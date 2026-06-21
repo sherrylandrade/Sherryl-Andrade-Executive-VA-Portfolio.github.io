@@ -653,20 +653,20 @@
     </div>
 
     <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; background: #1c1d1f; padding: 25px; border-radius: 8px;">
-        <img src="KPI 1.jpg" style="width:100%; grid-column: span 2; border-radius:6px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);" alt="KPI 1">
-        <img src="KPI 2.jpg" style="width:100%; grid-column: span 2; border-radius:6px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);" alt="KPI 2">
-        <img src="KPI 3.jpg" style="width:100%; border-radius:6px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);" alt="KPI 3">
-        <img src="KPI 4.jpg" style="width:100%; border-radius:6px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);" alt="KPI 4">
-        <img src="KPI 5.jpg" style="width:100%; border-radius:6px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);" alt="KPI 5">
-        <img src="KPI 6.jpg" style="width:100%; border-radius:6px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);" alt="KPI 6">
+        <img src="KPI 1.jpg" style="width:100% !important; grid-column: span 2; border-radius:6px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);" alt="KPI 1">
+        <img src="KPI 2.jpg" style="width:100% !important; grid-column: span 2; border-radius:6px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);" alt="KPI 2">
+        <img src="KPI 3.jpg" style="width:100% !important; border-radius:6px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);" alt="KPI 3">
+        <img src="KPI 4.jpg" style="width:100% !important; border-radius:6px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);" alt="KPI 4">
+        <img src="KPI 5.jpg" style="width:100% !important; border-radius:6px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);" alt="KPI 5">
+        <img src="KPI 6.jpg" style="width:100% !important; border-radius:6px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);" alt="KPI 6">
         
-        <!-- KPI 7: Centered inside container with forceful 30% reduction rule -->
-        <div style="grid-column: span 2; display: flex; justify-content: center; align-items: center; width: 100%;">
+        <!-- KPI 7: Explicitly fixed container structure and identical scaling footprint -->
+        <div style="grid-column: span 2; display: flex; justify-content: center; align-items: flex-start; width: 100%;">
             <img src="KPI 7.jpg" style="width: 70% !important; max-width: 70% !important; height: auto !important; border-radius:6px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);" alt="KPI 7">
         </div>
 
-        <!-- KPI 8: Centered inside container with forceful 30% reduction rule -->
-        <div style="grid-column: span 2; display: flex; justify-content: center; align-items: center; width: 100%;">
+        <!-- KPI 8: Now mirror-matched to KPI 7 with absolute priority overrides -->
+        <div style="grid-column: span 2; display: flex; justify-content: center; align-items: flex-start; width: 100%;">
             <img src="KPI 8.jpg" style="width: 70% !important; max-width: 70% !important; height: auto !important; border-radius:6px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);" alt="KPI 8">
         </div>
     </div>
