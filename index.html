@@ -148,7 +148,7 @@
 
         .btn-explore:hover { opacity: 0.9; }
 
-        /* Dramatic Portfolio Section Directory container */
+        /* Directory Setup */
         .directory-container {
             background: linear-gradient(145deg, #18191b, #222427);
             padding: 35px;
@@ -157,12 +157,7 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.05);
         }
 
-        .section-directory {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
+        .section-directory { list-style: none; display: flex; flex-direction: column; gap: 12px; }
 
         .directory-item {
             font-size: 1.1rem;
@@ -180,7 +175,6 @@
             align-items: center;
         }
 
-        /* Hover Dramatic Highlights & Shadow Glows */
         .directory-item:hover {
             color: #2dd4bf;
             background: rgba(45, 212, 191, 0.04);
@@ -197,22 +191,17 @@
             transition: all 0.3s ease;
         }
 
-        .directory-item:hover::after {
-            opacity: 1;
-            transform: translateX(0);
-        }
+        .directory-item:hover::after { opacity: 1; transform: translateX(0); }
 
-        /* PAGE 3: Core Services Styles */
+        /* Core Services setup */
         .service-card {
             background-color: #1c1d1f;
             border: 1px solid rgba(255, 255, 255, 0.03);
             padding: 40px;
             transition: transform 0.3s ease, border-color 0.3s ease;
         }
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(45, 212, 191, 0.2);
-        }
+        .service-card:hover { transform: translateY(-5px); border-color: rgba(45, 212, 191, 0.2); }
+        
         .service-tag {
             display: inline-block;
             font-size: 0.75rem;
@@ -224,6 +213,59 @@
             margin-bottom: 8px;
             font-weight: 600;
             text-transform: uppercase;
+        }
+
+        /* PAGE 4: Vertical Timeline Structural Styles */
+        .timeline-container {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding-left: 30px;
+            border-left: 2px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .timeline-card {
+            position: relative;
+            background-color: #1c1d1f;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 35px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-card:hover {
+            border-color: rgba(45, 212, 191, 0.2);
+            transform: translateX(5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -42px;
+            top: 40px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #333;
+            border: 2px solid #161719;
+            transition: background-color 0.3s ease;
+        }
+
+        .timeline-card:hover .timeline-dot {
+            background-color: #2dd4bf;
+            box-shadow: 0 0 10px #2dd4bf;
+        }
+
+        .time-badge {
+            display: inline-block;
+            font-size: 0.8rem;
+            color: #2dd4bf;
+            background-color: rgba(45, 212, 191, 0.08);
+            padding: 4px 14px;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-bottom: 15px;
         }
 
         @media (max-width: 950px) {
@@ -247,6 +289,7 @@
             <a href="#" class="nav-item">Home</a>
             <a href="#about" class="nav-item">About Me</a>
             <a href="#services" class="nav-item">Core Services</a>
+            <a href="#experience" class="nav-item">Experience</a>
             <a href="#testimonials" class="nav-item">Testimonials</a>
             <a href="#contact" class="nav-item">Contact</a>
         </div>
@@ -257,44 +300,34 @@
         <div class="image-side">
             <img src="profile.jpg" alt="Sherryl Andrade">
         </div>
-
         <div class="content-side">
             <div class="hero-title-container">
                 <div class="hero-title">My</div>
                 <div class="line-accent"></div>
             </div>
             <div class="hero-subtitle">Portfolio</div>
-            
             <div class="role-badge">Freelance Virtual Assistant</div>
-
             <div class="hero-description">
                 High-level administrative and operational support backed by deep expertise in Assistant Project Management. I help busy executives and teams streamline cross-functional workflows, safeguard system redundancies, organize platforms, and execute critical milestones with flawless precision.
             </div>
-
             <div class="action-group">
                 <button class="btn-explore" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">Explore Now</button>
             </div>
-
             <div style="position: absolute; bottom: 40px; right: 40px; font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); letter-spacing: 1px;">Page | 01</div>
         </div>
     </div>
 
-    <!-- PAGE 2: About Me Section (With Dramatic Directory Layout) -->
+    <!-- PAGE 2: About Me Section -->
     <div id="about" style="background-color: #1c1d1f; min-height: 100vh; width: 100vw; display: flex; align-items: center; padding: 120px 8% 80px 8%; position: relative; border-top: 1px solid rgba(255, 255, 255, 0.03);">
-        
         <div class="split-grid" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 8%; width: 100%; max-width: 1200px; margin: 0 auto;">
-            
-            <!-- Left Narrative -->
             <div style="display: flex; flex-direction: column; justify-content: center;">
                 <h2 style="font-size: 5rem; font-weight: 700; letter-spacing: -2px; line-height: 1.1; margin-bottom: 30px;">
                     Introduction
                     <div style="width: 120px; height: 2px; background-color: rgba(255, 255, 255, 0.4); margin-top: 15px;"></div>
                 </h2>
-
                 <p style="font-size: 1.05rem; color: #a0a0a5; line-height: 1.6; margin-bottom: 50px; max-width: 520px;">
                     I am an execution-focused Freelance Virtual Assistant specializing in high-level business administrative management and technical workflow orchestration. My professional background is deeply rooted in corporate project coordination, giving me a distinct edge in transforming complex daily chaos into streamlined, highly predictable business systems.
                 </p>
-
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; max-width: 550px;">
                     <div>
                         <h3 style="font-size: 1.1rem; font-weight: 600; color: #ffffff; margin-bottom: 12px; letter-spacing: 0.5px;">About Me</h3>
@@ -311,7 +344,6 @@
                 </div>
             </div>
 
-            <!-- Right Column: Dramatic Shadow Highlighted Box -->
             <div style="display: flex; flex-direction: column; justify-content: center;">
                 <h3 style="font-size: 0.85rem; color: #2dd4bf; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 25px; padding-left: 5px;">Portfolio Directory</h3>
                 <div class="directory-container">
@@ -319,7 +351,7 @@
                         <li class="directory-item" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">Core Services</li>
                         <li class="directory-item" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">Skills</li>
                         <li class="directory-item" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">Tools & Platforms</li>
-                        <li class="directory-item" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">Work Experience</li>
+                        <li class="directory-item" onclick="document.getElementById('experience').scrollIntoView({behavior: 'smooth'})">Work Experience</li>
                         <li class="directory-item" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">Client Testimonials</li>
                         <li class="directory-item" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">Customer Feedback</li>
                         <li class="directory-item" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">Certificates</li>
@@ -327,74 +359,167 @@
                     </ul>
                 </div>
             </div>
-
         </div>
         <div style="position: absolute; bottom: 40px; right: 40px; font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); letter-spacing: 1px;">Page | 02</div>
     </div>
 
-
-    <!-- PAGE 3: Core Services Section (Engineered from Experience, Skills & Tools) -->
+    <!-- PAGE 3: Core Services Section -->
     <div id="services" style="background-color: #121314; min-height: 100vh; width: 100vw; display: flex; align-items: center; padding: 120px 8% 80px 8%; position: relative; border-top: 1px solid rgba(255, 255, 255, 0.03);">
-        
         <div style="width: 100%; max-width: 1200px; margin: 0 auto;">
-            
-            <!-- Section Header -->
             <div style="margin-bottom: 60px;">
                 <h3 style="font-size: 0.85rem; color: #2dd4bf; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">What I Do Best</h3>
                 <h2 style="font-size: 4rem; font-weight: 700; letter-spacing: -2px; line-height: 1.1;">Core Services</h2>
                 <div style="width: 80px; height: 2px; background-color: rgba(255, 255, 255, 0.2); margin-top: 20px;"></div>
             </div>
-
-            <!-- Services Grid Matrix -->
             <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 30px;">
-                
-                <!-- Service 1 -->
                 <div class="service-card">
                     <h4 style="font-size: 1.4rem; font-weight: 600; margin-bottom: 15px; color: #ffffff;">Project Coordination & Operations</h4>
                     <p style="font-size: 0.95rem; color: #a0a0a5; line-height: 1.6; margin-bottom: 25px;">
                         End-to-end execution of cross-functional team workflows. I build structural roadmaps, oversee critical documentation, run quality assurance, and track timeline milestones with clinical focus.
                     </p>
                     <div>
-                        <span class="service-tag">Asana</span>
-                        <span class="service-tag">Basecamp</span>
-                        <span class="service-tag">Slack</span>
-                        <span class="service-tag">File Management</span>
+                        <span class="service-tag">Asana</span><span class="service-tag">Basecamp</span><span class="service-tag">Slack</span><span class="service-tag">File Management</span>
                     </div>
                 </div>
-
-                <!-- Service 2 -->
                 <div class="service-card">
                     <h4 style="font-size: 1.4rem; font-weight: 600; margin-bottom: 15px; color: #ffffff;">Executive CRM & Pipeline Admin</h4>
                     <p style="font-size: 0.95rem; color: #a0a0a5; line-height: 1.6; margin-bottom: 25px;">
                         High-tier pipeline maintenance and database orchestration. Expertly handling data syncs, calendar management, and complex administrative files to keep client data organized and secure.
                     </p>
                     <div>
-                        <span class="service-tag">Salesforce</span>
-                        <span class="service-tag">Hubspot</span>
-                        <span class="service-tag">Excel</span>
-                        <span class="service-tag">Google Workspace</span>
+                        <span class="service-tag">Salesforce</span><span class="service-tag">Hubspot</span><span class="service-tag">Excel</span><span class="service-tag">Google Workspace</span>
                     </div>
                 </div>
-
-                <!-- Service 3 -->
                 <div class="service-card">
                     <h4 style="font-size: 1.4rem; font-weight: 600; margin-bottom: 15px; color: #ffffff;">Customer Experience & Omnichannel Support</h4>
                     <p style="font-size: 0.95rem; color: #a0a0a5; line-height: 1.6; margin-bottom: 25px;">
                         Handling customer retention via email, phone, and live chat support loops. Proficient in technical escalation management, troubleshooting, and applying tactical scripting scripts.
                     </p>
                     <div>
-                        <span class="service-tag">Zendesk</span>
-                        <span class="service-tag">Gorgias</span>
-                        <span class="service-tag">Aircall</span>
-                        <span class="service-tag">Shopify</span>
+                        <span class="service-tag">Zendesk</span><span class="service-tag">Gorgias</span><span class="service-tag">Aircall</span><span class="service-tag">Shopify</span>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div style="position: absolute; bottom: 40px; right: 40px; font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); letter-spacing: 1px;">Page | 03</div>
+    </div>
+
+    <!-- PAGE 4: Work Experience Timeline Section -->
+    <div id="experience" style="background-color: #161719; min-height: 100vh; width: 100vw; padding: 120px 8% 80px 8%; position: relative; border-top: 1px solid rgba(255, 255, 255, 0.03);">
+        <div style="width: 100%; max-width: 1200px; margin: 0 auto;">
+            
+            <!-- Section Header -->
+            <div style="margin-bottom: 60px; text-align: left;">
+                <h3 style="font-size: 0.85rem; color: #2dd4bf; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px;">Professional History</h3>
+                <h2 style="font-size: 4rem; font-weight: 700; letter-spacing: -2px; line-height: 1.1;">Work Experience</h2>
+                <div style="width: 80px; height: 2px; background-color: rgba(255, 255, 255, 0.2); margin-top: 20px;"></div>
+            </div>
+
+            <!-- Timeline Stack -->
+            <div class="timeline-container">
+
+                <!-- 1. ModSquad (Manager) -->
+                <div class="timeline-card">
+                    <div class="timeline-dot"></div>
+                    <div class="time-badge">Nov 2024 - Sep 2025 (10 m)</div>
+                    <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 5px;">Project Assistant Manager</h4>
+                    <h5 style="font-size: 1.05rem; color: #a0a0a5; font-weight: 500; margin-bottom: 15px;">ModSquad</h5>
+                    <p style="font-size: 0.95rem; color: #8a8a8f; line-height: 1.6;">Monitored operational KPIs and data-driven reports to identify growth opportunities and resolve process bottlenecks. Standardized project documentation and coordinated cross-functional workflows to ensure 100% adherence to timelines.</p>
+                </div>
+
+                <!-- 2. ModSquad (Lead) -->
+                <div class="timeline-card">
+                    <div class="timeline-dot"></div>
+                    <div class="time-badge">Jul 2022 - Nov 2024 (2 yrs, 4 m)</div>
+                    <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 5px;">Lead Consultant</h4>
+                    <h5 style="font-size: 1.05rem; color: #a0a0a5; font-weight: 500; margin-bottom: 15px;">ModSquad</h5>
+                    <p style="font-size: 0.95rem; color: #8a8a8f; line-height: 1.6;">Provided real-time operational support and coaching to agents while strictly monitoring schedule adherence and performance standards. Compiled comprehensive shift reports to proactively identify and escalate operational trends, risks, and recurring issues.</p>
+                </div>
+
+                <!-- 3. SupportNinja (Tier 2) -->
+                <div class="timeline-card">
+                    <div class="timeline-dot"></div>
+                    <div class="time-badge">Jan 2022 - Nov 2022 (10 m)</div>
+                    <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 5px;">Junior Customer Resolution Specialist - Tier 2 (TSR)</h4>
+                    <h5 style="font-size: 1.05rem; color: #a0a0a5; font-weight: 500; margin-bottom: 15px;">SupportNinja</h5>
+                    <p style="font-size: 0.95rem; color: #8a8a8f; line-height: 1.6;">Managed Tier 2 support for DoubleGood.com via inbound, outbound, and email channels, expertly resolving complex order, billing, and technical app/web issues. Handled escalated cases from Tier 1 specialists to ensure timely resolution using specialized tools like Kustomer, Aircall, PopSQL, ShipStation, Swagger, and Slack.</p>
+                </div>
+
+                <!-- 4. SupportNinja (Tier 1) -->
+                <div class="timeline-card">
+                    <div class="timeline-dot"></div>
+                    <div class="time-badge">May 2021 - Jan 2022 (8 m)</div>
+                    <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 5px;">Customer Resolution Specialist - Tier 1 (CSR)</h4>
+                    <h5 style="font-size: 1.05rem; color: #a0a0a5; font-weight: 500; margin-bottom: 15px;">SupportNinja</h5>
+                    <p style="font-size: 0.95rem; color: #8a8a8f; line-height: 1.6;">Delivered phone and email support for e-commerce brands, assisting with order status, product inquiries, and case tracking. Provided technical troubleshooting and documented interactions to maintain high-quality resolution standards.</p>
+                </div>
+
+                <!-- 5. SupportNinja (Tech) -->
+                <div class="timeline-card">
+                    <div class="timeline-dot"></div>
+                    <div class="time-badge">Nov 2020 - Apr 2021 (5 m)</div>
+                    <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 5px;">Technical Support Specialist</h4>
+                    <h5 style="font-size: 1.05rem; color: #a0a0a5; font-weight: 500; margin-bottom: 15px;">SupportNinja</h5>
+                    <p style="font-size: 0.95rem; color: #8a8a8f; line-height: 1.6;">Resolved technical and access-related discrepancies for global e-learning platforms via email and CRM tools. Managed billing inquiries using Stripe, ensuring all documented resolutions met strict service quality standards.</p>
+                </div>
+
+                <!-- 6. TELUS International -->
+                <div class="timeline-card">
+                    <div class="timeline-dot"></div>
+                    <div class="time-badge">Oct 2019 - Oct 2020 (1 yr, 0 m)</div>
+                    <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 5px;">Customer Service Specialist</h4>
+                    <h5 style="font-size: 1.05rem; color: #a0a0a5; font-weight: 500; margin-bottom: 15px;">TELUS International Philippines</h5>
+                    <p style="font-size: 0.95rem; color: #8a8a8f; line-height: 1.6;">Managed mobility account support, overseeing billing, service renewals, and account activations via CRM systems. Resolved complex customer concerns while maintaining high service quality and strict adherence to operational compliance.</p>
+                </div>
+
+                <!-- 7. Concentrix -->
+                <div class="timeline-card">
+                    <div class="timeline-dot"></div>
+                    <div class="time-badge">May 2019 - Oct 2019 (5 m)</div>
+                    <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 5px;">Customer Service Specialist</h4>
+                    <h5 style="font-size: 1.05rem; color: #a0a0a5; font-weight: 500; margin-bottom: 15px;">Concentrix</h5>
+                    <p style="font-size: 0.95rem; color: #8a8a8f; line-height: 1.6;">Delivered comprehensive inbound support for AT&T ADSL customers by managing technical assistance, billing inquiries, and CRM documentation to maximize satisfaction. Boosted revenue through proactive upselling, new account activations, contract renewals, and efficient order tracking.</p>
+                </div>
+
+                <!-- 8. Telus International -->
+                <div class="timeline-card">
+                    <div class="timeline-dot"></div>
+                    <div class="time-badge">Nov 2016 - Apr 2019 (2 yrs, 5 m)</div>
+                    <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 5px;">Customer Service Specialist</h4>
+                    <h5 style="font-size: 1.05rem; color: #a0a0a5; font-weight: 500; margin-bottom: 15px;">Telus International</h5>
+                    <p style="font-size: 0.95rem; color: #8a8a8f; line-height: 1.6;">Delivered technical and sales support for AOL subscribers, resolving email access and connectivity issues over the phone. Guided customers through software troubleshooting and account management while meeting rigorous documentation standards.</p>
+                </div>
+
+                <!-- 9. Teleperformance (Tech 2) -->
+                <div class="timeline-card">
+                    <div class="timeline-dot"></div>
+                    <div class="time-badge">Nov 2015 - Nov 2016 (1 yr, 0 m)</div>
+                    <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 5px;">Technical Support Specialist</h4>
+                    <h5 style="font-size: 1.05rem; color: #a0a0a5; font-weight: 500; margin-bottom: 15px;">Teleperformance</h5>
+                    <p style="font-size: 0.95rem; color: #8a8a8f; line-height: 1.6;">Delivered email-based technical assistance for consumer electronics, assisting with product setup and complex issue resolution. Guided users through hardware and software troubleshooting while maintaining high service quality and strict adherence to guidelines.</p>
+                </div>
+
+                <!-- 10. Teleperformance (Tech 1) -->
+                <div class="timeline-card">
+                    <div class="timeline-dot"></div>
+                    <div class="time-badge">Mar 2014 - Oct 2015 (1 yr, 7 m)</div>
+                    <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 5px;">Technical Support Specialist</h4>
+                    <h5 style="font-size: 1.05rem; color: #a0a0a5; font-weight: 500; margin-bottom: 15px;">Teleperformance</h5>
+                    <p style="font-size: 0.95rem; color: #8a8a8f; line-height: 1.6;">Provided real-time chat and email support for mobility customers, managing service activations and account security changes. Balanced high-volume inquiries during peak hours while ensuring documented interactions met compliance and quality standards.</p>
+                </div>
+
+                <!-- 11. iQor -->
+                <div class="timeline-card">
+                    <div class="timeline-dot"></div>
+                    <div class="time-badge">Sep 2013 - Feb 2014 (5 m)</div>
+                    <h4 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 5px;">Customer Service Representative</h4>
+                    <h5 style="font-size: 1.05rem; color: #a0a0a5; font-weight: 500; margin-bottom: 15px;">iQor</h5>
+                    <p style="font-size: 0.95rem; color: #8a8a8f; line-height: 1.6;">Managed inbound sales and order entry for catalog retail, leveraging upselling techniques to maximize order value. Resolved out-of-stock issues by offering alternative product solutions to ensure a positive buyer experience.</p>
                 </div>
 
             </div>
-
         </div>
-
-        <div style="position: absolute; bottom: 40px; right: 40px; font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); letter-spacing: 1px;">Page | 03</div>
+        <div style="position: absolute; bottom: 40px; right: 40px; font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); letter-spacing: 1px;">Page | 04</div>
     </div>
 
 </body>
