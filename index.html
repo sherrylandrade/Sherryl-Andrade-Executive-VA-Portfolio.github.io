@@ -668,91 +668,98 @@
 </div>
                         
 <!-- PAGE 6: Certificates & Professional Credentials Landing Page -->
-<div id="certificates" class="slider-node" style="flex: 0 0 100%; width: 100vw; min-height: 100vh; background-color: #121314; display: flex; flex-direction: row; position: relative; border-top: 1px solid rgba(255, 255, 255, 0.03); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; box-sizing: border-box; scroll-snap-align: start; overflow: hidden;">
+<div id="certificates" class="slider-node" style="flex: 0 0 100%; width: 100vw; height: 100vh; max-height: 100vh; background-color: #121314; display: flex; flex-direction: row; position: relative; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; box-sizing: border-box; scroll-snap-align: start; overflow: hidden; margin: 0; padding: 0;">
     
-    <div class="portfolio-directory-container" style="width: 280px; min-width: 280px; height: 100vh; padding: 60px 40px; border-right: 1px solid rgba(255,255,255,0.03); display: flex; flex-direction: column; justify-content: center; box-sizing: border-box; background-color: #121314; z-index: 10;">
+    <!-- LEFT NAVIGATION CONTAINER -->
+    <div class="portfolio-directory-container" style="width: 280px; min-width: 280px; height: 100%; padding: 0 40px; border-right: 1px solid rgba(255,255,255,0.03); display: flex; flex-direction: column; justify-content: center; box-sizing: border-box; background-color: #121314; z-index: 10;">
         <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 15px;">
-            </ul>
+            <!-- Automated links fill this container -->
+        </ul>
     </div>
 
-    <div style="flex-grow: 1; display: flex; align-items: center; padding: 60px 5%; box-sizing: border-box; overflow-y: auto;">
-        <div style="width: 100%; max-width: 950px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px; box-sizing: border-box;">
+    <!-- MAIN GRID AXIS CONTAINER -->
+    <div style="flex-grow: 1; height: 100%; display: flex; align-items: center; justify-content: center; padding: 0 5%; box-sizing: border-box;">
+        <div style="width: 100%; max-width: 950px; display: flex; flex-direction: column; gap: 35px; box-sizing: border-box;">
             
+            <!-- Header Grid Elements -->
             <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px; width: 100%; box-sizing: border-box;">
                 <div>
-                    <h3 style="font-size: 0.85rem; color: #2dd4bf; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 10px 0;">Verifications</h3>
-                    <h2 style="font-size: 3.5rem; font-weight: 700; letter-spacing: -2px; line-height: 1.1; margin: 0; color: #ffffff;">Certificates</h2>
-                    <div style="width: 80px; height: 2px; background-color: rgba(45, 212, 191, 0.4); margin-top: 15px;"></div>
+                    <h3 style="font-size: 0.85rem; color: #2dd4bf; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 8px 0;">Verifications</h3>
+                    <h2 style="font-size: 3.2rem; font-weight: 700; letter-spacing: -2px; line-height: 1.1; margin: 0; color: #ffffff;">Certificates</h2>
+                    <div style="width: 80px; height: 2px; background-color: rgba(45, 212, 191, 0.4); margin-top: 12px;"></div>
                 </div>
                 <p style="font-size: 0.95rem; color: #a0a0a5; max-width: 380px; line-height: 1.6; margin: 0;">
                     Validated professional milestones, technical expertise credentials, and specialized industry platform governance standardizations.
                 </p>
             </div>
 
-            <div style="display: grid; grid-template-columns: 1fr; gap: 20px; box-sizing: border-box; width: 100%;">
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; box-sizing: border-box; width: 100%;">
-                    
-                    <div class="cert-card" style="background: #1c1d1f; border: 1px solid rgba(255, 255, 255, 0.03); border-radius: 8px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; gap: 15px; box-sizing: border-box;">
-                        <div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                                <span style="font-size: 0.75rem; background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.6); padding: 3px 8px; border-radius: 4px;">ID: CERT-01</span>
-                                <span style="font-size: 1.1rem;">📜</span>
-                            </div>
-                            <h5 style="font-size: 1.1rem; font-weight: 600; color: #ffffff; margin: 0 0 6px 0;">Zendesk Advanced Support Platform Governance</h5>
-                            <p style="font-size: 0.85rem; color: #a0a0a5; margin: 0; line-height: 1.4;">Operational ticket structural management, performance flow routing, and system data validations analytics.</p>
+            <!-- Credentials Workspace Grid -->
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; box-sizing: border-box; width: 100%;">
+                
+                <!-- Card 1 -->
+                <div class="cert-card" style="background: #1c1d1f; border: 1px solid rgba(255, 255, 255, 0.03); border-radius: 8px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; gap: 15px; box-sizing: border-box;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                            <span style="font-size: 0.75rem; background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.6); padding: 3px 8px; border-radius: 4px;">ID: CERT-01</span>
+                            <span style="font-size: 1.1rem;">📜</span>
                         </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.04); padding-top: 10px;">
-                            <span style="color: rgba(255,255,255,0.4);">Issuer: <strong>Internal Ops Academy</strong></span>
-                            <span style="color: #2dd4bf; font-weight: 500;">Verified</span>
-                        </div>
+                        <h5 style="font-size: 1.1rem; font-weight: 600; color: #ffffff; margin: 0 0 6px 0;">Zendesk Advanced Support Platform Governance</h5>
+                        <p style="font-size: 0.85rem; color: #a0a0a5; margin: 0; line-height: 1.4;">Operational ticket structural management, performance flow routing, and system data validations analytics.</p>
                     </div>
-
-                    <div class="cert-card" style="background: #1c1d1f; border: 1px solid rgba(255, 255, 255, 0.03); border-radius: 8px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; gap: 15px; box-sizing: border-box;">
-                        <div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                                <span style="font-size: 0.75rem; background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.6); padding: 3px 8px; border-radius: 4px;">ID: CERT-02</span>
-                                <span style="font-size: 1.1rem;">📊</span>
-                            </div>
-                            <h5 style="font-size: 1.1rem; font-weight: 600; color: #ffffff; margin: 0 0 6px 0;">Analytical Metrics Performance Tracking</h5>
-                            <p style="font-size: 0.85rem; color: #a0a0a5; margin: 0; line-height: 1.4;">KPI metrics scorecards logic, pipeline trend evaluations, and strategic cross-functional operational leadership reporting.</p>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.04); padding-top: 10px;">
-                            <span style="color: rgba(255,255,255,0.4);">Issuer: <strong>Metrics Standard Org</strong></span>
-                            <span style="color: #2dd4bf; font-weight: 500;">Verified</span>
-                        </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.04); padding-top: 10px;">
+                        <span style="color: rgba(255,255,255,0.4);">Issuer: <strong>Internal Ops Academy</strong></span>
+                        <span style="color: #2dd4bf; font-weight: 500;">Verified</span>
                     </div>
-
-                    <div class="cert-card" style="background: #1c1d1f; border: 1px solid rgba(255, 255, 255, 0.03); border-radius: 8px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; gap: 15px; box-sizing: border-box;">
-                        <div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                                <span style="font-size: 0.75rem; background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.6); padding: 3px 8px; border-radius: 4px;">ID: CERT-03</span>
-                                <span style="font-size: 1.1rem;">🛠️</span>
-                            </div>
-                            <h5 style="font-size: 1.1rem; font-weight: 600; color: #ffffff; margin: 0 0 6px 0;">Workspace & Infrastructure Specialization</h5>
-                            <p style="font-size: 0.85rem; color: #a0a0a5; margin: 0; line-height: 1.4;">Platform configuration controls, workspace macro optimization setups, and system sync validation procedures.</p>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.04); padding-top: 10px;">
-                            <span style="color: rgba(255,255,255,0.4);">Issuer: <strong>Tech System Corp</strong></span>
-                            <span style="color: #2dd4bf; font-weight: 500;">Verified</span>
-                        </div>
-                    </div>
-
-                    <div class="cert-card" style="background: #1c1d1f; border: 1px solid rgba(255, 255, 255, 0.03); border-radius: 8px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; gap: 15px; box-sizing: border-box;">
-                        <div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                                <span style="font-size: 0.75rem; background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.6); padding: 3px 8px; border-radius: 4px;">ID: CERT-04</span>
-                                <span style="font-size: 1.1rem;">🤝</span>
-                            </div>
-                            <h5 style="font-size: 1.1rem; font-weight: 600; color: #ffffff; margin: 0 0 6px 0;">User Escalation Adherence Management</h5>
-                            <p style="font-size: 0.85rem; color: #a0a0a5; margin: 0; line-height: 1.4;">Advanced user case handling, incident mapping methods, and escalation pathway administration rules.</p>
-                        </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.04); padding-top: 10px;">
-                            <span style="color: rgba(255,255,255,0.4);">Issuer: <strong>Global Operations</strong></span>
-                            <span style="color: #2dd4bf; font-weight: 500;">Verified</span>
-                        </div>
-                    </div>
-
                 </div>
+
+                <!-- Card 2 -->
+                <div class="cert-card" style="background: #1c1d1f; border: 1px solid rgba(255, 255, 255, 0.03); border-radius: 8px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; gap: 15px; box-sizing: border-box;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                            <span style="font-size: 0.75rem; background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.6); padding: 3px 8px; border-radius: 4px;">ID: CERT-02</span>
+                            <span style="font-size: 1.1rem;">📊</span>
+                        </div>
+                        <h5 style="font-size: 1.1rem; font-weight: 600; color: #ffffff; margin: 0 0 6px 0;">Analytical Metrics Performance Tracking</h5>
+                        <p style="font-size: 0.85rem; color: #a0a0a5; margin: 0; line-height: 1.4;">KPI metrics scorecards logic, pipeline trend evaluations, and strategic cross-functional operational leadership reporting.</p>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.04); padding-top: 10px;">
+                        <span style="color: rgba(255,255,255,0.4);">Issuer: <strong>Metrics Standard Org</strong></span>
+                        <span style="color: #2dd4bf; font-weight: 500;">Verified</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="cert-card" style="background: #1c1d1f; border: 1px solid rgba(255, 255, 255, 0.03); border-radius: 8px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; gap: 15px; box-sizing: border-box;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                            <span style="font-size: 0.75rem; background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.6); padding: 3px 8px; border-radius: 4px;">ID: CERT-03</span>
+                            <span style="font-size: 1.1rem;">🛠️</span>
+                        </div>
+                        <h5 style="font-size: 1.1rem; font-weight: 600; color: #ffffff; margin: 0 0 6px 0;">Workspace & Infrastructure Specialization</h5>
+                        <p style="font-size: 0.85rem; color: #a0a0a5; margin: 0; line-height: 1.4;">Platform configuration controls, workspace macro optimization setups, and system sync validation procedures.</p>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.04); padding-top: 10px;">
+                        <span style="color: rgba(255,255,255,0.4);">Issuer: <strong>Tech System Corp</strong></span>
+                        <span style="color: #2dd4bf; font-weight: 500;">Verified</span>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="cert-card" style="background: #1c1d1f; border: 1px solid rgba(255, 255, 255, 0.03); border-radius: 8px; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; gap: 15px; box-sizing: border-box;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                            <span style="font-size: 0.75rem; background: rgba(255,255,255,0.05); color: rgba(255,255,255,0.6); padding: 3px 8px; border-radius: 4px;">ID: CERT-04</span>
+                            <span style="font-size: 1.1rem;">🤝</span>
+                        </div>
+                        <h5 style="font-size: 1.1rem; font-weight: 600; color: #ffffff; margin: 0 0 6px 0;">User Escalation Adherence Management</h5>
+                        <p style="font-size: 0.85rem; color: #a0a0a5; margin: 0; line-height: 1.4;">Advanced user case handling, incident mapping methods, and escalation pathway administration rules.</p>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.75rem; border-top: 1px solid rgba(255,255,255,0.04); padding-top: 10px;">
+                        <span style="color: rgba(255,255,255,0.4);">Issuer: <strong>Global Operations</strong></span>
+                        <span style="color: #2dd4bf; font-weight: 500;">Verified</span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -760,36 +767,44 @@
 </div>  
                         
 <!-- PAGE 7: Technical Infrastructure Landing Page -->
-<div id="infrastructure" class="slider-node" style="flex: 0 0 100%; width: 100vw; min-height: 100vh; background-color: #121314; display: flex; flex-direction: row; position: relative; border-top: 1px solid rgba(255, 255, 255, 0.03); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; box-sizing: border-box; scroll-snap-align: start; overflow: hidden;">
+<div id="infrastructure" class="slider-node" style="flex: 0 0 100%; width: 100vw; height: 100vh; max-height: 100vh; background-color: #121314; display: flex; flex-direction: row; position: relative; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; box-sizing: border-box; scroll-snap-align: start; overflow: hidden; margin: 0; padding: 0;">
     
-    <div class="portfolio-directory-container" style="width: 280px; min-width: 280px; height: 100vh; padding: 60px 40px; border-right: 1px solid rgba(255,255,255,0.03); display: flex; flex-direction: column; justify-content: center; box-sizing: border-box; background-color: #121314; z-index: 10;">
+    <!-- LEFT NAVIGATION CONTAINER -->
+    <div class="portfolio-directory-container" style="width: 280px; min-width: 280px; height: 100%; padding: 0 40px; border-right: 1px solid rgba(255,255,255,0.03); display: flex; flex-direction: column; justify-content: center; box-sizing: border-box; background-color: #121314; z-index: 10;">
         <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 15px;">
-            </ul>
+            <!-- Automated links fill this container -->
+        </ul>
     </div>
 
-    <div style="flex-grow: 1; display: flex; align-items: center; padding: 60px 5%; box-sizing: border-box; overflow-y: auto;">
-        <div style="width: 100%; max-width: 950px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px; box-sizing: border-box;">
+    <!-- MAIN GRID AXIS CONTAINER -->
+    <div style="flex-grow: 1; height: 100%; display: flex; align-items: center; justify-content: center; padding: 0 5%; box-sizing: border-box;">
+        <div style="width: 100%; max-width: 950px; display: flex; flex-direction: column; gap: 35px; box-sizing: border-box;">
             
+            <!-- Headers -->
             <div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 20px; width: 100%; box-sizing: border-box;">
                 <div>
-                    <h3 style="font-size: 0.85rem; color: #2dd4bf; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 10px 0;">Workstation Setup</h3>
-                    <h2 style="font-size: 3.5rem; font-weight: 700; letter-spacing: -2px; line-height: 1.1; margin: 0; color: #ffffff;">Technical Infrastructure</h2>
-                    <div style="width: 80px; height: 2px; background-color: rgba(45, 212, 191, 0.4); margin-top: 15px;"></div>
+                    <h3 style="font-size: 0.85rem; color: #2dd4bf; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 8px 0;">Workstation Setup</h3>
+                    <h2 style="font-size: 3.2rem; font-weight: 700; letter-spacing: -2px; line-height: 1.1; margin: 0; color: #ffffff;">Technical Infrastructure</h2>
+                    <div style="width: 80px; height: 2px; background-color: rgba(45, 212, 191, 0.4); margin-top: 12px;"></div>
                 </div>
                 <p style="font-size: 0.95rem; color: #a0a0a5; max-width: 380px; line-height: 1.6; margin: 0;">
                     High-availability production environment configured for uninterrupted uptime, low-latency communication networks, and reliable workflow execution data.
                 </p>
             </div>
 
+            <!-- Content Area Split Layout Grid -->
             <div style="display: grid; grid-template-columns: 1.1fr 1.9fr; gap: 30px; width: 100%; box-sizing: border-box; align-items: center;">
                 
+                <!-- Terminal Gallery Wrapper Container -->
                 <div style="background: #1c1d1f; border: 1px solid rgba(255, 255, 255, 0.03); border-radius: 12px; padding: 15px; display: flex; flex-direction: column; gap: 15px; box-sizing: border-box;">
                     <div style="position: relative; width: 100%; aspect-ratio: 4/3; background: #151617; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center;">
                         
+                        <!-- Images Stack Interface -->
                         <img id="infra-slide-1" src="image_227f63.png" style="position: absolute; width: 100%; height: 100%; object-fit: cover; display: block; border-radius: 6px;">
                         <img id="infra-slide-2" src="image_544f01.png" style="position: absolute; width: 100%; height: 100%; object-fit: cover; display: none; border-radius: 6px;">
                         <img id="infra-slide-3" src="image_5452de.png" style="position: absolute; width: 100%; height: 100%; object-fit: cover; display: none; border-radius: 6px;">
                         
+                        <!-- Toggles Layer -->
                         <button onclick="changeInfraSlide(-1)" style="position: absolute; left: 10px; background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 50%; width: 32px; height: 32px; cursor: pointer; font-weight: bold; z-index: 10;">‹</button>
                         <button onclick="changeInfraSlide(1)" style="position: absolute; right: 10px; background: rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 50%; width: 32px; height: 32px; cursor: pointer; font-weight: bold; z-index: 10;">›</button>
                     </div>
@@ -803,6 +818,7 @@
                     </div>
                 </div>
 
+                <!-- Technical Parameters Specification Cards -->
                 <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; box-sizing: border-box; width: 100%;">
                     
                     <div style="background: #1c1d1f; border: 1px solid rgba(255, 255, 255, 0.03); border-radius: 8px; padding: 20px; box-sizing: border-box;">
