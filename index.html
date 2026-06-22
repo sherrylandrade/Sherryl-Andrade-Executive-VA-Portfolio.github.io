@@ -672,22 +672,9 @@
     
     <ul style="list-style: none; padding: 0; margin: 0;">
         <li style="margin-bottom: 15px; list-style: none;">
-            <a href="#certificates" 
-               onclick="
-                 event.preventDefault(); 
-                 window.location.hash = 'certificates';
-                 var el = document.getElementById('certificates');
-                 if(el) {
-                    el.scrollIntoView({ behavior: 'auto', block: 'center' });
-                    // Fallback force for custom scroll panels
-                    var parentNode = el.parentElement;
-                    while(parentNode && parentNode !== document.body) {
-                        if(parentNode.scrollLeft !== undefined) { parentNode.scrollLeft = el.offsetLeft; }
-                        parentNode = parentNode.parentElement;
-                    }
-                 }
-               " 
-               style="color: #a0a0a5; text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: 0.95rem; letter-spacing: 1px; display: inline-block; cursor: pointer; transition: color 0.2s ease;" 
+            <a href="javascript:void(0);" 
+               onclick="goToCertificatesPage(event);" 
+               style="color: #a0a0a5; text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: 0.95rem; letter-spacing: 1px; display: inline-block; cursor: pointer; position: relative; z-index: 99999 !important; transition: color 0.2s ease;" 
                onmouseover="this.style.color='#2dd4bf'" 
                onmouseout="this.style.color='#a0a0a5'">
                 Certificates
@@ -695,6 +682,47 @@
         </li>
     </ul>
 </div>
+<script>
+function goToCertificatesPage(e) {
+    if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+    
+    // 1. Force state updates
+    window.location.hash = 'certificates';
+    
+    // 2. Find section target
+    var target = document.getElementById('certificates');
+    
+    if (target) {
+        // Direct scroll attempt
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        
+        // 3. Fallback: Force global document container frames to shift manually
+        var scrollContainers = [
+            document.documentElement, 
+            document.body, 
+            document.querySelector('.main-content'), // common sidebar layout wrappers
+            document.querySelector('.app-container')
+        ];
+        
+        scrollContainers.forEach(function(el) {
+            if (el) {
+                // If it's a standard vertical scroll wrapper, slide to target offset
+                if (el.scrollHeight > el.clientHeight) {
+                    el.scrollTo({
+                        top: target.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    } else {
+        console.error("Layout error: The section element container with id='certificates' does not exist in this DOM tree.");
+    }
+}
+</script>                        
                         
 </body>
 </html>
