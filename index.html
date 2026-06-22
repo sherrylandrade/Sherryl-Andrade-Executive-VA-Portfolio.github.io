@@ -672,32 +672,8 @@
     
     <ul style="list-style: none; padding: 0; margin: 0;">
         <li style="margin-bottom: 15px; list-style: none;">
-            <a href="javascript:void(0);" 
-               onclick="
-                 event.preventDefault();
-                 event.stopPropagation();
-                 
-                 var targetSec = document.getElementById('certificates');
-                 if (targetSec) {
-                     // 1. First, attempt native fallback horizontal view
-                     targetSec.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
-                     
-                     // 2. Bruteforce global loop: look up the tree for ANY horizontal slider container
-                     var parent = targetSec.parentElement;
-                     while (parent && parent !== document.body) {
-                         // Check if this parent handles side-by-side child clipping
-                         if (parent.scrollWidth > parent.clientWidth) {
-                             parent.scrollTo({
-                                 left: targetSec.offsetLeft,
-                                 behavior: 'smooth'
-                             });
-                         }
-                         parent = parent.parentElement;
-                     }
-                 } else {
-                     alert('Error: Could not find an element with id=&quot;certificates&quot; on this layout view.');
-                 }
-               " 
+            <a href="#certificates" 
+               onclick="event.preventDefault(); event.stopPropagation(); var targetNode = document.getElementById('certificates'); if(targetNode) { targetNode.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' }); } else { var wrapper = document.querySelector('.slider-wrapper') || document.querySelector('.gallery-wrapper'); if(wrapper) { wrapper.scrollTo({ left: wrapper.clientWidth * 5, behavior: 'smooth' }); } }" 
                style="color: #a0a0a5; text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: 0.95rem; letter-spacing: 1px; display: inline-block; cursor: pointer; position: relative; z-index: 999999 !important; transition: color 0.2s ease;" 
                onmouseover="this.style.color='#2dd4bf'" 
                onmouseout="this.style.color='#a0a0a5'">
