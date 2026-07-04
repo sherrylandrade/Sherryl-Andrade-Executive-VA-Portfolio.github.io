@@ -19,13 +19,14 @@
                     },
                     fontFamily: {
                         sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'Fira Code', 'monospace']
                     }
                 }
             }
         }
     </script>
     <!-- Inter Font & Lucide Icons via CDN -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #090a0f; color: #f3f4f6; }
@@ -44,20 +45,20 @@
         </div>
 
         <!-- Central Navigation Pill -->
-        <nav class="flex items-center gap-1 bg-accentCyan-900/90 border border-accentCyan/25 rounded-full px-2 py-1.5 shadow-xl shadow-accentCyan/10">
-            <button onclick="switchPage('home')" id="nav-home" class="nav-btn flex items-center justify-center p-2 rounded-full text-neutral-400 hover:text-accentCyan transition-all duration-200">
+        <nav class="flex items-center gap-1 bg-neutral-900/90 border border-white/5 rounded-full px-2 py-1.5 shadow-xl">
+            <button onclick="switchPage('home')" id="nav-home" class="nav-btn flex items-center justify-center p-2 rounded-full bg-white/5 text-white border border-white/5 transition-all duration-200">
                 <i data-lucide="home" class="w-4 h-4"></i>
             </button>
-            <button onclick="switchPage('about')" id="nav-about" class="nav-btn flex items-center gap-2 text-xs font-medium px-4 py-1.5 rounded-full text-neutral-400 hover:text-accentCyan transition-all duration-200">
+            <button onclick="switchPage('about')" id="nav-about" class="nav-btn flex items-center gap-2 text-xs font-medium px-4 py-1.5 rounded-full text-neutral-400 hover:text-white transition-all duration-200">
                 <i data-lucide="user" class="w-3.5 h-3.5"></i>About
             </button>
-            <button onclick="switchPage('work')" id="nav-work" class="nav-btn flex items-center gap-2 text-xs font-medium px-4 py-1.5 rounded-full text-neutral-400 hover:text-accentCyan transition-all duration-200">
-                <i data-lucide="briefcase" class="w-3.5 h-3.5"></i> Case Studies & Work History
+            <button onclick="switchPage('work')" id="nav-work" class="nav-btn flex items-center gap-2 text-xs font-medium px-4 py-1.5 rounded-full text-neutral-400 hover:text-white transition-all duration-200">
+                <i data-lucide="briefcase" class="w-3.5 h-3.5"></i>Work History
             </button>
-            <button onclick="switchPage('testimonials')" id="nav-testimonials" class="nav-btn flex items-center gap-2 text-xs font-medium px-4 py-1.5 rounded-full text-neutral-400 hover:text-accentCyan transition-all duration-200">
+            <button onclick="switchPage('testimonials')" id="nav-testimonials" class="nav-btn flex items-center gap-2 text-xs font-medium px-4 py-1.5 rounded-full text-neutral-400 hover:text-white transition-all duration-200">
                 <i data-lucide="star" class="w-3.5 h-3.5"></i>Testimonials
             </button>
-            <button onclick="switchPage('contact')" id="nav-contact" class="nav-btn flex items-center gap-2 text-xs font-medium px-4 py-1.5 rounded-full text-neutral-400 hover:text-accentCyan transition-all duration-200">
+            <button onclick="switchPage('contact')" id="nav-contact" class="nav-btn flex items-center gap-2 text-xs font-medium px-4 py-1.5 rounded-full text-neutral-400 hover:text-white transition-all duration-200">
                 <i data-lucide="mail" class="w-3.5 h-3.5"></i>Contact
             </button>
         </nav>
@@ -73,23 +74,39 @@
 
         <!-- ================= HOME PAGE ================= -->
         <section id="page-home" class="page-viewport active">
-            <div class="text-center max-w-3xl mx-auto mt-5">
+            <div class="text-center max-w-4xl mx-auto mt-5 flex flex-col items-center">
                 <div class="inline-flex items-center gap-2 text-xs text-accentCyan bg-accentCyan/5 border border-accentCyan/10 rounded-full px-4 py-1.5 mb-8 font-medium tracking-wider uppercase">
                     My Portfolio
                 </div>
-                <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-accentBlue/50 mb-8 leading-[1.1]">
+                
+                <!-- Fixed vibrant gradient headline to match Image 1/Image 6 style perfectly -->
+                <h1 class="text-5xl md:text-8xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-blue-500 to-blue-800 mb-8 leading-[1.05] max-w-5xl">
                     Bringing elite order to executive chaos
                 </h1>
-                <p class="text-lg md:text-xl text-neutral-400 font-light leading-relaxed mb-12 max-w-2xl mx-auto">
-                    Highly calibrated executive assistance providing proactive inbox management, seamless calendar coordination, and high-level operational support so you can focus entirely on scaling your business.
+
+                <p class="text-lg md:text-xl text-neutral-400 font-light leading-relaxed mb-8 max-w-3xl mx-auto">
+                    Highly calibrated executive assistance providing proactive inbox management, seamless calendar coordination, and high-level operational support so you can focus entirely on scaling your business[cite: 1].
                 </p>
                 
-                <button onclick="switchPage('about')" class="inline-flex items-center gap-3 bg-emerald-500/5 border border-emerald-500/15 hover:border-emerald-500/20 text-emerald-500 hover:text-accentCyan font-medium text-sm px-4 py-2 rounded-full transition-all group shadow-md">
-                <!-- Replace 'your-profile-image.jpg' with your image link -->
-                    <img src="avatar.jpg" alt="Sherryl Andrade" class="w-6 h-6 rounded-full object-cover border border-emerald-500/20">
+                <!-- About Redirect Button -->
+                <button onclick="switchPage('about')" class="inline-flex items-center gap-3 bg-emerald-500/5 border border-emerald-500/15 hover:border-emerald-500/30 text-emerald-400 font-medium text-xs px-5 py-2.5 rounded-full transition-all group shadow-md mb-6">
+                    <img src="avatar.jpg" alt="Sherryl Andrade" class="w-5 h-5 rounded-full object-cover border border-emerald-500/20">
                     <span>About — Sherryl Andrade</span>
-                    <i data-lucide="arrow-right" class="w-4 h-4 text-emerald-500 group-hover:translate-x-1 transition-transform"></i>
+                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-emerald-400 group-hover:translate-x-1 transition-transform"></i>
                 </button>
+
+                <!-- NEW UPDATES: Clickable Social Media Logo Strip (Indicated by red box in image_9168c3.png) -->
+                <div class="flex items-center gap-4 pt-2">
+                    <a href="https://www.linkedin.com/in/sherrylandrade/" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg border border-white/5 bg-white/[0.02] text-neutral-400 hover:text-white hover:border-white/10 transition-all shadow-sm" title="LinkedIn Profile">
+                        <i data-lucide="linkedin" class="w-4 h-4 fill-current"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61591320306509&sk=about" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg border border-white/5 bg-white/[0.02] text-neutral-400 hover:text-white hover:border-white/10 transition-all shadow-sm" title="Facebook Page">
+                        <i data-lucide="facebook" class="w-4 h-4 fill-current"></i>
+                    </a>
+                    <a href="https://www.instagram.com/its.andrade.she/" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg border border-white/5 bg-white/[0.02] text-neutral-400 hover:text-white hover:border-white/10 transition-all shadow-sm" title="Instagram Profile">
+                        <i data-lucide="instagram" class="w-4 h-4"></i>
+                    </a>
+                </div>
             </div>
         </section>
 <!-- ================= ABOUT SECTION ================= -->
