@@ -803,74 +803,48 @@
 
     </main>
 
-    <!-- FOOTER ARCHITECTURE -->
-    <footer class="w-full border-t border-panelBorder bg-neutral-950/40 mt-12">
-        <div class="max-w-5xl mx-auto px-6 py-6 flex flex-col sm:flex-row justify-between items-center text-[10px] font-mono tracking-widest text-neutral-600 gap-4">
+   <!-- GLOBAL FOOTER LOGS -->
+    <!-- FIX: Replaced bold border line with ultra-subtle border-white/[0.03] to fulfill requested style change (Red arrow in image_9168c3.png) -->
+    <footer class="w-full border-t border-white/[0.03] bg-neutral-950/20 py-5">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center text-[10px] font-mono tracking-wider text-neutral-500 gap-4">
             <div>© 2026 Sherryl Andrade. Executive Virtual Assistant</div>
-            <div>Built For Elite Operations Compliance & Executive Support Architecture</div>
+            <div class="text-neutral-600">Built For Elite Operations Compliance & Executive Support Architecture</div>
         </div>
     </footer>
-    
-    <!-- CODE SCRIPT ROUTER AND SLIDER LOOPS -->
+
+    <!-- INTERACTION CONTROLLER ROUTER -->
     <script>
         function switchPage(pageId) {
-            document.querySelectorAll('.page-viewport').forEach(view => view.classList.remove('active'));
-            const targetView = document.getElementById(`page-${pageId}`);
-            if(targetView) targetView.classList.add('active');
+            document.querySelectorAll('.page-viewport').forEach(view => {
+                view.classList.remove('active');
+            });
+            const selectedView = document.getElementById(`page-${pageId}`);
+            if (selectedView) {
+                selectedView.classList.add('active');
+            }
 
+            // Adjust Tab state styles cleanly
             document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('bg-white/10', 'text-white');
+                btn.classList.remove('bg-white/5', 'text-white', 'border', 'border-white/5');
                 btn.classList.add('text-neutral-400');
             });
-            const activeBtn = document.getElementById(`nav-${pageId}`);
-            if(activeBtn) {
-                activeBtn.classList.remove('text-neutral-400');
-                activeBtn.classList.add('bg-white/10', 'text-white');
+            const currentTab = document.getElementById(`nav-${pageId}`);
+            if (currentTab) {
+                currentTab.classList.remove('text-neutral-400');
+                currentTab.classList.add('bg-white/5', 'text-white', 'border', 'border-white/5');
             }
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({ top: 0, behavior: 'instant' });
         }
 
-        let currentSlideIndex = 0;
-        const totalSlides = 3;
-        const slideTitles = [
-            "1. Client Commendations",
-            "2. Customer Feedback Surveys",
-            "3. KPI Metrics Data"
-        ];
-
-        function updateSlideDisplay() {
-            document.querySelectorAll('.testimonial-slide').forEach((slide, idx) => {
-                if(idx === currentSlideIndex) {
-                    slide.classList.remove('hidden');
-                    slide.classList.add('block');
-                } else {
-                    slide.classList.remove('block');
-                    slide.classList.add('hidden');
-                }
-            });
-            document.getElementById('slider-category-title').textContent = slideTitles[currentSlideIndex];
-        }
-
-        function slideNext() {
-            currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
-            updateSlideDisplay();
-        }
-
-        function slidePrev() {
-            currentSlideIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
-            updateSlideDisplay();
-        }
-
-        function updateSystemClock() {
+        function updateLiveClock() {
             const now = new Date();
-            document.getElementById('live-clock').textContent = now.toTimeString().split(' ')[0];
+            document.getElementById('live-clock').textContent = now.toLocaleTimeString('en-US', { hour12: false });
         }
 
-        document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();
-            updateSystemClock();
-            setInterval(updateSystemClock, 1000);
-            switchPage('home');
+            updateLiveClock();
+            setInterval(updateLiveClock, 1000);
         });
     </script>
 </body>
