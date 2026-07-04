@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sherryl Andrade — Executive Virtual Assistant Portfolio</title>
+    <title>Sherryl Andrade — Executive Virtual Assistant</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -38,39 +38,46 @@
         .glow-nav {
             box-shadow: 0 0 20px rgba(6, 182, 212, 0.05), inset 0 0 12px rgba(255, 255, 255, 0.02);
         }
+        /* Page Tab Management States */
+        .page-view {
+            display: none;
+        }
+        .page-view.active-page {
+            display: block;
+        }
     </style>
 </head>
-<body class="selection:bg-accentBlue/30 selection:text-white min-h-screen relative overflow-x-hidden">
+<body class="selection:bg-accentBlue/30 selection:text-white min-h-screen relative overflow-x-hidden flex flex-col justify-between">
 
-    <!-- FLOATING FIXED HEADER (Matches layouts in image_901d6e.png) -->
-    <header class="fixed top-0 left-0 w-full z-50 px-6 py-4 flex justify-between items-center max-w-7xl mx-auto left-1/2 -translate-x-1/2 backdrop-blur-sm bg-darkBg/10">
+    <!-- FLOATING FIXED NAVIGATION HEADER (Matches image_901d6e.png exactly) -->
+    <header class="fixed top-0 left-0 w-full z-50 px-6 py-4 flex justify-between items-center max-w-7xl mx-auto left-1/2 -translate-x-1/2 bg-darkBg/30 backdrop-blur-md">
         <!-- Timezone Badge Left -->
         <div class="bg-neutral-900/80 border border-panelBorder px-3 py-1.5 rounded-full text-[11px] font-mono tracking-wider text-neutral-400 flex items-center gap-2 shadow-md">
             <span class="w-1.5 h-1.5 rounded-full bg-accentCyan animate-pulse"></span>
             <span>PH Philippines</span>
         </div>
 
-        <!-- Center Glowing Navigation Pill -->
+        <!-- Center Glowing Tab Pill Navigation Buttons -->
         <nav class="glow-nav bg-cardBg/80 border border-panelBorder/90 rounded-full px-2 py-1.5 flex items-center gap-1 backdrop-blur-xl">
-            <a href="#hero" class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium bg-neutral-900 text-white border border-white/5 transition-all">
+            <button onclick="switchPage('home')" id="tab-home" class="nav-btn flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium transition-all bg-neutral-900 text-white border border-white/5">
                 <i data-lucide="home" class="w-3.5 h-3.5 text-accentCyan"></i>
-            </a>
-            <a href="#about" class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium text-neutral-400 hover:text-white transition-all">
+            </button>
+            <button onclick="switchPage('about')" id="tab-about" class="nav-btn flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium text-neutral-400 hover:text-white transition-all">
                 <i data-lucide="user" class="w-3.5 h-3.5"></i>
                 <span class="hidden sm:inline">About</span>
-            </a>
-            <a href="#work" class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium text-neutral-400 hover:text-white transition-all">
+            </button>
+            <button onclick="switchPage('work')" id="tab-work" class="nav-btn flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium text-neutral-400 hover:text-white transition-all">
                 <i data-lucide="briefcase" class="w-3.5 h-3.5"></i>
                 <span class="hidden sm:inline">Work</span>
-            </a>
-            <a href="#testimonials" class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium text-neutral-400 hover:text-white transition-all">
+            </button>
+            <button onclick="switchPage('testimonials')" id="tab-testimonials" class="nav-btn flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium text-neutral-400 hover:text-white transition-all">
                 <i data-lucide="star" class="w-3.5 h-3.5"></i>
                 <span class="hidden sm:inline">Testimonials</span>
-            </a>
-            <a href="#contact" class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium text-neutral-400 hover:text-white transition-all">
+            </button>
+            <button onclick="switchPage('contact')" id="tab-contact" class="nav-btn flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium text-neutral-400 hover:text-white transition-all">
                 <i data-lucide="mail" class="w-3.5 h-3.5"></i>
                 <span class="hidden sm:inline">Contact</span>
-            </a>
+            </button>
         </nav>
 
         <!-- Live Clock Right -->
@@ -79,64 +86,69 @@
         </div>
     </header>
 
-    <!-- MAIN PORTFOLIO BODY LAYER -->
-    <div class="max-w-6xl mx-auto px-6 space-y-32 pt-32 pb-16">
+    <!-- CONTENT PAGES LAYOUT WRAPPER -->
+    <main class="max-w-6xl w-full mx-auto px-6 pt-32 pb-16 flex-grow">
 
-        <!-- SECTION 1: HERO CONTAINER (Matches image_901d6e.png with text updates from image_907b83.jpg) -->
-        <section id="hero" class="min-h-[70vh] flex flex-col justify-center items-center text-center space-y-8 relative">
-            <div class="inline-flex items-center gap-2 font-mono text-[11px] text-accentCyan bg-accentCyan/5 border border-accentCyan/10 px-4 py-1.5 rounded-full uppercase tracking-widest">
-                My Portfolio
-            </div>
-            
-            <!-- Exact Blue Gradient Typography Layout from Image 1 -->
-            <h1 class="text-5xl md:text-8xl font-extrabold tracking-tight leading-[1.05] max-w-5xl text-transparent bg-clip-text bg-gradient-to-b from-blue-500 to-blue-800">
-                Bringing elite order to executive chaos
-            </h1>
+        <!-- ========================================== -->
+        <!-- PAGE 1: HOME PAGE (Matches image_901d6e.png) -->
+        <!-- ========================================== -->
+        <div id="page-home" class="page-view active-page">
+            <section class="min-h-[65vh] flex flex-col justify-center items-center text-center space-y-8">
+                <div class="inline-flex items-center gap-2 font-mono text-[11px] text-accentCyan bg-accentCyan/5 border border-accentCyan/10 px-4 py-1.5 rounded-full uppercase tracking-widest">
+                    My Portfolio
+                </div>
+                
+                <h1 class="text-5xl md:text-8xl font-extrabold tracking-tight leading-[1.05] max-w-5xl text-transparent bg-clip-text bg-gradient-to-b from-blue-500 to-blue-800">
+                    Bringing elite order to executive chaos
+                </h1>
 
-            <p class="text-neutral-400 text-base md:text-xl max-w-3xl font-light leading-relaxed">
-                Highly calibrated executive assistance providing proactive inbox management, seamless calendar coordination, and high-level operational support so you can focus entirely on scaling your business[cite: 1].
-            </p>
+                <p class="text-neutral-400 text-base md:text-xl max-w-3xl font-light leading-relaxed">
+                    Highly calibrated executive assistance providing proactive inbox management, seamless calendar coordination, and high-level operational support so you can focus entirely on scaling your business[cite: 1].
+                </p>
 
-            <div class="pt-4">
-                <a href="#about" class="inline-flex items-center gap-2.5 font-sans text-xs font-medium text-emerald-400 bg-emerald-500/5 border border-emerald-500/20 hover:bg-emerald-500/10 px-6 py-3 rounded-full transition-all shadow-lg shadow-emerald-500/5">
-                    <div class="w-5 h-5 rounded-full bg-neutral-800 overflow-hidden border border-white/10">
-                        <img src="avatar.jpg" alt="Sherryl" class="w-full h-full object-cover">
-                    </div>
-                    <span>About — Sherryl Andrade</span>
-                    <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                </a>
-            </div>
-        </section>
+                <div class="pt-4">
+                    <button onclick="switchPage('about')" class="inline-flex items-center gap-2.5 font-sans text-xs font-medium text-emerald-400 bg-emerald-500/5 border border-emerald-500/20 hover:bg-emerald-500/10 px-6 py-3 rounded-full transition-all shadow-lg shadow-emerald-500/5">
+                        <div class="w-5 h-5 rounded-full bg-neutral-800 overflow-hidden border border-white/10">
+                            <img src="avatar.jpg" alt="Sherryl" class="w-full h-full object-cover">
+                        </div>
+                        <span>About — Sherryl Andrade</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </button>
+                </div>
+            </section>
+        </div>
 
-        <!-- SECTION 2: ABOUT & PROFILE DASHBOARD (Matches image_90220d.jpg Layout with text updates from image_907b83.jpg) -->
-        <section id="about" class="space-y-16 scroll-mt-24">
-            
-            <!-- Quick Anchor Index Links on Left -->
+
+        <!-- ========================================== -->
+        <!-- PAGE 2: ABOUT PAGE (Matches image_90220d.jpg + update) -->
+        <!-- ========================================== -->
+        <div id="page-about" class="page-view">
             <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
+                <!-- Anchor Index Links Left Column -->
                 <div class="hidden lg:flex flex-col space-y-3 font-mono text-xs tracking-wider border-l border-panelBorder pl-4 text-neutral-500">
-                    <a href="#about" class="text-accentCyan font-medium">/ profile & bio</a>
+                    <a href="#profile-header" class="text-accentCyan font-medium">/ profile & bio</a>
                     <a href="#capabilities" class="hover:text-neutral-300">/ capabilities</a>
                     <a href="#skills" class="hover:text-neutral-300">/ skill matrices</a>
                     <a href="#infrastructure" class="hover:text-neutral-300">/ infrastructure</a>
                 </div>
 
-                <!-- Main About Dashboard Frame -->
+                <!-- Content Right Columns -->
                 <div class="lg:col-span-3 space-y-12">
-                    <!-- Bio Header Grid -->
-                    <div class="flex flex-col md:flex-row items-start md:items-center gap-8 border-b border-panelBorder/60 pb-8">
+                    <!-- Bio Layout Profile Section -->
+                    <div id="profile-header" class="flex flex-col md:flex-row items-start md:items-center gap-8 border-b border-panelBorder/60 pb-8">
                         <div class="w-24 h-24 rounded-full bg-neutral-900 border-2 border-panelBorder overflow-hidden shadow-2xl shrink-0">
                             <img src="avatar.jpg" alt="Sherryl Andrade" class="w-full h-full object-cover">
                         </div>
                         <div class="space-y-2">
                             <h2 class="text-3xl font-bold text-white tracking-tight">Sherryl Andrade</h2>
                             <p class="font-mono text-xs text-accentCyan uppercase tracking-widest">Executive Virtual Assistant</p>
-                            <p class="text-neutral-400 text-sm font-light max-w-xl leading-relaxed pt-2">
+                            <p class="text-neutral-400 text-sm font-light leading-relaxed pt-2">
                                 Highly organized and detail-oriented Executive Assistant specializing in calendar optimization, inbox management, and seamless professional communication[cite: 1]. Adept at mastering new digital tools, managing confidential parameters, and providing proactive support to help busy leaders reclaim their time and streamline daily operations[cite: 1].
                             </p>
                         </div>
                     </div>
 
-                    <!-- Mission & Vision Cards -->
+                    <!-- Mission/Vision Boxes Grid -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div class="bg-cardBg border border-panelBorder rounded-xl p-5 space-y-2">
                             <div class="flex items-center gap-2 text-xs font-mono text-blue-400">
@@ -158,375 +170,357 @@
                         </div>
                     </div>
 
-                    <!-- Core Capabilities Cards Structure -->
+                    <!-- Capabilities Block Grid (Updated Content from Image 6) -->
                     <div id="capabilities" class="space-y-6">
                         <h3 class="font-mono text-xs uppercase tracking-widest text-neutral-400">Core Capabilities</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div class="bg-cardBg border border-panelBorder rounded-xl p-5 flex items-start gap-4">
                                 <div class="p-2.5 bg-neutral-900 border border-panelBorder rounded-lg text-accentCyan"><i data-lucide="calendar" class="w-4 h-4"></i></div>
-                                <div class="space-y-1"><h4 class="text-sm font-semibold text-white">Calendar Management & Scheduling</h4><p class="text-xs text-neutral-400 font-light">Proactive schedules coordination, timezone handling, meeting management, adjustments, and appointment handling to balance daily operational execution[cite: 1].</p></div>
+                                <div class="space-y-1">
+                                    <h4 class="text-sm font-semibold text-white">Calendar Management & Scheduling</h4>
+                                    <p class="text-xs text-neutral-400 font-light">Proactive schedules coordination, timezone handling, meeting management, adjustments, and appointment handling to balance daily operational execution[cite: 1].</p>
+                                </div>
                             </div>
                             <div class="bg-cardBg border border-panelBorder rounded-xl p-5 flex items-start gap-4">
-                                <div class="p-2.5 bg-neutral-900 border border-panelBorder rounded-lg text-accentCyan"><i data-lucide="mail-check" class="w-4 h-4"></i></div>
-                                <div class="space-y-1"><h4 class="text-sm font-semibold text-white">Inbox Management & Correspondence</h4><p class="text-xs text-neutral-400 font-light">Efficient email triaging, tracking prioritizations, professional drafted communications, and tracking updates to ensure critical responses are addressed without missing metrics[cite: 1].</p></div>
+                                <div class="p-2.5 bg-neutral-900 border border-panelBorder rounded-lg text-accentCyan"><i data-lucide="mail" class="w-4 h-4"></i></div>
+                                <div class="space-y-1">
+                                    <h4 class="text-sm font-semibold text-white">Inbox Management & Correspondence</h4>
+                                    <p class="text-xs text-neutral-400 font-light">Efficient email triaging, tracking prioritizations, professional drafted communications, and tracking updates to ensure critical responses are addressed without missing metrics[cite: 1].</p>
+                                </div>
                             </div>
                             <div class="bg-cardBg border border-panelBorder rounded-xl p-5 flex items-start gap-4">
-                                <div class="p-2.5 bg-neutral-900 border border-panelBorder rounded-lg text-accentCyan"><i data-lucide="shield-check" class="w-4 h-4"></i></div>
-                                <div class="space-y-1"><h4 class="text-sm font-semibold text-white">Data Organization & Confidentiality</h4><p class="text-xs text-neutral-400 font-light">Meticulously cataloging documentation parameters, safe repository handling, records access setups, and visual layout updates keeping privacy preservation criteria absolute[cite: 1].</p></div>
+                                <div class="p-2.5 bg-neutral-900 border border-panelBorder rounded-lg text-accentCyan"><i data-lucide="lock" class="w-4 h-4"></i></div>
+                                <div class="space-y-1">
+                                    <h4 class="text-sm font-semibold text-white">Data Organization & Confidentiality</h4>
+                                    <p class="text-xs text-neutral-400 font-light">Meticulously cataloging documentation parameters, safe repository handling, records access setups, and visual layout updates keeping privacy preservation criteria absolute[cite: 1].</p>
+                                </div>
                             </div>
                             <div class="bg-cardBg border border-panelBorder rounded-xl p-5 flex items-start gap-4">
-                                <div class="p-2.5 bg-neutral-900 border border-panelBorder rounded-lg text-accentCyan"><i data-lucide="cpu" class="w-4 h-4"></i></div>
-                                <div class="space-y-1"><h4 class="text-sm font-semibold text-white">Administrative Tool Optimization</h4><p class="text-xs text-neutral-400 font-light">Quick adjustments and synchronization parameters across modern platforms like Asana, ClickUp, Workspace setups, and automated messaging tracking workflows[cite: 1].</p></div>
+                                <div class="p-2.5 bg-neutral-900 border border-panelBorder rounded-lg text-accentCyan"><i data-lucide="layers" class="w-4 h-4"></i></div>
+                                <div class="space-y-1">
+                                    <h4 class="text-sm font-semibold text-white">Administrative Tool Optimization</h4>
+                                    <p class="text-xs text-neutral-400 font-light">Quick adjustments and synchronization parameters across modern platforms like Asana, ClickUp, Workspace setups, and automated messaging tracking workflows[cite: 1].</p>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Skills Tags Pillar (Image 2 style) -->
+                    <!-- Skills Categorization Matrices -->
                     <div id="skills" class="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-panelBorder/40 pt-8 font-mono text-[11px]">
                         <div class="space-y-3">
-                            <span class="text-neutral-500 block uppercase tracking-wider">// Hard Skills</span>
+                            <span class="text-neutral-500 block uppercase tracking-wider">// Hard Skills Matrices</span>
                             <div class="flex flex-wrap gap-2">
                                 <span class="bg-neutral-900 border border-panelBorder px-2.5 py-1 rounded text-neutral-300">Calendar Coordination</span>
                                 <span class="bg-neutral-900 border border-panelBorder px-2.5 py-1 rounded text-neutral-300">Data Base Management</span>
                                 <span class="bg-neutral-900 border border-panelBorder px-2.5 py-1 rounded text-neutral-300">Inbox Management</span>
                                 <span class="bg-neutral-900 border border-panelBorder px-2.5 py-1 rounded text-neutral-300">Technical Data Tracking</span>
                                 <span class="bg-neutral-900 border border-panelBorder px-2.5 py-1 rounded text-neutral-300">CRM Synchronization</span>
-                                <span class="bg-neutral-900 border border-panelBorder px-2.5 py-1 rounded text-neutral-300">Workflow Standard Operating Procedures</span>
                             </div>
                         </div>
                         <div class="space-y-3">
-                            <span class="text-neutral-500 block uppercase tracking-wider">// Tooling Stack</span>
+                            <span class="text-neutral-500 block uppercase tracking-wider">// Tooling Verification Stack</span>
                             <div class="flex flex-wrap gap-2">
                                 <span class="bg-neutral-900 border border-panelBorder px-2.5 py-1 rounded text-neutral-300">Asana</span>
-                                <span class="bg-neutral-900 border border-panelBorder px-2.5 py-1 rounded text-neutral-300">ClickUp</span>
-                                <span class="bg-neutral-900 border border-panelBorder px-2.5 py-1 rounded text-neutral-300">Slack</span>
+                                <span class="bg-neutral-900 border border-panelBorder px-2.5 py-1 rounded text-neutral-300">ClickUp Workspace</span>
+                                <span class="bg-neutral-900 border border-panelBorder px-2.5 py-1 rounded text-neutral-300">Slack Systems</span>
                                 <span class="bg-neutral-900 border border-panelBorder px-2.5 py-1 rounded text-neutral-300">Hubspot CRM</span>
                                 <span class="bg-neutral-900 border border-panelBorder px-2.5 py-1 rounded text-neutral-300">Google Workspace</span>
-                                <span class="bg-neutral-900 border border-panelBorder px-2.5 py-1 rounded text-neutral-300">Salesforce</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Verified ClickUp Power User Banner Badge -->
+                    <!-- ClickUp Power User Banner -->
                     <div class="bg-gradient-to-r from-purple-950/20 to-blue-950/20 border border-purple-500/20 rounded-xl p-5 flex items-center gap-4">
                         <div class="w-12 h-12 rounded-lg bg-neutral-900 border border-panelBorder flex items-center justify-center text-purple-400 text-xs font-bold font-mono">CU</div>
                         <div>
-                            <h4 class="text-sm font-semibold text-white flex items-center gap-2">Verified ClickUp Power User <span class="text-[10px] font-mono font-normal bg-purple-500/10 text-purple-400 border border-purple-500/20 px-2 py-0.5 rounded-full">Credential Verified</span></h4>
-                            <p class="text-xs text-neutral-400 font-light mt-0.5">Validated platform efficiency matrix for configuration, sprint planning dashboards, and operational automation pipelines[cite: 1].</p>
+                            <h4 class="text-sm font-semibold text-white flex items-center gap-2">Verified ClickUp Power User</h4>
+                            <p class="text-xs text-neutral-400 font-light mt-0.5">Validated platform efficiency matrix for configurations, sprint tracking boards, and automation setup pipelines[cite: 1].</p>
                         </div>
                     </div>
 
-                    <!-- Specialized Technical Infrastructure Panel from Image 2 -->
+                    <!-- Technical Infrastructure Hardware Node Section -->
                     <div id="infrastructure" class="space-y-4 border-t border-panelBorder/40 pt-8">
                         <div class="flex justify-between items-end">
                             <div>
-                                <span class="font-mono text-[10px] text-accentBlue uppercase tracking-widest block">Hardware & Connectivity Parameters</span>
+                                <span class="font-mono text-[10px] text-accentBlue uppercase tracking-widest block">Hardware Framework parameters</span>
                                 <h3 class="text-xl font-bold text-white mt-1">Technical Infrastructure</h3>
                             </div>
-                            <span class="text-[11px] font-mono text-neutral-500 max-w-xs text-right hidden sm:block">High reliability execution environment optimized for zero-latency communication tracks[cite: 1].</span>
                         </div>
-
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                            <!-- Specs Card -->
-                            <div class="bg-cardBg border border-panelBorder rounded-xl p-5 space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                            <div class="bg-cardBg border border-panelBorder rounded-xl p-5 space-y-3">
                                 <div class="flex items-center gap-2 text-xs font-mono text-white">
                                     <i data-lucide="monitor" class="w-4 h-4 text-accentCyan"></i>
                                     <span>System Specifications</span>
                                 </div>
-                                <ul class="space-y-1.5 font-mono text-[11px] text-neutral-400">
-                                    <li>• <span class="text-neutral-500">OS:</span> Windows 11 System[cite: 1]</li>
-                                    <li>• <span class="text-neutral-500">CPU:</span> Intel Core i5 processor framework[cite: 1]</li>
-                                    <li>• <span class="text-neutral-500">RAM:</span> 16GB High Capacity[cite: 1]</li>
+                                <ul class="space-y-1 font-mono text-[11px] text-neutral-400">
+                                    <li>• OS: Windows 11 Framework[cite: 1]</li>
+                                    <li>• CPU: Intel Core i5 Processor Framework[cite: 1]</li>
+                                    <li>• RAM: 16GB Capacity System[cite: 1]</li>
                                 </ul>
                             </div>
-                            <!-- Network Card -->
-                            <div class="bg-cardBg border border-panelBorder rounded-xl p-5 space-y-4">
+                            <div class="bg-cardBg border border-panelBorder rounded-xl p-5 space-y-3">
                                 <div class="flex items-center gap-2 text-xs font-mono text-white">
                                     <i data-lucide="wifi" class="w-4 h-4 text-accentCyan"></i>
                                     <span>Primary Network Link</span>
                                 </div>
-                                <ul class="space-y-1.5 font-mono text-[11px] text-neutral-400">
-                                    <li>• <span class="text-neutral-500">Line:</span> Fiber Internet Pipeline[cite: 1]</li>
-                                    <li>• <span class="text-neutral-500">Speed:</span> 100+ Mbps DL / 75+ Mbps UL[cite: 1]</li>
-                                    <li>• <span class="text-neutral-500">Conn:</span> Direct Wired Ethernet Connection[cite: 1]</li>
+                                <ul class="space-y-1 font-mono text-[11px] text-neutral-400">
+                                    <li>• Line: Fiber Internet Pipeline[cite: 1]</li>
+                                    <li>• Speed: 100+ Mbps Speed Benchmarks[cite: 1]</li>
+                                    <li>• Link: Direct Ethernet Hardware Connectivity[cite: 1]</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- SECTION 3: WORK HISTORY (Matches image_9073c9.jpg Timeline layout with content verified from image_907b83.jpg) -->
-        <section id="work" class="grid grid-cols-1 lg:grid-cols-4 gap-12 border-t border-panelBorder/40 pt-16 scroll-mt-24">
-            <div class="space-y-4">
-                <div class="flex items-center gap-2 text-white font-bold text-xl">
-                    <div class="p-2 bg-neutral-900 border border-panelBorder rounded-lg"><i data-lucide="list-ordered" class="w-5 h-5 text-accentCyan"></i></div>
-                    <h3>Work History</h3>
-                </div>
-                <p class="text-xs font-light text-neutral-400 leading-relaxed">
-                    A detailed timeline of operational management, executive support tracks, data validation structures, and corporate resolution architecture milestones[cite: 1].
-                </p>
-            </div>
 
-            <!-- Scroll Timeline Block List -->
-            <div class="lg:col-span-3 space-y-6">
-                
-                <!-- Card 1 -->
-                <div class="bg-cardBg border border-panelBorder rounded-xl p-6 space-y-3 relative hover:border-neutral-700 transition-colors">
-                    <div class="flex flex-wrap justify-between items-center gap-2">
-                        <span class="font-mono text-[10px] text-accentCyan bg-accentCyan/5 px-2.5 py-1 rounded border border-accentCyan/10">Jan 2022 - Nov 2022 • 11 mos[cite: 1]</span>
-                        <span class="font-mono text-xs text-neutral-500 font-medium">SupportNinja[cite: 1]</span>
+        <!-- ========================================== -->
+        <!-- PAGE 3: WORK HISTORY PAGE (Matches image_9073c9.jpg) -->
+        <!-- ========================================== -->
+        <div id="page-work" class="page-view">
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-12">
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2 text-white font-bold text-xl">
+                        <div class="p-2 bg-neutral-900 border border-panelBorder rounded-lg"><i data-lucide="list-ordered" class="w-5 h-5 text-accentCyan"></i></div>
+                        <h3>Work History</h3>
                     </div>
-                    <h4 class="text-base font-bold text-white tracking-tight">Junior Customer Resolution Specialist - Tier 2 (TSR)[cite: 1]</h4>
-                    <p class="text-xs text-neutral-400 font-light leading-relaxed">
-                        Managed Tier 2 support loops with absolute resolution clarity. Expertly streamlined unexpected operational bottlenecks and handled multi-step technical validation updates safely across core databases[cite: 1].
+                    <p class="text-xs font-light text-neutral-400 leading-relaxed">
+                        A detailed timeline of operational management, executive support tracks, data validation structures, and corporate resolution architecture milestones[cite: 1].
                     </p>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="bg-cardBg border border-panelBorder rounded-xl p-6 space-y-3 relative hover:border-neutral-700 transition-colors">
-                    <div class="flex flex-wrap justify-between items-center gap-2">
-                        <span class="font-mono text-[10px] text-accentCyan bg-accentCyan/5 px-2.5 py-1 rounded border border-accentCyan/10">May 2021 - Jan 2022 • 9 mos[cite: 1]</span>
-                        <span class="font-mono text-xs text-neutral-500 font-medium">SupportNinja[cite: 1]</span>
-                    </div>
-                    <h4 class="text-base font-bold text-white tracking-tight">Customer Resolution Specialist - Tier 1 (CSR)[cite: 1]</h4>
-                    <p class="text-xs text-neutral-400 font-light leading-relaxed">
-                        Delivered high-volume text and email communication support framework parameters[cite: 1]. Maintained proactive tracking of pending accounts while sustaining maximum quality verification indexes[cite: 1].
-                    </p>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="bg-cardBg border border-panelBorder rounded-xl p-6 space-y-3 relative hover:border-neutral-700 transition-colors">
-                    <div class="flex flex-wrap justify-between items-center gap-2">
-                        <span class="font-mono text-[10px] text-accentCyan bg-accentCyan/5 px-2.5 py-1 rounded border border-accentCyan/10">Nov 2020 - Apr 2021 • 6 mos[cite: 1]</span>
-                        <span class="font-mono text-xs text-neutral-500 font-medium">SupportNinja[cite: 1]</span>
-                    </div>
-                    <h4 class="text-base font-bold text-white tracking-tight">Technical Support Specialist</h4>
-                    <p class="text-xs text-neutral-400 font-light leading-relaxed">
-                        Resolved complex digital file indexing and account access discrepancies using centralized CRM tools[cite: 1]. Ensured precise data entry alignments match strict service quality thresholds[cite: 1].
-                    </p>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="bg-cardBg border border-panelBorder rounded-xl p-6 space-y-3 relative hover:border-neutral-700 transition-colors">
-                    <div class="flex flex-wrap justify-between items-center gap-2">
-                        <span class="font-mono text-[10px] text-accentCyan bg-accentCyan/5 px-2.5 py-1 rounded border border-accentCyan/10">Oct 2019 - Oct 2020 • 1 yr[cite: 1]</span>
-                        <span class="font-mono text-xs text-neutral-500 font-medium">TELUS International Philippines[cite: 1]</span>
-                    </div>
-                    <h4 class="text-base font-bold text-white tracking-tight">Customer Service Specialist</h4>
-                    <p class="text-xs text-neutral-400 font-light leading-relaxed">
-                        Assumed total operational tracking control for corporate communications and profile configurations[cite: 1]. Optimized client information records data integrity metrics effortlessly[cite: 1].
-                    </p>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- SECTION 4: TESTIMONIALS & EVIDENCE LOGS (Matches image_90785f.jpg Layout with text updates) -->
-        <section id="testimonials" class="space-y-12 border-t border-panelBorder/40 pt-16 scroll-mt-24">
-            <div>
-                <h3 class="text-2xl font-bold text-white tracking-tight">Testimonials</h3>
-                <p class="text-xs text-neutral-500 font-mono mt-1">Commendations and Verified Customer Feedback Tracks</p>
-            </div>
-
-            <!-- Media/Video Frame Placeholder from Image 4 -->
-            <div class="w-full aspect-video bg-neutral-950 border border-panelBorder rounded-2xl flex items-center justify-center relative overflow-hidden group shadow-2xl">
-                <div class="absolute inset-0 bg-gradient-to-t from-darkBg to-transparent opacity-80"></div>
-                <div class="z-10 flex flex-col items-center gap-4 text-center p-6">
-                    <button class="w-16 h-16 rounded-full bg-accentBlue/20 border border-accentBlue text-white flex items-center justify-center hover:scale-105 transition-transform shadow-xl shadow-accentBlue/20">
-                        <i data-lucide="play" class="w-6 h-6 fill-white"></i>
-                    </button>
-                    <span class="font-mono text-xs text-neutral-400 tracking-wider">Commendation Video Briefing Overview</span>
-                </div>
-            </div>
-
-            <!-- Team Updates Feedback Blocks (Image 4 style screenshots mock) -->
-            <div class="space-y-4">
-                <span class="font-mono text-[10px] text-neutral-500 uppercase tracking-widest block">// Operational Log Screenshots</span>
-                
-                <div class="bg-cardBg border border-panelBorder rounded-xl p-5 space-y-4">
-                    <div class="flex items-center gap-3 border-b border-panelBorder/50 pb-3">
-                        <div class="w-8 h-8 rounded-full bg-neutral-800 flex items-center justify-center font-bold text-xs text-purple-400 font-mono">KB</div>
-                        <div>
-                            <span class="text-xs font-semibold text-white block">Kaleigh B. <span class="text-[10px] text-neutral-500 font-normal ml-2">Wednesday, May 31st[cite: 1]</span></span>
-                            <span class="text-[10px] text-neutral-500 font-mono uppercase tracking-wider">Operational Lead, SupportNinja[cite: 1]</span>
+                <!-- Vertical Cards Stream -->
+                <div class="lg:col-span-3 space-y-4">
+                    <!-- Timeline Card 1 -->
+                    <div class="bg-cardBg border border-panelBorder rounded-xl p-6 space-y-3 relative">
+                        <div class="flex flex-wrap justify-between items-center gap-2">
+                            <span class="font-mono text-[10px] text-accentCyan bg-accentCyan/5 px-2.5 py-1 rounded border border-accentCyan/10">Jan 2022 - Nov 2022 • 11 mos[cite: 1]</span>
+                            <span class="font-mono text-xs text-neutral-500 font-medium">SupportNinja[cite: 1]</span>
                         </div>
+                        <h4 class="text-base font-bold text-white tracking-tight">Junior Customer Resolution Specialist - Tier 2 (TSR)[cite: 1]</h4>
+                        <p class="text-xs text-neutral-400 font-light leading-relaxed">
+                            Managed Tier 2 support loops with absolute resolution clarity. Expertly streamlined unexpected operational bottlenecks and handled multi-step technical validation updates safely across core databases[cite: 1].
+                        </p>
                     </div>
-                    <blockquote class="text-xs font-mono text-neutral-300 italic leading-relaxed">
-                        "Hey Sherryl! I'm sure I've told you before, but it's worth telling you again - fantastic work on your tickets! I love the customizations that you make and your very thorough notes. You are a phenomenal example for the team! When we redo macros in the future, I hope that we use your tickets as our templates! ❤️ I'm really proud of you! Keep up the great work!"[cite: 1]
-                    </blockquote>
+
+                    <!-- Timeline Card 2 -->
+                    <div class="bg-cardBg border border-panelBorder rounded-xl p-6 space-y-3 relative">
+                        <div class="flex flex-wrap justify-between items-center gap-2">
+                            <span class="font-mono text-[10px] text-accentCyan bg-accentCyan/5 px-2.5 py-1 rounded border border-accentCyan/10">May 2021 - Jan 2022 • 9 mos[cite: 1]</span>
+                            <span class="font-mono text-xs text-neutral-500 font-medium">SupportNinja[cite: 1]</span>
+                        </div>
+                        <h4 class="text-base font-bold text-white tracking-tight">Customer Resolution Specialist - Tier 1 (CSR)[cite: 1]</h4>
+                        <p class="text-xs text-neutral-400 font-light leading-relaxed">
+                            Delivered high-volume text and email communication support framework parameters[cite: 1]. Maintained proactive tracking of pending accounts while sustaining maximum quality verification indexes[cite: 1].
+                        </p>
+                    </div>
+
+                    <!-- Timeline Card 3 -->
+                    <div class="bg-cardBg border border-panelBorder rounded-xl p-6 space-y-3 relative">
+                        <div class="flex flex-wrap justify-between items-center gap-2">
+                            <span class="font-mono text-[10px] text-accentCyan bg-accentCyan/5 px-2.5 py-1 rounded border border-accentCyan/10">Nov 2020 - Apr 2021 • 6 mos[cite: 1]</span>
+                            <span class="font-mono text-xs text-neutral-500 font-medium">SupportNinja[cite: 1]</span>
+                        </div>
+                        <h4 class="text-base font-bold text-white tracking-tight">Technical Support Specialist</h4>
+                        <p class="text-xs text-neutral-400 font-light leading-relaxed">
+                            Resolved complex digital file indexing and account access discrepancies using centralized CRM tools[cite: 1]. Ensured precise data entry alignments match strict service quality thresholds[cite: 1].
+                        </p>
+                    </div>
+
+                    <!-- Timeline Card 4 -->
+                    <div class="bg-cardBg border border-panelBorder rounded-xl p-6 space-y-3 relative">
+                        <div class="flex flex-wrap justify-between items-center gap-2">
+                            <span class="font-mono text-[10px] text-accentCyan bg-accentCyan/5 px-2.5 py-1 rounded border border-accentCyan/10">Oct 2019 - Oct 2020 • 1 yr[cite: 1]</span>
+                            <span class="font-mono text-xs text-neutral-500 font-medium">TELUS International Philippines[cite: 1]</span>
+                        </div>
+                        <h4 class="text-base font-bold text-white tracking-tight">Customer Service Specialist</h4>
+                        <p class="text-xs text-neutral-400 font-light leading-relaxed">
+                            Assumed total operational tracking control for corporate communications and profile configurations[cite: 1]. Optimized client information records data integrity metrics effortlessly[cite: 1].
+                        </p>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- SECTION 5: ENGAGEMENT PACKAGES & SOLUTIONS (From Image 6 content updates formatted cleanly) -->
-        <section id="pricing" class="space-y-12 border-t border-panelBorder/40 pt-16">
-            <div class="text-center space-y-2">
-                <span class="font-mono text-xs text-accentBlue uppercase tracking-widest block">Engagement Structures</span>
-                <h3 class="text-2xl font-bold text-white tracking-tight">Operational Support Solutions</h3>
-            </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 items-stretch">
-                <!-- Starter Tier -->
-                <div class="border border-panelBorder bg-cardBg rounded-xl p-6 flex flex-col justify-between space-y-6">
-                    <div class="space-y-4">
-                        <div class="font-mono text-[10px] text-neutral-500 uppercase tracking-wider">Operational Support Trial</div>
-                        <h4 class="text-white font-bold text-base">STARTER PACKAGE</h4>
-                        <div class="text-2xl font-mono text-white font-bold">$1,200<span class="text-xs text-neutral-500 font-normal"> / month</span></div>
-                        <p class="text-neutral-400 text-xs font-light">Best for lean architectural setups looking to hand off their primary micro-task administrative bottlenecks[cite: 1].</p>
-                        <ul class="text-[11px] text-neutral-400 space-y-2 pt-2 font-mono border-t border-panelBorder/40">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-accentCyan"></i> Inbox Triage & Daily Clean[cite: 1]</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-accentCyan"></i> Calendar Conflict Preventions[cite: 1]</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-accentCyan"></i> Basic Digital File Architecture[cite: 1]</li>
-                        </ul>
-                    </div>
-                    <a href="#contact" class="w-full text-center bg-neutral-900 border border-panelBorder text-white font-mono text-xs py-2 rounded-md hover:bg-neutral-800 transition-colors">Request Architecture</a>
+        <!-- ========================================== -->
+        <!-- PAGE 4: TESTIMONIALS (Matches image_90785f.jpg) -->
+        <!-- ========================================== -->
+        <div id="page-testimonials" class="page-view">
+            <div class="space-y-8">
+                <div>
+                    <h3 class="text-2xl font-bold text-white tracking-tight">Testimonials</h3>
+                    <p class="text-xs text-neutral-500 font-mono mt-1">Commendations and Verified Corporate Feedback Tracks</p>
                 </div>
 
-                <!-- Professional Tier -->
-                <div class="border-2 border-accentCyan/50 bg-cardBg rounded-xl p-6 flex flex-col justify-between space-y-6 relative shadow-xl shadow-accentCyan/5">
-                    <span class="absolute top-0 right-6 -translate-y-1/2 bg-accentCyan text-darkBg font-mono text-[9px] font-bold tracking-widest px-2 py-0.5 rounded-full uppercase">Most Selected</span>
-                    <div class="space-y-4">
-                        <div class="font-mono text-[10px] text-accentCyan uppercase tracking-wider">The Executive Engine[cite: 1]</div>
-                        <h4 class="text-white font-bold text-base">PROFESSIONAL</h4>
-                        <div class="text-2xl font-mono text-white font-bold">$2,200<span class="text-xs text-neutral-500 font-normal"> / month</span></div>
-                        <p class="text-neutral-300 text-xs font-light">Best for scaling founders needing an autonomous partner to take full structural ownership of daily operations[cite: 1].</p>
-                        <ul class="text-[11px] text-neutral-300 space-y-2 pt-2 font-mono border-t border-accentCyan/20">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-accentCyan"></i> Full Correspondence Management[cite: 1]</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-accentCyan"></i> Multi-Timezone Focus Protection[cite: 1]</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-accentCyan"></i> CRM Maintenance & Auditing System[cite: 1]</li>
-                        </ul>
+                <!-- Video Element Mockup Screen Frame -->
+                <div class="w-full aspect-video bg-neutral-950 border border-panelBorder rounded-2xl flex items-center justify-center relative overflow-hidden shadow-2xl">
+                    <div class="absolute inset-0 bg-gradient-to-t from-darkBg to-transparent opacity-80"></div>
+                    <div class="z-10 flex flex-col items-center gap-4 text-center p-6">
+                        <button class="w-16 h-16 rounded-full bg-accentBlue/20 border border-accentBlue text-white flex items-center justify-center hover:scale-105 transition-transform shadow-xl">
+                            <i data-lucide="play" class="w-6 h-6 fill-white"></i>
+                        </button>
+                        <span class="font-mono text-xs text-neutral-400 tracking-wider">Commendation Video Briefing Overview</span>
                     </div>
-                    <a href="#contact" class="w-full text-center bg-accentCyan text-darkBg font-mono text-xs font-semibold py-2 rounded-md hover:bg-accentCyan/90 transition-all">Deploy System</a>
                 </div>
 
-                <!-- Premium Tier -->
-                <div class="border border-panelBorder bg-cardBg rounded-xl p-6 flex flex-col justify-between space-y-6">
-                    <div class="space-y-4">
-                        <div class="font-mono text-[10px] text-neutral-500 uppercase tracking-wider">Fractional Operations Partner</div>
-                        <h4 class="text-white font-bold text-base">PREMIUM SUITE</h4>
-                        <div class="text-2xl font-mono text-white font-bold">$4,000<span class="text-xs text-neutral-500 font-normal"> / month</span></div>
-                        <p class="text-neutral-400 text-xs font-light">Best for multi-brand executives requiring comprehensive high-touch white-glove crisis and operations logistics[cite: 1].</p>
-                        <ul class="text-[11px] text-neutral-400 space-y-2 pt-2 font-mono border-t border-panelBorder/40">
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-accentCyan"></i> Full-Scale Multi-Brand Administration[cite: 1]</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-accentCyan"></i> Priority Executive Crisis Oversight[cite: 1]</li>
-                            <li class="flex items-center gap-2"><i data-lucide="check" class="w-3 h-3 text-accentCyan"></i> Custom Internal SOP Generation[cite: 1]</li>
-                        </ul>
+                <!-- Screenshot Log Blocks Container -->
+                <div class="space-y-4">
+                    <span class="font-mono text-[10px] text-neutral-500 uppercase tracking-widest block">// Verified Operational Work Logs</span>
+                    
+                    <div class="bg-cardBg border border-panelBorder rounded-xl p-5 space-y-4">
+                        <div class="flex items-center gap-3 border-b border-panelBorder/50 pb-3">
+                            <div class="w-8 h-8 rounded-full bg-neutral-800 flex items-center justify-center font-bold text-xs text-purple-400 font-mono">KB</div>
+                            <div>
+                                <span class="text-xs font-semibold text-white block">Kaleigh B. <span class="text-[10px] text-neutral-500 font-normal ml-2">Wednesday, May 31st[cite: 1]</span></span>
+                                <span class="text-[10px] text-neutral-500 font-mono uppercase tracking-wider">Operational Lead, SupportNinja[cite: 1]</span>
+                            </div>
+                        </div>
+                        <blockquote class="text-xs font-mono text-neutral-300 italic leading-relaxed">
+                            "Hey Sherryl! I'm sure I've told you before, but it's worth telling you again - fantastic work on your tickets! I love the customizations that you make and your very thorough notes. You are a phenomenal example for the team! When we redo macros in the future, I hope that we use your tickets as our templates! ❤️ I'm really proud of you! Keep up the great work!"[cite: 1]
+                        </blockquote>
                     </div>
-                    <a href="#contact" class="w-full text-center bg-neutral-900 border border-panelBorder text-white font-mono text-xs py-2 rounded-md hover:bg-neutral-800 transition-colors">Request Alliance</a>
                 </div>
             </div>
-        </section>
+        </div>
 
-        <!-- SECTION 6: CONTACT INTERACTION GRID (Matches image_907b44.png visual setup with image_907b83.jpg values) -->
-        <section id="contact" class="space-y-16 border-t border-panelBorder/40 pt-16 scroll-mt-24">
-            <div class="text-center space-y-3">
-                <span class="font-mono text-xs text-accentCyan uppercase tracking-widest block">Next Steps</span>
-                <h3 class="text-3xl md:text-5xl font-bold text-white tracking-tight">Ready to reclaim your time?</h3>
-                <p class="text-xs md:text-sm text-neutral-400 max-w-2xl mx-auto font-light leading-relaxed">
-                    Let's streamline your inbox, optimize your schedule, and eliminate daily administrative friction[cite: 1]. Book a consultation or reach out today[cite: 1].
-                </p>
-            </div>
 
-            <!-- Three Interactive Connection Blocks from Image 5 -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- LinkedIn Link Box -->
-                <div class="bg-cardBg border border-panelBorder rounded-2xl p-6 text-center space-y-4 hover:border-neutral-700 transition-all flex flex-col justify-between">
-                    <div class="space-y-4 pt-4">
-                        <div class="w-12 h-12 rounded-xl bg-blue-600/10 border border-blue-600/20 text-blue-500 mx-auto flex items-center justify-center">
+        <!-- ========================================== -->
+        <!-- PAGE 5: CONTACT PAGE (Matches image_907b44.png) -->
+        <!-- ========================================== -->
+        <div id="page-contact" class="page-view">
+            <div class="space-y-12">
+                <div class="text-center space-y-3">
+                    <span class="font-mono text-xs text-accentCyan uppercase tracking-widest block">Next Steps</span>
+                    <h3 class="text-3xl md:text-5xl font-bold text-white tracking-tight">Ready to reclaim your time?</h3>
+                    <p class="text-xs md:text-sm text-neutral-400 max-w-2xl mx-auto font-light leading-relaxed">
+                        Let's streamline your inbox, optimize your schedule, and eliminate daily administrative friction[cite: 1]. Book a consultation or reach out today[cite: 1].
+                    </p>
+                </div>
+
+                <!-- Three Block Interactive Matrix Layout Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- LinkedIn Box link -->
+                    <div class="bg-cardBg border border-panelBorder rounded-2xl p-6 text-center flex flex-col justify-between items-center min-h-[180px] hover:border-neutral-700 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-blue-600/10 border border-blue-600/20 text-blue-500 flex items-center justify-center mt-2">
                             <i data-lucide="linkedin" class="w-5 h-5 fill-current"></i>
                         </div>
                         <div>
                             <h4 class="text-sm font-semibold text-white">Professional Network</h4>
-                            <p class="text-[11px] text-neutral-500 mt-1">Connect on LinkedIn</p>
+                            <p class="text-[11px] text-neutral-500 mt-0.5">Connect on LinkedIn</p>
                         </div>
+                        <a href="https://linkedin.com/in/sherryl-andrade" target="_blank" class="text-xs font-mono text-accentBlue inline-flex items-center gap-1 hover:underline">
+                            <span>View Profile</span> <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                        </a>
                     </div>
-                    <a href="https://linkedin.com/in/sherryl-andrade" target="_blank" class="text-xs font-mono text-accentBlue inline-flex items-center justify-center gap-1.5 hover:underline pt-4">
-                        <span>View Profile</span>
-                        <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
-                    </a>
-                </div>
 
-                <!-- Email Link Box -->
-                <div class="bg-cardBg border border-panelBorder rounded-2xl p-6 text-center space-y-4 hover:border-neutral-700 transition-all flex flex-col justify-between">
-                    <div class="space-y-4 pt-4">
-                        <div class="w-12 h-12 rounded-xl bg-accentCyan/10 border border-accentCyan/20 text-accentCyan mx-auto flex items-center justify-center">
+                    <!-- Email Box link -->
+                    <div class="bg-cardBg border border-panelBorder rounded-2xl p-6 text-center flex flex-col justify-between items-center min-h-[180px] hover:border-neutral-700 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-accentCyan/10 border border-accentCyan/20 text-accentCyan flex items-center justify-center mt-2">
                             <i data-lucide="mail" class="w-5 h-5"></i>
                         </div>
                         <div>
                             <h4 class="text-sm font-semibold text-white">Business Inquiries</h4>
-                            <p class="text-[11px] text-neutral-500 mt-1">Send an Email</p>
+                            <p class="text-[11px] text-neutral-500 mt-0.5">Send an Email</p>
                         </div>
+                        <a href="mailto:sherryl.andrade@gmail.com" class="text-xs font-mono text-accentCyan inline-flex items-center gap-1 hover:underline">
+                            <span>Write Message</span> <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                        </a>
                     </div>
-                    <a href="mailto:sherryl.andrade@gmail.com" class="text-xs font-mono text-accentCyan inline-flex items-center justify-center gap-1.5 hover:underline pt-4">
-                        <span>Write Message</span>
-                        <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
-                    </a>
-                </div>
 
-                <!-- Discovery Schedule Box -->
-                <div class="bg-cardBg border border-2 border-panelBorder rounded-2xl p-6 text-center space-y-4 hover:border-neutral-700 transition-all flex flex-col justify-between">
-                    <div class="space-y-4 pt-4">
-                        <div class="w-12 h-12 rounded-xl bg-emerald-600/10 border border-emerald-600/20 text-emerald-500 mx-auto flex items-center justify-center">
-                            <i data-lucide="calendar-days" class="w-5 h-5"></i>
+                    <!-- Discovery Box link -->
+                    <div class="bg-cardBg border border-panelBorder rounded-2xl p-6 text-center flex flex-col justify-between items-center min-h-[180px] hover:border-neutral-700 transition-colors">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-600/10 border border-emerald-600/20 text-emerald-500 flex items-center justify-center mt-2">
+                            <i data-lucide="calendar" class="w-5 h-5"></i>
                         </div>
                         <div>
                             <h4 class="text-sm font-semibold text-white">Schedule a Discovery Call</h4>
-                            <p class="text-[11px] text-neutral-500 mt-1">Book a 15-Minute Sync</p>
+                            <p class="text-[11px] text-neutral-500 mt-0.5">Book a 15-Minute Sync</p>
                         </div>
+                        <a href="https://calendly.com/yourlink" target="_blank" class="text-xs font-mono text-emerald-400 inline-flex items-center gap-1 hover:underline">
+                            <span>Book Session</span> <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                        </a>
                     </div>
-                    <a href="https://calendly.com/yourlink" target="_blank" class="text-xs font-mono text-emerald-400 inline-flex items-center justify-center gap-1.5 hover:underline pt-4">
-                        <span>Book Session</span>
-                        <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
-                    </a>
+                </div>
+
+                <!-- Bottom Three-Pillar Context Matrix Elements -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-panelBorder/50 text-center md:text-left text-xs font-light leading-relaxed">
+                    <div class="space-y-1">
+                        <div class="flex items-center justify-center md:justify-start gap-2 text-white font-medium">
+                            <i data-lucide="shield" class="w-4 h-4 text-amber-500"></i>
+                            <span>Proactive Gatekeeping</span>
+                        </div>
+                        <p class="text-neutral-400">Anticipating your administrative needs to filter out distractions and keep you focused on high-priority goals[cite: 1].</p>
+                    </div>
+                    <div class="space-y-1">
+                        <div class="flex items-center justify-center md:justify-start gap-2 text-white font-medium">
+                            <i data-lucide="check-circle" class="w-4 h-4 text-accentCyan"></i>
+                            <span>Inbox Zero Strategy</span>
+                        </div>
+                        <p class="text-neutral-400">Structured, thorough handling of complex executive correspondence to maintain a clean workspace without missing critical details[cite: 1].</p>
+                    </div>
+                    <div class="space-y-1">
+                        <div class="flex items-center justify-center md:justify-start gap-2 text-white font-medium">
+                            <i data-lucide="zap" class="w-4 h-4 text-emerald-400"></i>
+                            <span>Flawless Execution</span>
+                        </div>
+                        <p class="text-neutral-400">Meticulous attention to detail, optimized scheduling alignment, and strict adherence to organizational confidentiality[cite: 1].</p>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Three Pillar Metric Grid Footer from Image 5 -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t border-panelBorder/50 text-center md:text-left text-xs font-light leading-relaxed">
-                <div class="space-y-2">
-                    <div class="flex items-center justify-center md:justify-start gap-2 font-mono text-xs text-white">
-                        <i data-lucide="shield" class="w-4 h-4 text-amber-500"></i>
-                        <span class="font-semibold">Proactive Gatekeeping</span>
-                    </div>
-                    <p class="text-neutral-400">Anticipating your administrative needs to filter out distractions and keep you focused on high-priority goals[cite: 1].</p>
-                </div>
-                <div class="space-y-2">
-                    <div class="flex items-center justify-center md:justify-start gap-2 font-mono text-xs text-white">
-                        <i data-lucide="check-circle" class="w-4 h-4 text-accentCyan"></i>
-                        <span class="font-semibold">Inbox Zero Strategy</span>
-                    </div>
-                    <p class="text-neutral-400">Structured, thorough handling of complex executive correspondence to maintain a clean workspace without missing critical details[cite: 1].</p>
-                </div>
-                <div class="space-y-2">
-                    <div class="flex items-center justify-center md:justify-start gap-2 font-mono text-xs text-white">
-                        <i data-lucide="zap" class="w-4 h-4 text-emerald-400"></i>
-                        <span class="font-semibold">Flawless Execution</span>
-                    </div>
-                    <p class="text-neutral-400">Meticulous attention to detail, optimized scheduling alignment, and strict adherence to organizational confidentiality[cite: 1].</p>
-                </div>
-            </div>
-        </section>
+    </main>
 
-    </div>
-
-    <!-- GENERAL FOOTER BRANDING -->
-    <footer class="w-full border-t border-panelBorder bg-neutral-950/60 py-6 mt-20">
+    <!-- GENERAL FOOTER BRANDING (Visible on all views) -->
+    <footer class="w-full border-t border-panelBorder bg-neutral-950/60 py-6">
         <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center text-[10px] font-mono tracking-wider text-neutral-500 gap-4">
             <div>© 2026 Sherryl Andrade | Executive Virtual Assistant</div>
             <div class="text-neutral-600">All Security Operations Validated & Live Tracking Configured[cite: 1]</div>
         </div>
     </footer>
 
-    <!-- INTERACTION CONTROLLER SCRIPT -->
+    <!-- LIGHTWEIGHT ARCHITECTURE INTERACTION SCRIPT -->
     <script>
+        // High-fidelity View Navigation Router Logic
+        function switchPage(pageId) {
+            // Hide all current view blocks
+            document.querySelectorAll('.page-view').forEach(view => {
+                view.classList.remove('active-page');
+            });
+            
+            // Show requested view block
+            const targetedView = document.getElementById(`page-${pageId}`);
+            if(targetedView) {
+                targetedView.classList.add('active-page');
+            }
+
+            // Reset navigation tab button design highlight parameters
+            document.querySelectorAll('.nav-btn').forEach(btn => {
+                btn.classList.remove('bg-neutral-900', 'text-white', 'border', 'border-white/5');
+                btn.classList.add('text-neutral-400');
+            });
+
+            // Set active highlight class states on active selected element button
+            const activeTabButton = document.getElementById(`tab-${pageId}`);
+            if(activeTabButton) {
+                activeTabButton.classList.remove('text-neutral-400');
+                activeTabButton.classList.add('bg-neutral-900', 'text-white', 'border', 'border-white/5');
+            }
+
+            // Scroll safely back to zero baseline coordinates smoothly on page swap
+            window.scrollTo({ top: 0, behavior: 'instant' });
+        }
+
+        // Running Clock Module initialization
         function updateLiveClock() {
             const now = new Date();
             const timeString = now.toLocaleTimeString('en-US', { hour12: false });
             document.getElementById('live-clock').textContent = timeString;
         }
+
         document.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();
             updateLiveClock();
