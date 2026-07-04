@@ -92,25 +92,27 @@
                 </p>
                 
                 <!-- About Redirect Button -->
-                <button onclick="switchPage('about')" class="inline-flex items-center gap-3 bg-emerald-500/5 border border-emerald-500/15 hover:border-emerald-500/30 text-emerald-400 font-medium text-xs px-5 py-2.5 rounded-full transition-all group shadow-md mb-6">
-                    <img src="avatar.jpg" alt="Sherryl Andrade" class="w-5 h-5 rounded-full object-cover border border-emerald-500/20">
+                <button onclick="switchPage('about')" class="inline-flex items-center gap-3 bg-emerald-500/5 border border-emerald-500/15 hover:border-emerald-500/20 text-emerald-500 hover:text-accentCyan font-medium text-sm px-4 py-2 rounded-full transition-all group shadow-md">
+                <!-- Replace 'your-profile-image.jpg' with your image link -->
+                    <img src="avatar.jpg" alt="Sherryl Andrade" class="w-6 h-6 rounded-full object-cover border border-emerald-500/20">
                     <span>About — Sherryl Andrade</span>
-                    <i data-lucide="arrow-right" class="w-3.5 h-3.5 text-emerald-400 group-hover:translate-x-1 transition-transform"></i>
+                    <i data-lucide="arrow-right" class="w-4 h-4 text-emerald-500 group-hover:translate-x-1 transition-transform"></i>
                 </button>
 
+
                 <!-- SOCIAL MEDIA LOGO STRIP (FIXED: Removed fill-current so vector line logos render perfectly in image_9d36a1.png) -->
-                <div class="flex items-center gap-4 pt-2">
-                    <a href="https://www.linkedin.com/in/sherrylandrade/" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg border border-white/5 bg-white/[0.02] text-neutral-400 hover:text-accentBlue hover:border-white/10 hover:bg-white/[0.05] transition-all shadow-sm" title="LinkedIn Profile">
-                        <i data-lucide="linkedin" class="w-4 h-4"></i>
-                    </a>
-                    <a href="https://www.facebook.com/profile.php?id=61591320306509&sk=about" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg border border-white/5 bg-white/[0.02] text-neutral-400 hover:text-accentBlue hover:border-white/10 hover:bg-white/[0.05] transition-all shadow-sm" title="Facebook Page">
-                        <i data-lucide="facebook" class="w-4 h-4"></i>
-                    </a>
-                    <a href="https://www.instagram.com/its.andrade.she/" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg border border-white/5 bg-white/[0.02] text-neutral-400 hover:text-accentBlue hover:border-white/10 hover:bg-white/[0.05] transition-all shadow-sm" title="Instagram Profile">
-                        <i data-lucide="instagram" class="w-4 h-4"></i>
-                    </a>
-                </div>
-            </div>
+                <!-- SOCIAL MEDIA LOGO STRIP (Using custom 3D image assets) -->
+                <div class="flex items-center gap-5 pt-4">
+                    <a href="https://www.linkedin.com/in/sherrylandrade/" target="_blank" rel="noopener noreferrer" class="hover:scale-115 transition-transform duration-200" title="LinkedIn Profile">
+                    <img src="linkedin_logo-rg.png" alt="LinkedIn" class="w-8 h-8 object-contain drop-shadow-[0_2px_8px_rgba(0,112,243,0.3)]">
+                </a>
+                    <a href="https://www.facebook.com/profile.php?id=61591320306509&sk=about" target="_blank" rel="noopener noreferrer" class="hover:scale-115 transition-transform duration-200" title="Facebook Page">
+                    <img src="fb_logo-rg.png" alt="Facebook" class="w-8 h-8 object-contain drop-shadow-[0_2px_8px_rgba(0,112,243,0.2)]">
+                </a>
+                    <a href="https://www.instagram.com/its.andrade.she/" target="_blank" rel="noopener noreferrer" class="hover:scale-115 transition-transform duration-200" title="Instagram Profile">
+                    <img src="ig_logo-rg.png" alt="Instagram" class="w-8 h-8 object-contain drop-shadow-[0_2px_8px_rgba(6,182,212,0.2)]">
+                </a>
+             </div>
         </section>
 <!-- ================= ABOUT SECTION ================= -->
 <section id="page-about" class="page-viewport max-w-7xl mx-auto px-4 pt-4 pb-16">
