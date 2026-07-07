@@ -19,7 +19,6 @@
                     },
                     fontFamily: {
                         sans: ['Inter', 'system-ui', 'sans-serif'],
-                        mono: ['JetBrains Mono', 'Fira Code', 'monospace']
                     }
                 }
             }
@@ -28,36 +27,40 @@
     <!-- Inter Font & Lucide Icons via CDN -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #090a0f; color: #f3f4f6; }
-        .page-viewport { display: none; }
-        .page-viewport.active { display: block; animation: fadeIn 0.3s ease-in-out; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
-    </style>
+<style>
+    body { font-family: 'Inter', sans-serif; background-color: #090a0f; color: #f3f4f6; }
+    
+    /* Keep your default display state setup */
+    .page-viewport { display: none; }
+    
+    /* FIXED: Added !important here to forcefully overwrite Tailwind's "hidden" class instantly */
+    .page-viewport.active { display: block !important; animation: fadeIn 0.3s ease-in-out; }
+    
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+</style>
 </head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-accentBlue selection:text-white">
+<body class="min-h-screen flex flex-col justify-between selection:bg-accentCyan-900/90 selection:text-white">
 
     <!-- GLOBAL HEADER NAVIGATION -->
     <header class="fixed top-0 left-0 w-full z-50 px-6 py-4 flex justify-between items-center bg-darkBg/80 backdrop-blur-md border-b border-white/5">
         <!-- Location Indicator -->
-        <div class="text-xs font-medium tracking-wide text-neutral-400 bg-white/5 px-3 py-1.5 rounded-full border border-accentCyan/10">
+        <div class="text-xs font-medium tracking-wide text-neutral-400 bg-accentBlue-900/90 px-3 py-1.5 rounded-full border border-accentCyan/10">
             🇵🇭 Philippines
         </div>
 
-        <!-- Central Navigation Pill (FIXED: Restored the vibrant cyan border and highlight glow shadow) -->
+        <!-- Central Navigation Pill -->
         <nav class="flex items-center gap-1 bg-accentCyan-900/90 border border-accentCyan/25 rounded-full px-2 py-1.5 shadow-xl shadow-accentCyan/10">
-
             <button onclick="switchPage('home')" id="nav-home" class="nav-btn flex items-center justify-center p-2 rounded-full text-neutral-400 hover:text-accentBlue transition-all duration-200">
                 <i data-lucide="home" class="w-4 h-4"></i>
             </button>
             <button onclick="switchPage('about')" id="nav-about" class="nav-btn flex items-center gap-2 text-xs font-medium px-4 py-1.5 rounded-full text-neutral-400 hover:text-accentBlue transition-all duration-200">
                 <i data-lucide="user" class="w-3.5 h-3.5"></i>About
             </button>
-            <button onclick="switchPage('work')" id="nav-work" class="nav-btn flex items-center gap-2 text-xs font-medium px-4 py-1.5 rounded-full text-neutral-400 hover:text-accentBlue transition-all duration-200">
-                <i data-lucide="briefcase" class="w-3.5 h-3.5"></i>Case Studies
+            <button onclick="switchPage('cases')" id="nav-cases" class="nav-btn flex items-center gap-2 text-xs font-medium px-4 py-1.5 rounded-full text-neutral-400 hover:text-accentBlue transition-all duration-200">
+                <i data-lucide="folder-kanban" class="w-3.5 h-3.5"></i>Case Studies
             </button>
             <button onclick="switchPage('work')" id="nav-work" class="nav-btn flex items-center gap-2 text-xs font-medium px-4 py-1.5 rounded-full text-neutral-400 hover:text-accentBlue transition-all duration-200">
-                <i data-lucide="briefcase" class="w-3.5 h-3.5"></i>Work History
+                <i data-lucide="briefcase" class="w-3.5 h-3.5"></i>Work
             </button>
             <button onclick="switchPage('testimonials')" id="nav-testimonials" class="nav-btn flex items-center gap-2 text-xs font-medium px-4 py-1.5 rounded-full text-neutral-400 hover:text-accentBlue transition-all duration-200">
                 <i data-lucide="star" class="w-3.5 h-3.5"></i>Testimonials
@@ -77,42 +80,25 @@
     <main class="flex-grow pt-36 pb-16 max-w-6xl w-full mx-auto px-6">
 
         <!-- ================= HOME PAGE ================= -->
-        <section id="page-home" class="page-viewport active">
-            <div class="text-center max-w-4xl mx-auto mt-5 flex flex-col items-center">
+        <section id="page-home" class="page-viewport">
+            <div class="text-center max-w-3xl mx-auto mt-5">
                 <div class="inline-flex items-center gap-2 text-xs text-accentCyan bg-accentCyan/5 border border-accentCyan/10 rounded-full px-4 py-1.5 mb-8 font-medium tracking-wider uppercase">
                     My Portfolio
                 </div>
-                
-                <h1 class="text-5xl md:text-8xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-blue-500 to-blue-800 mb-8 leading-[1.05] max-w-5xl">
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tight text-accentBlue/50 mb-8 leading-[1.1]">
                     Bringing elite order to executive chaos
                 </h1>
-
-                <p class="text-lg md:text-xl text-neutral-400 font-light leading-relaxed mb-8 max-w-3xl mx-auto">
-                    Highly calibrated executive assistance providing proactive inbox management, seamless calendar coordination, and high-level operational support so you can focus entirely on scaling your business[cite: 1].
+                <p class="text-lg md:text-xl text-neutral-400 font-light leading-relaxed mb-12 max-w-2xl mx-auto">
+                    Highly calibrated executive assistance providing proactive inbox management, seamless calendar coordination, and high-level operational support so you can focus entirely on scaling your business.
                 </p>
                 
-                <!-- About Redirect Button -->
-                <button onclick="switchPage('about')" class="inline-flex items-center gap-3 bg-emerald-500/5 border border-emerald-500/15 hover:border-emerald-500/20 text-emerald-500 hover:text-accentCyan font-medium text-sm px-4 py-2 rounded-full transition-all group shadow-md">
+                <button onclick="switchPage('about')" class="inline-flex items-center gap-3 bg-emerald-15 border border-emerald-500/15 hover:border-emerald-500/20 text-emerald-500 hover:text-accentCyan font-medium text-sm px-4 py-2 rounded-full transition-all group shadow-xl shadow-accentCyan/10">
                 <!-- Replace 'your-profile-image.jpg' with your image link -->
                     <img src="avatar.jpg" alt="Sherryl Andrade" class="w-6 h-6 rounded-full object-cover border border-emerald-500/20">
                     <span>About — Sherryl Andrade</span>
                     <i data-lucide="arrow-right" class="w-4 h-4 text-emerald-500 group-hover:translate-x-1 transition-transform"></i>
                 </button>
-
-
-                <!-- SOCIAL MEDIA LOGO STRIP (FIXED: Removed fill-current so vector line logos render perfectly in image_9d36a1.png) -->
-                <!-- SOCIAL MEDIA LOGO STRIP (Using custom 3D image assets) -->
-                <div class="flex items-center gap-5 pt-4">
-                    <a href="https://www.linkedin.com/in/sherrylandrade/" target="_blank" rel="noopener noreferrer" class="hover:scale-115 transition-transform duration-200" title="LinkedIn Profile">
-                    <img src="linkedin_logo-rg.png" alt="LinkedIn" class="w-8 h-8 object-contain drop-shadow-[0_2px_8px_rgba(0,112,243,0.3)]">
-                </a>
-                    <a href="https://www.facebook.com/profile.php?id=61591320306509&sk=about" target="_blank" rel="noopener noreferrer" class="hover:scale-115 transition-transform duration-200" title="Facebook Page">
-                    <img src="fb_logo-rg.png" alt="Facebook" class="w-8 h-8 object-contain drop-shadow-[0_2px_8px_rgba(0,112,243,0.2)]">
-                </a>
-                    <a href="https://www.instagram.com/its.andrade.she/" target="_blank" rel="noopener noreferrer" class="hover:scale-115 transition-transform duration-200" title="Instagram Profile">
-                    <img src="ig_logo-rg.png" alt="Instagram" class="w-8 h-8 object-contain drop-shadow-[0_2px_8px_rgba(6,182,212,0.2)]">
-                </a>
-             </div>
+            </div>
         </section>
 <!-- ================= ABOUT SECTION ================= -->
 <section id="page-about" class="page-viewport max-w-7xl mx-auto px-4 pt-4 pb-16">
@@ -120,36 +106,37 @@
     <!-- FIX 1: Reduced layout gap from gap-12 to gap-8 to bring the directory and content closer horizontally -->
     <div class="flex flex-col md:flex-row gap-8 items-start">
         
-<!-- 1. LEFT SIDEBAR: Directory Column -->
+        <!-- 1. LEFT SIDEBAR: Directory Column -->
         <div class="w-full md:w-1/5 shrink-0 md:sticky md:top-28">
             <nav class="flex flex-col gap-4 text-xs font-mono tracking-wide text-emerald-500">
                 <!-- FIXED: Updated base text color to emerald-500 and configured line markers to hover to emerald-400 -->
-                <a href="#about-intro" class="group flex items-center gap-2 hover:text-accentBlue transition-colors">
+                <a href="#about-intro" class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
                     <span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all"></span>
                     Introduction
                 </a>
-                <a href="#core-services" class="group flex items-center gap-2 hover:text-accentBlue transition-colors">
+                <a href="#core-services" class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
                     <span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all"></span>
                     Core Services
                 </a>
-                <a href="#skills-tools" class="group flex items-center gap-2 hover:text-accentBlue transition-colors">
+                <a href="#skills-tools" class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
                     <span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all"></span>
                     Skills & Tools
-                </a>
-                <a href="#certificates" class="group flex items-center gap-2 hover:text-accentBlue transition-colors">
-                    <span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all"></span>
-                    Certificates
-                </a>                
-                <a href="#education" class="group flex items-center gap-2 hover:text-accentBlue transition-colors">
+                </a>                   
+                <a href="#education" class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
                     <span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all"></span>
                     Education
                 </a>
-                <a href="#workstation" class="group flex items-center gap-2 hover:text-accentBlue transition-colors">
+                <a href="#certificates" class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
+                    <span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all"></span>
+                    Certificates
+                </a>
+                <a href="#workstation" class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
                     <span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all"></span>
                     Workstation Setup
-                </a>                
+                </a>
             </nav>
         </div>
+
         <!-- 2. RIGHT SIDE: Profile Card & Main Subsections content -->
         <!-- CLEANED: Removed the bad master negative margins that broke the layout in image-1 -->
         <div class="w-full md:w-4/5 flex flex-col space-y-16">
@@ -181,7 +168,7 @@
                             <h4 class="text-accentCyan text-xs font-bold flex items-center gap-2 mb-1">
                                 <i data-lucide="target" class="w-4 h-4 text-purple-400"></i> Our Mission
                             </h4>
-                            <p class="text-neutral-400 text-xs leading-relaxed font-light">To clear administrative clutter for busy professionals by managing schedules, streamlining communications, and handling daily operations with absolute precision and confidentiality</p>
+                            <p class="text-neutral-400 text-xs leading-relaxed font-light">To clear administrative clutter for busy professionals by managing schedules, streamlining communications, and handling daily operations with absolute precision and confidentiality.</p>
                         </div>
                         <div>
                             <h4 class="text-accentCyan text-xs font-bold flex items-center gap-2 mb-1">
@@ -194,20 +181,20 @@
             </div>
             
             <hr class="border-white/5">
-         
+
             <!-- Subsection 2: Core Services Matrix -->
             <div id="core-services" class="scroll-mt-28">
                 <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-6">Core Services</span>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div class="bg-neutral-900/40 border border-white/5 rounded-xl p-5 :border-white/10 transition-colors">
-                        <i data-lucide="calendar" class="w-5 h-5 text-accentCyan mb-3"></i>
+                        <i data-lucide="phone" class="w-5 h-5 text-accentCyan mb-3"></i>
                         <h3 class="text-white font-semibold mb-1">Calendar Management & Scheduling</h3>
                         <p class="text-neutral-400 text-sm font-light leading-relaxed">Proactive schedule coordination, time-blocking, meeting prioritization, and seamless multi-timezone appointment handling to optimize daily executive routines.</p>
                     </div>
                     <div class="bg-neutral-900/40 border border-white/5 rounded-xl p-5 hover:border-white/10 transition-colors">
                         <i data-lucide="mail" class="w-5 h-5 text-accentCyan mb-3"></i>
                         <h3 class="text-white font-semibold mb-1">Inbox Management & Correspondence</h3>
-                        <p class="text-neutral-400 text-sm font-light leading-relaxed">Efficient email filtering, priority labeling, drafting professional responses, and gatekeeping to ensure critical inquiries are surfaced while eliminating clutter..</p>
+                        <p class="text-neutral-400 text-sm font-light leading-relaxed">Efficient email filtering, priority labeling, drafting professional responses, and gatekeeping to ensure critical inquiries are surfaced while eliminating clutter.</p>
                     </div>
                     <div class="bg-neutral-900/40 border border-white/5 rounded-xl p-5 hover:border-white/10 transition-colors">
                         <i data-lucide="shield-check" class="w-5 h-5 text-accentCyan mb-3"></i>
@@ -222,45 +209,76 @@
                 </div>
             </div>
 
-            <hr class="border-white/5">
+<hr class="border-white/5">
 
-            <!-- Subsection 3: Skills & Tools -->
-            <div id="skills-tools" class="grid grid-cols-1 md:grid-cols-2 gap-8 scroll-mt-28">
-                <div class="bg-neutral-900/20 border border-white/5 rounded-2xl p-6">
-                    <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-6">Skills</span>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1.5 bg-neutral-900 border border-white/10 rounded-full text-xs text-neutral-300">Attention To Detail</span>
-                        <span class="px-3 py-1.5 bg-neutral-900 border border-white/10 rounded-full text-xs text-neutral-300">Calendar Management</span>
-                        <span class="px-3 py-1.5 bg-neutral-900 border border-white/10 rounded-full text-xs text-neutral-300">Inbox Gatekeeping</span>
-                        <span class="px-3 py-1.5 bg-neutral-900 border border-white/10 rounded-full text-xs text-neutral-300">Time Optimization</span>
-                        <span class="px-3 py-1.5 bg-neutral-900 border border-white/10 rounded-full text-xs text-neutral-300">Travel Coordination</span>
-                        <span class="px-3 py-1.5 bg-neutral-900 border border-white/10 rounded-full text-xs text-neutral-300">Confidentiality & Discretion</span>
-                        <span class="px-3 py-1.5 bg-neutral-900 border border-white/10 rounded-full text-xs text-neutral-300">Task Prioritization</span>
-                        <span class="px-3 py-1.5 bg-neutral-900 border border-white/10 rounded-full text-xs text-neutral-300">Files/Documents Management</span>
-                        <span class="px-3 py-1.5 bg-neutral-900 border border-white/10 rounded-full text-xs text-neutral-300">Meeting Minutes & Agenda Setting</span>
-                        <span class="px-3 py-1.5 bg-neutral-900 border border-white/10 rounded-full text-xs text-neutral-300">Tracking action items from meetings</span>                        
-                    </div>
-                </div>
+<!-- VERTICALLY STACKED LAYOUT: SKILLS ON TOP OF TOOLS -->
+<!-- FIXED: Added id="skills-tools" and scroll-mt-28 here so your sidebar anchor link works! -->
+<div id="skills-tools" class="flex flex-col gap-6 mt-12 w-full scroll-mt-28">
+    
+<!-- TOP SECTION: SKILLS CARD -->
+    <div class="bg-neutral-900/40 border border-emerald-500/10 rounded-2xl p-6 w-full">
+        <h3 class="font-mono text-xs uppercase tracking-widest text-accentBlue mb-4">Skills</h3>
+        <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Inbox Gatekeeping</span>
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Time Optimization</span>
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Attention To Detail</span>
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Calendar Management</span>
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Travel Coordination</span>
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Task Prioritization</span>
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Files/Documents Management</span>
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Confidentiality & Discretion</span>
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Meeting Minutes & Agenda Setting</span>
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Tracking action items from meetings</span>
+        </div>
+    </div>
 
-                <div class="bg-neutral-900/20 border border-white/5 rounded-2xl p-6">
-                    <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-6">Tools</span>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1.5 bg-neutral-900 border border-white/10 rounded-full text-xs text-neutral-300">Google Calendar / Outlook</span>
-                        <span class="px-3 py-1.5 bg-neutral-900 border border-white/10 rounded-full text-xs text-neutral-300">Gmail / Outlook Email</span>
-                        <span class="px-3 py-1.5 bg-neutral-900 border border-white/10 rounded-full text-xs text-neutral-300">Slack / Microsoft Teams</span>
-                        <span class="px-3 py-1.5 bg-neutral-900 border border-white/10 rounded-full text-xs text-neutral-300">Zoom / Google Meet</span>
-                        <span class="px-3 py-1.5 bg-neutral-900 border border-white/10 rounded-full text-xs text-neutral-300">Notion / Asana / ClickUp</span>
-                        <span class="px-3 py-1.5 bg-neutral-900 border border-white/10 rounded-full text-xs text-neutral-300">Calendly</span>
-                        <span class="px-3 py-1.5 bg-neutral-900 border border-white/10 rounded-full text-xs text-neutral-300">Google Docs / Sheets</span>
-                        <span class="px-3 py-1.5 bg-neutral-900 border border-white/10 rounded-full text-xs text-neutral-300">ChatGPT / Gemini</span>                        
-                        <span class="px-3 py-1.5 bg-neutral-900 border border-white/10 rounded-full text-xs text-neutral-300">Loom (async video updates)</span>
-                        <span class="px-3 py-1.5 bg-neutral-900 border border-white/10 rounded-full text-xs text-neutral-300">LastPass</span>
+    <!-- BOTTOM SECTION: TOOLS CARD WITH INTERNAL CATEGORY SEPARATORS -->
+    <div class="bg-neutral-900/40 border border-white/5 rounded-2xl p-6 flex flex-col space-y-6 w-full">
+        <h3 class="font-mono text-xs uppercase tracking-widest text-accentBlue">Tools</h3>
+
+        <!-- Category A -->
+     
+        <div class="space-y-2">
+            <div class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Support Platforms & CRMs</div>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Google Calendar / Outlook</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Gmail / Outlook Email</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Slack / Microsoft Teams</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Zoom / Google Meet</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Notion / Asana / ClickUp</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Google Docs / Sheets</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">ChatGPT / Gemini</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Loom</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">LastPass</span>
+            </div>
+        </div>
+    </div>
+</div>
+           
+<hr class="border-white/5">
+
+<!-- Subsection 5: Education -->
+            <div id="education" class="scroll-mt-28 mt-10">
+                <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-6">Education</span>
+                
+                <div class="bg-neutral-900/40 border border-white/5 rounded-2xl p-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                        <div>
+                            <h3 class="text-lg font-bold text-white tracking-tight">System Technology Institute</h3>
+                            <p class="text-neutral-400 text-sm font-light mt-0.5">Associate's degree, Computer Programming</p>
+                        </div>
+                        <div class="shrink-0">
+                            <span class="text-xs font-mono text-accentCyan bg-accentCyan/10 px-3 py-1 rounded-full">
+                                1997 – 1999
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <hr class="border-white/5">
-
+            <!-- Added Divider Line with vertical spacing matching image_8cc301.png -->
+            <div class="w-full h-[1px] bg-white/5 mt-12 mb-10"></div>  
+            
 <!-- Subsection 4: Certificates -->
             <div id="certificates" class="scroll-mt-28">
                 <!-- Platform Verification Header Card -->
@@ -371,29 +389,7 @@
                 </div>
             </div>
 
-            <hr class="border-white/5">
-
-<!-- Subsection 5: Education -->
-            <div id="education" class="scroll-mt-28 mt-10">
-                <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-6">Education</span>
-                
-                <div class="bg-neutral-900/40 border border-white/5 rounded-2xl p-6">
-                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                        <div>
-                            <h3 class="text-lg font-bold text-white tracking-tight">System Technology Institute</h3>
-                            <p class="text-neutral-400 text-sm font-light mt-0.5">Associate's degree, Computer Programming</p>
-                        </div>
-                        <div class="shrink-0">
-                            <span class="text-xs font-mono text-accentCyan bg-accentCyan/10 px-3 py-1 rounded-full">
-                                1997 – 1999
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Added Divider Line with vertical spacing matching image_8cc301.png -->
-            <div class="w-full h-[1px] bg-white/5 mt-12 mb-10"></div>                      
+            <hr class="border-white/5">            
 
             <!-- Subsection 5: Workstation Setup -->
             <div id="workstation" class="scroll-mt-28">
@@ -402,7 +398,7 @@
                         <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-2">Workstation Setup</span>
                         <h2 class="text-3xl font-bold text-white tracking-tight">Technical Infrastructure</h2>
                     </div>
-                    <p class="text-neutral-400 text-sm max-w-md font-light leading-relaxed md:text-right">
+                    <p class="bg-neutral-900/40 text-sm max-w-md font-light leading-relaxed md:text-right">
                         High-availability production environment configured for uninterrupted uptime, low-latency communication networks, and reliable workflow execution data.
                     </p>
                 </div>
@@ -447,7 +443,7 @@
                     </div>
 
                     <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div class="bg-neutral-900/20 border border-white/5 rounded-xl p-5">
+                        <div class="bg-neutral-900/40 border border-white/5 rounded-xl p-5">
                             <div class="flex items-center gap-3 text-white font-medium mb-3">
                                 <i data-lucide="settings" class="w-4 h-4 text-neutral-400"></i>
                                 <span>System Specifications</span>
@@ -458,7 +454,7 @@
                                 <li>• <strong class="text-neutral-300 font-medium">RAM:</strong> 12GB Capacity</li>
                             </ul>
                         </div>
-                        <div class="bg-neutral-900/20 border border-white/5 rounded-xl p-5">
+                        <div class="bg-neutral-900/40 border border-white/5 rounded-xl p-5">
                             <div class="flex items-center gap-3 text-white font-medium mb-3">
                                 <i data-lucide="wifi" class="w-4 h-4 text-neutral-400"></i>
                                 <span>Primary Network Link</span>
@@ -469,7 +465,7 @@
                                 <li>• <strong class="text-neutral-300 font-medium">Core:</strong> Wired Ethernet Connection</li>
                             </ul>
                         </div>
-                        <div class="bg-neutral-900/20 border border-white/5 rounded-xl p-5">
+                        <div class="bg-neutral-900/40 border border-white/5 rounded-xl p-5">
                             <div class="flex items-center gap-3 text-white font-medium mb-3">
                                 <i data-lucide="headphones" class="w-4 h-4 text-neutral-400"></i>
                                 <span>Audio Peripherals</span>
@@ -479,7 +475,7 @@
                                 <li>• <strong class="text-neutral-300 font-medium">Mic:</strong> HD Noise Reduction Microphone</li>
                             </ul>
                         </div>
-                        <div class="bg-neutral-900/20 border border-white/5 rounded-xl p-5">
+                        <div class="bg-neutral-900/40 border border-white/5 rounded-xl p-5">
                             <div class="flex items-center gap-3 text-white font-medium mb-3">
                                 <i data-lucide="battery-charging" class="w-4 h-4 text-neutral-400"></i>
                                 <span>Failover Redundancies</span>
@@ -496,6 +492,200 @@
         </div> <!-- /RIGHT SIDEBAR CONTAINER -->
     </div> <!-- /FLEX WRAPPER -->
 </section>
+<!-- ========================================== -->
+        <!-- NEW: CASE STUDIES SECTION (FIXED BORDERS)  -->
+        <!-- ========================================== -->
+        <section id="page-cases" class="page-viewport">
+            <!-- Section Header -->
+            <div class="mb-10">
+                <span class="text-xs font-mono uppercase tracking-widest text-accentCyan block mb-2">Operational Impact Portfolio</span>
+                <h2 class="text-3xl font-bold text-white tracking-tight">Case Studies & Resolution Logs</h2>
+                <p class="bg-neutral-900/40 font-light text-sm mt-1 max-w-xl">
+                    In-depth performance breakdowns showing how I convert backlogs, technical sync dropouts, and escalations into 100% QA interactions.
+                </p>
+            </div>
+            
+            <!-- FIXED: Extra stray div removed, margin spacer added to divider -->
+            <hr class="border-white/10 my-10">
+
+            <!-- Live Performance Metrics Dashboard -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-5 bg-neutral-900/40 border border-white/5 rounded-2xl mb-8 font-mono">
+                <div class="text-center p-2">
+                    <div class="text-2xl font-bold text-emerald-400 mb-0.5">100%</div>
+                    <div class="text-[9px] text-neutral-500 uppercase tracking-wider">QA Audit Score</div>
+                </div>
+                <div class="text-center p-2 border-l border-white/5">
+                    <div class="text-2xl font-bold text-accentCyan mb-0.5">First Contact</div>
+                    <div class="text-[9px] text-neutral-500 uppercase tracking-wider">Resolution Focus</div>
+                </div>
+                <div class="text-center p-2 border-l border-none md:border-l border-white/5">
+                    <div class="text-2xl font-bold text-purple-400 mb-0.5">Tier 2</div>
+                    <div class="text-[9px] text-neutral-500 uppercase tracking-wider">Escalation Mastery</div>
+                </div>
+                <div class="text-center p-2 border-l border-white/5">
+                    <div class="text-2xl font-bold text-blue-400 mb-0.5">100%</div>
+                    <div class="text-[9px] text-neutral-500 uppercase tracking-wider">Rapport & Empathy</div>
+                </div>
+            </div>
+
+            <!-- FIXED: Margin spacer added to divider -->
+            <hr class="border-white/10 my-10">
+
+            <!-- Case Studies Stack -->
+            <div class="space-y-6">
+                
+                <!-- CASE STUDY 1: E-COMMERCE TIER 2 PIPELINE -->
+                <article class="bg-neutral-900/40 border border-white/5 hover:border-white/10 transition-colors rounded-2xl p-6 flex flex-col lg:flex-row gap-6">
+                    <div class="w-full lg:w-1/3 flex flex-col justify-between">
+                        <div>
+                            <div class="text-[10px] font-mono text-purple-400 uppercase tracking-wider mb-2">Case Study #01 — E-Commerce Logistics</div>
+                            <h3 class="text-lg font-semibold text-white tracking-tight mb-2">Optimizing Tier 2 Escalation & Fulfillment Loops</h3>
+                            <p class="text-xs text-neutral-400 font-light leading-relaxed">
+                                Managing high-volume transactional exceptions, multi-tier escalations, and cross-functional vendor coordination for scaling digital store architectures.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mt-4 lg:mt-0">
+                            <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-800/5 border border-emerald-300/10 text-neutral-400 rounded-full">Salesforce</span>
+                            <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-800/5 border border-emerald-300/10 text-neutral-400 rounded-full">Hubspot</span>
+                            <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-800/5 border border-emerald-300/10 text-neutral-400 rounded-full">Aircall</span>
+                        </div>
+                    </div>
+
+                    <div class="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-4 border-t lg:border-t-0 lg:border-l border-white/5 pt-4 lg:pt-0 lg:pl-6">
+                        <div class="bg-black/20 p-4 border border-white/5 rounded-xl">
+                            <div class="flex items-center gap-1.5 text-[10px] font-mono text-red-400 uppercase tracking-wide mb-1">
+                                <i data-lucide="alert-circle" class="w-3 h-3"></i> Context & Challenge
+                            </div>
+                            <p class="text-xs text-neutral-400 font-light">
+                                Tier 1 teams faced complex multi-variable issues involving billing errors, order exceptions, and application data updates that risked delivery SLAs.
+                            </p>
+                        </div>
+                        <div class="bg-black/20 p-4 border border-white/5 rounded-xl">
+                            <div class="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400 uppercase tracking-wide mb-1">
+                            <i data-lucide="check-circle" class="w-3 h-3"></i> Implemented Framework
+                        </div>
+                            <p class="text-xs text-neutral-400 font-light">
+                            Deployed structured internal database queries, admin console tools, and cross-functional communication through Slack channels to safely override order errors.
+                            </p>
+                        </div>
+                        <div class="md:col-span-2 bg-gradient-to-r from-cyan-950/20 to-neutral-900/20 p-4 border border-cyan-500/10 rounded-xl flex items-center justify-between">
+                            <div>
+                                <div class="text-[10px] font-mono uppercase tracking-widest text-accentCyan mb-0.5">Verified Outcome</div>
+                                <p class="text-xs text-neutral-300 font-light">Standardized deep internal tracking notes that became templates for team macro developments.</p>
+                            </div>
+                            <div class="text-right font-mono shrink-0 pl-4">
+                                <span class="text-xl font-bold text-accentCyan">100%</span>
+                                <div class="text-[8px] text-neutral-500 uppercase">Notes Accuracy</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- FIXED: Margin spacer added to divider -->
+                <hr class="border-white/10 my-10">
+
+<!-- CASE STUDY 2: SAAS ENTERPRISE ACCESS INFRASTRUCTURE -->
+                <article class="bg-neutral-900/40 border border-white/5 hover:border-white/10 transition-colors rounded-2xl p-6 flex flex-col lg:flex-row gap-6">
+                    <div class="w-full lg:w-1/3 flex flex-col justify-between">
+                        <div>
+                            <div class="text-[10px] font-mono text-purple-400 uppercase tracking-wider mb-2">Case Study #02 — SaaS Support Strategy</div>
+                            <h3 class="text-lg font-semibold text-white tracking-tight mb-2">Resolving Account Access Discrepancies & Sync Faults</h3>
+                            <p class="text-xs text-neutral-400 font-light leading-relaxed">
+                                Managing asynchronous user validation processes to restore platform clearances and fix system database provisioning errors.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mt-4 lg:mt-0">
+                            <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-800/5 border border-emerald-300/10 text-neutral-400 rounded-full">Zendesk</span>
+                            <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-800/5 border border-emerald-300/10 text-neutral-400 rounded-full">Genesys</span>
+                            <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-800/5 border border-emerald-300/10 text-neutral-400 rounded-full">Asana</span>
+                        </div>
+                    </div>
+
+                    <div class="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-4 border-t lg:border-t-0 lg:border-l border-white/5 pt-4 lg:pt-0 lg:pl-6">
+                        <div class="bg-black/20 p-4 border border-white/5 rounded-xl">
+                            <div class="flex items-center gap-1.5 text-[10px] font-mono text-red-400 uppercase tracking-wide mb-1">
+                                <i data-lucide="alert-circle" class="w-3 h-3"></i> Context & Challenge
+                            </div>
+                            <p class="text-xs text-neutral-400 font-light">
+                                Enterprise clients faced structural activation code failures preventing immediate system login, generating multi-channel ticketing bottlenecks.
+                            </p>
+                        </div>
+                        <div class="bg-black/20 p-4 border border-white/5 rounded-xl">
+                            <div class="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400 uppercase tracking-wide mb-1">
+                                <i data-lucide="check-circle" class="w-3 h-3"></i> Implemented Framework
+                            </div>
+                            <p class="text-xs text-neutral-400 font-light">
+                                Deployed a verification workflow cross-checking internal profile provisioning directories, manually assigning valid access configuration strings on the first touchpoint.
+                            </p>
+                        </div>
+                        <div class="md:col-span-2 bg-gradient-to-r from-emerald-950/20 to-neutral-900/20 p-4 border border-emerald-500/10 rounded-xl flex items-center justify-between">
+                            <div>
+                                <div class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 mb-0.5">Verified Outcome</div>
+                                <p class="text-xs text-neutral-300 font-light">Consistently logged 1-contact text resolutions while handling high-volume surges during major enterprise onboarding cycles.</p>
+                            </div>
+                            <div class="text-right font-mono shrink-0 pl-4">
+                                <span class="text-xl font-bold text-emerald-400">First Contact</span>
+                                <div class="text-[8px] text-neutral-500 uppercase">Turnover</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- FIXED: Margin spacer added to divider -->
+                <hr class="border-white/10 my-10">
+
+<!-- CASE STUDY 3: DE-ESCALATION UNDER INTENSE FRICTION -->
+                <article class="bg-neutral-900/40 border border-white/5 hover:border-white/10 transition-colors rounded-2xl p-6 flex flex-col lg:flex-row gap-6">
+                    <div class="w-full lg:w-1/3 flex flex-col justify-between">
+                        <div>
+                            <div class="text-[10px] font-mono text-purple-400 uppercase tracking-wider mb-2">Case Study #03 — High-Friction Voice Operations</div>
+                            <h3 class="text-lg font-semibold text-white tracking-tight mb-2">Crisis De-escalation & Brand Recovery Vectors</h3>
+                            
+                            <!-- UPDATED: Tailored to order delays, missing items, and lost shipments -->
+                            <p class="text-xs text-neutral-400 font-light leading-relaxed">
+                                Defusing high-friction customer interactions over voice lines related to severe fulfillment delays, missing items, and undelivered shipments.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-1.5 mt-4 lg:mt-0">
+                            <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-800/5 border border-emerald-300/10 text-neutral-400 rounded-full">Positive Scripting</span>
+                            <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-800/5 border border-emerald-300/10 text-neutral-400 rounded-full">Crisis Handling</span>
+                            <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-800/5 border border-emerald-300/10 text-neutral-400 rounded-full">Compliance</span>
+                        </div>
+                    </div>
+
+                    <div class="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-4 border-t lg:border-t-0 lg:border-l border-white/5 pt-4 lg:pt-0 lg:pl-6">
+                        <div class="bg-black/20 p-4 border border-white/5 rounded-xl">
+                            <div class="flex items-center gap-1.5 text-[10px] font-mono text-red-400 uppercase tracking-wide mb-1">
+                                <i data-lucide="alert-circle" class="w-3 h-3"></i> Context & Challenge
+                            </div>
+                            <!-- UPDATED: Reflects transit issues -->
+                            <p class="text-xs text-neutral-400 font-light">
+                                Handling highly frustrated customers due to critical delivery delays or incomplete packages, demanding deep conversational composure and rapid resolution mapping.
+                            </p>
+                        </div>
+                        <div class="bg-black/20 p-4 border border-white/5 rounded-xl">
+                            <div class="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400 uppercase tracking-wide mb-1">
+                                <i data-lucide="check-circle" class="w-3 h-3"></i> Implemented Framework
+                            </div>
+                            <!-- UPDATED: Reflects replacement/refund/tracking tools -->
+                            <p class="text-xs text-neutral-400 font-light">
+                                Deployed active listening paths, checked real-time carrier tracking data, and executed priority replacement protocols or refunds on the first touchpoint.
+                            </p>
+                        </div>
+                        <div class="md:col-span-2 bg-gradient-to-r from-purple-950/20 to-neutral-900/20 p-4 border border-purple-500/10 rounded-xl flex items-center justify-between">
+                            <div>
+                                <div class="text-[10px] font-mono uppercase tracking-widest text-purple-300 mb-0.5">Verified Outcome</div>
+                                <p class="text-xs text-neutral-300 font-light">Achieved a perfect 100% Quality Score evaluation on extreme escalation call audits via strict policy adherence.</p>
+                            </div>
+                            <div class="text-right font-mono shrink-0 pl-4">
+                                <span class="text-xl font-bold text-purple-300">100%</span>
+                                <div class="text-[8px] text-neutral-500 uppercase">QA Evaluation</div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
 
 <!-- ================= WORK EXPERIENCE PAGE ================= -->
         <section id="page-work" class="page-viewport">
@@ -510,81 +700,81 @@
                         </div>
                     </div>
                     <p class="text-sm text-neutral-400 leading-relaxed font-light">
-                        A detailed timeline of technical and customer support engineering, tier-2 escalation handling, and customer success management milestones.
+                        A professional history highlighting 9+ years of dedicated customer ticket resolution, escalation management, and customer success achievements.
                     </p>
                 </div>
 
                 <div class="md:col-span-2 space-y-4">
                     <!-- Item 1 -->
-                    <div class="p-6 rounded-xl bg-panelBg border border-white/5">
+                    <div class="p-6 rounded-xl bg-neutral-900/40 border border-white/5">
                         <span class="text-xs font-mono text-accentBlue bg-accentBlue/10 px-2.5 py-1 rounded-md">Jan 2022 - Nov 2022 • 11 mos</span>
                         <h4 class="text-lg font-bold text-white mt-3">Junior Customer Resolution Specialist - Tier 2 (TSR)</h4>
                         <p class="text-xs text-neutral-400 font-medium mb-2">SupportNinja</p>
-                        <p class="text-xs text-neutral-400 leading-relaxed">Managed Tier 2 support for DoubleGood.com via inbound, outbound, and email channels, expertly resolving complex order, billing, and technical app/web issues. Handled escalated cases from Tier 1 specialists to ensure timely resolution using specialized tools like Kustomer, Aircall, PopSQL, ShipStation, Swagger, and Slack.</p>
+                        <p class="text-xs text-neutral-400 leading-relaxed">Managed Tier 2 support for an e-commerce platform via phone and email channels, expertly resolving complex order, billing, and fulfillment exceptions. Efficiently took over escalated cases from Tier 1 specialists to ensure timely resolution and maintain a 100% QA score.</p>
                     </div>
 
                     <!-- Item 2 -->
-                    <div class="p-6 rounded-xl bg-panelBg border border-white/5">
+                    <div class="p-6 rounded-xl bg-neutral-900/40 border border-white/5">
                         <span class="text-xs font-mono text-accentBlue bg-accentBlue/10 px-2.5 py-1 rounded-md">May 2021 - Jan 2022 • 9 mos</span>
                         <h4 class="text-lg font-bold text-white mt-3">Customer Resolution Specialist - Tier 1 (CSR)</h4>
                         <p class="text-xs text-neutral-400 font-medium mb-2">SupportNinja</p>
-                        <p class="text-xs text-neutral-400 leading-relaxed">Delivered phone and email support for e-commerce brands, assisting with order status, product inquiries, and case tracking. Provided technical troubleshooting and documented interactions to maintain high-quality resolution standards.</p>
+                        <p class="text-xs text-neutral-400 leading-relaxed">Delivered dedicated phone and email support for fast-growing e-commerce brands, handling order status inquiries, tracking updates, and modifications. Provided troubleshooting assistance and documented customer cases to uphold high first-contact resolution standards.</p>
                     </div>
 
                     <!-- Item 3 -->
-                    <div class="p-6 rounded-xl bg-panelBg border border-white/5">
+                    <div class="p-6 rounded-xl bg-neutral-900/40 border border-white/5">
                         <span class="text-xs font-mono text-accentBlue bg-accentBlue/10 px-2.5 py-1 rounded-md">Nov 2020 - Apr 2021 • 6 mos</span>
                         <h4 class="text-lg font-bold text-white mt-3">Technical Support Specialist</h4>
                         <p class="text-xs text-neutral-400 font-medium mb-2">SupportNinja</p>
-                        <p class="text-xs text-neutral-400 leading-relaxed">Resolved technical and access-related discrepancies for global e-learning platforms via email and CRM tools. Managed billing inquiries using Stripe, ensuring all documented resolutions met strict service quality standards.</p>
+                        <p class="text-xs text-neutral-400 leading-relaxed">Resolved user-access discrepancies for a global e-learning platform using specialized CRM ticketing tools. Managed account adjustments and billing inquiries via phone and email, ensuring all documented resolutions adhered strictly to service quality benchmarks.</p>
                     </div>
 
                     <!-- Item 4 -->
-                    <div class="p-6 rounded-xl bg-panelBg border border-white/5">
+                    <div class="p-6 rounded-xl bg-neutral-900/40 border border-white/5">
                         <span class="text-xs font-mono text-accentBlue bg-accentBlue/10 px-2.5 py-1 rounded-md">Oct 2019 - Oct 2020 • 1 yr</span>
                         <h4 class="text-lg font-bold text-white mt-3">Customer Service Specialist</h4>
                         <p class="text-xs text-neutral-400 font-medium mb-2">TELUS International Philippines</p>
-                        <p class="text-xs text-neutral-400 leading-relaxed">Managed mobility account support, overseeing billing, service renewals, and account activations via CRM systems. Resolved complex customer concerns while maintaining high service quality and strict adherence to operational compliance.</p>
+                        <p class="text-xs text-neutral-400 leading-relaxed">Handled mobility account support, overseeing customer billing inquiries, plan renewals, and account activations via phone. Resolved complex customer concerns while maintaining a flawless quality score and strict adherence to service timelines.</p>
                     </div>
 
                     <!-- Item 5 -->
-                    <div class="p-6 rounded-xl bg-panelBg border border-white/5">
+                    <div class="p-6 rounded-xl bg-neutral-900/40 border border-white/5">
                         <span class="text-xs font-mono text-accentBlue bg-accentBlue/10 px-2.5 py-1 rounded-md">May 2019 - Oct 2019 • 6 mos</span>
                         <h4 class="text-lg font-bold text-white mt-3">Customer Service Specialist</h4>
                         <p class="text-xs text-neutral-400 font-medium mb-2">Concentrix</p>
-                        <p class="text-xs text-neutral-400 leading-relaxed">Delivered comprehensive inbound support for AT&T ADSL customers by managing technical assistance, billing inquiries, and CRM documentation to maximize satisfaction. Boosted revenue through proactive upselling, new account activations, contract renewals, and efficient order tracking.</p>
+                        <p class="text-xs text-neutral-400 leading-relaxed">Delivered comprehensive phone support by managing connection assistance, billing inquiries, and documentation to maximize satisfaction scores. Facilitated new account activations, renewals, and efficient order tracking while exceeding daily performance targets.</p>
                     </div>
 
                     <!-- Item 6 -->
-                    <div class="p-6 rounded-xl bg-panelBg border border-white/5">
+                    <div class="p-6 rounded-xl bg-neutral-900/40 border border-white/5">
                         <span class="text-xs font-mono text-accentBlue bg-accentBlue/10 px-2.5 py-1 rounded-md">Nov 2016 - Apr 2019 • 2 yrs 6 mos</span>
                         <h4 class="text-lg font-bold text-white mt-3">Customer Service Specialist</h4>
                         <p class="text-xs text-neutral-400 font-medium mb-2">Telus International</p>
-                        <p class="text-xs text-neutral-400 leading-relaxed">Delivered technical and sales support for AOL subscribers, resolving email access and connectivity issues over the phone. Guided customers through software troubleshooting and account management while meeting rigorous documentation standards.</p>
+                        <p class="text-xs text-neutral-400 leading-relaxed">Provided technical and sales support for subscribers, successfully resolving email account access and connectivity issues over the phone. Guided customers step-by-step through configuration and account management while maintaining meticulous documentation standards.</p>
                     </div>
 
                     <!-- Item 7 -->
-                    <div class="p-6 rounded-xl bg-panelBg border border-white/5">
+                    <div class="p-6 rounded-xl bg-neutral-900/40 border border-white/5">
                         <span class="text-xs font-mono text-accentBlue bg-accentBlue/10 px-2.5 py-1 rounded-md">Nov 2015 - Nov 2016 • 1 yr</span>
                         <h4 class="text-lg font-bold text-white mt-3">Technical Support Specialist</h4>
                         <p class="text-xs text-neutral-400 font-medium mb-2">Teleperformance</p>
-                        <p class="text-xs text-neutral-400 leading-relaxed">Delivered email-based technical assistance for consumer electronics, assisting with product setup and complex issue resolution. Guided users through hardware and software troubleshooting while maintaining high service quality and strict adherence to guidelines.</p>
+                        <p class="text-xs text-neutral-400 leading-relaxed">Delivered dedicated email-based assistance for consumer electronics, assisting users with product setups and complex issue resolution. Guided customers through routine troubleshooting steps while maintaining exceptionally high service quality scores.</p>
                     </div>
 
                     <!-- Item 8 -->
-                    <div class="p-6 rounded-xl bg-panelBg border border-white/5">
+                    <div class="p-6 rounded-xl bg-neutral-900/40 border border-white/5">
                         <span class="text-xs font-mono text-accentBlue bg-accentBlue/10 px-2.5 py-1 rounded-md">Mar 2014 - Oct 2015 • 1 yr 8 mos</span>
                         <h4 class="text-lg font-bold text-white mt-3">Technical Support Specialist</h4>
                         <p class="text-xs text-neutral-400 font-medium mb-2">Teleperformance</p>
-                        <p class="text-xs text-neutral-400 leading-relaxed">Provided real-time chat and email support for mobility customers, managing service activations and account security changes. Balanced high-volume inquiries during peak hours while ensuring documented interactions met compliance and quality standards.</p>
+                        <p class="text-xs text-neutral-400 leading-relaxed">Provided high-quality email and chat support for mobility customers, managing service activations and account security adjustments. Efficiently balanced high-volume inquiries during peak hours while ensuring documented resolutions met all quality standards.</p>
                     </div>
 
                     <!-- Item 9 -->
-                    <div class="p-6 rounded-xl bg-panelBg border border-white/5">
+                    <div class="p-6 rounded-xl bg-neutral-900/40 border border-white/5">
                         <span class="text-xs font-mono text-accentBlue bg-accentBlue/10 px-2.5 py-1 rounded-md">Sep 2013 - Feb 2014 • 6 mos</span>
                         <h4 class="text-lg font-bold text-white mt-3">Customer Service Representative</h4>
                         <p class="text-xs text-neutral-400 font-medium mb-2">iQor</p>
-                        <p class="text-xs text-neutral-400 leading-relaxed">Managed inbound sales and order entry for catalog retail, leveraging upselling techniques to maximize order value. Resolved out-of-stock issues by offering alternative product solutions to ensure a positive buyer experience.</p>
+                        <p class="text-xs text-neutral-400 leading-relaxed">Handled inbound inquiries and order entries for catalog retail, focusing on providing an seamless and efficient purchasing process. Proactively resolved out-of-stock and shipping issues by offering alternative product options to preserve an excellent buyer experience.</p>
                     </div>
                 </div>
             </div>
@@ -594,32 +784,34 @@
     <div class="mb-12 max-w-xl">
         <h2 class="text-3xl font-bold text-white tracking-tight">Testimonials</h2>
         <p class="text-sm text-neutral-400 mt-2 font-light">
-            Commendations and Customer Feedback.
+            Commendations and Customer Feedback. 
+        </p>    
+        <span class="text-xs italic font-mono text-emerald-600 flex items-center gap-2">         
+            (If prompted with an error, please refresh the page) 
         </p>
     </div>
 
     <!-- Video Player Window Frame -->
-    <div class="w-full bg-panelBg rounded-2xl border border-white/5 overflow-hidden shadow-2xl mb-12">
+    <div class="w-full bg-neutral-900/40 rounded-2xl border border-white/5 overflow-hidden shadow-2xl mb-12">
         <div class="p-4 bg-black/40 border-b border-white/5 flex items-center justify-between">
             <span class="text-xs font-mono text-accentBlue flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full bg-accentCyan animate-pulse"></span> Commendation Video
             </span>
         </div>
         <div class="aspect-video w-full bg-neutral-950 relative flex items-center justify-center">
-            <!-- Insert Google Drive Embed URL Stream link below directly inside src -->
             <iframe class="w-full h-full" src="https://drive.google.com/file/d/1xE_tMCfpdZjiXO8qMOI2uV5W57q545G_/preview" allow="autoplay" allowfullscreen></iframe>
         </div>
     </div>
 
     <!-- TESTIMONIAL CAROUSEL SLIDER ENGINE -->
-    <div class="w-full bg-panelBg rounded-2xl border border-white/5 p-6 relative">
+    <div class="w-full bg-neutral-900/40 rounded-2xl border border-white/5 p-6 relative">
         <div class="p-4 bg-black/40 border-b border-white/5 flex items-center justify-between pb-4 mb-6">
             <span id="slider-category-title" class="text-xs font-mono uppercase tracking-widest text-accentBlue">1. Client Commendations</span>
             <div class="flex items-center gap-2">
-                <button onclick="slidePrev()" class="p-2 rounded-lg bg-neutral-900 border border-white/5 text-neutral-400 hover:text-white transition-colors">
+                <button onclick="slidePrev()" class="p-2 rounded-lg bg-accentCyan-100 border border-accentCyan/25 text-accentCyan-400 hover:text-accentBlue transition-colors">
                     <i data-lucide="chevron-left" class="w-4 h-4"></i>
                 </button>
-                <button onclick="slideNext()" class="p-2 rounded-lg bg-neutral-900 border border-white/5 text-neutral-400 hover:text-white transition-colors">
+                <button onclick="slideNext()" class="p-2 rounded-lg bg-accentCyan-100 border border-accentCyan/25 text-accentCyan-400 hover:text-accentBlue transition-colors">
                     <i data-lucide="chevron-right" class="w-4 h-4"></i>
                 </button>
             </div>
@@ -718,7 +910,7 @@
 </section>
 <!-- ================= CONTACT/CTA PAGE ================= -->
         <section id="page-contact" class="page-viewport -mt-12 pb-0 mb-[-4rem]">
-            <div class="text-center max-w-2xl mx-auto mb-12">
+            <div class="text-center max-w-2xl mx-auto mb-10">
                 <span class="text-xs font-mono text-accentCyan uppercase tracking-widest">Next Steps</span>
                 <h2 class="text-4xl font-bold text-accentBlue/50 mt-2 mb-4 tracking-tight">Ready to reclaim your time?</h2>
                 <p class="text-neutral-400 font-light text-sm max-w-md mx-auto">
@@ -730,7 +922,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
                 
                 <!-- 1. LinkedIn Anchor Card (Centered) -->
-                <a href="https://www.linkedin.com/in/sherrylandrade/" target="_blank" class="p-8 rounded-2xl bg-panelBg border border-white/5 hover:border-accentCyan/40 transition-all group flex flex-col items-center text-center">
+                <a href="https://www.linkedin.com/in/sherrylandrade/" target="_blank" class="p-8 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-accentCyan/40 transition-all group flex flex-col items-center text-center">
                     <div class="w-12 h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mb-6 group-hover:scale-105 transition-transform">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-accentBlue">
                             <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
@@ -746,7 +938,7 @@
                 </a>
 
                 <!-- 2. Email Hook Connection Card (Centered) -->
-                <a href="mailto:sherryl.andrade@gmail.com" class="p-8 rounded-2xl bg-panelBg border border-white/5 hover:border-accentCyan/40 transition-all group flex flex-col items-center text-center">
+                <a href="mailto:sherryl.andrade@gmail.com" class="p-8 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-accentCyan/40 transition-all group flex flex-col items-center text-center">
                     <div class="w-12 h-12 rounded-xl bg-accentCyan/10 flex items-center justify-center text-accentCyan mb-6 group-hover:scale-105 transition-transform">
                         <i data-lucide="mail" class="w-5 h-5"></i>
                     </div>
@@ -756,9 +948,8 @@
                         Write Message <i data-lucide="arrow-right" class="w-3 h-3"></i>
                     </span>
                 </a>
-
                 <!-- 3. Calendly Integration Card (Centered) -->
-                <a href="https://calendly.com/sherryl-andrade/15-min-call-meeting" target="_blank" class="p-8 rounded-2xl bg-panelBg border border-white/5 hover:border-accentCyan/40 transition-all group flex flex-col items-center text-center">
+                <a href="https://calendly.com/sherryl-andrade/15-min-call-meeting" target="_blank" class="p-8 rounded-2xl bg-neutral-900/40 border border-white/5 hover:border-accentCyan/40 transition-all group flex flex-col items-center text-center">
                     <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-105 transition-transform">
                         <i data-lucide="calendar" class="w-5 h-5"></i>
                     </div>
@@ -773,13 +964,13 @@
             <!-- Separator Line (Gap 3 reduced by 15%) -->
             <div class="w-full h-[1px] bg-white/5 mt-10 mb-5"></div>
 
-            <!-- Executive Assistant Value Alignment Grid -->
+            <!-- Customer Service Phone & Email Support Alignment Value Grid -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center max-w-5xl mx-auto px-4">
                 
-                <!-- Pillar 1: Proactive Gatekeeping -->
+                <!-- Pillar 1: Omni-Channel Presence -->
                 <div class="flex flex-col items-center">
                     <div class="text-orange-400 mb-3">
-                        <i data-lucide="shield-alert" class="w-5 h-5"></i>
+                        <i data-lucide="phone-call" class="w-5 h-5"></i>
                     </div>
                     <h4 class="text-sm font-semibold text-white tracking-wide mb-1">Proactive Gatekeeping</h4>
                     <p class="text-xs text-neutral-400 leading-relaxed max-w-xs">Anticipating your administrative needs to filter out distractions and keep you focused on high-priority goals.</p>
@@ -794,10 +985,10 @@
                     <p class="text-xs text-neutral-400 leading-relaxed max-w-xs">Structured, thorough handling of complex executive correspondence to maintain a clean workspace without missing critical details.</p>
                 </div>
 
-                <!-- Pillar 3: Flawless Execution -->
+                <!-- Pillar 3: SLA Alignment -->
                 <div class="flex flex-col items-center">
                     <div class="text-emerald-400 mb-3">
-                        <i data-lucide="check-square" class="w-5 h-5"></i>
+                        <i data-lucide="shield-check" class="w-5 h-5"></i>
                     </div>
                     <h4 class="text-sm font-semibold text-white tracking-wide mb-1">Flawless Execution</h4>
                     <p class="text-xs text-neutral-400 leading-relaxed max-w-xs">Meticulous attention to detail, optimized scheduling alignment, and strict adherence to organizational confidentiality.</p>
@@ -808,48 +999,148 @@
 
     </main>
 
-   <!-- GLOBAL FOOTER LOGS -->
-    <!-- FIX: Replaced bold border line with ultra-subtle border-white/[0.03] to fulfill requested style change (Red arrow in image_9168c3.png) -->
-    <footer class="w-full border-t border-white/[0.03] bg-neutral-950/20 py-5">
-        <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center text-[10px] font-mono tracking-wider text-neutral-500 gap-4">
-            <div>© 2026 Sherryl Andrade. Executive Virtual Assistant</div>
-            <div class="text-neutral-600">Built For Elite Operations Compliance & Executive Support Architecture</div>
-        </div>
-    </footer>
+<!-- ========================================== -->
+<!-- FIXED FOOTER SECTION                       -->
+<!-- ========================================== -->
+<footer class="fixed bottom-0 left-0 w-full border-t border-white/5 bg-[#090a0f]/80 backdrop-blur-md z-50 py-4 px-6">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+        
+        <!-- Left Side: Copyright Text -->
+        <p class="text-xs font-mono text-neutral-500/100 tracking-wide text-center sm:text-left">
+            © 2026 Sherryl Andrade | Executive Virtual Assistant | Built For Elite Operations Compliance & Executive Support Architecture.
+        </p>
+        
+       <!-- Right Side: Official Brand Logos Only (Fixed with Shadow Accent for image_d15a65.png) -->
+        <div class="flex items-center gap-5 text-neutral-500">
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/profile.php?id=61591320306509" target="_blank" rel="noopener noreferrer" class="hover:text-accentBlue transition-all duration-200 filter drop-shadow-[0_2px_8px_rgba(59,130,246,0.5)]" title="Facebook">
+                <svg class="w-4 h-4 fill-current filter drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]" viewBox="0 0 24 24">
+                    <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+                </svg>
+            </a>
 
-    <!-- INTERACTION CONTROLLER ROUTER -->
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/its.andrade.she" target="_blank" rel="noopener noreferrer" class="hover:text-accentBlue transition-all duration-200 filter drop-shadow-[0_2px_8px_rgba(244,63,94,0.5)]" title="Instagram">
+                <svg class="w-4 h-4 stroke-current fill-none filter drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/sherrylandrade/" target="_blank" rel="noopener noreferrer" class="hover:text-accentBlue transition-all duration-200 filter drop-shadow-[0_2px_8px_rgba(14,165,233,0.5)]" title="LinkedIn">
+                <svg class="w-4 h-4 fill-current filter drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+            </a>
+
+            <!-- Official Calendly Logo -->
+            <a href="https://calendly.com/sherryl-andrade/15-min-call-meeting" target="_blank" rel="noopener noreferrer" class="hover:text-accentBlue transition-all duration-200 filter drop-shadow-[0_2px_8px_rgba(255,255,255,0.4)]" title="Schedule a Call via Calendly">
+                <svg class="w-4 h-4 fill-current filter drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]" viewBox="0 0 24 24">
+                    <path d="M17.433 2.1c1.233 0 2.296.242 3.19.724a5.006 5.006 0 0 1 2.13 2.236c.427.944.64 2.062.64 3.352v7.176c0 1.29-.213 2.408-.64 3.352a5.006 5.006 0 0 1-2.13 2.236c-.894.482-1.957.724-3.19.724H6.567c-1.233 0-2.296-.242-3.19-.724a5.006 5.006 0 0 1-2.13-2.236C.82 17.97.607 16.852.607 15.562V8.386c0-1.29.213-2.408.64-3.352A5.006 5.006 0 0 1 3.377 2.8c.894-.482 1.957-.724 3.19-.724h10.866zm.052 3.101H6.515a2.531 2.531 0 0 0-1.802.68 2.656 2.656 0 0 0-.672 1.913v7.19c.004.757.23 1.394.676 1.91a2.536 2.536 0 0 0 1.798.683h10.97a2.536 2.536 0 0 0 1.798-.683c.447-.516.672-1.153.676-1.91V7.794a2.656 2.656 0 0 0-.672-1.913 2.531 2.531 0 0 0-1.802-.68zM12 7.72a3.868 3.868 0 1 1 0 7.736A3.868 3.868 0 0 1 12 7.72z"/>
+                </svg>
+            </a>
+        </div>
+
+    </div>
+</footer>
+
+<!-- CODE SCRIPT ROUTER AND SLIDER LOOPS -->
     <script>
         function switchPage(pageId) {
-            document.querySelectorAll('.page-viewport').forEach(view => {
-                view.classList.remove('active');
-            });
-            const selectedView = document.getElementById(`page-${pageId}`);
-            if (selectedView) {
-                selectedView.classList.add('active');
-            }
+            // Update URL hash without causing a page jump
+            window.location.hash = pageId;
 
-            // Adjust Tab state styles cleanly
+            // Viewport switching logic
+            document.querySelectorAll('.page-viewport').forEach(view => view.classList.remove('active'));
+            const targetView = document.getElementById(`page-${pageId}`);
+            if(targetView) targetView.classList.add('active');
+
+            // Reset navigation tab button classes
             document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('bg-white/5', 'text-white', 'border', 'border-white/5');
+                btn.classList.remove('bg-white/10', 'text-accentCyan');
                 btn.classList.add('text-neutral-400');
             });
-            const currentTab = document.getElementById(`nav-${pageId}`);
-            if (currentTab) {
-                currentTab.classList.remove('text-neutral-400');
-                currentTab.classList.add('bg-white/5', 'text-white', 'border', 'border-white/5');
+            
+            // Apply targeted active style configurations
+            const activeBtn = document.getElementById(`nav-${pageId}`);
+            if(activeBtn) {
+                activeBtn.classList.remove('text-neutral-400');
+                activeBtn.classList.add('bg-white/10', 'text-accentCyan');
             }
-            window.scrollTo({ top: 0, behavior: 'instant' });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function updateLiveClock() {
+        let currentSlideIndex = 0;
+        const totalSlides = 3;
+        const slideTitles = [
+            "1. Client Commendations",
+            "2. Customer Feedback Surveys",
+            "3. KPI Metrics Data"
+        ];
+
+        function updateSlideDisplay() {
+            document.querySelectorAll('.testimonial-slide').forEach((slide, idx) => {
+                if(idx === currentSlideIndex) {
+                    slide.classList.remove('hidden');
+                    slide.classList.add('block');
+                } else {
+                    slide.classList.remove('block');
+                    slide.classList.add('hidden');
+                }
+            });
+            document.getElementById('slider-category-title').textContent = slideTitles[currentSlideIndex];
+        }
+
+        function slideNext() {
+            currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
+            updateSlideDisplay();
+        }
+
+        function slidePrev() {
+            currentSlideIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
+            updateSlideDisplay();
+        }
+
+        function updateSystemClock() {
             const now = new Date();
-            document.getElementById('live-clock').textContent = now.toLocaleTimeString('en-US', { hour12: false });
+            const clockEl = document.getElementById('live-clock');
+            if (clockEl) clockEl.textContent = now.toTimeString().split(' ')[0];
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-            updateLiveClock();
-            setInterval(updateLiveClock, 1000);
+        // 1. RUN THIS INSTANTLY (Kills the split-second home-page flash on refresh)
+        function initRouter() {
+            if (window.location.hash) {
+                const initialPage = window.location.hash.replace('#', '');
+                switchPage(initialPage);
+            } else {
+                switchPage('home');
+            }
+        }
+        
+        // Run router instantly as this script tag executes
+        initRouter();
+
+        // 2. RUN NON-VISUAL BACKGROUND JOBS AFTER DOM IS READY
+        document.addEventListener("DOMContentLoaded", () => {
+            if (window.lucide) lucide.createIcons();
+            updateSystemClock();
+            setInterval(updateSystemClock, 1000);
+            
+            // Re-run once more to catch navigation button highlighting configurations
+            initRouter();
+        });
+
+        // Handle browser Back/Forward navigation changes
+        window.addEventListener('hashchange', () => {
+            if (window.location.hash) {
+                const targetPage = window.location.hash.replace('#', '');
+                const targetView = document.getElementById(`page-${targetPage}`);
+                if (targetView && !targetView.classList.contains('active')) {
+                    switchPage(targetPage);
+                }
+            }
         });
     </script>
 </body>
