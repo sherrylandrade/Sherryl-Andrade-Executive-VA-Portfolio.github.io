@@ -100,18 +100,10 @@
             <!-- CORE PROFILE MAIN VIEWPORT -->
             <div id="about-main-view" class="sub-viewport active">
                 <div class="flex flex-col md:flex-row gap-12 items-start">
-                    <!-- LEFT SIDEBAR: Main Directory -->
+                    
+                    <!-- CLEANED LEFT SIDEBAR: Kept only History, Education, Certificates, Workstation -->
                     <div class="w-full md:w-1/4 shrink-0 md:sticky md:top-32">
                         <nav class="flex flex-col gap-4 text-xs font-mono tracking-wide text-neutral-500">
-                            <a href="#about-intro" class="group flex items-center gap-2 hover:text-emerald-400 transition-colors">
-                                <span class="w-4 h-[1px] bg-neutral-800 group-hover:bg-emerald-400 group-hover:w-6 transition-all"></span> Introduction
-                            </a>
-                            <button onclick="navigateToSpecialty('cs')" class="group flex items-center gap-2 text-left hover:text-cyan-400 transition-colors">
-                                <span class="w-4 h-[1px] bg-neutral-800 group-hover:bg-cyan-400 group-hover:w-6 transition-all"></span> Customer Service Specialist &rarr;
-                            </button>
-                            <button onclick="navigateToSpecialty('re')" class="group flex items-center gap-2 text-left hover:text-cyan-400 transition-colors">
-                                <span class="w-4 h-[1px] bg-neutral-800 group-hover:bg-cyan-400 group-hover:w-6 transition-all"></span> Real Estate Virtual Assistant &rarr;
-                            </button>
                             <a href="#work-history" class="group flex items-center gap-2 hover:text-emerald-400 transition-colors">
                                 <span class="w-4 h-[1px] bg-neutral-800 group-hover:bg-emerald-400 group-hover:w-6 transition-all"></span> Work History
                             </a>
@@ -141,7 +133,7 @@
                             <div class="lg:col-span-2 space-y-4">
                                 <span class="text-[10px] font-mono uppercase tracking-widest text-blue-500 block">Overview Matrix</span>
                                 <p class="text-neutral-300 text-sm md:text-base leading-relaxed font-light">
-                                    Offering 9+ years of operational efficiency across customer success pipelines and virtual administrative systems. Select a discipline branch in the navigation headers above to view tailored workflows.
+                                    Offering 9+ years of operational efficiency across customer success pipelines and virtual administrative systems. Select a discipline branch in the navigation headers above to view targeted workflows.
                                 </p>
                             </div>
                         </div>
@@ -219,7 +211,7 @@
                 </div>
 
                 <div class="flex flex-col md:flex-row gap-12 items-start">
-                    <!-- Navigation Directory Specific to Customer Service -->
+                    <!-- Left Nav Directory for Customer Service -->
                     <div class="w-full md:w-1/4 shrink-0 md:sticky md:top-32">
                         <nav class="flex flex-col gap-4 text-xs font-mono tracking-wide text-neutral-500">
                             <a href="#cs-intro" class="group flex items-center gap-2 hover:text-cyan-400 transition-colors">
@@ -245,7 +237,13 @@
 
                     <!-- Main Panels Stack -->
                     <div class="w-full md:w-3/4 flex flex-col space-y-16">
-                        <div id="cs-intro" class="scroll-mt-32">
+                        <div id="cs-intro" class="scroll-mt-32 space-y-6">
+                            <!-- NICHE VIDEO INTRO CONTAINER -->
+                            <div class="w-full aspect-video rounded-xl bg-neutral-900 border border-white/5 overflow-hidden shadow-2xl relative group">
+                                <!-- Replace src link with Loom / Vimeo / YouTube embed code -->
+                                <iframe class="w-full h-full" src="https://www.youtube.com/embed/placeholder" title="Customer Service Intro Video" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                            
                             <p class="text-neutral-300 text-sm md:text-base font-light leading-relaxed">
                                 Specializing in managing dense ticketing backlogs, structural call standard adherence, and automated workflow macro design. Resolving deep cross-functional tracking escalations safely.
                             </p>
@@ -322,7 +320,12 @@
 
                     <!-- Content Stream -->
                     <div class="w-full md:w-3/4 flex flex-col space-y-16">
-                        <div id="re-intro" class="scroll-mt-32">
+                        <div id="re-intro" class="scroll-mt-32 space-y-6">
+                            <!-- NICHE VIDEO INTRO CONTAINER -->
+                            <div class="w-full aspect-video rounded-xl bg-neutral-900 border border-white/5 overflow-hidden shadow-2xl relative group">
+                                <iframe class="w-full h-full" src="https://www.youtube.com/embed/placeholder" title="Real Estate Intro Video" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                            
                             <p class="text-neutral-300 text-sm md:text-base font-light leading-relaxed">
                                 Handling operations management, tracking inbound broker pipelines, calendar organization schedules, CRM record updates, and client coordination communications.
                             </p>
@@ -388,18 +391,15 @@
         }
 
         function navigateToSpecialty(type) {
-            // First switch global viewport to About view parent container
             document.querySelectorAll('.page-viewport').forEach(view => view.classList.remove('active'));
             document.getElementById('page-about').classList.add('active');
             
-            // Toggle highlight markers on global navigation buttons
             document.querySelectorAll('.nav-btn').forEach(btn => {
                 btn.classList.remove('bg-white/5', 'text-white');
                 btn.classList.add('text-neutral-400');
             });
             document.getElementById(`nav-${type}`).classList.add('bg-white/5', 'text-white');
             
-            // Render correct internal sub-view block panel
             switchAboutSubPage(type);
         }
 
