@@ -611,36 +611,112 @@
                         </div>
                     </div>
 
-                    <!-- Subsection: Core Services -->
-                    <div id="cs-core-services" class="scroll-mt-28">
-                        <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-6">Core Services</span>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <!-- Inbound & Outbound -->
-                            <div class="bg-neutral-900/40 border border-white/5 rounded-xl p-5">
-                                <i data-lucide="phone-call" class="w-5 h-5 text-accentCyan mb-3"></i>
-                                <h4 class="text-white font-semibold text-sm mb-2">Inbound & Outbound Phone Support</h4>
-                                <p class="text-neutral-400 text-xs font-light leading-relaxed">Real-time troubleshooting, voice queue management, call standard adherence, and empathetic problem-solving.</p>
-                            </div>
-                            <!-- Email Ticketing -->
-                            <div class="bg-neutral-900/40 border border-white/5 rounded-xl p-5">
-                                <i data-lucide="mail" class="w-5 h-5 text-accentCyan mb-3"></i>
-                                <h4 class="text-white font-semibold text-sm mb-2">Email Ticketing & Async Resolution</h4>
-                                <p class="text-neutral-400 text-xs font-light leading-relaxed">Clear communication, macro-driven productivity, thorough issue tracking, and comprehensive email queue handling.</p>
-                            </div>
-                        </div>
+            <!-- Subsection 2: Core Services Matrix -->
+            <div id="core-services" class="scroll-mt-28">
+                <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-6">Core Services</span>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-neutral-900/40 border border-white/5 rounded-xl p-5 :border-white/10 transition-colors">
+                        <i data-lucide="phone" class="w-5 h-5 text-accentCyan mb-3"></i>
+                        <h3 class="text-white font-semibold mb-1">Inbound & Outbound Phone Support</h3>
+                        <p class="text-neutral-400 text-sm font-light leading-relaxed">Real-time troubleshooting, voice queue management, call standard adherence, and empathetic problem-solving to resolve customer concerns quickly.</p>
                     </div>
+                    <div class="bg-neutral-900/40 border border-white/5 rounded-xl p-5 hover:border-white/10 transition-colors">
+                        <i data-lucide="mail" class="w-5 h-5 text-accentCyan mb-3"></i>
+                        <h3 class="text-white font-semibold mb-1">Email Ticketing & Async Resolution</h3>
+                        <p class="text-neutral-400 text-sm font-light leading-relaxed">Clear communication, macro-driven productivity, thorough issue tracking, and comprehensive email queue management to hit daily resolution targets.</p>
+                    </div>
+                    <div class="bg-neutral-900/40 border border-white/5 rounded-xl p-5 hover:border-white/10 transition-colors">
+                        <i data-lucide="shield-check" class="w-5 h-5 text-accentCyan mb-3"></i>
+                        <h3 class="text-white font-semibold mb-1">Account Security Verification</h3>
+                        <p class="text-neutral-400 text-sm font-light leading-relaxed">Managing difficult customer cases, resolving billing or shipping complaints, and utilizing strict compliance rules to handle sensitive customer data safely.</p>
+                    </div>
+                    <div class="bg-neutral-900/40 border border-white/5 rounded-xl p-5 hover:border-white/10 transition-colors">
+                        <i data-lucide="cpu" class="w-5 h-5 text-accentCyan mb-3"></i>
+                        <h3 class="text-white font-semibold mb-1">CRM Technical Troubleshooting</h3>
+                        <p class="text-neutral-400 text-sm font-light leading-relaxed">System mastery across Zendesk, Gorgias, and HubSpot while utilizing structured internal documentation (SOPs) to reduce team response times.</p>
+                    </div>
+                </div>
+            </div>
 
-                    <!-- Subsection: Skills & Tools -->
-                    <div id="cs-skills-tools" class="scroll-mt-28 space-y-6">
-                        <div>
-                            <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-4">Skills</span>
-                            <div class="bg-neutral-900/40 border border-white/5 rounded-xl p-5 flex flex-wrap gap-2">
-                                <span class="text-xs bg-neutral-950 text-neutral-300 px-3 py-1.5 rounded-full border border-white/5">Sales Support</span>
-                                <span class="text-xs bg-neutral-950 text-neutral-300 px-3 py-1.5 rounded-full border border-white/5">Customer Support</span>
-                                <span class="text-xs bg-neutral-950 text-neutral-300 px-3 py-1.5 rounded-full border border-white/5">Technical Support</span>
-                            </div>
-                        </div>
-                    </div>
+<hr class="border-white/5">
+
+                    <!-- VERTICALLY STACKED LAYOUT: SKILLS ON TOP OF TOOLS -->
+<!-- FIXED: Added id="skills-tools" and scroll-mt-28 here so your sidebar anchor link works! -->
+<div id="skills-tools" class="flex flex-col gap-6 mt-12 w-full scroll-mt-28">
+    
+<!-- TOP SECTION: SKILLS CARD -->
+    <div class="bg-neutral-900/40 border border-emerald-500/10 rounded-2xl p-6 w-full">
+        <h3 class="font-mono text-xs uppercase tracking-widest text-accentBlue mb-4">Skills</h3>
+        <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Sales Support</span>
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Customer support</span>
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Technical Support</span>
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Quality Assurance</span>
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Attention to Detail</span>
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Project Coordination</span>
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Project Documentation</span>
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Escalations Management</span>
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Case Management (Inbound & Outbound)</span>
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Customer Relationship Management (CRM)</span>
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Brand Representation & Positive Customer Experience</span>
+        </div>
+    </div>
+
+    <!-- BOTTOM SECTION: TOOLS CARD WITH INTERNAL CATEGORY SEPARATORS -->
+    <div class="bg-neutral-900/40 border border-white/5 rounded-2xl p-6 flex flex-col space-y-6 w-full">
+        <h3 class="font-mono text-xs uppercase tracking-widest text-accentBlue">Tools</h3>
+
+        <!-- Category A -->
+        <div class="space-y-2">
+            <div class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Communication</div>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Gmail</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Slack</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">WhatsApp</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">GMeet</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Google Chat</span>
+            </div>
+        </div>
+        
+        <!-- Category B -->
+        <div class="space-y-2">
+            <div class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Support Platforms & CRMs</div>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Zendesk</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Gorgias</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Salesforce</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Hubspot</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">CRM</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Shopify</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Workday</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Genesys</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Aircall</span>
+            </div>
+        </div>
+
+        <!-- Category C -->
+        <div class="space-y-2">
+            <div class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Productivity & AI</div>
+            <div class="flex flex-wrap gap-2">
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Gemini</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">ChatGPT</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Notion</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Claude</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">ClickUp</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Asana</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Basecamp</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Google Workspace</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Google Calendar</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Drive</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Excel</span>
+                <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Google Sheets</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+           
+<hr class="border-white/5">
 
                     <!-- Subsection: Case Studies -->
                     <div id="cs-case-studies" class="scroll-mt-28">
