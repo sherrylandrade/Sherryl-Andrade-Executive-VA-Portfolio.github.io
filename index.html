@@ -748,130 +748,28 @@
     </div>
 </div>
 
-<hr class="border-white/5">            
+<hr class="border-white/5">
 
-<!-- ================= VIEW 3: STANDALONE CASE STUDIES VIEW ================= -->
-<section id="page-cases" class="page-viewport hidden max-w-5xl mx-auto py-12 px-4">
-    <!-- Header with Back Button -->
-    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-12 border-b border-white/5 pb-6">
-        <div>
-            <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-2">Portfolio View</span>
-            <h1 class="text-4xl font-bold text-white tracking-tight">Resolution Performance Logs</h1>
-            <p class="text-neutral-400 font-light mt-1 text-sm">Deep-dive metrics tracking performance, ticket overrides, and escalation loops.</p>
+<!-- ================= TESTIMONIALS PORTAL LINK ================= -->
+<div id="cs-testimonials-redirect" class="scroll-mt-28">
+    <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-4">Endorsements</span>
+    <div class="bg-neutral-900/40 border border-white/5 rounded-2xl p-6 flex items-center justify-between group hover:border-emerald-500/20 transition-all">
+        <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-neutral-950 border border-white/5 flex items-center justify-center text-emerald-400 group-hover:text-accentCyan transition-colors">
+                <i data-lucide="message-square-quote" class="w-6 h-6"></i>
+            </div>
+            <div>
+                <h3 class="text-white font-semibold text-lg tracking-tight">Client Reviews &amp; Recommendations</h3>
+                <p class="text-xs text-neutral-400 font-light mt-0.5">Read structured feedback and operation evaluations from executive team lead evaluations.</p>
+            </div>
         </div>
-        <a href="#page-customer-service" onclick="if(typeof showView === 'function') { showView('page-customer-service'); } else if(typeof switchView === 'function') { switchView('page-customer-service'); }" class="inline-flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-emerald-400 border border-white/5 hover:border-emerald-500/20 px-4 py-2 rounded-xl bg-neutral-900/40 transition-all self-start md:self-center">
-            <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Back to Specialty
+        <!-- Added explicit onclick view toggle to force the SPA router to open the page -->
+        <a href="#page-testimonials" onclick="if(typeof showView === 'function') { showView('page-testimonials'); } else if(typeof switchView === 'function') { switchView('page-testimonials'); }" class="inline-flex items-center gap-1 text-xs font-mono text-emerald-400 border border-emerald-500/20 px-4 py-2 rounded-xl bg-neutral-950 hover:bg-emerald-500 hover:text-black transition-all font-medium">
+            Open Reviews <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
         </a>
     </div>
-
-    <!-- Case Study Grid Items -->
-    <div class="space-y-8">
-        <!-- Item 1 -->
-        <div class="bg-neutral-900/20 border border-white/5 rounded-2xl p-6 md:p-8 hover:border-white/10 transition-colors">
-            <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
-                <span class="px-2.5 py-1 bg-emerald-500/10 text-emerald-400 rounded-md text-[10px] font-mono uppercase tracking-wider">E-Commerce Scaling</span>
-                <span class="text-xs font-mono text-neutral-500">Q3 2025</span>
-            </div>
-            <h3 class="text-xl font-semibold text-white mb-3">Reducing Ticket Backlog by 40% During Peak Season</h3>
-            <p class="text-neutral-400 text-sm font-light leading-relaxed mb-6">
-                Streamlined sorting filters and introduced macros in Zendesk to manage a sudden holiday surge, keeping Response Time under 12 hours.
-            </p>
-            <div class="grid grid-cols-3 gap-4 border-t border-white/5 pt-4 text-center">
-                <div>
-                    <div class="text-xl font-bold text-emerald-400">-40%</div>
-                    <div class="text-[10px] font-mono uppercase text-neutral-500 tracking-wider">Backlog</div>
-                </div>
-                <div>
-                    <div class="text-xl font-bold text-white">&lt;12h</div>
-                    <div class="text-[10px] font-mono uppercase text-neutral-500 tracking-wider">Response Time</div>
-                </div>
-                <div>
-                    <div class="text-xl font-bold text-white">96%</div>
-                    <div class="text-[10px] font-mono uppercase text-neutral-500 tracking-wider">CSAT Target</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Item 2 -->
-        <div class="bg-neutral-900/20 border border-white/5 rounded-2xl p-6 md:p-8 hover:border-white/10 transition-colors">
-            <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
-                <span class="px-2.5 py-1 bg-accentBlue/10 text-accentBlue rounded-md text-[10px] font-mono uppercase tracking-wider">SaaS Support Operations</span>
-                <span class="text-xs font-mono text-neutral-500">Q1 2026</span>
-            </div>
-            <h3 class="text-xl font-semibold text-white mb-3">Optimizing Technical Escalation &amp; Tier-2 Workflow Loop</h3>
-            <p class="text-neutral-400 text-sm font-light leading-relaxed mb-6">
-                Redefined internal triage pathways between customer support agents and product engineers to drop bug-to-resolution delay.
-            </p>
-            <div class="grid grid-cols-3 gap-4 border-t border-white/5 pt-4 text-center">
-                <div>
-                    <div class="text-xl font-bold text-accentCyan">2.5x</div>
-                    <div class="text-[10px] font-mono uppercase text-neutral-500 tracking-wider">Faster Loop</div>
-                </div>
-                <div>
-                    <div class="text-xl font-bold text-white">15 Min</div>
-                    <div class="text-[10px] font-mono uppercase text-neutral-500 tracking-wider">Avg Triage</div>
-                </div>
-                <div>
-                    <div class="text-xl font-bold text-white">98.4%</div>
-                    <div class="text-[10px] font-mono uppercase text-neutral-500 tracking-wider">SLA Accuracy</div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<!-- ================= VIEW 4: STANDALONE TESTIMONIALS VIEW ================= -->
-<section id="page-testimonials" class="page-viewport hidden max-w-5xl mx-auto py-12 px-4">
-    <!-- Header with Back Button -->
-    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-12 border-b border-white/5 pb-6">
-        <div>
-            <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-2">References</span>
-            <h1 class="text-4xl font-bold text-white tracking-tight">Client Reviews &amp; Endorsements</h1>
-            <p class="text-neutral-400 font-light mt-1 text-sm">Direct operational reviews from business owners and team supervisors.</p>
-        </div>
-        <a href="#page-customer-service" onclick="if(typeof showView === 'function') { showView('page-customer-service'); } else if(typeof switchView === 'function') { switchView('page-customer-service'); }" class="inline-flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-emerald-400 border border-white/5 hover:border-emerald-500/20 px-4 py-2 rounded-xl bg-neutral-900/40 transition-all self-start md:self-center">
-            <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Back to Specialty
-        </a>
-    </div>
-
-    <!-- Testimonial Grid layout -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Card 1 -->
-        <div class="bg-neutral-900/20 border border-white/5 rounded-2xl p-6 flex flex-col justify-between hover:border-white/10 transition-colors">
-            <div>
-                <i data-lucide="quote" class="w-8 h-8 text-emerald-500/20 mb-4"></i>
-                <p class="text-neutral-300 text-sm font-light leading-relaxed italic mb-6">
-                    "An exceptional asset to our customer operations. Handled difficult account verifications and complex ticketing loops seamlessly with almost zero guidance needed after training."
-                </p>
-            </div>
-            <div class="flex items-center gap-3 border-t border-white/5 pt-4">
-                <div class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center font-mono font-bold text-xs text-white border border-white/10">JH</div>
-                <div>
-                    <h4 class="text-white text-sm font-semibold">Jonathan Harris</h4>
-                    <p class="text-neutral-500 text-[11px] font-mono">Operations Director, Horizon Media</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="bg-neutral-900/20 border border-white/5 rounded-2xl p-6 flex flex-col justify-between hover:border-white/10 transition-colors">
-            <div>
-                <i data-lucide="quote" class="w-8 h-8 text-emerald-500/20 mb-4"></i>
-                <p class="text-neutral-300 text-sm font-light leading-relaxed italic mb-6">
-                    "Reliable, detail-oriented, and exceptionally fast with Zendesk queues. Our customer feedback scores definitely saw a clear upgrade during our peak support volume cycles."
-                </p>
-            </div>
-            <div class="flex items-center gap-3 border-t border-white/5 pt-4">
-                <div class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center font-mono font-bold text-xs text-white border border-white/10">SA</div>
-                <div>
-                    <h4 class="text-white text-sm font-semibold">Sarah Ames</h4>
-                    <p class="text-neutral-500 text-[11px] font-mono">Founder, Lux Retail Group</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>        
+</div>
+            
 <!-- ================= CONTACT/CTA PAGE ================= -->
         <section id="page-contact" class="page-viewport -mt-12 pb-0 mb-[-4rem]">
             <div class="text-center max-w-2xl mx-auto mb-10">
