@@ -544,13 +544,42 @@
                 </div>
             </div>
         </section>
-<!-- ================= CUSTOMER SERVICE NICHE SECTION ================= -->
-<section id="page-customer-service" class="max-w-7xl mx-auto px-4 pt-4 pb-16">
+        
+<!-- ================= 1. HERO / HOME PAGE HEADER (Full Width) ================= -->
+<header class="max-w-7xl mx-auto px-4 pt-16 pb-12 text-center">
+    <div class="flex flex-col items-center">
+        <span class="text-xs font-mono uppercase tracking-widest text-accentCyan bg-accentCyan/10 px-3 py-1 rounded-full mb-4">
+            Dual-Niche Portfolio
+        </span>
+        <h1 class="text-4xl md:text-6xl font-bold text-white tracking-tight max-w-4xl leading-tight">
+            Operational Excellence for Customer Care & Real Estate
+        </h1>
+        <p class="text-neutral-400 max-w-2xl text-base md:text-lg font-light leading-relaxed mt-6">
+            Hi, I'm Sherryl Andrade. I specialize in driving process efficiency and high-touch care across customer support ecosystems and technical real estate operations.
+        </p>
+        
+        <!-- Call to Action Buttons -->
+        <div class="flex flex-wrap items-center justify-center gap-4 mt-8">
+            <a href="#page-customer-service" class="flex items-center gap-2 bg-emerald-600/20 text-emerald-400 border border-emerald-500/30 hover:bg-emerald-600/30 px-5 py-2.5 rounded-xl text-sm font-medium transition-all">
+                <i data-lucide="phone" class="w-4 h-4"></i>
+                Customer Support Portfolio
+            </a>
+            <a href="#page-real-estate" class="flex items-center gap-2 bg-neutral-900 text-neutral-300 border border-white/5 hover:border-white/10 px-5 py-2.5 rounded-xl text-sm font-medium transition-all">
+                <i data-lucide="home" class="w-4 h-4"></i>
+                Real Estate VA Portfolio
+            </a>
+        </div>
+    </div>
+</header>
+
+
+<!-- ================= 2. CUSTOMER SERVICE NICHE SECTION (With Sidebar) ================= -->
+<section id="page-customer-service" class="max-w-7xl mx-auto px-4 py-16 border-t border-white/5">
     
     <!-- Layout Wrapper -->
     <div class="flex flex-col md:flex-row gap-8 items-start">
         
-        <!-- 1. LEFT SIDEBAR: Niche Directory Column (Sticky) -->
+        <!-- LEFT SIDEBAR: Sticky Navigator -->
         <div class="w-full md:w-1/5 shrink-0 md:sticky md:top-28">
             <nav class="flex flex-col gap-4 text-xs font-mono tracking-wide text-emerald-500">
                 <a href="#cs-introduction" class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
@@ -576,11 +605,11 @@
             </nav>
         </div>
 
-        <!-- 2. RIGHT SIDE: Main Content Subsections -->
+        <!-- RIGHT SIDE: Content Column -->
         <div class="w-full md:w-4/5 flex flex-col space-y-20">
             
             <!-- Subsection: Introduction -->
-            <div id="cs-introduction" class="scroll-mt-28 md:-mt-2">
+            <div id="cs-introduction" class="scroll-mt-28">
                 <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-2">Niche Mastery — 01</span>
                 <h2 class="text-4xl font-bold text-white tracking-tight mb-4">Customer Service Specialist</h2>
                 <p class="text-neutral-400 max-w-2xl text-base font-light leading-relaxed">
@@ -640,7 +669,6 @@
                 <div>
                     <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-4">Skills</span>
                     <div class="bg-neutral-900/40 border border-white/5 rounded-xl p-5 flex flex-wrap gap-2">
-                        <!-- Insert your skill badge loops/tags here -->
                         <span class="text-xs bg-neutral-950 text-neutral-300 px-3 py-1.5 rounded-full border border-white/5">Sales Support</span>
                         <span class="text-xs bg-neutral-950 text-neutral-300 px-3 py-1.5 rounded-full border border-white/5">Customer Support</span>
                         <span class="text-xs bg-neutral-950 text-neutral-300 px-3 py-1.5 rounded-full border border-white/5">Technical Support</span>
@@ -657,7 +685,6 @@
                                 <span class="text-xs bg-neutral-950 text-neutral-400 px-3 py-1 rounded-md">Slack</span>
                             </div>
                         </div>
-                        <!-- Additional groups like Support Platforms & CRMs go here -->
                     </div>
                 </div>
             </div>
@@ -666,7 +693,6 @@
             <div id="cs-case-studies" class="scroll-mt-28">
                 <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-6">Support Case Studies</span>
                 
-                <!-- Case Study Container Card -->
                 <div class="bg-neutral-900/40 border border-white/5 rounded-2xl p-6">
                     <span class="text-[10px] font-mono text-purple-400 uppercase tracking-widest">Case Study #01 — Logistics Operations</span>
                     <h3 class="text-xl font-bold text-white mt-1 mb-2">Optimizing Tier-2 Escalation Loops</h3>
@@ -680,7 +706,6 @@
             <div id="cs-testimonials" class="scroll-mt-28">
                 <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-6">Testimonials</span>
                 
-                <!-- Placeholder card layout for your incoming recommendations/testimonials -->
                 <div class="bg-neutral-900/40 border border-white/5 rounded-2xl p-6 border-dashed">
                     <p class="text-neutral-500 text-sm font-light italic">
                         Client recommendations and operational validation logs are loaded here dynamically.
