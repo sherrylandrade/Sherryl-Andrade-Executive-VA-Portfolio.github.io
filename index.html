@@ -728,7 +728,7 @@
                
             <hr class="border-white/5">
 
-            <!-- ================= CASE STUDIES PORTAL LINK ================= -->
+<!-- ================= CASE STUDIES PORTAL LINK ================= -->
 <div id="cs-cases-redirect" class="scroll-mt-28">
     <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-4">Case Library</span>
     <div class="bg-neutral-900/40 border border-white/5 rounded-2xl p-6 flex items-center justify-between group hover:border-emerald-500/20 transition-all">
@@ -748,230 +748,130 @@
     </div>
 </div>
 
-<hr class="border-white/5">
+<hr class="border-white/5">            
 
-<!-- ================= TESTIMONIALS PORTAL LINK ================= -->
-<div id="cs-testimonials-redirect" class="scroll-mt-28">
-    <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-4">Endorsements</span>
-    <div class="bg-neutral-900/40 border border-white/5 rounded-2xl p-6 flex items-center justify-between group hover:border-emerald-500/20 transition-all">
-        <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-neutral-950 border border-white/5 flex items-center justify-center text-emerald-400 group-hover:text-accentCyan transition-colors">
-                <i data-lucide="message-square-quote" class="w-6 h-6"></i>
-            </div>
-            <div>
-                <h3 class="text-white font-semibold text-lg tracking-tight">Client Reviews &amp; Recommendations</h3>
-                <p class="text-xs text-neutral-400 font-light mt-0.5">Read structured feedback and operation evaluations from executive team lead evaluations.</p>
-            </div>
+<!-- ================= VIEW 3: STANDALONE CASE STUDIES VIEW ================= -->
+<section id="page-cases" class="page-viewport hidden max-w-5xl mx-auto py-12 px-4">
+    <!-- Header with Back Button -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-12 border-b border-white/5 pb-6">
+        <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-2">Portfolio View</span>
+            <h1 class="text-4xl font-bold text-white tracking-tight">Resolution Performance Logs</h1>
+            <p class="text-neutral-400 font-light mt-1 text-sm">Deep-dive metrics tracking performance, ticket overrides, and escalation loops.</p>
         </div>
-        <!-- Added explicit onclick view toggle to force the SPA router to open the page -->
-        <a href="#page-testimonials" onclick="if(typeof showView === 'function') { showView('page-testimonials'); } else if(typeof switchView === 'function') { switchView('page-testimonials'); }" class="inline-flex items-center gap-1 text-xs font-mono text-emerald-400 border border-emerald-500/20 px-4 py-2 rounded-xl bg-neutral-950 hover:bg-emerald-500 hover:text-black transition-all font-medium">
-            Open Reviews <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        <a href="#page-customer-service" onclick="if(typeof showView === 'function') { showView('page-customer-service'); } else if(typeof switchView === 'function') { switchView('page-customer-service'); }" class="inline-flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-emerald-400 border border-white/5 hover:border-emerald-500/20 px-4 py-2 rounded-xl bg-neutral-900/40 transition-all self-start md:self-center">
+            <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Back to Specialty
         </a>
     </div>
-</div>
 
+    <!-- Case Study Grid Items -->
+    <div class="space-y-8">
+        <!-- Item 1 -->
+        <div class="bg-neutral-900/20 border border-white/5 rounded-2xl p-6 md:p-8 hover:border-white/10 transition-colors">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                <span class="px-2.5 py-1 bg-emerald-500/10 text-emerald-400 rounded-md text-[10px] font-mono uppercase tracking-wider">E-Commerce Scaling</span>
+                <span class="text-xs font-mono text-neutral-500">Q3 2025</span>
+            </div>
+            <h3 class="text-xl font-semibold text-white mb-3">Reducing Ticket Backlog by 40% During Peak Season</h3>
+            <p class="text-neutral-400 text-sm font-light leading-relaxed mb-6">
+                Streamlined sorting filters and introduced macros in Zendesk to manage a sudden holiday surge, keeping Response Time under 12 hours.
+            </p>
+            <div class="grid grid-cols-3 gap-4 border-t border-white/5 pt-4 text-center">
+                <div>
+                    <div class="text-xl font-bold text-emerald-400">-40%</div>
+                    <div class="text-[10px] font-mono uppercase text-neutral-500 tracking-wider">Backlog</div>
+                </div>
+                <div>
+                    <div class="text-xl font-bold text-white">&lt;12h</div>
+                    <div class="text-[10px] font-mono uppercase text-neutral-500 tracking-wider">Response Time</div>
+                </div>
+                <div>
+                    <div class="text-xl font-bold text-white">96%</div>
+                    <div class="text-[10px] font-mono uppercase text-neutral-500 tracking-wider">CSAT Target</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="bg-neutral-900/20 border border-white/5 rounded-2xl p-6 md:p-8 hover:border-white/10 transition-colors">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+                <span class="px-2.5 py-1 bg-accentBlue/10 text-accentBlue rounded-md text-[10px] font-mono uppercase tracking-wider">SaaS Support Operations</span>
+                <span class="text-xs font-mono text-neutral-500">Q1 2026</span>
+            </div>
+            <h3 class="text-xl font-semibold text-white mb-3">Optimizing Technical Escalation &amp; Tier-2 Workflow Loop</h3>
+            <p class="text-neutral-400 text-sm font-light leading-relaxed mb-6">
+                Redefined internal triage pathways between customer support agents and product engineers to drop bug-to-resolution delay.
+            </p>
+            <div class="grid grid-cols-3 gap-4 border-t border-white/5 pt-4 text-center">
+                <div>
+                    <div class="text-xl font-bold text-accentCyan">2.5x</div>
+                    <div class="text-[10px] font-mono uppercase text-neutral-500 tracking-wider">Faster Loop</div>
+                </div>
+                <div>
+                    <div class="text-xl font-bold text-white">15 Min</div>
+                    <div class="text-[10px] font-mono uppercase text-neutral-500 tracking-wider">Avg Triage</div>
+                </div>
+                <div>
+                    <div class="text-xl font-bold text-white">98.4%</div>
+                    <div class="text-[10px] font-mono uppercase text-neutral-500 tracking-wider">SLA Accuracy</div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<!-- ================= CASE STUDIES PAGE ================= -->        
 
-        <section id="page-cases" class="page-viewport">
-            <!-- Section Header -->
-            <div class="mb-10">
-                <span class="text-xs font-mono uppercase tracking-widest text-accentCyan block mb-2">Operational Impact Portfolio</span>
-                <h2 class="text-3xl font-bold text-white tracking-tight">Case Studies & Resolution Logs</h2>
-                <p class="bg-neutral-900/40 font-light text-sm mt-1 max-w-xl">
-                    In-depth performance breakdowns showing how I convert backlogs, technical sync dropouts, and escalations into 100% QA interactions.
+<!-- ================= VIEW 4: STANDALONE TESTIMONIALS VIEW ================= -->
+<section id="page-testimonials" class="page-viewport hidden max-w-5xl mx-auto py-12 px-4">
+    <!-- Header with Back Button -->
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-12 border-b border-white/5 pb-6">
+        <div>
+            <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-2">References</span>
+            <h1 class="text-4xl font-bold text-white tracking-tight">Client Reviews &amp; Endorsements</h1>
+            <p class="text-neutral-400 font-light mt-1 text-sm">Direct operational reviews from business owners and team supervisors.</p>
+        </div>
+        <a href="#page-customer-service" onclick="if(typeof showView === 'function') { showView('page-customer-service'); } else if(typeof switchView === 'function') { switchView('page-customer-service'); }" class="inline-flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-emerald-400 border border-white/5 hover:border-emerald-500/20 px-4 py-2 rounded-xl bg-neutral-900/40 transition-all self-start md:self-center">
+            <i data-lucide="arrow-left" class="w-3.5 h-3.5"></i> Back to Specialty
+        </a>
+    </div>
+
+    <!-- Testimonial Grid layout -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Card 1 -->
+        <div class="bg-neutral-900/20 border border-white/5 rounded-2xl p-6 flex flex-col justify-between hover:border-white/10 transition-colors">
+            <div>
+                <i data-lucide="quote" class="w-8 h-8 text-emerald-500/20 mb-4"></i>
+                <p class="text-neutral-300 text-sm font-light leading-relaxed italic mb-6">
+                    "An exceptional asset to our customer operations. Handled difficult account verifications and complex ticketing loops seamlessly with almost zero guidance needed after training."
                 </p>
             </div>
-            
-            <!-- FIXED: Extra stray div removed, margin spacer added to divider -->
-            <hr class="border-white/10 my-10">
-
-            <!-- Live Performance Metrics Dashboard -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 p-5 bg-neutral-900/40 border border-white/5 rounded-2xl mb-8 font-mono">
-                <div class="text-center p-2">
-                    <div class="text-2xl font-bold text-emerald-400 mb-0.5">100%</div>
-                    <div class="text-[9px] text-neutral-500 uppercase tracking-wider">QA Audit Score</div>
-                </div>
-                <div class="text-center p-2 border-l border-white/5">
-                    <div class="text-2xl font-bold text-accentCyan mb-0.5">First Contact</div>
-                    <div class="text-[9px] text-neutral-500 uppercase tracking-wider">Resolution Focus</div>
-                </div>
-                <div class="text-center p-2 border-l border-none md:border-l border-white/5">
-                    <div class="text-2xl font-bold text-purple-400 mb-0.5">Tier 2</div>
-                    <div class="text-[9px] text-neutral-500 uppercase tracking-wider">Escalation Mastery</div>
-                </div>
-                <div class="text-center p-2 border-l border-white/5">
-                    <div class="text-2xl font-bold text-blue-400 mb-0.5">100%</div>
-                    <div class="text-[9px] text-neutral-500 uppercase tracking-wider">Rapport & Empathy</div>
+            <div class="flex items-center gap-3 border-t border-white/5 pt-4">
+                <div class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center font-mono font-bold text-xs text-white border border-white/10">JH</div>
+                <div>
+                    <h4 class="text-white text-sm font-semibold">Jonathan Harris</h4>
+                    <p class="text-neutral-500 text-[11px] font-mono">Operations Director, Horizon Media</p>
                 </div>
             </div>
+        </div>
 
-            <!-- FIXED: Margin spacer added to divider -->
-            <hr class="border-white/10 my-10">
-
-            <!-- Case Studies Stack -->
-            <div class="space-y-6">
-                
-                <!-- CASE STUDY 1: E-COMMERCE TIER 2 PIPELINE -->
-                <article class="bg-neutral-900/40 border border-white/5 hover:border-white/10 transition-colors rounded-2xl p-6 flex flex-col lg:flex-row gap-6">
-                    <div class="w-full lg:w-1/3 flex flex-col justify-between">
-                        <div>
-                            <div class="text-[10px] font-mono text-purple-400 uppercase tracking-wider mb-2">Case Study #01 — E-Commerce Logistics</div>
-                            <h3 class="text-lg font-semibold text-white tracking-tight mb-2">Optimizing Tier 2 Escalation & Fulfillment Loops</h3>
-                            <p class="text-xs text-neutral-400 font-light leading-relaxed">
-                                Managing high-volume transactional exceptions, multi-tier escalations, and cross-functional vendor coordination for scaling digital store architectures.
-                            </p>
-                        </div>
-                        <div class="flex flex-wrap gap-1.5 mt-4 lg:mt-0">
-                            <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-800/5 border border-emerald-300/10 text-neutral-400 rounded-full">Salesforce</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-800/5 border border-emerald-300/10 text-neutral-400 rounded-full">Hubspot</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-800/5 border border-emerald-300/10 text-neutral-400 rounded-full">Aircall</span>
-                        </div>
-                    </div>
-
-                    <div class="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-4 border-t lg:border-t-0 lg:border-l border-white/5 pt-4 lg:pt-0 lg:pl-6">
-                        <div class="bg-black/20 p-4 border border-white/5 rounded-xl">
-                            <div class="flex items-center gap-1.5 text-[10px] font-mono text-red-400 uppercase tracking-wide mb-1">
-                                <i data-lucide="alert-circle" class="w-3 h-3"></i> Context & Challenge
-                            </div>
-                            <p class="text-xs text-neutral-400 font-light">
-                                Tier 1 teams faced complex multi-variable issues involving billing errors, order exceptions, and application data updates that risked delivery SLAs.
-                            </p>
-                        </div>
-                        <div class="bg-black/20 p-4 border border-white/5 rounded-xl">
-                            <div class="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400 uppercase tracking-wide mb-1">
-                            <i data-lucide="check-circle" class="w-3 h-3"></i> Implemented Framework
-                        </div>
-                            <p class="text-xs text-neutral-400 font-light">
-                            Deployed structured internal database queries, admin console tools, and cross-functional communication through Slack channels to safely override order errors.
-                            </p>
-                        </div>
-                        <div class="md:col-span-2 bg-gradient-to-r from-cyan-950/20 to-neutral-900/20 p-4 border border-cyan-500/10 rounded-xl flex items-center justify-between">
-                            <div>
-                                <div class="text-[10px] font-mono uppercase tracking-widest text-accentCyan mb-0.5">Verified Outcome</div>
-                                <p class="text-xs text-neutral-300 font-light">Standardized deep internal tracking notes that became templates for team macro developments.</p>
-                            </div>
-                            <div class="text-right font-mono shrink-0 pl-4">
-                                <span class="text-xl font-bold text-accentCyan">100%</span>
-                                <div class="text-[8px] text-neutral-500 uppercase">Notes Accuracy</div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- FIXED: Margin spacer added to divider -->
-                <hr class="border-white/10 my-10">
-
-<!-- CASE STUDY 2: SAAS ENTERPRISE ACCESS INFRASTRUCTURE -->
-                <article class="bg-neutral-900/40 border border-white/5 hover:border-white/10 transition-colors rounded-2xl p-6 flex flex-col lg:flex-row gap-6">
-                    <div class="w-full lg:w-1/3 flex flex-col justify-between">
-                        <div>
-                            <div class="text-[10px] font-mono text-purple-400 uppercase tracking-wider mb-2">Case Study #02 — SaaS Support Strategy</div>
-                            <h3 class="text-lg font-semibold text-white tracking-tight mb-2">Resolving Account Access Discrepancies & Sync Faults</h3>
-                            <p class="text-xs text-neutral-400 font-light leading-relaxed">
-                                Managing asynchronous user validation processes to restore platform clearances and fix system database provisioning errors.
-                            </p>
-                        </div>
-                        <div class="flex flex-wrap gap-1.5 mt-4 lg:mt-0">
-                            <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-800/5 border border-emerald-300/10 text-neutral-400 rounded-full">Zendesk</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-800/5 border border-emerald-300/10 text-neutral-400 rounded-full">Genesys</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-800/5 border border-emerald-300/10 text-neutral-400 rounded-full">Asana</span>
-                        </div>
-                    </div>
-
-                    <div class="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-4 border-t lg:border-t-0 lg:border-l border-white/5 pt-4 lg:pt-0 lg:pl-6">
-                        <div class="bg-black/20 p-4 border border-white/5 rounded-xl">
-                            <div class="flex items-center gap-1.5 text-[10px] font-mono text-red-400 uppercase tracking-wide mb-1">
-                                <i data-lucide="alert-circle" class="w-3 h-3"></i> Context & Challenge
-                            </div>
-                            <p class="text-xs text-neutral-400 font-light">
-                                Enterprise clients faced structural activation code failures preventing immediate system login, generating multi-channel ticketing bottlenecks.
-                            </p>
-                        </div>
-                        <div class="bg-black/20 p-4 border border-white/5 rounded-xl">
-                            <div class="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400 uppercase tracking-wide mb-1">
-                                <i data-lucide="check-circle" class="w-3 h-3"></i> Implemented Framework
-                            </div>
-                            <p class="text-xs text-neutral-400 font-light">
-                                Deployed a verification workflow cross-checking internal profile provisioning directories, manually assigning valid access configuration strings on the first touchpoint.
-                            </p>
-                        </div>
-                        <div class="md:col-span-2 bg-gradient-to-r from-emerald-950/20 to-neutral-900/20 p-4 border border-emerald-500/10 rounded-xl flex items-center justify-between">
-                            <div>
-                                <div class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 mb-0.5">Verified Outcome</div>
-                                <p class="text-xs text-neutral-300 font-light">Consistently logged 1-contact text resolutions while handling high-volume surges during major enterprise onboarding cycles.</p>
-                            </div>
-                            <div class="text-right font-mono shrink-0 pl-4">
-                                <span class="text-xl font-bold text-emerald-400">First Contact</span>
-                                <div class="text-[8px] text-neutral-500 uppercase">Turnover</div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- FIXED: Margin spacer added to divider -->
-                <hr class="border-white/10 my-10">
-
-<!-- CASE STUDY 3: DE-ESCALATION UNDER INTENSE FRICTION -->
-                <article class="bg-neutral-900/40 border border-white/5 hover:border-white/10 transition-colors rounded-2xl p-6 flex flex-col lg:flex-row gap-6">
-                    <div class="w-full lg:w-1/3 flex flex-col justify-between">
-                        <div>
-                            <div class="text-[10px] font-mono text-purple-400 uppercase tracking-wider mb-2">Case Study #03 — High-Friction Voice Operations</div>
-                            <h3 class="text-lg font-semibold text-white tracking-tight mb-2">Crisis De-escalation & Brand Recovery Vectors</h3>
-                            
-                            <!-- UPDATED: Tailored to order delays, missing items, and lost shipments -->
-                            <p class="text-xs text-neutral-400 font-light leading-relaxed">
-                                Defusing high-friction customer interactions over voice lines related to severe fulfillment delays, missing items, and undelivered shipments.
-                            </p>
-                        </div>
-                        <div class="flex flex-wrap gap-1.5 mt-4 lg:mt-0">
-                            <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-800/5 border border-emerald-300/10 text-neutral-400 rounded-full">Positive Scripting</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-800/5 border border-emerald-300/10 text-neutral-400 rounded-full">Crisis Handling</span>
-                            <span class="text-[10px] font-mono px-2 py-0.5 bg-emerald-800/5 border border-emerald-300/10 text-neutral-400 rounded-full">Compliance</span>
-                        </div>
-                    </div>
-
-                    <div class="w-full lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-4 border-t lg:border-t-0 lg:border-l border-white/5 pt-4 lg:pt-0 lg:pl-6">
-                        <div class="bg-black/20 p-4 border border-white/5 rounded-xl">
-                            <div class="flex items-center gap-1.5 text-[10px] font-mono text-red-400 uppercase tracking-wide mb-1">
-                                <i data-lucide="alert-circle" class="w-3 h-3"></i> Context & Challenge
-                            </div>
-                            <!-- UPDATED: Reflects transit issues -->
-                            <p class="text-xs text-neutral-400 font-light">
-                                Handling highly frustrated customers due to critical delivery delays or incomplete packages, demanding deep conversational composure and rapid resolution mapping.
-                            </p>
-                        </div>
-                        <div class="bg-black/20 p-4 border border-white/5 rounded-xl">
-                            <div class="flex items-center gap-1.5 text-[10px] font-mono text-emerald-400 uppercase tracking-wide mb-1">
-                                <i data-lucide="check-circle" class="w-3 h-3"></i> Implemented Framework
-                            </div>
-                            <!-- UPDATED: Reflects replacement/refund/tracking tools -->
-                            <p class="text-xs text-neutral-400 font-light">
-                                Deployed active listening paths, checked real-time carrier tracking data, and executed priority replacement protocols or refunds on the first touchpoint.
-                            </p>
-                        </div>
-                        <div class="md:col-span-2 bg-gradient-to-r from-purple-950/20 to-neutral-900/20 p-4 border border-purple-500/10 rounded-xl flex items-center justify-between">
-                            <div>
-                                <div class="text-[10px] font-mono uppercase tracking-widest text-purple-300 mb-0.5">Verified Outcome</div>
-                                <p class="text-xs text-neutral-300 font-light">Achieved a perfect 100% Quality Score evaluation on extreme escalation call audits via strict policy adherence.</p>
-                            </div>
-                            <div class="text-right font-mono shrink-0 pl-4">
-                                <span class="text-xl font-bold text-purple-300">100%</span>
-                                <div class="text-[8px] text-neutral-500 uppercase">QA Evaluation</div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
+        <!-- Card 2 -->
+        <div class="bg-neutral-900/20 border border-white/5 rounded-2xl p-6 flex flex-col justify-between hover:border-white/10 transition-colors">
+            <div>
+                <i data-lucide="quote" class="w-8 h-8 text-emerald-500/20 mb-4"></i>
+                <p class="text-neutral-300 text-sm font-light leading-relaxed italic mb-6">
+                    "Reliable, detail-oriented, and exceptionally fast with Zendesk queues. Our customer feedback scores definitely saw a clear upgrade during our peak support volume cycles."
+                </p>
             </div>
-        </section>        
-        
-<!-- ================= TESTIMONIALS PAGE ================= -->
-
-        
-        
+            <div class="flex items-center gap-3 border-t border-white/5 pt-4">
+                <div class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center font-mono font-bold text-xs text-white border border-white/10">SA</div>
+                <div>
+                    <h4 class="text-white text-sm font-semibold">Sarah Ames</h4>
+                    <p class="text-neutral-500 text-[11px] font-mono">Founder, Lux Retail Group</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>        
 <!-- ================= CONTACT/CTA PAGE ================= -->
         <section id="page-contact" class="page-viewport -mt-12 pb-0 mb-[-4rem]">
             <div class="text-center max-w-2xl mx-auto mb-10">
