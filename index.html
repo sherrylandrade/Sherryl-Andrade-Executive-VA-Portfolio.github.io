@@ -98,17 +98,17 @@
 <!-- ================= ABOUT SECTION ================= -->
 <section id="page-about" class="page-viewport max-w-7xl mx-auto px-4 pt-4 pb-16">
     
-    <!-- FIX 1: Reduced layout gap from gap-12 to gap-8 to bring the directory and content closer horizontally -->
+    <!-- Layout Wrapper -->
     <div class="flex flex-col md:flex-row gap-8 items-start">
         
         <!-- 1. LEFT SIDEBAR: Directory Column -->
         <div class="w-full md:w-1/5 shrink-0 md:sticky md:top-28">
             <nav class="flex flex-col gap-4 text-xs font-mono tracking-wide text-emerald-500">
-                <!-- FIXED: Updated base text color to emerald-500 and configured line markers to hover to emerald-400 -->
-                </a>                   
-                <a href="#education" class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
+                <!-- FIXED: Removed stray broken closing tag, updated link to separate page with an icon -->
+                <a href="work.html" class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
                     <span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all"></span>
                     Work History
+                    <i data-lucide="external-link" class="w-3 h-3 opacity-60 group-hover:opacity-100 transition-opacity ml-1"></i>
                 </a>                   
                 <a href="#education" class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
                     <span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all"></span>
@@ -126,11 +126,9 @@
         </div>
 
         <!-- 2. RIGHT SIDE: Profile Card & Main Subsections content -->
-        <!-- CLEANED: Removed the bad master negative margins that broke the layout in image-1 -->
         <div class="w-full md:w-4/5 flex flex-col space-y-16">
             
             <!-- Subsection 1: About Intro -->
-            <!-- FIX 2: Added md:-mt-6 here to pull ONLY the Introduction section content up into the empty top space safely -->
             <div id="about-intro" class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start scroll-mt-28 md:-mt-6">
                 <!-- Left Side Profile Metadata Stack -->
                 <div class="flex flex-col items-center text-center">
@@ -170,18 +168,38 @@
             
             <hr class="border-white/5">
 
-            <!-- Subsection 2: Core Services Matrix -->
+            <!-- Subsection 2: Work History Redirect Section -->
             <div id="core-services" class="scroll-mt-28">
-                <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-6">Work History</span>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-
-                </div>
+                <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-4">Work History</span>
+                
+                <!-- Interactive Action Link Card -->
+                <a href="work.html" class="group block bg-neutral-900/40 hover:bg-neutral-900/70 border border-white/5 hover:border-emerald-500/30 rounded-2xl p-6 transition-all duration-300">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-neutral-950 flex items-center justify-center shrink-0 border border-white/10 group-hover:border-emerald-500/20 text-emerald-400 transition-colors">
+                                <i data-lucide="briefcase" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-base font-semibold text-white tracking-tight flex items-center gap-2 group-hover:text-accentCyan transition-colors">
+                                    Explore Complete Career Timeline
+                                </h3>
+                                <p class="text-neutral-400 text-xs font-light mt-1 leading-relaxed">
+                                    View 9+ years of experience spanning technical customer assistance, Tier-2 support, real estate management, and platform workflow optimizations.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="shrink-0 flex items-center gap-1.5 text-xs font-mono text-emerald-500 bg-emerald-500/5 group-hover:bg-emerald-500/10 px-4 py-2 rounded-xl border border-emerald-500/10 transition-all self-start sm:self-center">
+                            <span>Open Log</span>
+                            <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+                        </div>
+                    </div>
+                </a>
             </div>
 
-<hr class="border-white/5">
+            <hr class="border-white/5">
 
-<!-- Subsection 5: Education -->
-            <div id="education" class="scroll-mt-28 mt-10">
+            <!-- Subsection 3: Education -->
+            <div id="education" class="scroll-mt-28">
                 <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-6">Education</span>
                 
                 <div class="bg-neutral-900/40 border border-white/5 rounded-2xl p-6">
@@ -199,10 +217,10 @@
                 </div>
             </div>
 
-            <!-- Added Divider Line with vertical spacing matching image_8cc301.png -->
+            <!-- Divider Line -->
             <div class="w-full h-[1px] bg-white/5 mt-12 mb-10"></div>  
             
-<!-- Subsection 4: Certificates -->
+            <!-- Subsection 4: Certificates -->
             <div id="certificates" class="scroll-mt-28">
                 <!-- Platform Verification Header Card -->
                 <div class="flex flex-col sm:flex-row sm:items-center gap-4 bg-gradient-to-r from-purple-950/30 to-neutral-900/40 border border-white/5 rounded-2xl p-6 mb-8">
