@@ -626,23 +626,43 @@
             <!-- VERTICALLY STACKED LAYOUT: SKILLS ON TOP OF TOOLS -->
             <div id="skills-tools" class="flex flex-col gap-6 w-full scroll-mt-28">
                 
-                <!-- TOP SECTION: SKILLS CARD -->
-                <div class="bg-neutral-900/40 border border-emerald-500/10 rounded-2xl p-6 w-full">
-                    <h3 class="font-mono text-xs uppercase tracking-widest text-accentBlue mb-4">Skills</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Sales Support</span>
-                        <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Customer support</span>
-                        <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Technical Support</span>
-                        <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Quality Assurance</span>
-                        <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Attention to Detail</span>
-                        <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Project Coordination</span>
-                        <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Project Documentation</span>
-                        <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Escalations Management</span>
-                        <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Case Management (Inbound & Outbound)</span>
-                        <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Customer Relationship Management (CRM)</span>
-                        <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Brand Representation & Positive Customer Experience</span>
-                    </div>
-                </div>
+<!-- TOP SECTION: SKILLS CARD -->
+<div class="bg-neutral-900/40 border border-emerald-500/10 rounded-2xl p-6 w-full flex flex-col gap-6">
+    <h3 class="font-mono text-xs uppercase tracking-widest text-accentBlue">Skills</h3>
+    
+    <!-- Category 1: Customer Support -->
+    <div class="space-y-2">
+        <h4 class="font-mono text-[10px] uppercase tracking-wider text-neutral-500 font-semibold">Customer Support</h4>
+        <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Customer Support</span>
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Technical Support</span>
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Sales Support</span>
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Inbound & Outbound Case Management</span>
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Escalation Management</span>
+        </div>
+    </div>
+
+    <!-- Category 2: CRM & Customer Success -->
+    <div class="space-y-2">
+        <h4 class="font-mono text-[10px] uppercase tracking-wider text-neutral-500 font-semibold">CRM & Customer Success</h4>
+        <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Customer Relationship Management (CRM)</span>
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Brand Representation</span>
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Customer Experience</span>
+        </div>
+    </div>
+
+    <!-- Category 3: Operations -->
+    <div class="space-y-2">
+        <h4 class="font-mono text-[10px] uppercase tracking-wider text-neutral-500 font-semibold">Operations</h4>
+        <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Project Coordination</span>
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Project Documentation</span>
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Quality Assurance</span>
+            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Attention to Detail</span>
+        </div>
+    </div>
+</div>
 
                 <!-- BOTTOM SECTION: TOOLS CARD WITH INTERNAL CATEGORY SEPARATORS -->
                 <div class="bg-neutral-900/40 border border-white/5 rounded-2xl p-6 flex flex-col space-y-6 w-full">
