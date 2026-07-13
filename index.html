@@ -548,13 +548,10 @@
             </div>
         </section>
         
-<!-- ================= VIEW 2: CUSTOMER SERVICE NICHE VIEW (Isolated Grid Container) ================= -->
-<section id="page-customer-service" class="page-viewport max-w-7xl mx-auto py-8">
+<section id="page-customer-service" class="page-viewport hidden max-w-7xl mx-auto py-8">
     
-    <!-- Asymmetric Sidebar Grid Setup -->
     <div class="flex flex-col md:flex-row gap-8 items-start">
         
-        <!-- LEFT SIDEBAR: Sticky Internal Directory (Navigator Only) -->
         <div class="w-full md:w-1/5 shrink-0 md:sticky md:top-28">
             <nav class="flex flex-col gap-4 text-xs font-mono tracking-wide text-emerald-500">
                 <a href="#cs-introduction" class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
@@ -569,36 +566,32 @@
                     <span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all"></span>
                     Skills &amp; Tools
                 </a>
-                <a href="#cs-cases-redirect" class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
+                <a href="#cases" onclick="switchPage('cases')" class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
                     <span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all"></span>
                     Case Studies
                 </a>
-                <a href="#cs-testimonials-redirect" class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
+                <a href="#testimonials" onclick="switchPage('testimonials')" class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
                     <span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all"></span>
                     Testimonials
                 </a>
             </nav>
         </div>
 
-        <!-- RIGHT SIDE: Main Target Content Blocks -->
         <div class="w-full md:w-4/5 flex flex-col space-y-20">
             
-            <!-- Subsection: Introduction -->
             <div id="cs-introduction" class="scroll-mt-28 space-y-6">
-                <!-- Video Intro Container -->
                 <div class="w-full aspect-video rounded-2xl overflow-hidden bg-neutral-900/80 border border-white/5 relative group shadow-2xl">
                     <video 
                         class="w-full h-full object-cover" 
                         controls 
                         preload="metadata"
-                        poster="https://images.unsplash.com/photo-1557200134-90327ee9fafa?q=80&w=1200&auto=format&fit=crop"
+                        poster="https://images.unsplash.com/photo-1557200134-90327ee9fafa?q=80&amp;w=1200&amp;auto=format&amp;fit=crop"
                     >
                         <source src="your-video-url.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
 
-                <!-- Text Info -->
                 <div>
                     <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-2">Core Expertise</span>
                     <h2 class="text-4xl font-bold text-white tracking-tight mb-4">Customer Service Specialist</h2>
@@ -610,7 +603,6 @@
             
             <hr class="border-white/5">         
                 
-            <!-- Subsection 2: Core Services Matrix -->
             <div id="cs-core-services" class="scroll-mt-28">
                 <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-6">Core Services</span>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -639,9 +631,7 @@
 
             <hr class="border-white/5">
 
-            <!-- Skills & Tools -->
             <div id="skills-tools" class="flex flex-col gap-6 w-full scroll-mt-28">
-                <!-- Skills Card -->
                 <div class="bg-neutral-900/40 border border-emerald-500/10 rounded-2xl p-6 w-full flex flex-col gap-6">
                     <h3 class="font-mono text-xs uppercase tracking-widest text-accentBlue">Skills</h3>
                     
@@ -676,7 +666,6 @@
                     </div>
                 </div>
 
-                <!-- Tools Card -->
                 <div class="bg-neutral-900/40 border border-white/5 rounded-2xl p-6 flex flex-col space-y-6 w-full">
                     <h3 class="font-mono text-xs uppercase tracking-widest text-accentBlue">Tools</h3>
 
@@ -728,47 +717,47 @@
                
             <hr class="border-white/5">
 
-<!-- ================= CASE STUDIES PORTAL LINK ================= -->
-<div id="cs-cases-redirect" class="scroll-mt-28">
-    <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-4">Case Library</span>
-    <div class="bg-neutral-900/40 border border-white/5 rounded-2xl p-6 flex items-center justify-between group hover:border-emerald-500/20 transition-all">
-        <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-neutral-950 border border-white/5 flex items-center justify-center text-emerald-400 group-hover:text-accentCyan transition-colors">
-                <i data-lucide="folder-git-2" class="w-6 h-6"></i>
+            <div class="scroll-mt-28">
+                <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-4">Case Library</span>
+                <div class="bg-neutral-900/40 border border-white/5 rounded-2xl p-6 flex items-center justify-between group hover:border-emerald-500/20 transition-all">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-neutral-950 border border-white/5 flex items-center justify-center text-emerald-400 group-hover:text-accentCyan transition-colors">
+                            <i data-lucide="folder-git-2" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-semibold text-lg tracking-tight">Explore Resolution Performance Logs</h3>
+                            <p class="text-xs text-neutral-400 font-light mt-0.5">View in-depth metrics tracking metric performance, ticket overrides, and escalation loops.</p>
+                        </div>
+                    </div>
+                    <a href="#cases" onclick="switchPage('cases')" class="inline-flex items-center gap-1 text-xs font-mono text-emerald-400 border border-emerald-500/20 px-4 py-2 rounded-xl bg-neutral-950 hover:bg-emerald-500 hover:text-black transition-all font-medium">
+                        Open Log <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
             </div>
-            <div>
-                <h3 class="text-white font-semibold text-lg tracking-tight">Explore Resolution Performance Logs</h3>
-                <p class="text-xs text-neutral-400 font-light mt-0.5">View in-depth metrics tracking metric performance, ticket overrides, and escalation loops.</p>
-            </div>
-        </div>
-        <!-- Added explicit onclick view toggle to force the SPA router to open the page -->
-        <a href="#page-cases" onclick="if(typeof showView === 'function') { showView('page-cases'); } else if(typeof switchView === 'function') { switchView('page-cases'); }" class="inline-flex items-center gap-1 text-xs font-mono text-emerald-400 border border-emerald-500/20 px-4 py-2 rounded-xl bg-neutral-950 hover:bg-emerald-500 hover:text-black transition-all font-medium">
-            Open Log <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-        </a>
-    </div>
-</div>
 
-<hr class="border-white/5">
+            <hr class="border-white/5">
 
-<!-- ================= TESTIMONIALS PORTAL LINK ================= -->
-<div id="cs-testimonials-redirect" class="scroll-mt-28">
-    <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-4">Endorsements</span>
-    <div class="bg-neutral-900/40 border border-white/5 rounded-2xl p-6 flex items-center justify-between group hover:border-emerald-500/20 transition-all">
-        <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-xl bg-neutral-950 border border-white/5 flex items-center justify-center text-emerald-400 group-hover:text-accentCyan transition-colors">
-                <i data-lucide="message-square-quote" class="w-6 h-6"></i>
+            <div class="scroll-mt-28">
+                <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-4">Endorsements</span>
+                <div class="bg-neutral-900/40 border border-white/5 rounded-2xl p-6 flex items-center justify-between group hover:border-emerald-500/20 transition-all">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-neutral-950 border border-white/5 flex items-center justify-center text-emerald-400 group-hover:text-accentCyan transition-colors">
+                            <i data-lucide="message-square-quote" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-semibold text-lg tracking-tight">Client Reviews &amp; Recommendations</h3>
+                            <p class="text-xs text-neutral-400 font-light mt-0.5">Read structured feedback and operation evaluations from executive team lead evaluations.</p>
+                        </div>
+                    </div>
+                    <a href="#testimonials" onclick="switchPage('testimonials')" class="inline-flex items-center gap-1 text-xs font-mono text-emerald-400 border border-emerald-500/20 px-4 py-2 rounded-xl bg-neutral-950 hover:bg-emerald-500 hover:text-black transition-all font-medium">
+                        Open Reviews <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
             </div>
-            <div>
-                <h3 class="text-white font-semibold text-lg tracking-tight">Client Reviews &amp; Recommendations</h3>
-                <p class="text-xs text-neutral-400 font-light mt-0.5">Read structured feedback and operation evaluations from executive team lead evaluations.</p>
-            </div>
+
         </div>
-        <!-- Added explicit onclick view toggle to force the SPA router to open the page -->
-        <a href="#page-testimonials" onclick="if(typeof showView === 'function') { showView('page-testimonials'); } else if(typeof switchView === 'function') { switchView('page-testimonials'); }" class="inline-flex items-center gap-1 text-xs font-mono text-emerald-400 border border-emerald-500/20 px-4 py-2 rounded-xl bg-neutral-950 hover:bg-emerald-500 hover:text-black transition-all font-medium">
-            Open Reviews <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-        </a>
     </div>
-</div>
+</section>
             
 <!-- ================= CONTACT/CTA PAGE ================= -->
         <section id="page-contact" class="page-viewport -mt-12 pb-0 mb-[-4rem]">
