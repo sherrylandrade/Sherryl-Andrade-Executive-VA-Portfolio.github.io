@@ -549,40 +549,12 @@
         </section>
         
 <!-- ================= VIEW 2: CUSTOMER SERVICE NICHE VIEW (Isolated Grid Container) ================= -->
-
-<!-- Subsection: Introduction -->
-<div id="cs-introduction" class="scroll-mt-28 space-y-6">
-    
-    <!-- Video Intro Container -->
-    <div class="w-full aspect-video rounded-2xl overflow-hidden bg-neutral-900/80 border border-white/5 relative group shadow-2xl">
-        <!-- Replace 'your-video-url.mp4' with your actual video link -->
-        <video 
-            class="w-full h-full object-cover" 
-            controls 
-            preload="metadata"
-            poster="https://images.unsplash.com/photo-1557200134-90327ee9fafa?q=80&w=1200&auto=format&fit=crop"
-        >
-            <source src="your-video-url.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
-
-    <!-- Text Content -->
-    <div>
-        <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-2">Core Expertise</span>
-        <h2 class="text-4xl font-bold text-white tracking-tight mb-4">Customer Service Specialist</h2>
-        <p class="text-neutral-400 max-w-2xl text-base font-light leading-relaxed">
-            Helping businesses deliver exceptional customer experiences through 9+ years of omnichannel support, CRM expertise, and operational efficiency.
-        </p>
-    </div>
-</div>
-        
 <section id="page-customer-service" class="page-viewport max-w-7xl mx-auto py-8">
     
     <!-- Asymmetric Sidebar Grid Setup -->
     <div class="flex flex-col md:flex-row gap-8 items-start">
         
-        <!-- LEFT SIDEBAR: Sticky Internal Directory -->
+        <!-- LEFT SIDEBAR: Sticky Internal Directory (Navigator Only) -->
         <div class="w-full md:w-1/5 shrink-0 md:sticky md:top-28">
             <nav class="flex flex-col gap-4 text-xs font-mono tracking-wide text-emerald-500">
                 <a href="#cs-introduction" class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
@@ -611,13 +583,31 @@
         <!-- RIGHT SIDE: Main Target Content Blocks -->
         <div class="w-full md:w-4/5 flex flex-col space-y-20">
             
-            <!-- Subsection: Introduction -->
-            <div id="cs-introduction" class="scroll-mt-28">
-                <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-2">Core Expertise</span>
-                <h2 class="text-4xl font-bold text-white tracking-tight mb-4">Customer Service Specialist</h2>
-                <p class="text-neutral-400 max-w-2xl text-base font-light leading-relaxed">
-                    Helping businesses deliver exceptional customer experiences through 9+ years of omnichannel support, CRM expertise, and operational efficiency.
-                </p>
+            <!-- Subsection: Introduction (Video + Text perfectly aligned on the right) -->
+            <div id="cs-introduction" class="scroll-mt-28 space-y-6">
+                
+                <!-- Video Intro Container -->
+                <div class="w-full aspect-video rounded-2xl overflow-hidden bg-neutral-900/80 border border-white/5 relative group shadow-2xl">
+                    <!-- Replace 'your-video-url.mp4' with your actual video link -->
+                    <video 
+                        class="w-full h-full object-cover" 
+                        controls 
+                        preload="metadata"
+                        poster="https://images.unsplash.com/photo-1557200134-90327ee9fafa?q=80&w=1200&auto=format&fit=crop"
+                    >
+                        <source src="your-video-url.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <!-- Text Info -->
+                <div>
+                    <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-2">Core Expertise</span>
+                    <h2 class="text-4xl font-bold text-white tracking-tight mb-4">Customer Service Specialist</h2>
+                    <p class="text-neutral-400 max-w-2xl text-base font-light leading-relaxed">
+                        Helping businesses deliver exceptional customer experiences through 9+ years of omnichannel support, CRM expertise, and operational efficiency.
+                    </p>
+                </div>
             </div>
             
             <hr class="border-white/5">         
@@ -651,46 +641,46 @@
 
             <hr class="border-white/5">
 
-            <!-- VERTICALLY STACKED LAYOUT: SKILLS ON TOP OF TOOLS -->
+            <!-- VERTICALLY STACKED LAYOUT: CATEGORIZED SKILLS ON TOP OF TOOLS -->
             <div id="skills-tools" class="flex flex-col gap-6 w-full scroll-mt-28">
                 
-<!-- TOP SECTION: SKILLS CARD -->
-<div class="bg-neutral-900/40 border border-emerald-500/10 rounded-2xl p-6 w-full flex flex-col gap-6">
-    <h3 class="font-mono text-xs uppercase tracking-widest text-accentBlue">Skills</h3>
-    
-    <!-- Category 1: Customer Support -->
-    <div class="space-y-2">
-        <h4 class="font-mono text-[10px] uppercase tracking-wider text-purple-300 font-semibold">Customer Support</h4>
-        <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Customer Support</span>
-            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Technical Support</span>
-            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Sales Support</span>
-            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Inbound & Outbound Case Management</span>
-            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Escalation Management</span>
-        </div>
-    </div>
+                <!-- TOP SECTION: SKILLS CARD (Categorized) -->
+                <div class="bg-neutral-900/40 border border-emerald-500/10 rounded-2xl p-6 w-full flex flex-col gap-6">
+                    <h3 class="font-mono text-xs uppercase tracking-widest text-accentBlue">Skills</h3>
+                    
+                    <!-- Category 1: Customer Support -->
+                    <div class="space-y-2">
+                        <h4 class="font-mono text-[10px] uppercase tracking-wider text-neutral-500 font-semibold">Customer Support</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Customer Support</span>
+                            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Technical Support</span>
+                            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Sales Support</span>
+                            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Inbound & Outbound Case Management</span>
+                            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Escalation Management</span>
+                        </div>
+                    </div>
 
-    <!-- Category 2: CRM & Customer Success -->
-    <div class="space-y-2">
-        <h4 class="font-mono text-[10px] uppercase tracking-wider text-purple-300 font-semibold">CRM & Customer Success</h4>
-        <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Customer Relationship Management (CRM)</span>
-            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Brand Representation</span>
-            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Customer Experience</span>
-        </div>
-    </div>
+                    <!-- Category 2: CRM & Customer Success -->
+                    <div class="space-y-2">
+                        <h4 class="font-mono text-[10px] uppercase tracking-wider text-neutral-500 font-semibold">CRM & Customer Success</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Customer Relationship Management (CRM)</span>
+                            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Brand Representation</span>
+                            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Customer Experience</span>
+                        </div>
+                    </div>
 
-    <!-- Category 3: Operations -->
-    <div class="space-y-2">
-        <h4 class="font-mono text-[10px] uppercase tracking-wider text-purple-300 font-semibold">Operations</h4>
-        <div class="flex flex-wrap gap-2">
-            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Project Coordination</span>
-            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Project Documentation</span>
-            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Quality Assurance</span>
-            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Attention to Detail</span>
-        </div>
-    </div>
-</div>
+                    <!-- Category 3: Operations -->
+                    <div class="space-y-2">
+                        <h4 class="font-mono text-[10px] uppercase tracking-wider text-neutral-500 font-semibold">Operations</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Project Coordination</span>
+                            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Project Documentation</span>
+                            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Quality Assurance</span>
+                            <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Attention to Detail</span>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- BOTTOM SECTION: TOOLS CARD WITH INTERNAL CATEGORY SEPARATORS -->
                 <div class="bg-neutral-900/40 border border-white/5 rounded-2xl p-6 flex flex-col space-y-6 w-full">
