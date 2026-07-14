@@ -1127,129 +1127,139 @@
         
 <!-- ================= VIEW: TESTIMONIALS LANDING PAGE ================= -->
 <section id="page-testimonials" class="page-viewport hidden max-w-7xl mx-auto py-12 px-4">
-    <div class="mb-10">
-        <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-2">// Professional Endorsements</span>
-        <h2 class="text-4xl font-bold text-white tracking-tight">Client Reviews &amp; Recommendations</h2>
-        <p class="text-neutral-400 font-light mt-2 max-w-xl text-sm">
-            Evaluations and written feedback were collected from supervisors, team leads, and cross-functional colleagues throughout my customer support career.
-        </p>
-    </div>
-
-    <!-- Video Player Window Frame -->
-    <div class="w-full bg-neutral-900/40 rounded-2xl border border-white/5 overflow-hidden shadow-2xl mb-12">
-        <div class="p-4 bg-black/40 border-b border-white/5 flex items-center justify-between">
-            <span class="text-xs font-mono text-accentBlue flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-accentCyan animate-pulse"></span> Commendation Video
-            </span>
-        </div>
-        <div class="aspect-video w-full bg-neutral-950 relative flex items-center justify-center">
-            <iframe class="w-full h-full" src="https://drive.google.com/file/d/1xE_tMCfpdZjiXO8qMOI2uV5W57q545G_/preview" allow="autoplay" allowfullscreen></iframe>
-        </div>
-    </div>
-
-    <!-- TESTIMONIAL CAROUSEL SLIDER ENGINE -->
-    <div class="w-full bg-neutral-900/40 rounded-2xl border border-white/5 p-6 relative">
-        <div class="p-4 bg-black/40 border-b border-white/5 flex items-center justify-between pb-4 mb-6">
-            <span id="slider-category-title" class="text-xs font-mono uppercase tracking-widest text-accentBlue">1. Client Commendations</span>
-            <div class="flex items-center gap-2">
-                <button onclick="slidePrev()" class="p-2 rounded-lg bg-accentCyan-100 border border-accentCyan/25 text-accentCyan-400 hover:text-accentBlue transition-colors">
-                    <i data-lucide="chevron-left" class="w-4 h-4"></i>
-                </button>
-                <button onclick="slideNext()" class="p-2 rounded-lg bg-accentCyan-100 border border-accentCyan/25 text-accentCyan-400 hover:text-accentBlue transition-colors">
-                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
-                </button>
+    <div class="flex flex-col md:flex-row gap-8 items-start">
+        
+        <div class="w-full md:w-64 shrink-0 md:sticky md:top-28 space-y-4">
+            <div class="bg-neutral-900/40 border border-white/5 rounded-2xl p-4">
+                <span class="text-[10px] font-mono uppercase tracking-widest text-neutral-500 block mb-3 px-2">Navigation</span>
+                <nav class="space-y-1 font-mono text-xs">
+                    <a href="javascript:void(0)" onclick="currentSlideIndex=0; updateSliderView();" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1.5 px-2 rounded hover:bg-white/5 block">
+                        <span class="opacity-50 font-light">—</span> Commendations
+                    </a>
+                    <a href="javascript:void(0)" onclick="currentSlideIndex=1; updateSliderView();" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1.5 px-2 rounded hover:bg-white/5 block">
+                        <span class="opacity-50 font-light">—</span> Feedback Panels
+                    </a>
+                    <a href="javascript:void(0)" onclick="currentSlideIndex=2; updateSliderView();" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1.5 px-2 rounded hover:bg-white/5 block">
+                        <span class="opacity-50 font-light">—</span> KPI Performance
+                    </a>
+                </nav>
             </div>
         </div>
 
-        <div class="relative overflow-hidden min-h-[160px]">
-            <!-- Slide 1: Client Commendations (Stacked Workspace/Slack Layout like image_f5dd4c.png) -->
-            <div id="testimonial-slide-0" class="testimonial-slide transition-opacity duration-300 block">
-                <p class="text-base text-neutral-300 italic font-light leading-relaxed mb-6">
-                    Direct operational logs and workspace team updates highlighting cross-functional leadership, problem-solving agility, and administrative praise.
+        <div class="flex-1 w-full space-y-12">
+            <div>
+                <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-2">// Professional Endorsements</span>
+                <h2 class="text-4xl font-bold text-white tracking-tight">Client Reviews &amp; Recommendations</h2>
+                <p class="text-neutral-400 font-light mt-2 max-w-xl text-sm">
+                    Evaluations and written feedback were collected from supervisors, team leads, and cross-functional colleagues throughout my customer support career.
                 </p>
-                
-                <!-- Vertical Stack Container for Workspace Screenshots -->
-                <div class="space-y-6 max-w-3xl mx-auto mt-4">
-                    <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-2">
-                        <img src="commendation1.jpg" alt="Workspace Commendation Detail 1" class="w-full h-auto object-contain rounded-lg">
-                    </div>
-                    <!-- Two column grid layout for horizontal screenshot pairs -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-2">
-                            <img src="commendation2.jpg" alt="Workspace Commendation Detail 2" class="w-full h-auto object-contain rounded-lg">
-                        </div>
-                        <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-2">
-                            <img src="commendation4.jpg" alt="Workspace Commendation Detail 4" class="w-full h-auto object-contain rounded-lg">
-                        </div>
-                    </div>
-                    <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-2">
-                        <img src="commendation3.jpg" alt="Workspace Commendation Detail 3" class="w-full h-auto object-contain rounded-lg">
-                    </div>
-                    <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-2">
-                        <img src="commendation5.jpg" alt="Workspace Commendation Detail 5" class="w-full h-auto object-contain rounded-lg">
-                    </div>
+            </div>
+
+            <div class="w-full bg-neutral-900/40 rounded-2xl border border-white/5 overflow-hidden shadow-2xl">
+                <div class="p-4 bg-black/40 border-b border-white/5 flex items-center justify-between">
+                    <span class="text-xs font-mono text-accentBlue flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-accentCyan animate-pulse"></span> Commendation Video
+                    </span>
+                </div>
+                <div class="aspect-video w-full bg-neutral-950 relative flex items-center justify-center">
+                    <iframe class="w-full h-full" src="https://drive.google.com/file/d/1xE_tMCfpdZjiXO8qMOI2uV5W57q545G_/preview" allow="autoplay" allowfullscreen></iframe>
                 </div>
             </div>
 
-            <!-- Slide 2: Customer Feedback Panels (Multi-Grid Layout like image_f5dde4.png) -->
-            <div id="testimonial-slide-1" class="testimonial-slide transition-opacity duration-300 hidden">
-                <p class="text-base text-neutral-300 italic font-light leading-relaxed mb-6">
-                    Verified client satisfaction metrics and text reviews submitted through support communication tracking channels.
-                </p>
-
-                <!-- Responsive Grid Setup matching the survey logs -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-                    <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-1.5"><img src="feedback1.jpg" alt="Customer Feedback 1" class="w-full h-auto object-contain rounded-lg"></div>
-                    <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-1.5"><img src="feedback2.jpg" alt="Customer Feedback 2" class="w-full h-auto object-contain rounded-lg"></div>
-                    <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-1.5"><img src="feedback3.jpg" alt="Customer Feedback 3" class="w-full h-auto object-contain rounded-lg"></div>
-                    <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-1.5"><img src="feedback4.jpg" alt="Customer Feedback 4" class="w-full h-auto object-contain rounded-lg"></div>
-                    <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-1.5"><img src="feedback5.jpg" alt="Customer Feedback 5" class="w-full h-auto object-contain rounded-lg"></div>
-                    <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-1.5"><img src="feedback6.jpg" alt="Customer Feedback 6" class="w-full h-auto object-contain rounded-lg"></div>
-                    <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-1.5"><img src="feedback7.jpg" alt="Customer Feedback 7" class="w-full h-auto object-contain rounded-lg"></div>
-                    <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-1.5"><img src="feedback11.jpg" alt="Customer Feedback 8" class="w-full h-auto object-contain rounded-lg"></div>
-                    <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-1.5"><img src="feedback9.jpg" alt="Customer Feedback 9" class="w-full h-auto object-contain rounded-lg"></div>
-                    <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-1.5"><img src="feedback10.jpg" alt="Customer Feedback 10" class="w-full h-auto object-contain rounded-lg"></div>
-                    <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-1.5"><img src="feedback8.jpg" alt="Customer Feedback 11" class="w-full h-auto object-contain rounded-lg"></div>
-                    
-                </div>
-            </div>
-
-            <!-- Slide 3: KPI Metrics Sheets & Quality Audit Logs (Balanced Matrix like image_f5de5a.png) -->
-            <div id="testimonial-slide-2" class="testimonial-slide transition-opacity duration-300 hidden">
-                <div class="space-y-2 mb-6">
-                    <div class="flex justify-between text-xs font-mono border-b border-white/5 pb-2 text-accentCyan">
-                        <span>Phone & Email Quality Audit Parameter</span><span>Score Level</span>
+            <div class="w-full bg-neutral-900/40 rounded-2xl border border-white/5 p-6 relative">
+                <div class="p-4 bg-black/40 border-b border-white/5 flex items-center justify-between pb-4 mb-6">
+                    <span id="slider-category-title" class="text-xs font-mono uppercase tracking-widest text-accentBlue">1. Client Commendations</span>
+                    <div class="flex items-center gap-2">
+                        <button onclick="slidePrev()" class="p-2 rounded-lg bg-accentCyan-100 border border-accentCyan/25 text-accentCyan-400 hover:text-accentBlue transition-colors">
+                            <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                        </button>
+                        <button onclick="slideNext()" class="p-2 rounded-lg bg-accentCyan-100 border border-accentCyan/25 text-accentCyan-400 hover:text-accentBlue transition-colors">
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </button>
                     </div>
-                    <div class="flex justify-between text-sm text-neutral-300"><span>Zendesk Response Empathy/Tone Accuracy</span><span class="text-emerald-400">98.4%</span></div>
-                    <div class="flex justify-between text-sm text-neutral-300"><span>First Contact Resolution (FCR)</span><span class="text-accentCyan">94.1%</span></div>
-                    <div class="flex justify-between text-sm text-neutral-300"><span>Average Customer Satisfaction Rating (CSAT)</span><span class="text-purple-400">4.95 / 5.0</span></div>
                 </div>
 
-                <!-- Structured Audit Report Data Layout -->
-                <div class="space-y-6 mt-6">
-                    <!-- Top Summary Sheet Grid Rows -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-2">
-                            <img src="KPI 1.jpg" alt="Zendesk Analytical Summary Data 1" class="w-full h-auto object-contain rounded-lg">
-                        </div>
-                        <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-2">
-                            <img src="KPI 2.jpg" alt="Zendesk Analytical Summary Data 2" class="w-full h-auto object-contain rounded-lg">
-                        </div>
-                    </div>
-
-                    <!-- Individual Core Breakdown Cards Sub-grid -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                        <div class="overflow-hidden rounded-lg border border-white/5 bg-neutral-900/20 p-1"><img src="KPI 3.jpg" alt="Metrics Sheet Detail 3" class="w-full h-auto object-contain rounded"></div>
-                        <div class="overflow-hidden rounded-lg border border-white/5 bg-neutral-900/20 p-1"><img src="KPI 4.jpg" alt="Metrics Sheet Detail 4" class="w-full h-auto object-contain rounded"></div>
-                        <div class="overflow-hidden rounded-lg border border-white/5 bg-neutral-900/20 p-1"><img src="KPI 5.jpg" alt="Metrics Sheet Detail 5" class="w-full h-auto object-contain rounded"></div>
-                        <div class="overflow-hidden rounded-lg border border-white/5 bg-neutral-900/20 p-1"><img src="KPI 6.jpg" alt="Metrics Sheet Detail 6" class="w-full h-auto object-contain rounded"></div>
-                        <div class="overflow-hidden rounded-lg border border-white/5 bg-neutral-900/20 p-1"><img src="KPI 7.jpg" alt="Metrics Sheet Detail 7" class="w-full h-auto object-contain rounded"></div>
-                        <div class="overflow-hidden rounded-lg border border-white/5 bg-neutral-900/20 p-1"><img src="KPI 8.jpg" alt="Metrics Sheet Detail 8" class="w-full h-auto object-contain rounded"></div>
+                <div class="relative overflow-hidden min-h-[160px]">
+                    <div id="testimonial-slide-0" class="testimonial-slide transition-opacity duration-300 block">
+                        <p class="text-base text-neutral-300 italic font-light leading-relaxed mb-6">
+                            Direct operational logs and workspace team updates highlighting cross-functional leadership, problem-solving agility, and administrative praise.
+                        </p>
                         
+                        <div class="space-y-6 max-w-3xl mx-auto mt-4">
+                            <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-2">
+                                <img src="commendation1.jpg" alt="Workspace Commendation Detail 1" class="w-full h-auto object-contain rounded-lg">
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-2">
+                                    <img src="commendation2.jpg" alt="Workspace Commendation Detail 2" class="w-full h-auto object-contain rounded-lg">
+                                </div>
+                                <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-2">
+                                    <img src="commendation4.jpg" alt="Workspace Commendation Detail 4" class="w-full h-auto object-contain rounded-lg">
+                                </div>
+                            </div>
+                            <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-2">
+                                <img src="commendation3.jpg" alt="Workspace Commendation Detail 3" class="w-full h-auto object-contain rounded-lg">
+                            </div>
+                            <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-2">
+                                <img src="commendation5.jpg" alt="Workspace Commendation Detail 5" class="w-full h-auto object-contain rounded-lg">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="testimonial-slide-1" class="testimonial-slide transition-opacity duration-300 hidden">
+                        <p class="text-base text-neutral-300 italic font-light leading-relaxed mb-6">
+                            Verified client satisfaction metrics and text reviews submitted through support communication tracking channels.
+                        </p>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+                            <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-1.5"><img src="feedback1.jpg" alt="Customer Feedback 1" class="w-full h-auto object-contain rounded-lg"></div>
+                            <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-1.5"><img src="feedback2.jpg" alt="Customer Feedback 2" class="w-full h-auto object-contain rounded-lg"></div>
+                            <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-1.5"><img src="feedback3.jpg" alt="Customer Feedback 3" class="w-full h-auto object-contain rounded-lg"></div>
+                            <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-1.5"><img src="feedback4.jpg" alt="Customer Feedback 4" class="w-full h-auto object-contain rounded-lg"></div>
+                            <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-1.5"><img src="feedback5.jpg" alt="Customer Feedback 5" class="w-full h-auto object-contain rounded-lg"></div>
+                            <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-1.5"><img src="feedback6.jpg" alt="Customer Feedback 6" class="w-full h-auto object-contain rounded-lg"></div>
+                            <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-1.5"><img src="feedback7.jpg" alt="Customer Feedback 7" class="w-full h-auto object-contain rounded-lg"></div>
+                            <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-1.5"><img src="feedback11.jpg" alt="Customer Feedback 8" class="w-full h-auto object-contain rounded-lg"></div>
+                            <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-1.5"><img src="feedback9.jpg" alt="Customer Feedback 9" class="w-full h-auto object-contain rounded-lg"></div>
+                            <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-1.5"><img src="feedback10.jpg" alt="Customer Feedback 10" class="w-full h-auto object-contain rounded-lg"></div>
+                            <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-1.5"><img src="feedback8.jpg" alt="Customer Feedback 11" class="w-full h-auto object-contain rounded-lg"></div>
+                        </div>
+                    </div>
+
+                    <div id="testimonial-slide-2" class="testimonial-slide transition-opacity duration-300 hidden">
+                        <div class="space-y-2 mb-6">
+                            <div class="flex justify-between text-xs font-mono border-b border-white/5 pb-2 text-accentCyan">
+                                <span>Phone & Email Quality Audit Parameter</span><span>Score Level</span>
+                            </div>
+                            <div class="flex justify-between text-sm text-neutral-300"><span>Zendesk Response Empathy/Tone Accuracy</span><span class="text-emerald-400">98.4%</span></div>
+                            <div class="flex justify-between text-sm text-neutral-300"><span>First Contact Resolution (FCR)</span><span class="text-accentCyan">94.1%</span></div>
+                            <div class="flex justify-between text-sm text-neutral-300"><span>Average Customer Satisfaction Rating (CSAT)</span><span class="text-purple-400">4.95 / 5.0</span></div>
+                        </div>
+
+                        <div class="space-y-6 mt-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-2">
+                                    <img src="KPI 1.jpg" alt="Zendesk Analytical Summary Data 1" class="w-full h-auto object-contain rounded-lg">
+                                </div>
+                                <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-2">
+                                    <img src="KPI 2.jpg" alt="Zendesk Analytical Summary Data 2" class="w-full h-auto object-contain rounded-lg">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                                <div class="overflow-hidden rounded-lg border border-white/5 bg-neutral-900/20 p-1"><img src="KPI 3.jpg" alt="Metrics Sheet Detail 3" class="w-full h-auto object-contain rounded"></div>
+                                <div class="overflow-hidden rounded-lg border border-white/5 bg-neutral-900/20 p-1"><img src="KPI 4.jpg" alt="Metrics Sheet Detail 4" class="w-full h-auto object-contain rounded"></div>
+                                <div class="overflow-hidden rounded-lg border border-white/5 bg-neutral-900/20 p-1"><img src="KPI 5.jpg" alt="Metrics Sheet Detail 5" class="w-full h-auto object-contain rounded"></div>
+                                <div class="overflow-hidden rounded-lg border border-white/5 bg-neutral-900/20 p-1"><img src="KPI 6.jpg" alt="Metrics Sheet Detail 6" class="w-full h-auto object-contain rounded"></div>
+                                <div class="overflow-hidden rounded-lg border border-white/5 bg-neutral-900/20 p-1"><img src="KPI 7.jpg" alt="Metrics Sheet Detail 7" class="w-full h-auto object-contain rounded"></div>
+                                <div class="overflow-hidden rounded-lg border border-white/5 bg-neutral-900/20 p-1"><img src="KPI 8.jpg" alt="Metrics Sheet Detail 8" class="w-full h-auto object-contain rounded"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 </section>
         
