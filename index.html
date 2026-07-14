@@ -1455,7 +1455,46 @@
                 }
             }
         });
-               
+// ================= TESTIMONIAL CAROUSEL SLIDER ENGINE DRIVER =================
+let currentSlideIndex = 0;
+const totalSlides = 3;
+const slideCategoryTitles = [
+    "1. Client Commendations",
+    "2. Customer Feedback Panels",
+    "3. KPI Metrics Sheets & Quality Audit Logs"
+];
+
+function updateSliderView() {
+    // 1. Loop through all three layout view nodes and balance classes
+    for (let i = 0; i < totalSlides; i++) {
+        const slideEl = document.getElementById(`testimonial-slide-${i}`);
+        if (slideEl) {
+            if (i === currentSlideIndex) {
+                slideEl.classList.remove('hidden');
+                slideEl.classList.add('block');
+            } else {
+                slideEl.classList.remove('block');
+                slideEl.classList.add('hidden');
+            }
+        }
+    }
+    
+    // 2. Synchronize string context container heading text node
+    const titleEl = document.getElementById('slider-category-title');
+    if (titleEl) {
+        titleEl.textContent = slideCategoryTitles[currentSlideIndex];
+    }
+}
+
+function slideNext() {
+    currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
+    updateSliderView();
+}
+
+function slidePrev() {
+    currentSlideIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
+    updateSliderView();
+}               
     </script>
 </body>
 </html>
