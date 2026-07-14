@@ -1063,8 +1063,25 @@
     </div>
 </section>
         
- <!-- ================= TESTIMONIALS SECTION ================= -->
-                <div id="cs-testimonials-section" class="scroll-mt-28 mt-12">
+<!-- ... EXISTING CASE STUDY #03 ABOVE ... -->
+                    <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between">
+                        <div class="flex flex-wrap gap-x-6 gap-y-2 text-[10px] font-mono text-neutral-500">
+                            <div>ROLE: <span class="text-neutral-300">Voice Operations Lead</span></div>
+                            <div>INDUSTRY: <span class="text-neutral-300">High-Friction Voice Ops</span></div>
+                            <div>CHANNELS: <span class="text-neutral-300">Inbound Phone</span></div>
+                            <div>CRMS: <span class="text-neutral-300">Zendesk</span></div>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-[10px] font-mono uppercase tracking-wider text-emerald-400">Quality Assured</span>
+                        </div>
+                    </div>
+                </div> <!-- Close Case Study 03 Card -->
+
+                <!-- Divider separating Case Studies from Testimonials -->
+                <hr class="border-white/5 my-8">
+
+                <!-- TESTIMONIALS SECTION (Now nested at the bottom of Case Studies) -->
+                <div id="cs-testimonials-section" class="scroll-mt-28">
                     <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-4">Testimonials</span>
                     <div class="bg-neutral-900/40 border border-white/5 rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 group hover:border-emerald-500/20 transition-all">
                         <div class="flex items-center gap-4">
@@ -1076,17 +1093,16 @@
                                 <p class="text-xs text-neutral-400 font-light mt-0.5">Read structured feedback and operation evaluations from executive team lead evaluations.</p>
                             </div>
                         </div>
-                        <!-- Action link triggers separate SPA page view -->
-                        <a href="#testimonials" onclick="switchPage('testimonials')" class="inline-flex items-center gap-1 text-xs font-mono text-emerald-400 border border-emerald-500/20 px-4 py-2 rounded-xl bg-neutral-950 hover:bg-emerald-500 hover:text-black transition-all font-medium whitespace-nowrap self-start sm:self-center">
+                        <!-- SPA Navigation Trigger -->
+                        <a href="#testimonials" onclick="switchPage('testimonials')" class="inline-flex items-center gap-1 text-xs font-mono text-emerald-400 border border-emerald-500/20 px-4 py-2 rounded-xl bg-neutral-950 hover:bg-emerald-500 hover:text-black transition-all font-medium shrink-0 self-start sm:self-center">
                             Open Reviews <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
                         </a>
                     </div>
                 </div>
 
-            </div> <!-- Close Right Side Column Content Wrapper -->
-        </div> <!-- Close Main Layout Flex/Grid Wrapper -->
-    </div> <!-- Close Section Inner Container -->
-</section> <!-- Close Case Studies Main Section -->
+            </div> <!-- Close Right Side Column Container -->
+        </div> <!-- Close Main Inner Layout Flex/Grid Wrapper -->
+    </section> <!-- Close Case Studies Section Wrapper -->
         
 <!-- ================= VIEW: TESTIMONIALS LANDING PAGE ================= -->
 <section id="page-testimonials" class="page-viewport hidden max-w-7xl mx-auto py-12 px-4">
