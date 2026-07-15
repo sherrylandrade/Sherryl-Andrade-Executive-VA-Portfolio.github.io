@@ -1110,13 +1110,12 @@
 <section id="page-testimonials" class="page-viewport hidden max-w-7xl mx-auto py-12 px-4">
     <div class="flex flex-col md:flex-row gap-8 items-start">
         
-        <!-- Left Sidebar Navigation Layout -->
         <div class="w-full md:w-64 shrink-0 md:sticky md:top-28"> 
             <nav class="space-y-2 font-mono text-xs">
-                <button type="button" onclick="const target = document.getElementById('section-video'); if(target) { window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth' }); }" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left bg-transparent border-0 cursor-pointer">
+                <button type="button" onclick="const el = document.getElementById('section-video'); if(el) { window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth' }); }" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left bg-transparent border-0 cursor-pointer">
                     <span class="opacity-50">—</span> Commendation Video
                 </button>
-                <button type="button" onclick="const target = document.getElementById('section-feedback-panel'); if(target) { window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth' }); }" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left bg-transparent border-0 cursor-pointer">
+                <button type="button" onclick="const el = document.getElementById('section-feedback-panel'); if(el) { window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth' }); }" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left bg-transparent border-0 cursor-pointer">
                     <span class="opacity-50">—</span> Feedback Panels
                 </button> 
             </nav>
@@ -1131,7 +1130,7 @@
                 </p>
             </div>
 
-            <div class="w-full bg-neutral-900/40 rounded-2xl border border-white/5 overflow-hidden shadow-2xl">
+            <div id="section-video" class="w-full bg-neutral-900/40 rounded-2xl border border-white/5 overflow-hidden shadow-2xl">
                 <div class="p-4 bg-black/40 border-b border-white/5 flex items-center justify-between">
                     <span class="text-xs font-mono text-accentBlue flex items-center gap-2">
                         <span class="w-2 h-2 rounded-full bg-accentCyan animate-pulse"></span> Commendation Video
@@ -1142,7 +1141,7 @@
                 </div>
             </div>
 
-            <div class="w-full bg-neutral-900/40 rounded-2xl border border-white/5 p-6 relative">
+            <div id="section-feedback-panel" class="w-full bg-neutral-900/40 rounded-2xl border border-white/5 p-6 relative">
                 <div class="p-4 bg-black/40 border-b border-white/5 flex items-center justify-between pb-4 mb-6">
                     <span id="slider-category-title" class="text-xs font-mono uppercase tracking-widest text-accentBlue">1. Client Commendations</span>
                     <div class="flex items-center gap-2">
