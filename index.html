@@ -1112,14 +1112,15 @@
         
         <div class="w-full md:w-64 shrink-0 md:sticky md:top-28"> 
             <nav class="space-y-2 font-mono text-xs">
-                <a href="javascript:void(0)" onclick="event.preventDefault(); event.stopPropagation(); document.getElementById('section-video')?.scrollIntoView({ behavior: 'smooth', block: 'start' });" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left">
-                <span class="opacity-50">—</span> Commendation Video
+                <a href="javascript:void(0)" onclick="const el = document.getElementById('section-video'); if(el) { window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' }); }" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left">
+                    <span class="opacity-50">—</span> Commendation Video
                 </a>
-                <a href="javascript:void(0)" onclick="event.preventDefault(); event.stopPropagation(); document.getElementById('section-feedback-panel')?.scrollIntoView({ behavior: 'smooth', block: 'start' });" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left">
-                <span class="opacity-50">—</span> Feedback Panels
+                <a href="javascript:void(0)" onclick="const el = document.getElementById('section-feedback-panel'); if(el) { window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' }); }" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left">
+                    <span class="opacity-50">—</span> Feedback Panels
                 </a> 
+                
                 <a href="javascript:void(0)" onclick="event.preventDefault(); event.stopPropagation(); document.getElementById('confidentiality-disclaimer')?.scrollIntoView({ behavior: 'smooth', block: 'center' });" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left">
-                <span class="opacity-50">—</span> Disclaimer
+                    <span class="opacity-50">—</span> Disclaimer
                 </a> 
             </nav>
         </div>
