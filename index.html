@@ -1112,15 +1112,14 @@
         
         <div class="w-full md:w-64 shrink-0 md:sticky md:top-28"> 
             <nav class="space-y-2 font-mono text-xs">
-                <a href="javascript:void(0)" onclick="const el = document.getElementById('section-video'); if(el) { window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' }); }" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left">
-                    <span class="opacity-50">—</span> Commendation Video
+                <a href="javascript:void(0)" onclick="event.preventDefault(); event.stopPropagation(); document.getElementById('section-video')?.scrollIntoView({ behavior: 'smooth', block: 'start' });" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left">
+                <span class="opacity-50">—</span> Commendation Video
                 </a>
-                <a href="javascript:void(0)" onclick="const el = document.getElementById('section-feedback-panel'); if(el) { window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' }); }" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left">
-                    <span class="opacity-50">—</span> Feedback Panels
+                <a href="javascript:void(0)" onclick="event.preventDefault(); event.stopPropagation(); document.getElementById('section-feedback-panel')?.scrollIntoView({ behavior: 'smooth', block: 'start' });" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left">
+                <span class="opacity-50">—</span> Feedback Panels
                 </a> 
-                
-                <a href="javascript:void(0)" onclick="const card = document.getElementById('confidentiality-disclaimer'); if(card) { card.scrollIntoView({ behavior: 'smooth', block: 'center' }); }" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left">
-                    <span class="opacity-50">—</span> Disclaimer
+                <a href="javascript:void(0)" onclick="event.preventDefault(); event.stopPropagation(); document.getElementById('confidentiality-disclaimer')?.scrollIntoView({ behavior: 'smooth', block: 'center' });" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left">
+                <span class="opacity-50">—</span> Disclaimer
                 </a> 
             </nav>
         </div>
@@ -1243,7 +1242,11 @@
                     </div>
                 </div>
 <!-- Privacy & Anonymization Disclaimer Note Card -->
+                
                 <div class="w-full bg-neutral-950/40 rounded-xl border border-white/5 p-4 flex items-start gap-3 mt-6">
+
+                    <div id="confidentiality-disclaimer" class="w-full bg-neutral-950/40 rounded-xl border border-white/5 p-4 flex items-start gap-3 mt-6">
+                
                     <div class="p-2 rounded bg-neutral-900/50 text-neutral-400 shrink-0">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-alert"><path d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8-2a1 1 0 0 1 .48 0l8 2A1 1 0 0 1 20 6z"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
                     </div>
