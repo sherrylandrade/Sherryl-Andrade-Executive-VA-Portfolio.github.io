@@ -1110,13 +1110,13 @@
 <section id="page-testimonials" class="page-viewport hidden max-w-7xl mx-auto py-12 px-4">
     <div class="flex flex-col md:flex-row gap-8 items-start">
         
-        <!-- Left Sidebar Navigation Layout (Clean, Title-less Links Only) -->
+        <!-- Left Sidebar Navigation Layout -->
         <div class="w-full md:w-64 shrink-0 md:sticky md:top-28"> 
             <nav class="space-y-2 font-mono text-xs">
-                <button type="button" onclick="document.getElementById('section-video').scrollIntoView({ behavior: 'smooth', block: 'start' });" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left bg-transparent border-0 cursor-pointer">
+                <button type="button" onclick="const target = document.getElementById('section-video'); if(target) { window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth' }); }" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left bg-transparent border-0 cursor-pointer">
                     <span class="opacity-50">—</span> Commendation Video
                 </button>
-                <button type="button" onclick="document.getElementById('section-feedback-panel').scrollIntoView({ behavior: 'smooth', block: 'start' });" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left bg-transparent border-0 cursor-pointer">
+                <button type="button" onclick="const target = document.getElementById('section-feedback-panel'); if(target) { window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 100, behavior: 'smooth' }); }" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left bg-transparent border-0 cursor-pointer">
                     <span class="opacity-50">—</span> Feedback Panels
                 </button> 
             </nav>
