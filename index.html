@@ -1129,23 +1129,21 @@
 <section id="page-testimonials" class="page-viewport hidden max-w-7xl mx-auto py-12 px-4">
     <div class="flex flex-col md:flex-row gap-8 items-start">
         
-        <div class="w-full md:w-64 shrink-0 md:sticky md:top-28">          
+        <!-- Left Sidebar Navigation Layout (Pure Links Only) -->
+        <div class="w-full md:w-64 shrink-0 md:sticky md:top-28"> 
             <nav class="space-y-2 font-mono text-xs">
-                <a href="javascript:void(0)" onclick="currentSlideIndex=0; updateSliderView();" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1">
-                    <span class="opacity-50">—</span> Commendations
+                <a href="#section-video" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1">
+                    <span class="opacity-50">—</span> Commendation Video
                 </a>
-                <a href="javascript:void(0)" onclick="currentSlideIndex=1; updateSliderView();" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1">
+                <a href="javascript:void(0)" onclick="currentSlideIndex=1; updateSliderView(); document.getElementById('section-feedback').scrollIntoView({behavior: 'smooth'});" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1">
                     <span class="opacity-50">—</span> Feedback Panels
-                </a>
-                <a href="javascript:void(0)" onclick="currentSlideIndex=2; updateSliderView();" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1">
-                    <span class="opacity-50">—</span> KPI Performance
-                </a>
+                </a> 
             </nav>
         </div>
 
         <div class="flex-1 w-full space-y-12">
             <div>
-                <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-2">// Professional Endorsements</span>
+                <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-2">Professional Endorsements</span>
                 <h2 class="text-4xl font-bold text-white tracking-tight">Client Reviews &amp; Recommendations</h2>
                 <p class="text-neutral-400 font-light mt-2 max-w-xl text-sm">
                     Evaluations and written feedback were collected from supervisors, team leads, and cross-functional colleagues throughout my customer support career.
