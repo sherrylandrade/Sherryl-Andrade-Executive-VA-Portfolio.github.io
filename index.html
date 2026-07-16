@@ -1261,21 +1261,23 @@
 
 <hr class="border-white/5 my-8">
 
-            <div id="confidentiality-disclaimer" class="w-full bg-neutral-950/40 rounded-xl border border-red-600/25 p-4 flex items-start gap-3 drop-shadow-[0_2px_8px_rgba(244,63,94,0.5)]">
-                <div class="p-2 rounded bg-neutral-900/40 text-neutral-400 shrink-0">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-alert">
-                        <path d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8-2a1 1 0 0 1 .48 0l8 2A1 1 0 0 1 20 6z"/>
-                        <path d="M12 8v4"/>
-                        <path d="M12 16h.01"/>
-                    </svg>
-                </div>
-                <div class="space-y-1">
-                    <span class="text-[10px] font-mono uppercase tracking-wider text-accentCyan block">System Notice | Confidentiality Guard</span>
-                    <p class="text-xs text-neutral-400 leading-relaxed font-light">
-                        All materials have been carefully anonymized to protect customer privacy and company confidentiality. Screenshots, evaluations, and documentation are presented solely to demonstrate professional experience and operational capabilities.
-                    </p>
-                </div>
-            </div>
+<!-- Background set to bg-transparent to make it completely see-through -->
+<div id="confidentiality-disclaimer" class="w-full bg-transparent rounded-xl border border-red-600/25 p-4 flex items-start gap-3 drop-shadow-[0_2px_8px_rgba(244,63,94,0.5)]">
+    <!-- Icon background also set to transparent to blend in -->
+    <div class="p-2 rounded bg-transparent text-neutral-400 shrink-0">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-alert">
+            <path d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8-2a1 1 0 0 1 .48 0l8 2A1 1 0 0 1 20 6z"/>
+            <path d="M12 8v4"/>
+            <path d="M12 16h.01"/>
+        </svg>
+    </div>
+    <div class="space-y-1">
+        <span class="text-[10px] font-mono uppercase tracking-wider text-accentCyan block">System Notice | Confidentiality Guard</span>
+        <p class="text-xs text-neutral-400 leading-relaxed font-light">
+            All materials have been carefully anonymized to protect customer privacy and company confidentiality. Screenshots, evaluations, and documentation are presented solely to demonstrate professional experience and operational capabilities.
+        </p>
+    </div>
+</div>
 
     </div>
 </section>
