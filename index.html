@@ -1329,15 +1329,13 @@
   <div class="flex flex-col lg:flex-row gap-12 position-relative">
     
     <!-- ========================================== -->
-    <!-- STICKY SIDE PANEL NAVIGATOR                -->
+    <!-- UPDATED STICKY SIDE PANEL NAVIGATOR       -->
     <!-- ========================================== -->
     <aside class="lg:w-48 shrink-0 lg:sticky lg:top-8 h-fit">
       <nav class="flex flex-row lg:flex-col flex-wrap gap-3 lg:gap-4 font-mono text-[11px] uppercase tracking-wider text-neutral-500">
         <a href="#hero" class="hover:text-emerald-400 transition-colors py-1 block border-b lg:border-b-0 lg:border-l border-transparent lg:pl-3">Introduction</a>
-        <a href="#expertise" class="hover:text-emerald-400 transition-colors py-1 block border-b lg:border-b-0 lg:border-l border-transparent lg:pl-3">Core Expertise</a>
         <a href="#services" class="hover:text-emerald-400 transition-colors py-1 block border-b lg:border-b-0 lg:border-l border-transparent lg:pl-3">Core Services</a>
-        <a href="#skills" class="hover:text-emerald-400 transition-colors py-1 block border-b lg:border-b-0 lg:border-l border-transparent lg:pl-3">Skills Breakdown</a>
-        <a href="#tools" class="hover:text-emerald-400 transition-colors py-1 block border-b lg:border-b-0 lg:border-l border-transparent lg:pl-3">Tools Toolkit</a>
+        <a href="#skills-and-tools" class="hover:text-emerald-400 transition-colors py-1 block border-b lg:border-b-0 lg:border-l border-transparent lg:pl-3">Skills & Tools</a>
         <a href="#case-library" class="hover:text-emerald-400 transition-colors py-1 block border-b lg:border-b-0 lg:border-l border-transparent lg:pl-3">Case Studies</a>
         <a href="#testimonials" class="hover:text-emerald-400 transition-colors py-1 block border-b lg:border-b-0 lg:border-l border-transparent lg:pl-3">Testimonials</a>
       </nav>
@@ -1371,7 +1369,7 @@
       </section>
 
       <!-- 2. CORE EXPERTISE HIGHLIGHTS BAR -->
-      <section id="expertise" class="scroll-mt-8 border-y border-white/5 bg-neutral-900/10 rounded-2xl py-8 px-4">
+      <section class="scroll-mt-8 border-y border-white/5 bg-neutral-900/10 rounded-2xl py-8 px-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <!-- Expertise 1 -->
           <div class="flex flex-col items-center space-y-2">
@@ -1453,8 +1451,10 @@
         </div>
       </section>
 
-      <!-- 4. SKILLS CATEGORY BLOCK -->
-      <section id="skills" class="scroll-mt-8 border-t border-white/5 pt-16">
+      <!-- 4. CONSOLIDATED SKILLS & TOOLS WRAPPER SECTION -->
+      <section id="skills-and-tools" class="scroll-mt-8 border-t border-white/5 pt-16 space-y-12">
+        
+        <!-- Skills Segment -->
         <div class="bg-neutral-900/30 border border-white/5 hover:border-emerald-500/20 rounded-2xl p-6 w-full transition-all duration-300">
           <h3 class="font-mono text-xs uppercase tracking-widest text-accentBlue mb-6">Skills Breakdown</h3>
           
@@ -1508,10 +1508,8 @@
             </div>
           </div>
         </div>
-      </section>
 
-      <!-- 5. TOOLS DISCOVERY CLUSTER -->
-      <section id="tools" class="scroll-mt-8 border-t border-white/5 pt-16">
+        <!-- Tools Segment -->
         <div class="bg-neutral-900/30 border border-white/5 hover:border-emerald-500/20 rounded-2xl p-6 w-full transition-all duration-300">
           <h3 class="font-mono text-xs uppercase tracking-widest text-accentBlue mb-6">Tools Toolkit</h3>
           
@@ -1584,7 +1582,7 @@
         </div>
       </section>
 
-      <!-- 6. CASE LIBRARY ACCESS BLOCK -->
+      <!-- 5. CASE LIBRARY ACCESS BLOCK -->
       <section id="case-library" class="scroll-mt-8 border-t border-white/5 pt-16">
         <div class="bg-neutral-900/30 border border-white/5 p-6 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-6">
           <div class="flex items-start gap-4">
@@ -1605,7 +1603,7 @@
         </div>
       </section>
 
-      <!-- 7. TESTIMONIALS ACCESS BLOCK -->
+      <!-- 6. TESTIMONIALS ACCESS BLOCK -->
       <section id="testimonials" class="scroll-mt-8 border-t border-white/5 pt-16 pb-12">
         <div class="bg-neutral-900/30 border border-white/5 p-6 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-6">
           <div class="flex items-start gap-4">
@@ -1628,7 +1626,7 @@
 
     </div>
   </div>
-</main>            
+</main>    
         
 <!-- ================= CONTACT/CTA PAGE ================= -->
         <section id="page-contact" class="page-viewport -mt-12 pb-0 mb-[-4rem]">
