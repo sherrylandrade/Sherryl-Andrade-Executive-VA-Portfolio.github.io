@@ -1354,23 +1354,33 @@
         <!-- LEFT SIDEBAR: Sticky Internal Directory (Smooth Scroller Only) -->
         <div class="w-full md:w-1/5 shrink-0 md:sticky md:top-28">
             <nav class="flex flex-col gap-4 text-xs font-mono tracking-wide text-emerald-500">
-                <a href="#re-introduction" class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
+                <a href="#re-introduction" 
+                    onclick="event.preventDefault(); switchPage('about', 're-introduction')"
+                    class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
                     <span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all"></span>
                     Introduction
                 </a>
-                <a href="#re-core-services" class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
+                <a href="#re-core-services" 
+                    onclick="event.preventDefault(); switchPage('about', 're-core-services')"
+                    class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
                     <span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all"></span>
                     Core Services
                 </a>                    
-                <a href="#re-skills-tools" class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
+                <a href="#re-skills-tools" 
+                    onclick="event.preventDefault(); switchPage('about', 're-skills-tools')"
+                    class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
                     <span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all"></span>
                     Skills &amp; Tools
                 </a>
-                <a href="#re-cases-section" class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
+                <a href="#re-cases-section" 
+                    onclick="event.preventDefault(); switchPage('about', 're-cases-section')"
+                    class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
                     <span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all"></span>
                     Case Studies
                 </a>
-                <a href="#re-testimonials-section" class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
+                <a href="#re-testimonials-section" 
+                    onclick="event.preventDefault(); switchPage('about', 're-testimonials-section')"
+                    class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
                     <span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all"></span>
                     Testimonials
                 </a>
