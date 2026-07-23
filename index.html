@@ -2221,139 +2221,112 @@
     </div>
 </footer>
 
-    <!-- CODE SCRIPT ROUTER AND SLIDER LOOPS -->
-    <script>
-        function switchPage(pageId) {
-            window.location.hash = pageId;
+<!-- CODE SCRIPT ROUTER AND SLIDER LOOPS -->
+<script>
+    // ================= MASTER PAGE ROUTER =================
+    function switchPage(pageId) {
+        // Fallback to home if pageId is empty or target element doesn't exist
+        const targetView = document.getElementById(`page-${pageId}`) ? pageId : 'home';
 
-            document.querySelectorAll('.page-viewport').forEach(view => view.classList.remove('active'));
-            const targetView = document.getElementById(`page-${pageId}`);
-            if(targetView) targetView.classList.add('active');
-
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('bg-white/10', 'text-accentCyan', 'text-emerald-400');
-                btn.classList.add('text-neutral-400');
-            });
-            
-            const activeBtn = document.getElementById(`nav-${pageId}`);
-            if(activeBtn) {
-                activeBtn.classList.remove('text-neutral-400');
-                if (pageId === 'real-estate') {
-                    activeBtn.classList.add('bg-white/10', 'text-emerald-400');
-                } else {
-                    activeBtn.classList.add('bg-white/10', 'text-accentCyan');
-                }
-            }
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        // Update URL hash without triggering double events
+        if (window.location.hash !== `#${targetView}`) {
+            history.pushState(null, '', `#${targetView}`);
         }
 
-        function updateSystemClock() {
-            const now = new Date();
-            const clockEl = document.getElementById('live-clock');
-            if (clockEl) clockEl.textContent = now.toTimeString().split(' ')[0];
+        // Hide all viewports
+        document.querySelectorAll('.page-viewport').forEach(view => {
+            view.classList.remove('active');
+            view.classList.add('hidden');
+        });
+
+        // Activate target viewport
+        const activeView = document.getElementById(`page-${targetView}`);
+        if (activeView) {
+            activeView.classList.remove('hidden');
+            activeView.classList.add('active');
         }
 
-        function initRouter() {
-            if (window.location.hash) {
-                const initialPage = window.location.hash.replace('#', '');
-                switchPage(initialPage);
+        // Update navigation UI buttons
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+            btn.classList.remove('bg-white/10', 'text-accentCyan', 'text-emerald-400');
+            btn.classList.add('text-neutral-400');
+        });
+
+        const activeBtn = document.getElementById(`nav-${targetView}`);
+        if (activeBtn) {
+            activeBtn.classList.remove('text-neutral-400');
+            if (targetView === 'real-estate') {
+                activeBtn.classList.add('bg-white/10', 'text-emerald-400');
             } else {
-                switchPage('home');
+                activeBtn.classList.add('bg-white/10', 'text-accentCyan');
+            }
+        }
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function initRouter() {
+        const hash = window.location.hash.replace('#', '').trim();
+        switchPage(hash || 'home');
+    }
+
+    function updateSystemClock() {
+        const now = new Date();
+        const clockEl = document.getElementById('live-clock');
+        if (clockEl) clockEl.textContent = now.toTimeString().split(' ')[0];
+    }
+
+    // ================= TESTIMONIAL CAROUSEL =================
+    let currentSlideIndex = 0;
+    const totalSlides = 3;
+    const slideCategoryTitles = [
+        "1. Supervisor Commendations",
+        "2. Customer Satisfaction Surveys",
+        "3. Quality Assurance Metrics & Performance Reviews"
+    ];
+
+    function updateSliderView() {
+        for (let i = 0; i < totalSlides; i++) {
+            const slideEl = document.getElementById(`testimonial-slide-${i}`);
+            if (slideEl) {
+                if (i === currentSlideIndex) {
+                    slideEl.classList.remove('hidden');
+                    slideEl.classList.add('block');
+                } else {
+                    slideEl.classList.remove('block');
+                    slideEl.classList.add('hidden');
+                }
             }
         }
         
-        initRouter();
-
-        document.addEventListener("DOMContentLoaded", () => {
-            if (window.lucide) lucide.createIcons();
-            updateSystemClock();
-            setInterval(updateSystemClock, 1000);
-            initRouter();
-        });
-
-        window.addEventListener('hashchange', () => {
-            if (window.location.hash) {
-                const targetPage = window.location.hash.replace('#', '');
-                const targetView = document.getElementById(`page-${targetPage}`);
-                if (targetView && !targetView.classList.contains('active')) {
-                    switchPage(targetPage);
-                }
-            }
-        });
-    
-// ================= TESTIMONIAL CAROUSEL SLIDER ENGINE DRIVER =================
-let currentSlideIndex = 0;
-const totalSlides = 3;
-const slideCategoryTitles = [
-    "1. Supervisor Commendations",
-    "2. Customer Satisfaction Surveys",
-    "3. Quality Assurance Metrics & Performance Reviews"
-];
-
-function updateSliderView() {
-    // 1. Loop through all three layout view nodes and balance classes
-    for (let i = 0; i < totalSlides; i++) {
-        const slideEl = document.getElementById(`testimonial-slide-${i}`);
-        if (slideEl) {
-            if (i === currentSlideIndex) {
-                slideEl.classList.remove('hidden');
-                slideEl.classList.add('block');
-            } else {
-                slideEl.classList.remove('block');
-                slideEl.classList.add('hidden');
-            }
+        const titleEl = document.getElementById('slider-category-title');
+        if (titleEl) {
+            titleEl.textContent = slideCategoryTitles[currentSlideIndex];
         }
     }
-    
-    // 2. Synchronize string context container heading text node
-    const titleEl = document.getElementById('slider-category-title');
-    if (titleEl) {
-        titleEl.textContent = slideCategoryTitles[currentSlideIndex];
+
+    function slideNext() {
+        currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
+        updateSliderView();
     }
-}
 
-function slideNext() {
-    currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
-    updateSliderView();
-}
+    function slidePrev() {
+        currentSlideIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
+        updateSliderView();
+    }
 
-function slidePrev() {
-    currentSlideIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
-    updateSliderView();
-}               
-
-        // Master Page Switcher Function
-function switchPage(pageId) {
-    // Hide all viewports
-    document.querySelectorAll('.page-viewport').forEach(page => {
-        page.classList.remove('active');
-        page.classList.add('hidden');
+    // ================= EVENT LISTENERS =================
+    document.addEventListener("DOMContentLoaded", () => {
+        if (window.lucide) lucide.createIcons();
+        updateSystemClock();
+        setInterval(updateSystemClock, 1000);
+        
+        // Initial route setup on page load
+        initRouter();
     });
 
-    // Target the requested view section
-    const targetPage = document.getElementById(`page-${pageId}`);
-    if (targetPage) {
-        targetPage.classList.remove('hidden');
-        targetPage.classList.add('active');
-        window.location.hash = pageId; // Update browser URL hash
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-}
-
-// Handle Direct Page Refresh & Direct URL Links
-function initRouter() {
-    const hash = window.location.hash.replace('#', '');
-    if (hash && document.getElementById(`page-${hash}`)) {
-        switchPage(hash);
-    } else {
-        switchPage('home'); // Default fallback
-    }
-}
-
-// Initialize on initial document load and back/forward browser navigation
-document.addEventListener('DOMContentLoaded', initRouter);
-window.addEventListener('hashchange', initRouter);
-                
-    </script>
+    // Handle back/forward navigation or URL hash changes
+    window.addEventListener('hashchange', initRouter);
+</script>
 </body>
 </html>
