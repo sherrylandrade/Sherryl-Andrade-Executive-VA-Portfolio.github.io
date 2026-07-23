@@ -108,9 +108,11 @@
         <div class="w-full md:w-1/5 shrink-0 md:sticky md:top-28">
             <nav class="flex flex-col gap-4 text-xs font-mono tracking-wide text-emerald-400">
                 <ul class="space-y-4">
-                <a href="#about-intro" class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
+                
+                <a href="#about/about-intro" onclick="event.preventDefault(); switchPage('about', 'about-intro')"
+>               
                     <span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all"></span>
-                    Introduction
+                   Introduction
                 </a>
                 <a href="#core-strengths" class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
                     <span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all"></span>
@@ -2223,97 +2225,121 @@
 
 <!-- CODE SCRIPT ROUTER AND SLIDER LOOPS -->
 <script>
-    // ================= MASTER PAGE ROUTER =================
-    function switchPage(pageId) {
-        // Fallback to home if pageId is empty or target element doesn't exist
-        const targetView = document.getElementById(`page-${pageId}`) ? pageId : 'home';
+// ================= MASTER PAGE ROUTER =================
 
-        // Update URL hash without triggering double events
-        if (window.location.hash !== `#${targetView}`) {
-            history.pushState(null, '', `#${targetView}`);
+const pageRoutes = [
+    'home',
+    'about',
+    'work',
+    'customer-service',
+    'real-estate',
+    'contact',
+    'cases',
+    'testimonials',
+    're-cases',
+    're-testimonials'
+];
+
+function displayPage(pageId, sectionId = null) {
+    const targetView = pageRoutes.includes(pageId) ? pageId : 'home';
+
+    // Hide all page views
+    document.querySelectorAll('.page-viewport').forEach(view => {
+        view.classList.remove('active');
+        view.classList.add('hidden');
+    });
+
+    // Display selected page
+    const activeView = document.getElementById(`page-${targetView}`);
+
+    if (activeView) {
+        activeView.classList.remove('hidden');
+        activeView.classList.add('active');
+    }
+
+    // Reset navigation styles
+    document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.classList.remove(
+            'bg-white/10',
+            'text-accentCyan',
+            'text-emerald-400'
+        );
+
+        btn.classList.add('text-neutral-400');
+    });
+
+    // Highlight the matching main navigation button
+    const activeBtn = document.getElementById(`nav-${targetView}`);
+
+    if (activeBtn) {
+        activeBtn.classList.remove('text-neutral-400');
+
+        if (targetView === 'real-estate') {
+            activeBtn.classList.add(
+                'bg-white/10',
+                'text-emerald-400'
+            );
+        } else {
+            activeBtn.classList.add(
+                'bg-white/10',
+                'text-accentCyan'
+            );
         }
+    }
 
-        // Hide all viewports
-        document.querySelectorAll('.page-viewport').forEach(view => {
-            view.classList.remove('active');
-            view.classList.add('hidden');
-        });
+    // Scroll after the selected page becomes visible
+    requestAnimationFrame(() => {
+        if (sectionId) {
+            const section = document.getElementById(sectionId);
 
-        // Activate target viewport
-        const activeView = document.getElementById(`page-${targetView}`);
-        if (activeView) {
-            activeView.classList.remove('hidden');
-            activeView.classList.add('active');
-        }
+            if (section) {
+                section.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
 
-        // Update navigation UI buttons
-        document.querySelectorAll('.nav-btn').forEach(btn => {
-            btn.classList.remove('bg-white/10', 'text-accentCyan', 'text-emerald-400');
-            btn.classList.add('text-neutral-400');
-        });
-
-        const activeBtn = document.getElementById(`nav-${targetView}`);
-        if (activeBtn) {
-            activeBtn.classList.remove('text-neutral-400');
-            if (targetView === 'real-estate') {
-                activeBtn.classList.add('bg-white/10', 'text-emerald-400');
-            } else {
-                activeBtn.classList.add('bg-white/10', 'text-accentCyan');
+                return;
             }
         }
 
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
+function switchPage(pageId, sectionId = null) {
+    const targetView = pageRoutes.includes(pageId) ? pageId : 'home';
+
+    const newHash = sectionId
+        ? `#${targetView}/${sectionId}`
+        : `#${targetView}`;
+
+    if (window.location.hash !== newHash) {
+        history.pushState(null, '', newHash);
     }
 
-    function initRouter() {
-        const hash = window.location.hash.replace('#', '').trim();
-        switchPage(hash || 'home');
+    displayPage(targetView, sectionId);
+}
+
+function initRouter() {
+    const hash = window.location.hash
+        .replace(/^#/, '')
+        .trim();
+
+    if (!hash) {
+        displayPage('home');
+        return;
     }
 
-    function updateSystemClock() {
-        const now = new Date();
-        const clockEl = document.getElementById('live-clock');
-        if (clockEl) clockEl.textContent = now.toTimeString().split(' ')[0];
-    }
+    const [pageId, sectionId] = hash.split('/');
 
-    // ================= TESTIMONIAL CAROUSEL =================
-    let currentSlideIndex = 0;
-    const totalSlides = 3;
-    const slideCategoryTitles = [
-        "1. Supervisor Commendations",
-        "2. Customer Satisfaction Surveys",
-        "3. Quality Assurance Metrics & Performance Reviews"
-    ];
-
-    function updateSliderView() {
-        for (let i = 0; i < totalSlides; i++) {
-            const slideEl = document.getElementById(`testimonial-slide-${i}`);
-            if (slideEl) {
-                if (i === currentSlideIndex) {
-                    slideEl.classList.remove('hidden');
-                    slideEl.classList.add('block');
-                } else {
-                    slideEl.classList.remove('block');
-                    slideEl.classList.add('hidden');
-                }
-            }
-        }
-        
-        const titleEl = document.getElementById('slider-category-title');
-        if (titleEl) {
-            titleEl.textContent = slideCategoryTitles[currentSlideIndex];
-        }
-    }
-
-    function slideNext() {
-        currentSlideIndex = (currentSlideIndex + 1) % totalSlides;
-        updateSliderView();
-    }
-
-    function slidePrev() {
-        currentSlideIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
-        updateSliderView();
-    }
+    displayPage(
+        pageRoutes.includes(pageId) ? pageId : 'home',
+        sectionId || null
+    );
+}
 
     // ================= EVENT LISTENERS =================
     document.addEventListener("DOMContentLoaded", () => {
