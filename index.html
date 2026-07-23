@@ -2224,84 +2224,83 @@
 <!-- CODE SCRIPT ROUTER AND SLIDER LOOPS -->
 <script>
     // ================= ROUTER ENGINE =================
-    function switchPage(pageId) {
-        if (!pageId) pageId = 'home';
+function switchPage(pageId) {
+    if (!pageId) pageId = 'home';
 
-        // 1. Update hash without triggering double reload
-        if (window.location.hash.replace('#', '') !== pageId) {
-            history.pushState(null, null, `#${pageId}`);
-        }
+    // 1. Update hash in browser URL
+    window.location.hash = pageId;
 
-        // 2. Hide all viewports
-        document.querySelectorAll('.page-viewport').forEach(view => {
-            view.classList.remove('active', 'block');
-            view.classList.add('hidden');
-        });
-
-        // 3. Show target viewport
-        const targetView = document.getElementById(`page-${pageId}`);
-        if (targetView) {
-            targetView.classList.remove('hidden');
-            targetView.classList.add('active', 'block');
-        } else {
-            // Fallback to home if page ID isn't found
-            const homeView = document.getElementById('page-home');
-            if (homeView) {
-                homeView.classList.remove('hidden');
-                homeView.classList.add('active', 'block');
-            }
-        }
-
-        // 4. Update Navigation Styles
-        document.querySelectorAll('.nav-btn').forEach(btn => {
-            btn.classList.remove('bg-white/10', 'text-accentCyan', 'text-emerald-400');
-            btn.classList.add('text-neutral-400');
-        });
-
-        const activeBtn = document.getElementById(`nav-${pageId}`);
-        if (activeBtn) {
-            activeBtn.classList.remove('text-neutral-400');
-            if (pageId === 'real-estate') {
-                activeBtn.classList.add('bg-white/10', 'text-emerald-400');
-            } else {
-                activeBtn.classList.add('bg-white/10', 'text-accentCyan');
-            }
-        }
-
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function updateSystemClock() {
-        const now = new Date();
-        const clockEl = document.getElementById('live-clock');
-        if (clockEl) clockEl.textContent = now.toTimeString().split(' ')[0];
-    }
-
-    function handleRoute() {
-        const rawHash = window.location.hash.replace('#', '');
-        // Ignore sub-anchors like #work or #testimonials if they aren't main page viewports
-        const validPages = ['home', 'about', 'customer-support', 'real-estate', 'contact']; 
-        
-        if (rawHash && validPages.includes(rawHash)) {
-            switchPage(rawHash);
-        } else if (rawHash === '') {
-            switchPage('home');
-        }
-    }
-
-    // Ensure DOM is fully loaded before routing on refresh
-    document.addEventListener("DOMContentLoaded", () => {
-        if (window.lucide) lucide.createIcons();
-        updateSystemClock();
-        setInterval(updateSystemClock, 1000);
-        
-        // Trigger route immediately after DOM ready
-        handleRoute();
+    // 2. Hide all viewports
+    document.querySelectorAll('.page-viewport').forEach(view => {
+        view.classList.remove('active', 'block');
+        view.classList.add('hidden');
     });
 
-    // Handle browser Back / Forward buttons and refresh hashes
-    window.addEventListener('popstate', handleRoute);
-    window.addEventListener('hashchange', handleRoute);
+    // 3. Find target section (supports both 'page-about' AND 'about' as element IDs)
+    const targetView = document.getElementById(`page-${pageId}`) || document.getElementById(pageId);
+    
+    if (targetView) {
+        targetView.classList.remove('hidden');
+        targetView.classList.add('active', 'block');
+    } else {
+        // Fallback to home only if the section really doesn't exist in HTML
+        const homeView = document.getElementById('page-home') || document.getElementById('home');
+        if (homeView) {
+            homeView.classList.remove('hidden');
+            homeView.classList.add('active', 'block');
+        }
+    }
+
+    // 4. Update Navigation Styles
+    document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.classList.remove('bg-white/10', 'text-accentCyan', 'text-emerald-400');
+        btn.classList.add('text-neutral-400');
+    });
+
+    const activeBtn = document.getElementById(`nav-${pageId}`);
+    if (activeBtn) {
+        activeBtn.classList.remove('text-neutral-400');
+        if (pageId === 'real-estate') {
+            activeBtn.classList.add('bg-white/10', 'text-emerald-400');
+        } else {
+            activeBtn.classList.add('bg-white/10', 'text-accentCyan');
+        }
+    }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function handleRoute() {
+    const rawHash = window.location.hash.replace('#', '');
+    
+    // Check if the hash matches a main viewport or its page container
+    if (rawHash) {
+        const target = document.getElementById(`page-${rawHash}`) || document.getElementById(rawHash);
+        if (target && target.classList.contains('page-viewport')) {
+            switchPage(rawHash);
+            return;
+        }
+    }
+    
+    // Default to home if no hash or invalid hash
+    if (!rawHash) {
+        switchPage('home');
+    }
+}
+
+// Ensure DOM is fully loaded before routing on refresh
+document.addEventListener("DOMContentLoaded", () => {
+    if (window.lucide) lucide.createIcons();
+    if (typeof updateSystemClock === 'function') {
+        updateSystemClock();
+        setInterval(updateSystemClock, 1000);
+    }
+    
+    handleRoute();
+});
+
+// Handle browser Back / Forward buttons and manual hash changes
+window.addEventListener('hashchange', handleRoute);
     
 // ================= TESTIMONIAL CAROUSEL SLIDER ENGINE DRIVER =================
 let currentSlideIndex = 0;
