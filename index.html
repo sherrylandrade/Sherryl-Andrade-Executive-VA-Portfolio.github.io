@@ -2227,19 +2227,8 @@
 function switchPage(pageId) {
     if (!pageId) pageId = 'home';
 
-    // Clean up hash input (removes '#' or extra slashes)
-    pageId = pageId.replace('#', '').trim();
-
-    // 1. Try finding the element with or without 'page-' prefix
-    let targetView = document.getElementById(`page-${pageId}`) || document.getElementById(pageId);
-
-    // If still not found, default to home
-    if (!targetView) {
-        pageId = 'home';
-        targetView = document.getElementById('page-home') || document.getElementById('home');
-    }
-
-    if (!targetView) return; // Exit safety check
+    // 1. Update hash in browser URL
+    window.location.hash = pageId;
 
     // 2. Hide all viewports
     document.querySelectorAll('.page-viewport').forEach(view => {
@@ -2247,16 +2236,22 @@ function switchPage(pageId) {
         view.classList.add('hidden');
     });
 
-    // 3. Display the target viewport
-    targetView.classList.remove('hidden');
-    targetView.classList.add('active', 'block');
-
-    // 4. Ensure hash in address bar matches without forcing page jump
-    if (window.location.hash !== `#${pageId}`) {
-        history.replaceState(null, null, `#${pageId}`);
+    // 3. Find target section (supports both 'page-about' AND 'about' as element IDs)
+    const targetView = document.getElementById(`page-${pageId}`) || document.getElementById(pageId);
+    
+    if (targetView) {
+        targetView.classList.remove('hidden');
+        targetView.classList.add('active', 'block');
+    } else {
+        // Fallback to home only if the section really doesn't exist in HTML
+        const homeView = document.getElementById('page-home') || document.getElementById('home');
+        if (homeView) {
+            homeView.classList.remove('hidden');
+            homeView.classList.add('active', 'block');
+        }
     }
 
-    // 5. Update Navigation Buttons
+    // 4. Update Navigation Styles
     document.querySelectorAll('.nav-btn').forEach(btn => {
         btn.classList.remove('bg-white/10', 'text-accentCyan', 'text-emerald-400');
         btn.classList.add('text-neutral-400');
@@ -2276,15 +2271,24 @@ function switchPage(pageId) {
 }
 
 function handleRoute() {
-    const currentHash = window.location.hash.replace('#', '');
-    if (currentHash) {
-        switchPage(currentHash);
-    } else {
+    const rawHash = window.location.hash.replace('#', '');
+    
+    // Check if the hash matches a main viewport or its page container
+    if (rawHash) {
+        const target = document.getElementById(`page-${rawHash}`) || document.getElementById(rawHash);
+        if (target && target.classList.contains('page-viewport')) {
+            switchPage(rawHash);
+            return;
+        }
+    }
+    
+    // Default to home if no hash or invalid hash
+    if (!rawHash) {
         switchPage('home');
     }
 }
 
-// Ensure DOM is fully loaded before routing
+// Ensure DOM is fully loaded before routing on refresh
 document.addEventListener("DOMContentLoaded", () => {
     if (window.lucide) lucide.createIcons();
     if (typeof updateSystemClock === 'function') {
@@ -2292,12 +2296,10 @@ document.addEventListener("DOMContentLoaded", () => {
         setInterval(updateSystemClock, 1000);
     }
     
-    // Route to current hash immediately on page refresh
     handleRoute();
 });
 
-// Handle back/forward navigation and hash changes
-window.addEventListener('popstate', handleRoute);
+// Handle browser Back / Forward buttons and manual hash changes
 window.addEventListener('hashchange', handleRoute);
     
 // ================= TESTIMONIAL CAROUSEL SLIDER ENGINE DRIVER =================
