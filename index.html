@@ -72,7 +72,7 @@
     <main class="flex-grow pt-36 pb-16 max-w-6xl w-full mx-auto px-6">
 
         <!-- ================= VIEW 1: HOME PAGE / HERO (Full Width) ================= -->
-        <section id="page-home" class="page-viewport active max-w-7xl mx-auto px-4 pt-16 pb-12 text-center">
+        <section id="page-home" class="page-viewport hidden max-w-7xl mx-auto px-4 pt-16 pb-12 text-center">
             <div class="flex flex-col items-center">
                 <span class="text-xs font-mono uppercase tracking-widest text-accentCyan bg-accentCyan/10 px-3 py-1 rounded-full mb-4">
                     Specialized Professional Services
@@ -2321,6 +2321,39 @@ function slidePrev() {
     currentSlideIndex = (currentSlideIndex - 1 + totalSlides) % totalSlides;
     updateSliderView();
 }               
+
+        // Master Page Switcher Function
+function switchPage(pageId) {
+    // Hide all viewports
+    document.querySelectorAll('.page-viewport').forEach(page => {
+        page.classList.remove('active');
+        page.classList.add('hidden');
+    });
+
+    // Target the requested view section
+    const targetPage = document.getElementById(`page-${pageId}`);
+    if (targetPage) {
+        targetPage.classList.remove('hidden');
+        targetPage.classList.add('active');
+        window.location.hash = pageId; // Update browser URL hash
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+}
+
+// Handle Direct Page Refresh & Direct URL Links
+function initRouter() {
+    const hash = window.location.hash.replace('#', '');
+    if (hash && document.getElementById(`page-${hash}`)) {
+        switchPage(hash);
+    } else {
+        switchPage('home'); // Default fallback
+    }
+}
+
+// Initialize on initial document load and back/forward browser navigation
+document.addEventListener('DOMContentLoaded', initRouter);
+window.addEventListener('hashchange', initRouter);
+                
     </script>
 </body>
 </html>
