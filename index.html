@@ -2221,65 +2221,88 @@
     </div>
 </footer>
 
-    <!-- CODE SCRIPT ROUTER AND SLIDER LOOPS -->
-    <script>
-        function switchPage(pageId) {
-            window.location.hash = pageId;
+<!-- CODE SCRIPT ROUTER AND SLIDER LOOPS -->
+<script>
+    // ================= ROUTER ENGINE =================
+    function switchPage(pageId) {
+        if (!pageId) pageId = 'home';
 
-            document.querySelectorAll('.page-viewport').forEach(view => view.classList.remove('active'));
-            const targetView = document.getElementById(`page-${pageId}`);
-            if(targetView) targetView.classList.add('active');
+        // 1. Update hash without triggering double reload
+        if (window.location.hash.replace('#', '') !== pageId) {
+            history.pushState(null, null, `#${pageId}`);
+        }
 
-            document.querySelectorAll('.nav-btn').forEach(btn => {
-                btn.classList.remove('bg-white/10', 'text-accentCyan', 'text-emerald-400');
-                btn.classList.add('text-neutral-400');
-            });
-            
-            const activeBtn = document.getElementById(`nav-${pageId}`);
-            if(activeBtn) {
-                activeBtn.classList.remove('text-neutral-400');
-                if (pageId === 'real-estate') {
-                    activeBtn.classList.add('bg-white/10', 'text-emerald-400');
-                } else {
-                    activeBtn.classList.add('bg-white/10', 'text-accentCyan');
-                }
+        // 2. Hide all viewports
+        document.querySelectorAll('.page-viewport').forEach(view => {
+            view.classList.remove('active', 'block');
+            view.classList.add('hidden');
+        });
+
+        // 3. Show target viewport
+        const targetView = document.getElementById(`page-${pageId}`);
+        if (targetView) {
+            targetView.classList.remove('hidden');
+            targetView.classList.add('active', 'block');
+        } else {
+            // Fallback to home if page ID isn't found
+            const homeView = document.getElementById('page-home');
+            if (homeView) {
+                homeView.classList.remove('hidden');
+                homeView.classList.add('active', 'block');
             }
-            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function updateSystemClock() {
-            const now = new Date();
-            const clockEl = document.getElementById('live-clock');
-            if (clockEl) clockEl.textContent = now.toTimeString().split(' ')[0];
-        }
+        // 4. Update Navigation Styles
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+            btn.classList.remove('bg-white/10', 'text-accentCyan', 'text-emerald-400');
+            btn.classList.add('text-neutral-400');
+        });
 
-        function initRouter() {
-            if (window.location.hash) {
-                const initialPage = window.location.hash.replace('#', '');
-                switchPage(initialPage);
+        const activeBtn = document.getElementById(`nav-${pageId}`);
+        if (activeBtn) {
+            activeBtn.classList.remove('text-neutral-400');
+            if (pageId === 'real-estate') {
+                activeBtn.classList.add('bg-white/10', 'text-emerald-400');
             } else {
-                switchPage('home');
+                activeBtn.classList.add('bg-white/10', 'text-accentCyan');
             }
         }
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function updateSystemClock() {
+        const now = new Date();
+        const clockEl = document.getElementById('live-clock');
+        if (clockEl) clockEl.textContent = now.toTimeString().split(' ')[0];
+    }
+
+    function handleRoute() {
+        const rawHash = window.location.hash.replace('#', '');
+        // Ignore sub-anchors like #work or #testimonials if they aren't main page viewports
+        const validPages = ['home', 'about', 'customer-support', 'real-estate', 'contact']; 
         
-        initRouter();
+        if (rawHash && validPages.includes(rawHash)) {
+            switchPage(rawHash);
+        } else if (rawHash === '') {
+            switchPage('home');
+        }
+    }
 
-        document.addEventListener("DOMContentLoaded", () => {
-            if (window.lucide) lucide.createIcons();
-            updateSystemClock();
-            setInterval(updateSystemClock, 1000);
-            initRouter();
-        });
+    // Ensure DOM is fully loaded before routing on refresh
+    document.addEventListener("DOMContentLoaded", () => {
+        if (window.lucide) lucide.createIcons();
+        updateSystemClock();
+        setInterval(updateSystemClock, 1000);
+        
+        // Trigger route immediately after DOM ready
+        handleRoute();
+    });
 
-        window.addEventListener('hashchange', () => {
-            if (window.location.hash) {
-                const targetPage = window.location.hash.replace('#', '');
-                const targetView = document.getElementById(`page-${targetPage}`);
-                if (targetView && !targetView.classList.contains('active')) {
-                    switchPage(targetPage);
-                }
-            }
-        });
+    // Handle browser Back / Forward buttons and refresh hashes
+    window.addEventListener('popstate', handleRoute);
+    window.addEventListener('hashchange', handleRoute);
+    
 // ================= TESTIMONIAL CAROUSEL SLIDER ENGINE DRIVER =================
 let currentSlideIndex = 0;
 const totalSlides = 3;
