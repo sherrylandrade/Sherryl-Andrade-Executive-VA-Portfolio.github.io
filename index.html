@@ -2160,19 +2160,18 @@
 
             </div>
 
-            <a
-                href="YOUR-PROJECT-01-LINK"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 hover:text-accentCyan transition-colors mt-auto"
-            >
-                View Project
+            <button
+    type="button"
+    onclick="switchPage('re-project-01')"
+    class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 hover:text-accentCyan transition-colors mt-auto w-fit"
+>
+    View Project
 
-                <i
-                    data-lucide="arrow-up-right"
-                    class="w-3.5 h-3.5"
-                ></i>
-            </a>
+    <i
+        data-lucide="arrow-right"
+        class="w-3.5 h-3.5"
+    ></i>
+</button>
            
         </article>
 
@@ -4298,8 +4297,7 @@
     're-testimonials',
     're-project-01'
 ];
-
-
+    
     // ================= SCROLL TO SECTION =================
 
     function scrollToSection(sectionId, behavior = 'smooth') {
@@ -4387,14 +4385,15 @@
 
         // Match secondary pages to their parent navigation item
         const parentNavigation = {
-            work: 'about',
+    work: 'about',
 
-            cases: 'customer-service',
-            testimonials: 'customer-service',
+    cases: 'customer-service',
+    testimonials: 'customer-service',
 
-            're-cases': 'real-estate',
-            're-testimonials': 'real-estate'
-        };
+    're-cases': 'real-estate',
+    're-testimonials': 'real-estate',
+    're-project-01': 'real-estate'
+};
 
         const navigationId =
             parentNavigation[targetView] || targetView;
@@ -4727,20 +4726,7 @@
                 150
             );
         }
-    );
-
-       // ================= real-estate =================
-const parentNavigation = {
-    work: 'about',
-
-    cases: 'customer-service',
-    testimonials: 'customer-service',
-
-    're-cases': 'real-estate',
-    're-testimonials': 'real-estate',
-    're-project-01': 'real-estate'
-};    
-    
+    );    
 </script>
 </body>
 </html>
