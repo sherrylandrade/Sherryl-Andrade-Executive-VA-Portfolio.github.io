@@ -871,20 +871,56 @@
         
         <!-- Sticky Sub-Navigation Rail -->
         <aside class="w-full md:w-64 shrink-0 md:sticky md:top-28 flex flex-col space-y-2 py-2 font-mono text-xs z-10 bg-neutral-950/80 backdrop-blur-sm p-4 rounded-xl border border-white/5 md:bg-transparent md:backdrop-blur-none md:p-0 md:border-none">
-            <span class="text-[10px] uppercase text-neutral-500 tracking-wider mb-2 font-bold px-2 hidden md:block">Navigation Nodes</span>
-            <a href="#case-01" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1.5 px-2 rounded hover:bg-white/5 md:hover:bg-transparent md:p-1">
-                <span class="opacity-50 font-light">—</span> Case Study 01
-            </a>
-            <a href="#case-02" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1.5 px-2 rounded hover:bg-white/5 md:hover:bg-transparent md:p-1">
-                <span class="opacity-50 font-light">—</span> Case Study 02
-            </a>
-            <a href="#case-03" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1.5 px-2 rounded hover:bg-white/5 md:hover:bg-transparent md:p-1">
-                <span class="opacity-50 font-light">—</span> Case Study 03
-            </a>
-            <a href="#case-testimonials-section" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1">
-                <span class="opacity-50">—</span> Testimonials
-            </a>
-        </aside>
+
+    <span class="text-[10px] uppercase text-neutral-500 tracking-wider mb-2 font-bold px-2 hidden md:block">
+        Navigation Nodes
+    </span>
+
+    <a
+        href="#cases/case-01"
+        onclick="event.preventDefault(); switchPage('cases', 'case-01')"
+        class="group text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1.5 px-2 rounded hover:bg-white/5 md:hover:bg-transparent md:p-1"
+    >
+        <span class="opacity-50 font-light group-hover:text-emerald-300">
+            —
+        </span>
+        Case Study 01
+    </a>
+
+    <a
+        href="#cases/case-02"
+        onclick="event.preventDefault(); switchPage('cases', 'case-02')"
+        class="group text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1.5 px-2 rounded hover:bg-white/5 md:hover:bg-transparent md:p-1"
+    >
+        <span class="opacity-50 font-light group-hover:text-emerald-300">
+            —
+        </span>
+        Case Study 02
+    </a>
+
+    <a
+        href="#cases/case-03"
+        onclick="event.preventDefault(); switchPage('cases', 'case-03')"
+        class="group text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1.5 px-2 rounded hover:bg-white/5 md:hover:bg-transparent md:p-1"
+    >
+        <span class="opacity-50 font-light group-hover:text-emerald-300">
+            —
+        </span>
+        Case Study 03
+    </a>
+
+    <a
+        href="#cases/case-testimonials-section"
+        onclick="event.preventDefault(); switchPage('cases', 'case-testimonials-section')"
+        class="group text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1.5 px-2 rounded hover:bg-white/5 md:hover:bg-transparent md:p-1"
+    >
+        <span class="opacity-50 font-light group-hover:text-emerald-300">
+            —
+        </span>
+        Testimonials
+    </a>
+
+</aside>
 
         <!-- Main Stream Stack Component Container -->
         <div class="flex-1 w-full space-y-8">
@@ -1189,17 +1225,41 @@
         
         <div class="w-full md:w-64 shrink-0 md:sticky md:top-28"> 
             <nav class="space-y-2 font-mono text-xs">
-                <a href="javascript:void(0)" onclick="const el = document.getElementById('section-video'); if(el) { window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' }); }" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left">
-                    <span class="opacity-50">—</span> Commendation Video
-                </a>
-                <a href="javascript:void(0)" onclick="const el = document.getElementById('section-feedback-panel'); if(el) { window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' }); }" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left">
-                    <span class="opacity-50">—</span> Feedback Panels
-                </a> 
-                
-                <a href="javascript:void(0)" onclick="event.preventDefault(); event.stopPropagation(); document.getElementById('confidentiality-disclaimer')?.scrollIntoView({ behavior: 'smooth', block: 'center' });" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left">
-                    <span class="opacity-50">—</span> Disclaimer
-                </a> 
-            </nav>
+
+    <a
+        href="#testimonials/section-video"
+        onclick="event.preventDefault(); switchPage('testimonials', 'section-video')"
+        class="group text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left"
+    >
+        <span class="opacity-50 group-hover:text-emerald-300">
+            —
+        </span>
+        Commendation Video
+    </a>
+
+    <a
+        href="#testimonials/section-feedback-panel"
+        onclick="event.preventDefault(); switchPage('testimonials', 'section-feedback-panel')"
+        class="group text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left"
+    >
+        <span class="opacity-50 group-hover:text-emerald-300">
+            —
+        </span>
+        Feedback Panels
+    </a>
+
+    <a
+        href="#testimonials/confidentiality-disclaimer"
+        onclick="event.preventDefault(); switchPage('testimonials', 'confidentiality-disclaimer')"
+        class="group text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left"
+    >
+        <span class="opacity-50 group-hover:text-emerald-300">
+            —
+        </span>
+        Disclaimer
+    </a>
+
+</nav>
         </div>
 
         <div class="flex-1 w-full space-y-12">
@@ -1354,32 +1414,32 @@
         <!-- LEFT SIDEBAR: Sticky Internal Directory (Smooth Scroller Only) -->
         <div class="w-full md:w-1/5 shrink-0 md:sticky md:top-28">
             <nav class="flex flex-col gap-4 text-xs font-mono tracking-wide text-emerald-500">
-                <a href="#re-introduction" 
-                    onclick="event.preventDefault(); switchPage('about', 're-introduction')"
+                <a href="#real-estate/re-introduction" 
+                    onclick="event.preventDefault(); switchPage('real-estate', 're-introduction')"
                     class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
                     <span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all"></span>
                     Introduction
                 </a>
-                <a href="#re-core-services" 
-                    onclick="event.preventDefault(); switchPage('about', 're-core-services')"
+                <a href="#real-estate/re-core-services" 
+                    onclick="event.preventDefault(); switchPage('real-estate', 're-core-services')"
                     class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
                     <span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all"></span>
                     Core Services
                 </a>                    
-                <a href="#re-skills-tools" 
-                    onclick="event.preventDefault(); switchPage('about', 're-skills-tools')"
+                <a href="#real-estate/re-skills-tools" 
+                    onclick="event.preventDefault(); switchPage('real-estate', 're-skills-tools')"
                     class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
                     <span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all"></span>
                     Skills &amp; Tools
                 </a>
-                <a href="#re-cases-section" 
-                    onclick="event.preventDefault(); switchPage('about', 're-cases-section')"
+                <a href="#real-estate/re-cases-section" 
+                    onclick="event.preventDefault(); switchPage('real-estate', 're-cases-section')"
                     class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
                     <span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all"></span>
                     Case Studies
                 </a>
-                <a href="#re-testimonials-section" 
-                    onclick="event.preventDefault(); switchPage('about', 're-testimonials-section')"
+                <a href="#real-estate/re-testimonials-section" 
+                    onclick="event.preventDefault(); switchPage('real-estate', 're-testimonials-section')"
                     class="group flex items-center gap-2 hover:text-accentCyan transition-colors">
                     <span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all"></span>
                     Testimonials
@@ -2254,136 +2314,307 @@
     </div>
 </footer>
 
-<!-- CODE SCRIPT ROUTER AND SLIDER LOOPS -->
+<!-- CODE SCRIPT ROUTER, CLOCK, AND SLIDER -->
 <script>
-// ================= MASTER PAGE ROUTER =================
+    // ================= VALID PAGE ROUTES =================
 
-const pageRoutes = [
-    'home',
-    'about',
-    'work',
-    'customer-service',
-    'real-estate',
-    'contact',
-    'cases',
-    'testimonials',
-    're-cases',
-    're-testimonials'
-];
+    const pageRoutes = [
+        'home',
+        'about',
+        'work',
+        'customer-service',
+        'real-estate',
+        'contact',
+        'cases',
+        'testimonials',
+        're-cases',
+        're-testimonials'
+    ];
 
-function displayPage(pageId, sectionId = null) {
-    const targetView = pageRoutes.includes(pageId) ? pageId : 'home';
 
-    // Hide all page views
-    document.querySelectorAll('.page-viewport').forEach(view => {
-        view.classList.remove('active');
-        view.classList.add('hidden');
-    });
+    // ================= PAGE DISPLAY =================
 
-    // Display selected page
-    const activeView = document.getElementById(`page-${targetView}`);
+    function displayPage(pageId, sectionId = null) {
+        const targetView = pageRoutes.includes(pageId)
+            ? pageId
+            : 'home';
 
-    if (activeView) {
-        activeView.classList.remove('hidden');
-        activeView.classList.add('active');
-    }
+        // Hide every landing page
+        document.querySelectorAll('.page-viewport').forEach(view => {
+            view.classList.remove('active');
+            view.classList.add('hidden');
+        });
 
-    // Reset navigation styles
-    document.querySelectorAll('.nav-btn').forEach(btn => {
-        btn.classList.remove(
-            'bg-white/10',
-            'text-accentCyan',
-            'text-emerald-400'
-        );
+        // Show the selected landing page
+        const activeView = document.getElementById(`page-${targetView}`);
 
-        btn.classList.add('text-neutral-400');
-    });
+        if (activeView) {
+            activeView.classList.remove('hidden');
+            activeView.classList.add('active');
+        }
 
-    // Highlight the matching main navigation button
-    const activeBtn = document.getElementById(`nav-${targetView}`);
-
-    if (activeBtn) {
-        activeBtn.classList.remove('text-neutral-400');
-
-        if (targetView === 'real-estate') {
-            activeBtn.classList.add(
+        // Reset global navigation styles
+        document.querySelectorAll('.nav-btn').forEach(button => {
+            button.classList.remove(
                 'bg-white/10',
+                'text-accentCyan',
                 'text-emerald-400'
             );
-        } else {
-            activeBtn.classList.add(
-                'bg-white/10',
-                'text-accentCyan'
-            );
-        }
-    }
 
-    // Scroll after the selected page becomes visible
-    requestAnimationFrame(() => {
-        if (sectionId) {
-            const section = document.getElementById(sectionId);
+            button.classList.add('text-neutral-400');
+        });
 
-            if (section) {
-                section.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+        // Determine which global navigation item should remain active
+        const parentNavigation = {
+            work: 'about',
 
-                return;
+            cases: 'customer-service',
+            testimonials: 'customer-service',
+
+            're-cases': 'real-estate',
+            're-testimonials': 'real-estate'
+        };
+
+        const navigationId =
+            parentNavigation[targetView] || targetView;
+
+        const activeButton =
+            document.getElementById(`nav-${navigationId}`);
+
+        if (activeButton) {
+            activeButton.classList.remove('text-neutral-400');
+
+            if (navigationId === 'real-estate') {
+                activeButton.classList.add(
+                    'bg-white/10',
+                    'text-emerald-400'
+                );
+            } else {
+                activeButton.classList.add(
+                    'bg-white/10',
+                    'text-accentCyan'
+                );
             }
         }
 
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+        // Wait until the page is visible before scrolling
+        requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+                if (sectionId) {
+                    const section =
+                        document.getElementById(sectionId);
+
+                    if (section) {
+                        section.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+
+                        return;
+                    }
+                }
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'auto'
+                });
+            });
         });
-    });
-}
-
-function switchPage(pageId, sectionId = null) {
-    const targetView = pageRoutes.includes(pageId) ? pageId : 'home';
-
-    const newHash = sectionId
-        ? `#${targetView}/${sectionId}`
-        : `#${targetView}`;
-
-    if (window.location.hash !== newHash) {
-        history.pushState(null, '', newHash);
     }
 
-    displayPage(targetView, sectionId);
-}
 
-function initRouter() {
-    const hash = window.location.hash
-        .replace(/^#/, '')
-        .trim();
+    // ================= PAGE NAVIGATION =================
 
-    if (!hash) {
-        displayPage('home');
-        return;
+    function switchPage(pageId, sectionId = null) {
+        const targetView = pageRoutes.includes(pageId)
+            ? pageId
+            : 'home';
+
+        const newHash = sectionId
+            ? `#${targetView}/${sectionId}`
+            : `#${targetView}`;
+
+        if (window.location.hash !== newHash) {
+            history.pushState(null, '', newHash);
+        }
+
+        displayPage(targetView, sectionId);
     }
 
-    const [pageId, sectionId] = hash.split('/');
 
-    displayPage(
-        pageRoutes.includes(pageId) ? pageId : 'home',
-        sectionId || null
+    // ================= ROUTER INITIALIZATION =================
+
+    function initRouter() {
+        const hash = window.location.hash
+            .replace(/^#/, '')
+            .trim();
+
+        if (!hash) {
+            history.replaceState(null, '', '#home');
+            displayPage('home');
+            return;
+        }
+
+        const [pageId, sectionId] = hash.split('/');
+
+        const targetView = pageRoutes.includes(pageId)
+            ? pageId
+            : 'home';
+
+        // Correct invalid hashes without adding another history entry
+        if (!pageRoutes.includes(pageId)) {
+            history.replaceState(null, '', '#home');
+        }
+
+        displayPage(
+            targetView,
+            sectionId || null
+        );
+    }
+
+
+    // ================= PHILIPPINE CLOCK =================
+
+    function updateSystemClock() {
+        const clockElement =
+            document.getElementById('live-clock');
+
+        if (!clockElement) {
+            return;
+        }
+
+        const philippineTime = new Intl.DateTimeFormat(
+            'en-PH',
+            {
+                timeZone: 'Asia/Manila',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            }
+        ).format(new Date());
+
+        clockElement.textContent =
+            `${philippineTime} PHT`;
+    }
+
+
+    // ================= CUSTOMER SUPPORT TESTIMONIAL SLIDER =================
+
+    let currentSlideIndex = 0;
+
+    const slideCategoryTitles = [
+        '1. Client Commendations',
+        '2. Customer Satisfaction Surveys',
+        '3. Quality Assurance Metrics & Performance Reviews'
+    ];
+
+    function updateSliderView() {
+        const slides =
+            document.querySelectorAll(
+                '#page-testimonials .testimonial-slide'
+            );
+
+        if (!slides.length) {
+            return;
+        }
+
+        slides.forEach((slide, index) => {
+            const isActive =
+                index === currentSlideIndex;
+
+            slide.classList.toggle(
+                'hidden',
+                !isActive
+            );
+
+            slide.classList.toggle(
+                'block',
+                isActive
+            );
+        });
+
+        const titleElement =
+            document.getElementById(
+                'slider-category-title'
+            );
+
+        if (titleElement) {
+            titleElement.textContent =
+                slideCategoryTitles[currentSlideIndex];
+        }
+    }
+
+    function slideNext() {
+        const slides =
+            document.querySelectorAll(
+                '#page-testimonials .testimonial-slide'
+            );
+
+        if (!slides.length) {
+            return;
+        }
+
+        currentSlideIndex =
+            (currentSlideIndex + 1) % slides.length;
+
+        updateSliderView();
+    }
+
+    function slidePrev() {
+        const slides =
+            document.querySelectorAll(
+                '#page-testimonials .testimonial-slide'
+            );
+
+        if (!slides.length) {
+            return;
+        }
+
+        currentSlideIndex =
+            (
+                currentSlideIndex -
+                1 +
+                slides.length
+            ) % slides.length;
+
+        updateSliderView();
+    }
+
+
+    // ================= INITIAL PAGE LOAD =================
+
+    document.addEventListener(
+        'DOMContentLoaded',
+        () => {
+            if (window.lucide) {
+                lucide.createIcons();
+            }
+
+            updateSystemClock();
+
+            setInterval(
+                updateSystemClock,
+                1000
+            );
+
+            updateSliderView();
+            initRouter();
+        }
     );
-}
 
-    // ================= EVENT LISTENERS =================
-    document.addEventListener("DOMContentLoaded", () => {
-        if (window.lucide) lucide.createIcons();
-        updateSystemClock();
-        setInterval(updateSystemClock, 1000);
-        
-        // Initial route setup on page load
-        initRouter();
-    });
 
-    // Handle back/forward navigation or URL hash changes
-    window.addEventListener('hashchange', initRouter);
+    // ================= BROWSER NAVIGATION =================
+
+    window.addEventListener(
+        'hashchange',
+        initRouter
+    );
+
+    window.addEventListener(
+        'popstate',
+        initRouter
+    );
 </script>
 </body>
 </html>
