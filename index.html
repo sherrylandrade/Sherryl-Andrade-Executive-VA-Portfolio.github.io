@@ -1993,19 +1993,31 @@
         <div class="w-full md:w-64 shrink-0 md:sticky md:top-28"> 
             <nav class="space-y-2 font-mono text-xs">
                 <a
-    href="#testimonials/section-video-anchor"
-    onclick="event.preventDefault(); switchPage('testimonials', 'section-video-anchor')"
+    href="#testimonials/section-video"
+    onclick="event.preventDefault(); switchPage('testimonials', 'section-video')"
     class="group text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left"
 >
-    <span class="opacity-50 group-hover:text-emerald-300">—</span>
+    <span class="opacity-50">—</span>
     Commendation Video
 </a>
-                <a href="javascript:void(0)" onclick="const el = document.getElementById('re-section-feedback-panel'); if(el) { window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' }); }" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left">
-                    <span class="opacity-50">—</span> Performance Logs
-                </a> 
-                <a href="javascript:void(0)" onclick="event.preventDefault(); event.stopPropagation(); document.getElementById('re-confidentiality-disclaimer')?.scrollIntoView({ behavior: 'smooth', block: 'center' });" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left">
-                    <span class="opacity-50">—</span> Disclaimer
-                </a> 
+
+<a
+    href="#testimonials/section-feedback-panel"
+    onclick="event.preventDefault(); switchPage('testimonials', 'section-feedback-panel')"
+    class="group text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left"
+>
+    <span class="opacity-50">—</span>
+    Feedback Panels
+</a>
+
+<a
+    href="#testimonials/confidentiality-disclaimer"
+    onclick="event.preventDefault(); switchPage('testimonials', 'confidentiality-disclaimer')"
+    class="group text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left"
+>
+    <span class="opacity-50">—</span>
+    Disclaimer
+</a> 
             </nav>
         </div>
 
@@ -2342,21 +2354,72 @@
     ];
 
 
+    // ================= SCROLL TO SECTION =================
+
+    function scrollToSection(sectionId, behavior = 'smooth') {
+        if (!sectionId) {
+            window.scrollTo({
+                top: 0,
+                behavior: behavior
+            });
+
+            return;
+        }
+
+        const section = document.getElementById(sectionId);
+
+        if (!section) {
+            window.scrollTo({
+                top: 0,
+                behavior: behavior
+            });
+
+            return;
+        }
+
+        const header = document.querySelector('header');
+
+        const headerHeight = header
+            ? header.getBoundingClientRect().height
+            : 0;
+
+        const extraSpacing = 24;
+
+        const targetPosition =
+            section.getBoundingClientRect().top +
+            window.pageYOffset -
+            headerHeight -
+            extraSpacing;
+
+        window.scrollTo({
+            top: Math.max(targetPosition, 0),
+            behavior: behavior
+        });
+    }
+
+
     // ================= PAGE DISPLAY =================
 
-    function displayPage(pageId, sectionId = null) {
+    function displayPage(
+        pageId,
+        sectionId = null,
+        scrollBehavior = 'smooth'
+    ) {
         const targetView = pageRoutes.includes(pageId)
             ? pageId
             : 'home';
 
-        // Hide every landing page
-        document.querySelectorAll('.page-viewport').forEach(view => {
-            view.classList.remove('active');
-            view.classList.add('hidden');
-        });
+        // Hide all landing pages
+        document
+            .querySelectorAll('.page-viewport')
+            .forEach(view => {
+                view.classList.remove('active');
+                view.classList.add('hidden');
+            });
 
-        // Show the selected landing page
-        const activeView = document.getElementById(`page-${targetView}`);
+        // Display selected landing page
+        const activeView =
+            document.getElementById(`page-${targetView}`);
 
         if (activeView) {
             activeView.classList.remove('hidden');
@@ -2364,17 +2427,19 @@
         }
 
         // Reset global navigation styles
-        document.querySelectorAll('.nav-btn').forEach(button => {
-            button.classList.remove(
-                'bg-white/10',
-                'text-accentCyan',
-                'text-emerald-400'
-            );
+        document
+            .querySelectorAll('.nav-btn')
+            .forEach(button => {
+                button.classList.remove(
+                    'bg-white/10',
+                    'text-accentCyan',
+                    'text-emerald-400'
+                );
 
-            button.classList.add('text-neutral-400');
-        });
+                button.classList.add('text-neutral-400');
+            });
 
-        // Determine which global navigation item should remain active
+        // Match secondary pages to their parent navigation item
         const parentNavigation = {
             work: 'about',
 
@@ -2389,10 +2454,14 @@
             parentNavigation[targetView] || targetView;
 
         const activeButton =
-            document.getElementById(`nav-${navigationId}`);
+            document.getElementById(
+                `nav-${navigationId}`
+            );
 
         if (activeButton) {
-            activeButton.classList.remove('text-neutral-400');
+            activeButton.classList.remove(
+                'text-neutral-400'
+            );
 
             if (navigationId === 'real-estate') {
                 activeButton.classList.add(
@@ -2407,27 +2476,20 @@
             }
         }
 
-        // Wait until the page is visible before scrolling
+        /*
+         * Wait until:
+         * 1. The selected page is visible.
+         * 2. The browser has recalculated its layout.
+         * 3. Embedded video/iframe containers have received dimensions.
+         */
         requestAnimationFrame(() => {
             requestAnimationFrame(() => {
-                if (sectionId) {
-                    const section =
-                        document.getElementById(sectionId);
-
-                    if (section) {
-                        section.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-
-                        return;
-                    }
-                }
-
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'auto'
-                });
+                setTimeout(() => {
+                    scrollToSection(
+                        sectionId,
+                        scrollBehavior
+                    );
+                }, 80);
             });
         });
     }
@@ -2435,20 +2497,32 @@
 
     // ================= PAGE NAVIGATION =================
 
-    function switchPage(pageId, sectionId = null) {
-        const targetView = pageRoutes.includes(pageId)
-            ? pageId
-            : 'home';
+    function switchPage(
+        pageId,
+        sectionId = null
+    ) {
+        const targetView =
+            pageRoutes.includes(pageId)
+                ? pageId
+                : 'home';
 
         const newHash = sectionId
             ? `#${targetView}/${sectionId}`
             : `#${targetView}`;
 
         if (window.location.hash !== newHash) {
-            history.pushState(null, '', newHash);
+            history.pushState(
+                null,
+                '',
+                newHash
+            );
         }
 
-        displayPage(targetView, sectionId);
+        displayPage(
+            targetView,
+            sectionId,
+            'smooth'
+        );
     }
 
 
@@ -2460,25 +2534,47 @@
             .trim();
 
         if (!hash) {
-            history.replaceState(null, '', '#home');
-            displayPage('home');
+            history.replaceState(
+                null,
+                '',
+                '#home'
+            );
+
+            displayPage(
+                'home',
+                null,
+                'auto'
+            );
+
             return;
         }
 
-        const [pageId, sectionId] = hash.split('/');
+        const hashParts = hash.split('/');
 
-        const targetView = pageRoutes.includes(pageId)
-            ? pageId
-            : 'home';
+        const pageId = hashParts[0];
 
-        // Correct invalid hashes without adding another history entry
+        const sectionId =
+            hashParts.length > 1
+                ? hashParts.slice(1).join('/')
+                : null;
+
+        const targetView =
+            pageRoutes.includes(pageId)
+                ? pageId
+                : 'home';
+
         if (!pageRoutes.includes(pageId)) {
-            history.replaceState(null, '', '#home');
+            history.replaceState(
+                null,
+                '',
+                '#home'
+            );
         }
 
         displayPage(
             targetView,
-            sectionId || null
+            sectionId,
+            'auto'
         );
     }
 
@@ -2487,22 +2583,25 @@
 
     function updateSystemClock() {
         const clockElement =
-            document.getElementById('live-clock');
+            document.getElementById(
+                'live-clock'
+            );
 
         if (!clockElement) {
             return;
         }
 
-        const philippineTime = new Intl.DateTimeFormat(
-            'en-PH',
-            {
-                timeZone: 'Asia/Manila',
-                hour: '2-digit',
-                minute: '2-digit',
-                second: '2-digit',
-                hour12: false
-            }
-        ).format(new Date());
+        const philippineTime =
+            new Intl.DateTimeFormat(
+                'en-PH',
+                {
+                    timeZone: 'Asia/Manila',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    hour12: false
+                }
+            ).format(new Date());
 
         clockElement.textContent =
             `${philippineTime} PHT`;
@@ -2529,20 +2628,29 @@
             return;
         }
 
-        slides.forEach((slide, index) => {
-            const isActive =
-                index === currentSlideIndex;
+        if (
+            currentSlideIndex >= slides.length
+        ) {
+            currentSlideIndex = 0;
+        }
 
-            slide.classList.toggle(
-                'hidden',
-                !isActive
-            );
+        slides.forEach(
+            (slide, index) => {
+                const isActive =
+                    index ===
+                    currentSlideIndex;
 
-            slide.classList.toggle(
-                'block',
-                isActive
-            );
-        });
+                slide.classList.toggle(
+                    'hidden',
+                    !isActive
+                );
+
+                slide.classList.toggle(
+                    'block',
+                    isActive
+                );
+            }
+        );
 
         const titleElement =
             document.getElementById(
@@ -2551,7 +2659,10 @@
 
         if (titleElement) {
             titleElement.textContent =
-                slideCategoryTitles[currentSlideIndex];
+                slideCategoryTitles[
+                    currentSlideIndex
+                ] ||
+                `Slide ${currentSlideIndex + 1}`;
         }
     }
 
@@ -2566,7 +2677,9 @@
         }
 
         currentSlideIndex =
-            (currentSlideIndex + 1) % slides.length;
+            (
+                currentSlideIndex + 1
+            ) % slides.length;
 
         updateSliderView();
     }
@@ -2609,6 +2722,7 @@
             );
 
             updateSliderView();
+
             initRouter();
         }
     );
@@ -2624,6 +2738,49 @@
     window.addEventListener(
         'popstate',
         initRouter
+    );
+
+
+    // ================= RESIZE CORRECTION =================
+
+    let resizeTimer;
+
+    window.addEventListener(
+        'resize',
+        () => {
+            clearTimeout(resizeTimer);
+
+            resizeTimer = setTimeout(
+                () => {
+                    const hash =
+                        window.location.hash
+                            .replace(/^#/, '')
+                            .trim();
+
+                    if (!hash) {
+                        return;
+                    }
+
+                    const hashParts =
+                        hash.split('/');
+
+                    const sectionId =
+                        hashParts.length > 1
+                            ? hashParts
+                                .slice(1)
+                                .join('/')
+                            : null;
+
+                    if (sectionId) {
+                        scrollToSection(
+                            sectionId,
+                            'auto'
+                        );
+                    }
+                },
+                150
+            );
+        }
     );
 </script>
 </body>
