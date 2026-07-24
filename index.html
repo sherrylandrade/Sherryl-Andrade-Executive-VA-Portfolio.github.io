@@ -97,19 +97,6 @@
 <!-- Layout Wrapper -->
 <div class="flex flex-col md:flex-row gap-8 items-start">
 <!-- 1. LEFT SIDEBAR: Directory Column -->
-        
-<div class="md:col-span-1 md:sticky md:top-36 space-y-6">
-    <button
-        onclick="switchPage('about','work-redirect')"
-        class="group flex items-center gap-2 text-sm text-neutral-400 hover:text-accentCyan transition-colors">
-        <i data-lucide="arrow-left" class="w-4 h-4"></i>
-        <span>Back to About</span>
-    </button>
-    <div class="flex items-center gap-4">
-        ...
-    </div>
-</div>
-        
 <div class="w-full md:w-1/5 shrink-0 md:sticky md:top-28">
 <nav class="flex flex-col gap-4 text-xs font-mono tracking-wide text-emerald-400">
 <ul class="space-y-4">
@@ -444,7 +431,7 @@
 </div> <!-- /RIGHT SIDEBAR CONTAINER -->
 </div> <!-- /FLEX WRAPPER -->
 </section>
-<!-- ================= WORK EXPERIENCE PAGE ================= -->
+<!-- ================= WORK EXPERIENCE PAGE ================= -->        
 <section class="page-viewport" id="page-work">
 <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start mt-4">
 <div class="md:col-span-1 md:sticky md:top-36 space-y-4">
@@ -452,6 +439,21 @@
 <div class="w-12 h-12 rounded-full bg-neutral-900/30 flex items-center justify-center border border-white/5">
 <i class="w-5 h-5 text-neutral-400" data-lucide="list-ordered"></i>
 </div>
+
+        
+<div class="md:col-span-1 md:sticky md:top-36 space-y-6">
+    <button
+        onclick="switchPage('about','work-redirect')"
+        class="group flex items-center gap-2 text-sm text-neutral-400 hover:text-accentCyan transition-colors">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+        <span>Back to About</span>
+    </button>
+    <div class="flex items-center gap-4">
+        ...
+    </div>
+</div>
+               
+        
 <div>
 <h2 class="text-2xl font-bold text-white tracking-tight">Work History</h2>
 </div>
