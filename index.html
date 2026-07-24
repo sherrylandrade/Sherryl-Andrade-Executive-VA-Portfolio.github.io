@@ -4090,17 +4090,18 @@
     // ================= VALID PAGE ROUTES =================
 
     const pageRoutes = [
-        'home',
-        'about',
-        'work',
-        'customer-service',
-        'real-estate',
-        'contact',
-        'cases',
-        'testimonials',
-        're-cases',
-        're-testimonials'
-    ];
+    'home',
+    'about',
+    'work',
+    'customer-service',
+    'real-estate',
+    'contact',
+    'cases',
+    'testimonials',
+    're-cases',
+    're-testimonials',
+    're-project-01'
+];
 
 
     // ================= SCROLL TO SECTION =================
@@ -4531,6 +4532,19 @@
             );
         }
     );
+
+       // ================= real-estate =================
+const parentNavigation = {
+    work: 'about',
+
+    cases: 'customer-service',
+    testimonials: 'customer-service',
+
+    're-cases': 'real-estate',
+    're-testimonials': 'real-estate',
+    're-project-01': 'real-estate'
+};    
+    
 </script>
 </body>
 </html>
