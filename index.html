@@ -68,7 +68,7 @@
 <!-- MAIN CONTENT CANVAS -->
 <main class="flex-grow pt-36 pb-16 max-w-6xl w-full mx-auto px-6">
 <!-- ================= VIEW 1: HOME PAGE / HERO (Full Width) ================= -->
-<section class="page-viewport max-w-7xl mx-auto px-4 pt-16 pb-12 text-center" id="page-home">
+<section class="page-viewport max-w-7xl mx-auto px-4 pt-16 pb-12 text-center active" id="page-home">
 <div class="flex flex-col items-center">
 <span class="text-xs font-mono uppercase tracking-widest text-accentCyan bg-accentCyan/10 px-3 py-1 rounded-full mb-4">
                     Specialized Professional Services
@@ -773,7 +773,7 @@
 </div>
 </section>
 <!-- ================= VIEW: CASE STUDIES LANDING PAGE ================= -->
-<section class="page-viewport hidden max-w-7xl mx-auto py-12 px-4 transition-all duration-300" id="page-cases">
+<section class="page-viewport hidden max-w-7xl mx-auto py-12 px-4 transition-all duration-300" id="page-cases"><div class="mb-8"><button class="group inline-flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-accentCyan transition-colors" onclick="switchPage('customer-service', 'cs-cases-section')" type="button"><i class="w-4 h-4 transition-transform group-hover:-translate-x-1" data-lucide="arrow-left"></i>Back to Customer Support</button></div>
 <div class="w-full h-full relative flex flex-col md:flex-row gap-8 items-start">
 <!-- Sticky Sub-Navigation Rail -->
 <aside class="w-full md:w-64 shrink-0 md:sticky md:top-28 flex flex-col space-y-4 py-2 font-mono text-xs z-10">
@@ -1069,7 +1069,7 @@
 </div>
 </section>
 <!-- ================= VIEW: TESTIMONIALS LANDING PAGE ================= -->
-<section class="page-viewport hidden max-w-7xl mx-auto py-12 px-4" id="page-testimonials">
+<section class="page-viewport hidden max-w-7xl mx-auto py-12 px-4" id="page-testimonials"><div class="mb-8"><button class="group inline-flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-accentCyan transition-colors" onclick="switchPage('customer-service', 'cs-testimonials-section')" type="button"><i class="w-4 h-4 transition-transform group-hover:-translate-x-1" data-lucide="arrow-left"></i>Back to Customer Support</button></div>
 <div class="flex flex-col md:flex-row gap-8 items-start">
 <div class="w-full md:w-64 shrink-0 md:sticky md:top-28">
 <nav class="space-y-4 font-mono text-xs">
@@ -1495,8 +1495,6 @@
                     Calendly
                 </span>
 </div>
-
-
 </div>
 <!-- Property Research Platforms -->
 <div class="flex flex-col gap-3">
@@ -1526,7 +1524,6 @@
                     Crexi
                 </span>
 </div>
-       
 </div>
 <!-- Document & Transaction Support -->
 <div class="flex flex-col gap-3">
@@ -1543,9 +1540,7 @@
 <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400">
                     Google Sheets
                 </span>
-      
 </div>
-
 </div>
 <!-- CRM & Lead Management -->
 <div class="flex flex-col gap-3">
@@ -1559,8 +1554,7 @@
 <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400">
                     HubSpot
                 </span>
-</div>         
-        
+</div>
 </div>
 <!-- Productivity & Project Management -->
 <div class="flex flex-col gap-3">
@@ -1653,11 +1647,7 @@
                     Data Accuracy
                 </span>
 </div>
-<button class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 hover:text-accentCyan transition-colors mt-auto w-fit" onclick="switchPage('re-project-01')" type="button">
-    View Project
-
-    <i class="w-3.5 h-3.5" data-lucide="arrow-right"></i>
-</button>
+<button class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 hover:text-accentCyan transition-colors mt-auto w-fit" onclick="switchPage('re-project-01')" type="button">View Project <i class="w-3.5 h-3.5" data-lucide="arrow-right"></i></button>
 </article>
 <!-- =================================================
              PROJECT 02
@@ -1685,11 +1675,7 @@
                     Property Comparison
                 </span>
 </div>
-<a class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 hover:text-accentCyan transition-colors mt-auto" href="YOUR-PROJECT-02-LINK" rel="noopener noreferrer" target="_blank">
-                View Project
-
-                <i class="w-3.5 h-3.5" data-lucide="arrow-up-right"></i>
-</a>
+<button class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 hover:text-accentCyan transition-colors mt-auto w-fit" onclick="switchPage('re-project-02')" type="button">View Project <i class="w-3.5 h-3.5" data-lucide="arrow-right"></i></button>
 </article>
 <!-- =================================================
              PROJECT 03
@@ -1717,11 +1703,7 @@
                     Rental Administration
                 </span>
 </div>
-<a class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 hover:text-accentCyan transition-colors mt-auto" href="YOUR-PROJECT-03-LINK" rel="noopener noreferrer" target="_blank">
-                View Project
-
-                <i class="w-3.5 h-3.5" data-lucide="arrow-up-right"></i>
-</a>
+<button class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 hover:text-accentCyan transition-colors mt-auto w-fit" onclick="switchPage('re-project-03')" type="button">View Project <i class="w-3.5 h-3.5" data-lucide="arrow-right"></i></button>
 </article>
 <!-- =================================================
              PROJECT 04
@@ -1749,11 +1731,7 @@
                     Report Preparation
                 </span>
 </div>
-<a class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 hover:text-accentCyan transition-colors mt-auto" href="YOUR-PROJECT-04-LINK" rel="noopener noreferrer" target="_blank">
-                View Project
-
-                <i class="w-3.5 h-3.5" data-lucide="arrow-up-right"></i>
-</a>
+<button class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 hover:text-accentCyan transition-colors mt-auto w-fit" onclick="switchPage('re-project-04')" type="button">View Project <i class="w-3.5 h-3.5" data-lucide="arrow-right"></i></button>
 </article>
 <!-- =================================================
              PROJECT 05
@@ -1781,11 +1759,7 @@
                     Listing Shortlist
                 </span>
 </div>
-<a class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 hover:text-accentCyan transition-colors mt-auto" href="YOUR-PROJECT-05-LINK" rel="noopener noreferrer" target="_blank">
-                View Project
-
-                <i class="w-3.5 h-3.5" data-lucide="arrow-up-right"></i>
-</a>
+<button class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 hover:text-accentCyan transition-colors mt-auto w-fit" onclick="switchPage('re-project-05')" type="button">View Project <i class="w-3.5 h-3.5" data-lucide="arrow-right"></i></button>
 </article>
 <!-- =================================================
              PROJECT 06
@@ -1813,11 +1787,7 @@
                     Property Highlights
                 </span>
 </div>
-<a class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 hover:text-accentCyan transition-colors mt-auto" href="YOUR-PROJECT-06-LINK" rel="noopener noreferrer" target="_blank">
-                View Project
-
-                <i class="w-3.5 h-3.5" data-lucide="arrow-up-right"></i>
-</a>
+<button class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 hover:text-accentCyan transition-colors mt-auto w-fit" onclick="switchPage('re-project-06')" type="button">View Project <i class="w-3.5 h-3.5" data-lucide="arrow-right"></i></button>
 </article>
 <!-- =================================================
              PROJECT 07
@@ -1844,11 +1814,7 @@
                     Transaction Milestones
                 </span>
 </div>
-<a class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 hover:text-accentCyan transition-colors mt-auto" href="YOUR-PROJECT-07-LINK" rel="noopener noreferrer" target="_blank">
-                View Project
-
-                <i class="w-3.5 h-3.5" data-lucide="arrow-up-right"></i>
-</a>
+<button class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 hover:text-accentCyan transition-colors mt-auto w-fit" onclick="switchPage('re-project-07')" type="button">View Project <i class="w-3.5 h-3.5" data-lucide="arrow-right"></i></button>
 </article>
 <!-- =================================================
              PROJECT 08
@@ -1876,11 +1842,7 @@
                     Email Drafting
                 </span>
 </div>
-<a class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 hover:text-accentCyan transition-colors mt-auto" href="YOUR-PROJECT-08-LINK" rel="noopener noreferrer" target="_blank">
-                View Project
-
-                <i class="w-3.5 h-3.5" data-lucide="arrow-up-right"></i>
-</a>
+<button class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 hover:text-accentCyan transition-colors mt-auto w-fit" onclick="switchPage('re-project-08')" type="button">View Project <i class="w-3.5 h-3.5" data-lucide="arrow-right"></i></button>
 </article>
 </div>
 </section>
@@ -1909,7 +1871,7 @@
 <!-- =================================================
              DELIVERABLE 01
         ================================================== -->
-<a class="group bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/35 hover:bg-neutral-900/45 transition-all duration-300 flex flex-col" href="YOUR-PROPERTY-RESEARCH-LINK" rel="noopener noreferrer" target="_blank">
+<article class="group bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/35 hover:bg-neutral-900/45 transition-all duration-300 flex flex-col">
 <div class="w-11 h-11 rounded-xl bg-neutral-950 border border-white/5 flex items-center justify-center text-accentCyan mb-4">
 <i class="w-5 h-5" data-lucide="search"></i>
 </div>
@@ -1934,16 +1896,12 @@
                     Data Organization
                 </span>
 </div>
-<span class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 group-hover:text-accentCyan transition-colors mt-auto">
-                View Sample
-
-                <i class="w-3.5 h-3.5" data-lucide="arrow-up-right"></i>
-</span>
-</a>
+<button class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 group-hover:text-accentCyan transition-colors mt-auto w-fit" onclick="switchPage('re-sample-01')" type="button">View Sample <i class="w-3.5 h-3.5" data-lucide="arrow-right"></i></button>
+</article>
 <!-- =================================================
              DELIVERABLE 02
         ================================================== -->
-<a class="group bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/35 hover:bg-neutral-900/45 transition-all duration-300 flex flex-col" href="YOUR-CMA-LINK" rel="noopener noreferrer" target="_blank">
+<article class="group bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/35 hover:bg-neutral-900/45 transition-all duration-300 flex flex-col">
 <div class="w-11 h-11 rounded-xl bg-neutral-950 border border-white/5 flex items-center justify-center text-accentCyan mb-4">
 <i class="w-5 h-5" data-lucide="bar-chart-3"></i>
 </div>
@@ -1968,16 +1926,12 @@
                     Report Preparation
                 </span>
 </div>
-<span class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 group-hover:text-accentCyan transition-colors mt-auto">
-                View Sample
-
-                <i class="w-3.5 h-3.5" data-lucide="arrow-up-right"></i>
-</span>
-</a>
+<button class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 group-hover:text-accentCyan transition-colors mt-auto w-fit" onclick="switchPage('re-sample-02')" type="button">View Sample <i class="w-3.5 h-3.5" data-lucide="arrow-right"></i></button>
+</article>
 <!-- =================================================
              DELIVERABLE 03
         ================================================== -->
-<a class="group bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/35 hover:bg-neutral-900/45 transition-all duration-300 flex flex-col" href="YOUR-CALENDAR-LINK" rel="noopener noreferrer" target="_blank">
+<article class="group bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/35 hover:bg-neutral-900/45 transition-all duration-300 flex flex-col">
 <div class="w-11 h-11 rounded-xl bg-neutral-950 border border-white/5 flex items-center justify-center text-accentCyan mb-4">
 <i class="w-5 h-5" data-lucide="calendar-days"></i>
 </div>
@@ -2002,16 +1956,12 @@
                     Milestone Scheduling
                 </span>
 </div>
-<span class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 group-hover:text-accentCyan transition-colors mt-auto">
-                View Sample
-
-                <i class="w-3.5 h-3.5" data-lucide="arrow-up-right"></i>
-</span>
-</a>
+<button class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 group-hover:text-accentCyan transition-colors mt-auto w-fit" onclick="switchPage('re-sample-03')" type="button">View Sample <i class="w-3.5 h-3.5" data-lucide="arrow-right"></i></button>
+</article>
 <!-- =================================================
              DELIVERABLE 04
         ================================================== -->
-<a class="group bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/35 hover:bg-neutral-900/45 transition-all duration-300 flex flex-col" href="YOUR-COMPLIANCE-LINK" rel="noopener noreferrer" target="_blank">
+<article class="group bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/35 hover:bg-neutral-900/45 transition-all duration-300 flex flex-col">
 <div class="w-11 h-11 rounded-xl bg-neutral-950 border border-white/5 flex items-center justify-center text-accentCyan mb-4">
 <i class="w-5 h-5" data-lucide="clipboard-check"></i>
 </div>
@@ -2036,16 +1986,12 @@
                     Email Drafting
                 </span>
 </div>
-<span class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 group-hover:text-accentCyan transition-colors mt-auto">
-                View Sample
-
-                <i class="w-3.5 h-3.5" data-lucide="arrow-up-right"></i>
-</span>
-</a>
+<button class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 group-hover:text-accentCyan transition-colors mt-auto w-fit" onclick="switchPage('re-sample-04')" type="button">View Sample <i class="w-3.5 h-3.5" data-lucide="arrow-right"></i></button>
+</article>
 <!-- =================================================
              DELIVERABLE 05
         ================================================== -->
-<a class="group bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/35 hover:bg-neutral-900/45 transition-all duration-300 flex flex-col" href="YOUR-MARKETING-LINK" rel="noopener noreferrer" target="_blank">
+<article class="group bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/35 hover:bg-neutral-900/45 transition-all duration-300 flex flex-col">
 <div class="w-11 h-11 rounded-xl bg-neutral-950 border border-white/5 flex items-center justify-center text-accentCyan mb-4">
 <i class="w-5 h-5" data-lucide="image"></i>
 </div>
@@ -2070,16 +2016,12 @@
                     Visual Content
                 </span>
 </div>
-<span class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 group-hover:text-accentCyan transition-colors mt-auto">
-                View Sample
-
-                <i class="w-3.5 h-3.5" data-lucide="arrow-up-right"></i>
-</span>
-</a>
+<button class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 group-hover:text-accentCyan transition-colors mt-auto w-fit" onclick="switchPage('re-sample-05')" type="button">View Sample <i class="w-3.5 h-3.5" data-lucide="arrow-right"></i></button>
+</article>
 <!-- =================================================
              DELIVERABLE 06
         ================================================== -->
-<a class="group bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/35 hover:bg-neutral-900/45 transition-all duration-300 flex flex-col" href="YOUR-VENDOR-LINK" rel="noopener noreferrer" target="_blank">
+<article class="group bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/35 hover:bg-neutral-900/45 transition-all duration-300 flex flex-col">
 <div class="w-11 h-11 rounded-xl bg-neutral-950 border border-white/5 flex items-center justify-center text-accentCyan mb-4">
 <i class="w-5 h-5" data-lucide="contact-round"></i>
 </div>
@@ -2104,12 +2046,8 @@
                     Database Building
                 </span>
 </div>
-<span class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 group-hover:text-accentCyan transition-colors mt-auto">
-                View Sample
-
-                <i class="w-3.5 h-3.5" data-lucide="arrow-up-right"></i>
-</span>
-</a>
+<button class="inline-flex items-center gap-1.5 text-xs font-mono text-emerald-400 group-hover:text-accentCyan transition-colors mt-auto w-fit" onclick="switchPage('re-sample-06')" type="button">View Sample <i class="w-3.5 h-3.5" data-lucide="arrow-right"></i></button>
+</article>
 </div>
 </section>
 <!-- ================= VIEW: TESTIMONIALS LANDING PAGE ================= -->
@@ -2117,7 +2055,9 @@
      PROJECT 01: PROPERTY RESEARCH & LISTING ANALYSIS
 ========================================================= -->
 
-<section class="page-viewport hidden max-w-7xl mx-auto py-12 px-4" id="page-re-testimonials">
+<!-- ================= CONTACT/CTA PAGE ================= -->
+</div>
+</div></section><section class="page-viewport hidden max-w-7xl mx-auto py-12 px-4" id="page-re-testimonials">
 <div class="flex flex-col md:flex-row gap-8 items-start">
 <div class="w-full md:w-64 shrink-0 md:sticky md:top-28">
 <nav class="space-y-2 font-mono text-xs">
@@ -2247,121 +2187,488 @@
 </div>
 </div>
 </div>
-</section>
-<!-- ================= CONTACT/CTA PAGE ================= -->
-<section class="page-viewport -mt-12 pb-0 mb-[-4rem]" id="page-contact">
-<div class="text-center max-w-2xl mx-auto mb-10">
-<h2 class="text-4xl font-bold text-accentBlue/50 mt-2 mb-4 tracking-tight">Ready to strengthen your customer support and real estate operations?</h2>
-<p class="text-neutral-400 font-light text-sm max-w-md mx-auto">
-                    Whether you're improving customer experience or optimizing real estate workflows, I provide organized, dependable support that keeps your operations running smoothly.
-                </p>
+</section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-project-02">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
+<button class="group inline-flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-emerald-400 transition-colors w-fit" onclick="switchPage('real-estate', 're-project-portfolio')" type="button">
+<i class="w-4 h-4 transition-transform group-hover:-translate-x-1" data-lucide="arrow-left"></i>Back to Projects &amp; Workflow Demonstrations
+</button>
+<div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-500"><span>Real Estate Operations</span><span class="text-neutral-700">/</span><span class="text-emerald-400">Project 02</span></div>
 </div>
-<!-- Premium Quick Link Integration Grid Matrix -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-<!-- 1. LinkedIn Anchor Card (Centered) -->
-<a class="p-8 rounded-2xl bg-neutral-700/5 border border-white/5 hover:bg-emerald-700/5 hover:border-accentBlue transition-all group flex flex-col items-center text-center" href="https://www.linkedin.com/in/sherrylandrade/" target="_blank">
-<div class="w-12 h-12 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mb-6 group-hover:scale-105 transition-transform">
-<svg class="w-5 h-5 text-accentBlue" fill="none" height="20" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg">
-<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-<rect height="12" width="4" x="2" y="9"></rect>
-<circle cx="4" cy="4" r="2"></circle>
-</svg>
+<header class="relative overflow-hidden bg-neutral-900/30 border border-white/5 rounded-2xl p-7 md:p-10 mb-8">
+<div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-emerald-500/5 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-4xl">
+<div class="flex flex-wrap gap-2 mb-5"><span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 bg-purple-500/5 border border-purple-500/10 px-3 py-1.5 rounded-full">Project 02</span><span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/5 border border-emerald-500/10 px-3 py-1.5 rounded-full">Rental Research</span></div>
+<span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-3">Real Estate Operations Portfolio</span>
+<h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">Rental Property &amp; Vendor Research</h1>
+<p class="text-neutral-400 font-light leading-relaxed mt-5 max-w-3xl">Compiled residential, commercial, and short-term rental options with pricing, amenities, listing links, and vendor contact information.</p>
+<div class="flex flex-wrap gap-2 mt-6"><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Rental Research</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Vendor Sourcing</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Property Comparison</span></div>
+</div></header>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5"><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Objective</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Demonstrate organized and dependable support for rental property &amp; vendor research while maintaining clear documentation, accurate data handling, and practical next-step visibility.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Workflow Demonstrated</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Compiled residential, commercial, and short-term rental options with pricing, amenities, listing links, and vendor contact information.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Process</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Review the request and source materials, identify the required data points, verify information across available records, organize the findings into a clear working format, and complete a final accuracy and presentation check.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Deliverables</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">A structured project demonstration showing the research, coordination, documentation, and quality-control steps used to support rental property &amp; vendor research.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Quality &amp; Confidentiality</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Sample information is presented for portfolio demonstration. Client, property, transaction, and personal details should be anonymized before publication or sharing.</p>
+</article></div>
+<div class="mt-8 flex flex-wrap gap-3">
+<button class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-neutral-400 border border-white/5 bg-neutral-900/30 hover:text-emerald-400 hover:border-emerald-500/20 px-5 py-3 rounded-xl transition-all" onclick="switchPage('real-estate', 're-project-portfolio')" type="button"><i class="w-4 h-4 group-hover:-translate-x-1 transition-transform" data-lucide="arrow-left"></i>Back to Projects &amp; Workflow Demonstrations</button>
+<a class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue px-5 py-3 rounded-xl transition-all" href="#contact" onclick="event.preventDefault(); switchPage('contact')">Discuss This Workflow<i class="w-4 h-4" data-lucide="arrow-up-right"></i></a>
 </div>
-<h3 class="text-md font-semibold text-white mb-1">Professional Network</h3>
-<p class="text-xs text-neutral-500 mb-6">Connect on LinkedIn</p>
-<span class="text-xs font-medium text-accentBlue flex items-center gap-1 group-hover:underline">
-                        View Profile <i class="w-3 h-3" data-lucide="arrow-right"></i>
-</span>
-</a>
-<!-- 2. Email Hook Connection Card (Centered) -->
-<a class="p-8 rounded-2xl bg-neutral-700/5 border border-white/5 hover:bg-emerald-700/5 hover:border-accentBlue transition-all group flex flex-col items-center text-center" href="mailto:sherryl.andrade@gmail.com">
-<div class="w-12 h-12 rounded-xl bg-accentCyan/10 flex items-center justify-center text-accentCyan mb-6 group-hover:scale-105 transition-transform">
-<i class="w-5 h-5" data-lucide="mail"></i>
+</section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-project-03">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
+<button class="group inline-flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-emerald-400 transition-colors w-fit" onclick="switchPage('real-estate', 're-project-portfolio')" type="button">
+<i class="w-4 h-4 transition-transform group-hover:-translate-x-1" data-lucide="arrow-left"></i>Back to Projects &amp; Workflow Demonstrations
+</button>
+<div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-500"><span>Real Estate Operations</span><span class="text-neutral-700">/</span><span class="text-emerald-400">Project 03</span></div>
 </div>
-<h3 class="text-md font-semibold text-white mb-1">Business Inquiries</h3>
-<p class="text-xs text-neutral-500 mb-6">Send an Email</p>
-<span class="text-xs font-medium text-accentCyan flex items-center gap-1 group-hover:underline">
-                        Write Message <i class="w-3 h-3" data-lucide="arrow-right"></i>
-</span>
-</a>
-<!-- 3. Calendly Integration Card (Centered) -->
-<a class="p-8 rounded-2xl bg-neutral-700/5 border border-white/5 hover:bg-emerald-700/5 hover:border-accentBlue transition-all group flex flex-col items-center text-center" href="https://calendly.com/sherryl-andrade/15-min-call-meeting" target="_blank">
-<div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-6 group-hover:scale-105 transition-transform">
-<i class="w-5 h-5" data-lucide="calendar"></i>
+<header class="relative overflow-hidden bg-neutral-900/30 border border-white/5 rounded-2xl p-7 md:p-10 mb-8">
+<div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-emerald-500/5 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-4xl">
+<div class="flex flex-wrap gap-2 mb-5"><span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 bg-purple-500/5 border border-purple-500/10 px-3 py-1.5 rounded-full">Project 03</span><span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/5 border border-emerald-500/10 px-3 py-1.5 rounded-full">Document Review</span></div>
+<span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-3">Real Estate Operations Portfolio</span>
+<h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">Tenant Screening Support</h1>
+<p class="text-neutral-400 font-light leading-relaxed mt-5 max-w-3xl">Organized tenant background information and reviewed screening details for rental administration and property-management support.</p>
+<div class="flex flex-wrap gap-2 mt-6"><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Document Review</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Data Handling</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Rental Administration</span></div>
+</div></header>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5"><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Objective</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Demonstrate organized and dependable support for tenant screening support while maintaining clear documentation, accurate data handling, and practical next-step visibility.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Workflow Demonstrated</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Organized tenant background information and reviewed screening details for rental administration and property-management support.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Process</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Review the request and source materials, identify the required data points, verify information across available records, organize the findings into a clear working format, and complete a final accuracy and presentation check.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Deliverables</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">A structured project demonstration showing the research, coordination, documentation, and quality-control steps used to support tenant screening support.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Quality &amp; Confidentiality</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Sample information is presented for portfolio demonstration. Client, property, transaction, and personal details should be anonymized before publication or sharing.</p>
+</article></div>
+<div class="mt-8 flex flex-wrap gap-3">
+<button class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-neutral-400 border border-white/5 bg-neutral-900/30 hover:text-emerald-400 hover:border-emerald-500/20 px-5 py-3 rounded-xl transition-all" onclick="switchPage('real-estate', 're-project-portfolio')" type="button"><i class="w-4 h-4 group-hover:-translate-x-1 transition-transform" data-lucide="arrow-left"></i>Back to Projects &amp; Workflow Demonstrations</button>
+<a class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue px-5 py-3 rounded-xl transition-all" href="#contact" onclick="event.preventDefault(); switchPage('contact')">Discuss This Workflow<i class="w-4 h-4" data-lucide="arrow-up-right"></i></a>
 </div>
-<h3 class="text-md font-semibold text-white mb-1">Schedule a Discovery Call</h3>
-<p class="text-xs text-neutral-500 mb-6">Schedule a 15-Minute Discovery Call</p>
-<span class="text-xs font-medium text-emerald-400 flex items-center gap-1 group-hover:underline">
-                        Book Session <i class="w-3 h-3" data-lucide="arrow-right"></i>
-</span>
-</a>
+</section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-project-04">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
+<button class="group inline-flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-emerald-400 transition-colors w-fit" onclick="switchPage('real-estate', 're-project-portfolio')" type="button">
+<i class="w-4 h-4 transition-transform group-hover:-translate-x-1" data-lucide="arrow-left"></i>Back to Projects &amp; Workflow Demonstrations
+</button>
+<div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-500"><span>Real Estate Operations</span><span class="text-neutral-700">/</span><span class="text-emerald-400">Project 04</span></div>
 </div>
-<!-- Separator Line (Gap 3 reduced by 15%) -->
-<div class="w-full h-[1px] bg-white/5 mt-10 mb-5"></div>
-<!-- Reinstated Feature Highlights Section -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center my-12 px-4 max-w-6xl mx-auto">
-<!-- Highlight 1: High-Tier Client Care -->
-<div class="flex flex-col items-center space-y-3">
-<!-- Headset Icon -->
-<div class="text-[#f59e0b] text-xl">
-<svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M3 18v-6a9 9 0 0118 0v6M4 16h2a1 1 0 011 1v3a1 1 0 01-1 1H4a1 1 0 01-1-1v-3a1 1 0 011-1zm14 0h2a1 1 0 011 1v3a1 1 0 01-1 1h-2a1 1 0 01-1-1v-3a1 1 0 011-1z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-</svg>
+<header class="relative overflow-hidden bg-neutral-900/30 border border-white/5 rounded-2xl p-7 md:p-10 mb-8">
+<div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-emerald-500/5 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-4xl">
+<div class="flex flex-wrap gap-2 mb-5"><span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 bg-purple-500/5 border border-purple-500/10 px-3 py-1.5 rounded-full">Project 04</span><span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/5 border border-emerald-500/10 px-3 py-1.5 rounded-full">Comparable Research</span></div>
+<span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-3">Real Estate Operations Portfolio</span>
+<h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">Comparative Market Analysis Support</h1>
+<p class="text-neutral-400 font-light leading-relaxed mt-5 max-w-3xl">Researched comparable properties and organized listing information to support property evaluation and pricing discussions.</p>
+<div class="flex flex-wrap gap-2 mt-6"><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Comparable Research</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Market Review</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Report Preparation</span></div>
+</div></header>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5"><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Objective</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Demonstrate organized and dependable support for comparative market analysis support while maintaining clear documentation, accurate data handling, and practical next-step visibility.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Workflow Demonstrated</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Researched comparable properties and organized listing information to support property evaluation and pricing discussions.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Process</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Review the request and source materials, identify the required data points, verify information across available records, organize the findings into a clear working format, and complete a final accuracy and presentation check.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Deliverables</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">A structured project demonstration showing the research, coordination, documentation, and quality-control steps used to support comparative market analysis support.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Quality &amp; Confidentiality</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Sample information is presented for portfolio demonstration. Client, property, transaction, and personal details should be anonymized before publication or sharing.</p>
+</article></div>
+<div class="mt-8 flex flex-wrap gap-3">
+<button class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-neutral-400 border border-white/5 bg-neutral-900/30 hover:text-emerald-400 hover:border-emerald-500/20 px-5 py-3 rounded-xl transition-all" onclick="switchPage('real-estate', 're-project-portfolio')" type="button"><i class="w-4 h-4 group-hover:-translate-x-1 transition-transform" data-lucide="arrow-left"></i>Back to Projects &amp; Workflow Demonstrations</button>
+<a class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue px-5 py-3 rounded-xl transition-all" href="#contact" onclick="event.preventDefault(); switchPage('contact')">Discuss This Workflow<i class="w-4 h-4" data-lucide="arrow-up-right"></i></a>
 </div>
-<h4 class="text-sm font-semibold text-neutral-200">Customer Care Excellence</h4>
-<p class="text-xs text-neutral-400 font-light leading-relaxed max-w-sm">
-      Delivering responsive customer support that improves customer satisfaction, protects retention, and resolves issues efficiently.
-    </p>
+</section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-project-05">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
+<button class="group inline-flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-emerald-400 transition-colors w-fit" onclick="switchPage('real-estate', 're-project-portfolio')" type="button">
+<i class="w-4 h-4 transition-transform group-hover:-translate-x-1" data-lucide="arrow-left"></i>Back to Projects &amp; Workflow Demonstrations
+</button>
+<div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-500"><span>Real Estate Operations</span><span class="text-neutral-700">/</span><span class="text-emerald-400">Project 05</span></div>
 </div>
-<!-- Highlight 2: Pipeline & Lead Management -->
-<div class="flex flex-col items-center space-y-3">
-<!-- Home/Pipeline Icon -->
-<div class="text-[#06b6d4] text-xl">
-<svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-</svg>
+<header class="relative overflow-hidden bg-neutral-900/30 border border-white/5 rounded-2xl p-7 md:p-10 mb-8">
+<div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-emerald-500/5 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-4xl">
+<div class="flex flex-wrap gap-2 mb-5"><span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 bg-purple-500/5 border border-purple-500/10 px-3 py-1.5 rounded-full">Project 05</span><span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/5 border border-emerald-500/10 px-3 py-1.5 rounded-full">Buyer Criteria</span></div>
+<span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-3">Real Estate Operations Portfolio</span>
+<h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">Buyer Property Search</h1>
+<p class="text-neutral-400 font-light leading-relaxed mt-5 max-w-3xl">Researched available properties based on buyer criteria and organized suitable options for easier agent and client evaluation.</p>
+<div class="flex flex-wrap gap-2 mt-6"><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Buyer Criteria</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Property Search</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Listing Shortlist</span></div>
+</div></header>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5"><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Objective</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Demonstrate organized and dependable support for buyer property search while maintaining clear documentation, accurate data handling, and practical next-step visibility.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Workflow Demonstrated</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Researched available properties based on buyer criteria and organized suitable options for easier agent and client evaluation.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Process</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Review the request and source materials, identify the required data points, verify information across available records, organize the findings into a clear working format, and complete a final accuracy and presentation check.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Deliverables</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">A structured project demonstration showing the research, coordination, documentation, and quality-control steps used to support buyer property search.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Quality &amp; Confidentiality</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Sample information is presented for portfolio demonstration. Client, property, transaction, and personal details should be anonymized before publication or sharing.</p>
+</article></div>
+<div class="mt-8 flex flex-wrap gap-3">
+<button class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-neutral-400 border border-white/5 bg-neutral-900/30 hover:text-emerald-400 hover:border-emerald-500/20 px-5 py-3 rounded-xl transition-all" onclick="switchPage('real-estate', 're-project-portfolio')" type="button"><i class="w-4 h-4 group-hover:-translate-x-1 transition-transform" data-lucide="arrow-left"></i>Back to Projects &amp; Workflow Demonstrations</button>
+<a class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue px-5 py-3 rounded-xl transition-all" href="#contact" onclick="event.preventDefault(); switchPage('contact')">Discuss This Workflow<i class="w-4 h-4" data-lucide="arrow-up-right"></i></a>
 </div>
-<h4 class="text-sm font-semibold text-neutral-200">Pipeline &amp; Lead Management</h4>
-<p class="text-xs text-neutral-400 font-light leading-relaxed max-w-sm">
-      Structured, proactive handling of CRM updates, property coordination, and client communications to keep your transactions moving seamlessly.
-    </p>
+</section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-project-06">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
+<button class="group inline-flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-emerald-400 transition-colors w-fit" onclick="switchPage('real-estate', 're-project-portfolio')" type="button">
+<i class="w-4 h-4 transition-transform group-hover:-translate-x-1" data-lucide="arrow-left"></i>Back to Projects &amp; Workflow Demonstrations
+</button>
+<div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-500"><span>Real Estate Operations</span><span class="text-neutral-700">/</span><span class="text-emerald-400">Project 06</span></div>
 </div>
-<!-- Highlight 3: Detail-Driven Execution -->
-<div class="flex flex-col items-center space-y-3">
-<!-- Controls/Execution Icon -->
-<div class="text-[#10b981] text-xl">
-<svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-<path d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-</svg>
+<header class="relative overflow-hidden bg-neutral-900/30 border border-white/5 rounded-2xl p-7 md:p-10 mb-8">
+<div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-emerald-500/5 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-4xl">
+<div class="flex flex-wrap gap-2 mb-5"><span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 bg-purple-500/5 border border-purple-500/10 px-3 py-1.5 rounded-full">Project 06</span><span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/5 border border-emerald-500/10 px-3 py-1.5 rounded-full">Canva Design</span></div>
+<span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-3">Real Estate Operations Portfolio</span>
+<h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">Open House Marketing Design</h1>
+<p class="text-neutral-400 font-light leading-relaxed mt-5 max-w-3xl">Created an open-house promotional design using property details, listing highlights, contact information, and a clear call to action.</p>
+<div class="flex flex-wrap gap-2 mt-6"><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Canva Design</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Listing Marketing</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Property Highlights</span></div>
+</div></header>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5"><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Objective</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Demonstrate organized and dependable support for open house marketing design while maintaining clear documentation, accurate data handling, and practical next-step visibility.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Workflow Demonstrated</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Created an open-house promotional design using property details, listing highlights, contact information, and a clear call to action.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Process</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Review the request and source materials, identify the required data points, verify information across available records, organize the findings into a clear working format, and complete a final accuracy and presentation check.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Deliverables</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">A structured project demonstration showing the research, coordination, documentation, and quality-control steps used to support open house marketing design.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Quality &amp; Confidentiality</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Sample information is presented for portfolio demonstration. Client, property, transaction, and personal details should be anonymized before publication or sharing.</p>
+</article></div>
+<div class="mt-8 flex flex-wrap gap-3">
+<button class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-neutral-400 border border-white/5 bg-neutral-900/30 hover:text-emerald-400 hover:border-emerald-500/20 px-5 py-3 rounded-xl transition-all" onclick="switchPage('real-estate', 're-project-portfolio')" type="button"><i class="w-4 h-4 group-hover:-translate-x-1 transition-transform" data-lucide="arrow-left"></i>Back to Projects &amp; Workflow Demonstrations</button>
+<a class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue px-5 py-3 rounded-xl transition-all" href="#contact" onclick="event.preventDefault(); switchPage('contact')">Discuss This Workflow<i class="w-4 h-4" data-lucide="arrow-up-right"></i></a>
 </div>
-<h4 class="text-sm font-semibold text-neutral-200">Detail-Driven Execution</h4>
-<p class="text-xs text-neutral-400 font-light leading-relaxed max-w-sm">
-      Organized workflows, accurate execution, and dependable follow-through that keep daily operations running smoothly.
-    </p>
+</section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-project-07">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
+<button class="group inline-flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-emerald-400 transition-colors w-fit" onclick="switchPage('real-estate', 're-project-portfolio')" type="button">
+<i class="w-4 h-4 transition-transform group-hover:-translate-x-1" data-lucide="arrow-left"></i>Back to Projects &amp; Workflow Demonstrations
+</button>
+<div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-500"><span>Real Estate Operations</span><span class="text-neutral-700">/</span><span class="text-emerald-400">Project 07</span></div>
 </div>
+<header class="relative overflow-hidden bg-neutral-900/30 border border-white/5 rounded-2xl p-7 md:p-10 mb-8">
+<div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-emerald-500/5 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-4xl">
+<div class="flex flex-wrap gap-2 mb-5"><span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 bg-purple-500/5 border border-purple-500/10 px-3 py-1.5 rounded-full">Project 07</span><span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/5 border border-emerald-500/10 px-3 py-1.5 rounded-full">Calendar Management</span></div>
+<span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-3">Real Estate Operations Portfolio</span>
+<h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">Transaction Calendar Coordination</h1>
+<p class="text-neutral-400 font-light leading-relaxed mt-5 max-w-3xl">Organized transaction dates, follow-up activities, deadlines, and milestone reminders within a structured calendar workflow.</p>
+<div class="flex flex-wrap gap-2 mt-6"><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Calendar Management</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Deadline Tracking</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Transaction Milestones</span></div>
+</div></header>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5"><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Objective</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Demonstrate organized and dependable support for transaction calendar coordination while maintaining clear documentation, accurate data handling, and practical next-step visibility.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Workflow Demonstrated</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Organized transaction dates, follow-up activities, deadlines, and milestone reminders within a structured calendar workflow.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Process</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Review the request and source materials, identify the required data points, verify information across available records, organize the findings into a clear working format, and complete a final accuracy and presentation check.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Deliverables</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">A structured project demonstration showing the research, coordination, documentation, and quality-control steps used to support transaction calendar coordination.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Quality &amp; Confidentiality</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Sample information is presented for portfolio demonstration. Client, property, transaction, and personal details should be anonymized before publication or sharing.</p>
+</article></div>
+<div class="mt-8 flex flex-wrap gap-3">
+<button class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-neutral-400 border border-white/5 bg-neutral-900/30 hover:text-emerald-400 hover:border-emerald-500/20 px-5 py-3 rounded-xl transition-all" onclick="switchPage('real-estate', 're-project-portfolio')" type="button"><i class="w-4 h-4 group-hover:-translate-x-1 transition-transform" data-lucide="arrow-left"></i>Back to Projects &amp; Workflow Demonstrations</button>
+<a class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue px-5 py-3 rounded-xl transition-all" href="#contact" onclick="event.preventDefault(); switchPage('contact')">Discuss This Workflow<i class="w-4 h-4" data-lucide="arrow-up-right"></i></a>
 </div>
-<!-- Availability & Response Bar Container with Scroll Padding Fix -->
-<div class="w-full col-span-full mt-8 pb-24 px-4">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-4 py-4 px-6 bg-neutral-900/40 border border-white/5 hover:border-emerald-500/35 rounded-xl text-center text-xs text-neutral-400 font-light backdrop-blur-sm w-full">
-<!-- Response Time -->
-<div class="flex items-center justify-center gap-2.5 py-1 md:border-r md:border-white/5">
-<span class="text-base select-none">🕒</span>
-<span>Typically respond within 24 hours.</span>
+</section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-project-08">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
+<button class="group inline-flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-emerald-400 transition-colors w-fit" onclick="switchPage('real-estate', 're-project-portfolio')" type="button">
+<i class="w-4 h-4 transition-transform group-hover:-translate-x-1" data-lucide="arrow-left"></i>Back to Projects &amp; Workflow Demonstrations
+</button>
+<div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-500"><span>Real Estate Operations</span><span class="text-neutral-700">/</span><span class="text-emerald-400">Project 08</span></div>
 </div>
-<!-- Job Types -->
-<div class="flex items-center justify-center gap-2.5 py-1 md:border-r md:border-white/5">
-<span class="text-base select-none">💼</span>
-<span>Open to FT, PT, and Contract.</span>
+<header class="relative overflow-hidden bg-neutral-900/30 border border-white/5 rounded-2xl p-7 md:p-10 mb-8">
+<div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-emerald-500/5 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-4xl">
+<div class="flex flex-wrap gap-2 mb-5"><span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 bg-purple-500/5 border border-purple-500/10 px-3 py-1.5 rounded-full">Project 08</span><span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/5 border border-emerald-500/10 px-3 py-1.5 rounded-full">Compliance Review</span></div>
+<span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-3">Real Estate Operations Portfolio</span>
+<h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">Contract Compliance Review</h1>
+<p class="text-neutral-400 font-light leading-relaxed mt-5 max-w-3xl">Reviewed transaction documents for missing information and prepared professional follow-up communication requesting required details.</p>
+<div class="flex flex-wrap gap-2 mt-6"><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Compliance Review</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Document Tracking</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Email Drafting</span></div>
+</div></header>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5"><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Objective</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Demonstrate organized and dependable support for contract compliance review while maintaining clear documentation, accurate data handling, and practical next-step visibility.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Workflow Demonstrated</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Reviewed transaction documents for missing information and prepared professional follow-up communication requesting required details.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Process</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Review the request and source materials, identify the required data points, verify information across available records, organize the findings into a clear working format, and complete a final accuracy and presentation check.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Deliverables</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">A structured project demonstration showing the research, coordination, documentation, and quality-control steps used to support contract compliance review.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Quality &amp; Confidentiality</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Sample information is presented for portfolio demonstration. Client, property, transaction, and personal details should be anonymized before publication or sharing.</p>
+</article></div>
+<div class="mt-8 flex flex-wrap gap-3">
+<button class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-neutral-400 border border-white/5 bg-neutral-900/30 hover:text-emerald-400 hover:border-emerald-500/20 px-5 py-3 rounded-xl transition-all" onclick="switchPage('real-estate', 're-project-portfolio')" type="button"><i class="w-4 h-4 group-hover:-translate-x-1 transition-transform" data-lucide="arrow-left"></i>Back to Projects &amp; Workflow Demonstrations</button>
+<a class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue px-5 py-3 rounded-xl transition-all" href="#contact" onclick="event.preventDefault(); switchPage('contact')">Discuss This Workflow<i class="w-4 h-4" data-lucide="arrow-up-right"></i></a>
 </div>
-<!-- Location -->
-<div class="flex items-center justify-center gap-2.5 py-1">
-<span class="text-base select-none">🌍</span>
-<span>Available for remote worldwide.</span>
+</section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-sample-01">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
+<button class="group inline-flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-emerald-400 transition-colors w-fit" onclick="switchPage('real-estate', 're-portfolio-deliverables')" type="button">
+<i class="w-4 h-4 transition-transform group-hover:-translate-x-1" data-lucide="arrow-left"></i>Back to Real Estate Work Samples
+</button>
+<div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-500"><span>Real Estate Operations</span><span class="text-neutral-700">/</span><span class="text-emerald-400">Work Sample 01</span></div>
 </div>
+<header class="relative overflow-hidden bg-neutral-900/30 border border-white/5 rounded-2xl p-7 md:p-10 mb-8">
+<div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-emerald-500/5 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-4xl">
+<div class="flex flex-wrap gap-2 mb-5"><span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 bg-purple-500/5 border border-purple-500/10 px-3 py-1.5 rounded-full">Work Sample 01</span><span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/5 border border-emerald-500/10 px-3 py-1.5 rounded-full">Listing Research</span></div>
+<span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-3">Real Estate Operations Portfolio</span>
+<h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">Property Research Reports</h1>
+<p class="text-neutral-400 font-light leading-relaxed mt-5 max-w-3xl">Listing information, property comparisons, rental options, amenities, pricing, and organized property research findings.</p>
+<div class="flex flex-wrap gap-2 mt-6"><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Listing Research</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Property Comparison</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Data Organization</span></div>
+</div></header>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5"><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Objective</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Demonstrate organized and dependable support for property research reports while maintaining clear documentation, accurate data handling, and practical next-step visibility.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Workflow Demonstrated</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Listing information, property comparisons, rental options, amenities, pricing, and organized property research findings.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Process</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Review the request and source materials, identify the required data points, verify information across available records, organize the findings into a clear working format, and complete a final accuracy and presentation check.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Deliverables</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">A structured work sample showing the research, coordination, documentation, and quality-control steps used to support property research reports.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Quality &amp; Confidentiality</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Sample information is presented for portfolio demonstration. Client, property, transaction, and personal details should be anonymized before publication or sharing.</p>
+</article></div>
+<div class="mt-8 flex flex-wrap gap-3">
+<button class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-neutral-400 border border-white/5 bg-neutral-900/30 hover:text-emerald-400 hover:border-emerald-500/20 px-5 py-3 rounded-xl transition-all" onclick="switchPage('real-estate', 're-portfolio-deliverables')" type="button"><i class="w-4 h-4 group-hover:-translate-x-1 transition-transform" data-lucide="arrow-left"></i>Back to Real Estate Work Samples</button>
+<a class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue px-5 py-3 rounded-xl transition-all" href="#contact" onclick="event.preventDefault(); switchPage('contact')">Discuss This Workflow<i class="w-4 h-4" data-lucide="arrow-up-right"></i></a>
 </div>
+</section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-sample-02">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
+<button class="group inline-flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-emerald-400 transition-colors w-fit" onclick="switchPage('real-estate', 're-portfolio-deliverables')" type="button">
+<i class="w-4 h-4 transition-transform group-hover:-translate-x-1" data-lucide="arrow-left"></i>Back to Real Estate Work Samples
+</button>
+<div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-500"><span>Real Estate Operations</span><span class="text-neutral-700">/</span><span class="text-emerald-400">Work Sample 02</span></div>
 </div>
-</section></div>
-</div></section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-project-01">
+<header class="relative overflow-hidden bg-neutral-900/30 border border-white/5 rounded-2xl p-7 md:p-10 mb-8">
+<div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-emerald-500/5 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-4xl">
+<div class="flex flex-wrap gap-2 mb-5"><span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 bg-purple-500/5 border border-purple-500/10 px-3 py-1.5 rounded-full">Work Sample 02</span><span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/5 border border-emerald-500/10 px-3 py-1.5 rounded-full">Comparable Research</span></div>
+<span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-3">Real Estate Operations Portfolio</span>
+<h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">Market Analysis Support</h1>
+<p class="text-neutral-400 font-light leading-relaxed mt-5 max-w-3xl">Comparable-property research and organized market information prepared to support property evaluation and pricing review.</p>
+<div class="flex flex-wrap gap-2 mt-6"><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Comparable Research</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Market Review</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Report Preparation</span></div>
+</div></header>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5"><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Objective</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Demonstrate organized and dependable support for market analysis support while maintaining clear documentation, accurate data handling, and practical next-step visibility.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Workflow Demonstrated</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Comparable-property research and organized market information prepared to support property evaluation and pricing review.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Process</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Review the request and source materials, identify the required data points, verify information across available records, organize the findings into a clear working format, and complete a final accuracy and presentation check.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Deliverables</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">A structured work sample showing the research, coordination, documentation, and quality-control steps used to support market analysis support.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Quality &amp; Confidentiality</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Sample information is presented for portfolio demonstration. Client, property, transaction, and personal details should be anonymized before publication or sharing.</p>
+</article></div>
+<div class="mt-8 flex flex-wrap gap-3">
+<button class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-neutral-400 border border-white/5 bg-neutral-900/30 hover:text-emerald-400 hover:border-emerald-500/20 px-5 py-3 rounded-xl transition-all" onclick="switchPage('real-estate', 're-portfolio-deliverables')" type="button"><i class="w-4 h-4 group-hover:-translate-x-1 transition-transform" data-lucide="arrow-left"></i>Back to Real Estate Work Samples</button>
+<a class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue px-5 py-3 rounded-xl transition-all" href="#contact" onclick="event.preventDefault(); switchPage('contact')">Discuss This Workflow<i class="w-4 h-4" data-lucide="arrow-up-right"></i></a>
+</div>
+</section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-sample-03">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
+<button class="group inline-flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-emerald-400 transition-colors w-fit" onclick="switchPage('real-estate', 're-portfolio-deliverables')" type="button">
+<i class="w-4 h-4 transition-transform group-hover:-translate-x-1" data-lucide="arrow-left"></i>Back to Real Estate Work Samples
+</button>
+<div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-500"><span>Real Estate Operations</span><span class="text-neutral-700">/</span><span class="text-emerald-400">Work Sample 03</span></div>
+</div>
+<header class="relative overflow-hidden bg-neutral-900/30 border border-white/5 rounded-2xl p-7 md:p-10 mb-8">
+<div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-emerald-500/5 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-4xl">
+<div class="flex flex-wrap gap-2 mb-5"><span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 bg-purple-500/5 border border-purple-500/10 px-3 py-1.5 rounded-full">Work Sample 03</span><span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/5 border border-emerald-500/10 px-3 py-1.5 rounded-full">Calendar Management</span></div>
+<span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-3">Real Estate Operations Portfolio</span>
+<h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">Transaction Calendars</h1>
+<p class="text-neutral-400 font-light leading-relaxed mt-5 max-w-3xl">Structured schedules containing key transaction dates, deadlines, milestones, reminders, and follow-up activities.</p>
+<div class="flex flex-wrap gap-2 mt-6"><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Calendar Management</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Deadline Tracking</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Milestone Scheduling</span></div>
+</div></header>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5"><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Objective</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Demonstrate organized and dependable support for transaction calendars while maintaining clear documentation, accurate data handling, and practical next-step visibility.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Workflow Demonstrated</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Structured schedules containing key transaction dates, deadlines, milestones, reminders, and follow-up activities.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Process</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Review the request and source materials, identify the required data points, verify information across available records, organize the findings into a clear working format, and complete a final accuracy and presentation check.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Deliverables</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">A structured work sample showing the research, coordination, documentation, and quality-control steps used to support transaction calendars.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Quality &amp; Confidentiality</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Sample information is presented for portfolio demonstration. Client, property, transaction, and personal details should be anonymized before publication or sharing.</p>
+</article></div>
+<div class="mt-8 flex flex-wrap gap-3">
+<button class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-neutral-400 border border-white/5 bg-neutral-900/30 hover:text-emerald-400 hover:border-emerald-500/20 px-5 py-3 rounded-xl transition-all" onclick="switchPage('real-estate', 're-portfolio-deliverables')" type="button"><i class="w-4 h-4 group-hover:-translate-x-1 transition-transform" data-lucide="arrow-left"></i>Back to Real Estate Work Samples</button>
+<a class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue px-5 py-3 rounded-xl transition-all" href="#contact" onclick="event.preventDefault(); switchPage('contact')">Discuss This Workflow<i class="w-4 h-4" data-lucide="arrow-up-right"></i></a>
+</div>
+</section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-sample-04">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
+<button class="group inline-flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-emerald-400 transition-colors w-fit" onclick="switchPage('real-estate', 're-portfolio-deliverables')" type="button">
+<i class="w-4 h-4 transition-transform group-hover:-translate-x-1" data-lucide="arrow-left"></i>Back to Real Estate Work Samples
+</button>
+<div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-500"><span>Real Estate Operations</span><span class="text-neutral-700">/</span><span class="text-emerald-400">Work Sample 04</span></div>
+</div>
+<header class="relative overflow-hidden bg-neutral-900/30 border border-white/5 rounded-2xl p-7 md:p-10 mb-8">
+<div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-emerald-500/5 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-4xl">
+<div class="flex flex-wrap gap-2 mb-5"><span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 bg-purple-500/5 border border-purple-500/10 px-3 py-1.5 rounded-full">Work Sample 04</span><span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/5 border border-emerald-500/10 px-3 py-1.5 rounded-full">Document Review</span></div>
+<span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-3">Real Estate Operations Portfolio</span>
+<h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">Compliance Reviews</h1>
+<p class="text-neutral-400 font-light leading-relaxed mt-5 max-w-3xl">Missing-information checks, document tracking, compliance review notes, and professional follow-up communication.</p>
+<div class="flex flex-wrap gap-2 mt-6"><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Document Review</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Missing-Info Tracking</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Email Drafting</span></div>
+</div></header>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5"><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Objective</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Demonstrate organized and dependable support for compliance reviews while maintaining clear documentation, accurate data handling, and practical next-step visibility.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Workflow Demonstrated</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Missing-information checks, document tracking, compliance review notes, and professional follow-up communication.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Process</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Review the request and source materials, identify the required data points, verify information across available records, organize the findings into a clear working format, and complete a final accuracy and presentation check.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Deliverables</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">A structured work sample showing the research, coordination, documentation, and quality-control steps used to support compliance reviews.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Quality &amp; Confidentiality</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Sample information is presented for portfolio demonstration. Client, property, transaction, and personal details should be anonymized before publication or sharing.</p>
+</article></div>
+<div class="mt-8 flex flex-wrap gap-3">
+<button class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-neutral-400 border border-white/5 bg-neutral-900/30 hover:text-emerald-400 hover:border-emerald-500/20 px-5 py-3 rounded-xl transition-all" onclick="switchPage('real-estate', 're-portfolio-deliverables')" type="button"><i class="w-4 h-4 group-hover:-translate-x-1 transition-transform" data-lucide="arrow-left"></i>Back to Real Estate Work Samples</button>
+<a class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue px-5 py-3 rounded-xl transition-all" href="#contact" onclick="event.preventDefault(); switchPage('contact')">Discuss This Workflow<i class="w-4 h-4" data-lucide="arrow-up-right"></i></a>
+</div>
+</section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-sample-05">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
+<button class="group inline-flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-emerald-400 transition-colors w-fit" onclick="switchPage('real-estate', 're-portfolio-deliverables')" type="button">
+<i class="w-4 h-4 transition-transform group-hover:-translate-x-1" data-lucide="arrow-left"></i>Back to Real Estate Work Samples
+</button>
+<div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-500"><span>Real Estate Operations</span><span class="text-neutral-700">/</span><span class="text-emerald-400">Work Sample 05</span></div>
+</div>
+<header class="relative overflow-hidden bg-neutral-900/30 border border-white/5 rounded-2xl p-7 md:p-10 mb-8">
+<div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-emerald-500/5 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-4xl">
+<div class="flex flex-wrap gap-2 mb-5"><span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 bg-purple-500/5 border border-purple-500/10 px-3 py-1.5 rounded-full">Work Sample 05</span><span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/5 border border-emerald-500/10 px-3 py-1.5 rounded-full">Canva Design</span></div>
+<span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-3">Real Estate Operations Portfolio</span>
+<h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">Marketing Materials</h1>
+<p class="text-neutral-400 font-light leading-relaxed mt-5 max-w-3xl">Open-house posters, property advertisements, listing highlights, promotional graphics, and visual marketing assets.</p>
+<div class="flex flex-wrap gap-2 mt-6"><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Canva Design</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Listing Promotion</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Visual Content</span></div>
+</div></header>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5"><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Objective</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Demonstrate organized and dependable support for marketing materials while maintaining clear documentation, accurate data handling, and practical next-step visibility.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Workflow Demonstrated</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Open-house posters, property advertisements, listing highlights, promotional graphics, and visual marketing assets.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Process</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Review the request and source materials, identify the required data points, verify information across available records, organize the findings into a clear working format, and complete a final accuracy and presentation check.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Deliverables</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">A structured work sample showing the research, coordination, documentation, and quality-control steps used to support marketing materials.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Quality &amp; Confidentiality</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Sample information is presented for portfolio demonstration. Client, property, transaction, and personal details should be anonymized before publication or sharing.</p>
+</article></div>
+<div class="mt-8 flex flex-wrap gap-3">
+<button class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-neutral-400 border border-white/5 bg-neutral-900/30 hover:text-emerald-400 hover:border-emerald-500/20 px-5 py-3 rounded-xl transition-all" onclick="switchPage('real-estate', 're-portfolio-deliverables')" type="button"><i class="w-4 h-4 group-hover:-translate-x-1 transition-transform" data-lucide="arrow-left"></i>Back to Real Estate Work Samples</button>
+<a class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue px-5 py-3 rounded-xl transition-all" href="#contact" onclick="event.preventDefault(); switchPage('contact')">Discuss This Workflow<i class="w-4 h-4" data-lucide="arrow-up-right"></i></a>
+</div>
+</section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-sample-06">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
+<button class="group inline-flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-emerald-400 transition-colors w-fit" onclick="switchPage('real-estate', 're-portfolio-deliverables')" type="button">
+<i class="w-4 h-4 transition-transform group-hover:-translate-x-1" data-lucide="arrow-left"></i>Back to Real Estate Work Samples
+</button>
+<div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-500"><span>Real Estate Operations</span><span class="text-neutral-700">/</span><span class="text-emerald-400">Work Sample 06</span></div>
+</div>
+<header class="relative overflow-hidden bg-neutral-900/30 border border-white/5 rounded-2xl p-7 md:p-10 mb-8">
+<div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-emerald-500/5 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-4xl">
+<div class="flex flex-wrap gap-2 mb-5"><span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 bg-purple-500/5 border border-purple-500/10 px-3 py-1.5 rounded-full">Work Sample 06</span><span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/5 border border-emerald-500/10 px-3 py-1.5 rounded-full">Vendor Sourcing</span></div>
+<span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-3">Real Estate Operations Portfolio</span>
+<h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">Vendor Research Lists</h1>
+<p class="text-neutral-400 font-light leading-relaxed mt-5 max-w-3xl">Organized vendor information containing services, websites, phone numbers, email addresses, and contact references.</p>
+<div class="flex flex-wrap gap-2 mt-6"><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Vendor Sourcing</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Contact Research</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Database Building</span></div>
+</div></header>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5"><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Objective</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Demonstrate organized and dependable support for vendor research lists while maintaining clear documentation, accurate data handling, and practical next-step visibility.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Workflow Demonstrated</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Organized vendor information containing services, websites, phone numbers, email addresses, and contact references.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Process</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Review the request and source materials, identify the required data points, verify information across available records, organize the findings into a clear working format, and complete a final accuracy and presentation check.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Deliverables</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">A structured work sample showing the research, coordination, documentation, and quality-control steps used to support vendor research lists.</p>
+</article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Quality &amp; Confidentiality</span>
+<p class="text-sm text-neutral-400 font-light leading-relaxed">Sample information is presented for portfolio demonstration. Client, property, transaction, and personal details should be anonymized before publication or sharing.</p>
+</article></div>
+<div class="mt-8 flex flex-wrap gap-3">
+<button class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-neutral-400 border border-white/5 bg-neutral-900/30 hover:text-emerald-400 hover:border-emerald-500/20 px-5 py-3 rounded-xl transition-all" onclick="switchPage('real-estate', 're-portfolio-deliverables')" type="button"><i class="w-4 h-4 group-hover:-translate-x-1 transition-transform" data-lucide="arrow-left"></i>Back to Real Estate Work Samples</button>
+<a class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue px-5 py-3 rounded-xl transition-all" href="#contact" onclick="event.preventDefault(); switchPage('contact')">Discuss This Workflow<i class="w-4 h-4" data-lucide="arrow-up-right"></i></a>
+</div>
+</section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-contact">
+<header class="relative overflow-hidden rounded-3xl border border-white/5 bg-neutral-900/30 p-8 md:p-12 mb-8">
+<div class="absolute -top-24 -right-20 w-80 h-80 rounded-full bg-accentCyan/5 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-5 gap-10 items-center">
+<div class="lg:col-span-3"><span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-3">Contact &amp; Availability</span><h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">Let’s build smoother support and real estate operations.</h1><p class="text-neutral-400 font-light leading-relaxed mt-5 max-w-2xl">Reach out for customer support, real estate virtual assistance, workflow organization, documentation, research, CRM support, or project-based administrative help.</p><div class="flex flex-wrap gap-3 mt-7"><a class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-accentCyan/10 border border-accentCyan/20 hover:bg-accentCyan/20 text-accentCyan font-medium transition-all" href="mailto:sherryl.andrade@gmail.com"><i class="w-4 h-4" data-lucide="mail"></i>Send an Email</a><a class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 text-emerald-400 font-medium transition-all" href="https://calendly.com/sherryl-andrade/15-min-call-meeting" rel="noopener noreferrer" target="_blank"><i class="w-4 h-4" data-lucide="calendar"></i>Book a 15-Minute Call</a></div></div>
+<div class="lg:col-span-2 bg-neutral-950/40 border border-white/5 rounded-2xl p-6"><span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 block mb-5">Availability Snapshot</span><div class="space-y-4 text-sm"><div class="flex items-start gap-3"><i class="w-4 h-4 text-emerald-400 mt-0.5" data-lucide="clock-3"></i><div><p class="text-white font-medium">Response Time</p><p class="text-neutral-500 text-xs mt-1">Typically within 24 hours</p></div></div><div class="flex items-start gap-3"><i class="w-4 h-4 text-accentCyan mt-0.5" data-lucide="briefcase-business"></i><div><p class="text-white font-medium">Engagement Types</p><p class="text-neutral-500 text-xs mt-1">Full-time, part-time, and contract</p></div></div><div class="flex items-start gap-3"><i class="w-4 h-4 text-purple-400 mt-0.5" data-lucide="globe-2"></i><div><p class="text-white font-medium">Work Setup</p><p class="text-neutral-500 text-xs mt-1">Remote support worldwide</p></div></div></div></div>
+</div></header>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
+<a class="group rounded-2xl bg-neutral-900/30 border border-white/5 hover:border-accentBlue p-6 transition-all" href="mailto:sherryl.andrade@gmail.com"><div class="w-11 h-11 rounded-xl bg-accentCyan/10 flex items-center justify-center text-accentCyan mb-5"><i class="w-5 h-5" data-lucide="mail"></i></div><h2 class="text-white font-semibold">Email</h2><p class="text-neutral-500 text-xs mt-2">Best for project details, job opportunities, and service inquiries.</p><span class="inline-flex items-center gap-1 text-xs text-accentCyan mt-5">sherryl.andrade@gmail.com <i class="w-3 h-3" data-lucide="arrow-up-right"></i></span></a>
+<a class="group rounded-2xl bg-neutral-900/30 border border-white/5 hover:border-accentBlue p-6 transition-all" href="https://www.linkedin.com/in/sherrylandrade/" rel="noopener noreferrer" target="_blank"><div class="w-11 h-11 rounded-xl bg-accentBlue/10 flex items-center justify-center text-accentBlue mb-5"><i class="w-5 h-5" data-lucide="linkedin"></i></div><h2 class="text-white font-semibold">LinkedIn</h2><p class="text-neutral-500 text-xs mt-2">Connect professionally and review my career background.</p><span class="inline-flex items-center gap-1 text-xs text-accentBlue mt-5">View Professional Profile <i class="w-3 h-3" data-lucide="arrow-up-right"></i></span></a>
+<a class="group rounded-2xl bg-neutral-900/30 border border-white/5 hover:border-emerald-500/35 p-6 transition-all" href="https://calendly.com/sherryl-andrade/15-min-call-meeting" rel="noopener noreferrer" target="_blank"><div class="w-11 h-11 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-5"><i class="w-5 h-5" data-lucide="calendar-check-2"></i></div><h2 class="text-white font-semibold">Discovery Call</h2><p class="text-neutral-500 text-xs mt-2">Schedule a focused 15-minute conversation about your support needs.</p><span class="inline-flex items-center gap-1 text-xs text-emerald-400 mt-5">Choose a Time <i class="w-3 h-3" data-lucide="arrow-up-right"></i></span></a>
+</div>
+<section class="rounded-2xl bg-neutral-900/20 border border-white/5 p-7 md:p-9"><div class="flex flex-col md:flex-row md:items-center justify-between gap-6"><div><span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 block mb-2">Helpful Information</span><h2 class="text-2xl font-bold text-white">What to include in your message</h2><p class="text-neutral-400 text-sm font-light mt-3 max-w-2xl">Share the role or project, expected responsibilities, preferred schedule, tools currently used, and your target start date. This helps me respond with relevant next steps.</p></div><button class="inline-flex items-center justify-center gap-2 text-xs font-mono text-neutral-300 border border-white/10 bg-neutral-900/40 hover:text-accentCyan hover:border-accentCyan/30 px-5 py-3 rounded-xl transition-all shrink-0" onclick="switchPage('home')" type="button"><i class="w-4 h-4" data-lucide="home"></i>Back to Home</button></div></section>
+</section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-project-01">
 <!-- =====================================================
          PROJECT NAVIGATION
     ====================================================== -->
@@ -3012,7 +3319,20 @@
     'testimonials',
     're-cases',
     're-testimonials',
-    're-project-01'
+    're-project-01',
+    're-project-02',
+    're-project-03',
+    're-project-04',
+    're-project-05',
+    're-project-06',
+    're-project-07',
+    're-project-08',
+    're-sample-01',
+    're-sample-02',
+    're-sample-03',
+    're-sample-04',
+    're-sample-05',
+    're-sample-06'
 ];
     
     // ================= SCROLL TO SECTION =================
@@ -3109,7 +3429,20 @@
 
     're-cases': 'real-estate',
     're-testimonials': 'real-estate',
-    're-project-01': 'real-estate'
+    're-project-01': 'real-estate',
+    're-project-02': 'real-estate',
+    're-project-03': 'real-estate',
+    're-project-04': 'real-estate',
+    're-project-05': 'real-estate',
+    're-project-06': 'real-estate',
+    're-project-07': 'real-estate',
+    're-project-08': 'real-estate',
+    're-sample-01': 'real-estate',
+    're-sample-02': 'real-estate',
+    're-sample-03': 'real-estate',
+    're-sample-04': 'real-estate',
+    're-sample-05': 'real-estate',
+    're-sample-06': 'real-estate'
 };
 
         const navigationId =
