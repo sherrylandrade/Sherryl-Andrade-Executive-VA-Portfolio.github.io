@@ -1992,9 +1992,14 @@
         
         <div class="w-full md:w-64 shrink-0 md:sticky md:top-28"> 
             <nav class="space-y-2 font-mono text-xs">
-                <a href="javascript:void(0)" onclick="const el = document.getElementById('re-section-video'); if(el) { window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' }); }" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left">
-                    <span class="opacity-50">—</span> Endorsement Video
-                </a>
+                <a
+    href="#testimonials/section-video-anchor"
+    onclick="event.preventDefault(); switchPage('testimonials', 'section-video-anchor')"
+    class="group text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left"
+>
+    <span class="opacity-50 group-hover:text-emerald-300">—</span>
+    Commendation Video
+</a>
                 <a href="javascript:void(0)" onclick="const el = document.getElementById('re-section-feedback-panel'); if(el) { window.scrollTo({ top: el.offsetTop - 100, behavior: 'smooth' }); }" class="text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left">
                     <span class="opacity-50">—</span> Performance Logs
                 </a> 
