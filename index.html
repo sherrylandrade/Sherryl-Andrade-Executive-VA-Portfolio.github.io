@@ -108,7 +108,7 @@ body.home-mode > main {
 .exact-home-hotspot:active,
 .exact-home-hotspot:visited {
     position: absolute;
-    z-index: 50;
+    z-index: 100;
     display: block;
     pointer-events: auto;
     margin: 0;
@@ -120,7 +120,7 @@ body.home-mode > main {
     box-shadow: none !important;
     color: transparent !important;
     text-decoration: none !important;
-    opacity: 1;
+    opacity: 1 !important;
     transform: none !important;
     transition: none !important;
     -webkit-tap-highlight-color: transparent;
@@ -130,55 +130,53 @@ body.home-mode > main {
 
 /* Header navigation */
 .exact-home-link-home {
-    left: 21.2%;
+    left: 21.7%;
     top: 2.0%;
-    width: 4.8%;
-    height: 5.8%;
+    width: 5.2%;
+    height: 7.0%;
 }
 
 .exact-home-link-about {
-    left: 26.2%;
-    top: 2.1%;
-    width: 7.8%;
-    height: 5.9%;
+    left: 27.7%;
+    top: 2.2%;
+    width: 7.0%;
+    height: 5.8%;
 }
 
 .exact-home-link-customer {
-    left: 34.6%;
-    top: 2.1%;
-    width: 13.7%;
-    height: 5.9%;
+    left: 35.5%;
+    top: 2.2%;
+    width: 14.0%;
+    height: 5.8%;
 }
 
 .exact-home-link-real-estate {
-    left: 48.8%;
-    top: 2.1%;
-    width: 17.2%;
-    height: 5.9%;
+    left: 50.2%;
+    top: 2.2%;
+    width: 17.6%;
+    height: 5.8%;
 }
 
 .exact-home-link-contact {
-    left: 66.5%;
-    top: 2.1%;
-    width: 8.1%;
-    height: 5.9%;
+    left: 68.3%;
+    top: 2.2%;
+    width: 8.2%;
+    height: 5.8%;
 }
 
 /* Main hero actions */
 .exact-home-link-customer-cta {
-    left: 22.3%;
-    top: 59.7%;
-    width: 25%;
-    height: 6.3%;
-    border-radius: 0.9rem;
+    left: 23.7%;
+    top: 64.4%;
+    width: 27.7%;
+    height: 7.4%;
 }
 
 .exact-home-link-real-estate-cta {
-    left: 48.5%;
-    top: 59.7%;
-    width: 21.2%;
-    height: 6.3%;
-    border-radius: 0.9rem;
+    left: 52.7%;
+    top: 64.4%;
+    width: 24.3%;
+    height: 7.4%;
 }
 
 
@@ -225,6 +223,139 @@ body.home-mode > main {
         width: 1200px;
         min-height: auto;
         object-fit: contain;
+    }
+}
+
+
+/* ============================================================
+   NON-HOME PAGE VISUAL SYSTEM
+   Adds atmospheric wallpaper styling without changing content.
+============================================================ */
+
+body:not(.home-mode) {
+    position: relative;
+    isolation: isolate;
+    background:
+        radial-gradient(
+            circle at 12% 14%,
+            rgba(6, 182, 212, 0.075),
+            transparent 25rem
+        ),
+        radial-gradient(
+            circle at 88% 36%,
+            rgba(16, 185, 129, 0.055),
+            transparent 30rem
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(6, 182, 212, 0.035),
+            transparent 34rem
+        ),
+        #090a0f;
+}
+
+body:not(.home-mode)::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    opacity: 0.18;
+    background-image:
+        linear-gradient(
+            rgba(6, 182, 212, 0.055) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(6, 182, 212, 0.055) 1px,
+            transparent 1px
+        );
+    background-size: 76px 76px;
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent 0%,
+            black 16%,
+            black 82%,
+            transparent 100%
+        );
+}
+
+body:not(.home-mode)::after {
+    content: "";
+    position: fixed;
+    right: -11rem;
+    bottom: -12rem;
+    z-index: -1;
+    width: 34rem;
+    height: 34rem;
+    border: 1px solid rgba(16, 185, 129, 0.075);
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow:
+        0 0 85px rgba(6, 182, 212, 0.045),
+        inset 0 0 85px rgba(16, 185, 129, 0.025);
+}
+
+body:not(.home-mode) > main {
+    position: relative;
+    isolation: isolate;
+}
+
+.page-viewport:not(#page-home).active {
+    position: relative;
+}
+
+.page-viewport:not(#page-home).active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -1.5rem;
+    width: min(18rem, 46vw);
+    height: 1px;
+    pointer-events: none;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(45, 212, 191, 0.75),
+            rgba(6, 182, 212, 0.18),
+            transparent
+        );
+    box-shadow: 0 0 18px rgba(6, 182, 212, 0.14);
+}
+
+body:not(.home-mode) header {
+    box-shadow:
+        0 12px 38px rgba(0, 0, 0, 0.34),
+        0 0 30px rgba(6, 182, 212, 0.045);
+}
+
+body:not(.home-mode) .bg-neutral-900\/30,
+body:not(.home-mode) .bg-neutral-900\/40 {
+    backdrop-filter: blur(10px);
+}
+
+body:not(.home-mode) .rounded-2xl,
+body:not(.home-mode) .rounded-xl {
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+body:not(.home-mode) .hover\:border-emerald-500\/35:hover,
+body:not(.home-mode) .hover\:border-emerald-500\/30:hover {
+    box-shadow:
+        0 12px 34px rgba(0, 0, 0, 0.22),
+        0 0 22px rgba(16, 185, 129, 0.055);
+}
+
+@media (max-width: 767px) {
+    body:not(.home-mode)::before {
+        background-size: 52px 52px;
+        opacity: 0.12;
+    }
+
+    .page-viewport:not(#page-home).active::before {
+        top: -0.75rem;
     }
 }
 
@@ -300,7 +431,7 @@ body.home-mode > main {
            onclick="event.preventDefault(); switchPage('contact')"
            aria-label="Contact"></a>
 
-        <!-- Hero calls to action: résumé intentionally omitted -->
+        <!-- Hero calls to action -->
         <a class="exact-home-hotspot exact-home-link-customer-cta"
            href="#customer-service"
            onclick="event.preventDefault(); switchPage('customer-service')"
