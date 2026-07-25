@@ -89,30 +89,350 @@
 </header>
 <!-- MAIN CONTENT CANVAS -->
 <main class="flex-grow pt-36 pb-16 max-w-6xl w-full mx-auto px-6">
-<!-- ================= VIEW 1: HOME PAGE / HERO (Full Width) ================= -->
-<section class="page-viewport max-w-7xl mx-auto px-4 pt-16 pb-12 text-center active" id="page-home">
-<div class="flex flex-col items-center">
-<span class="text-xs font-mono uppercase tracking-widest text-accentCyan bg-accentCyan/10 px-3 py-1 rounded-full mb-4">
-                    Customer Support · CRM · Real Estate Operations
+        
+<!-- ======================================================
+     HOME PAGE
+======================================================= -->
+<section
+    id="page-home"
+    class="page-viewport active max-w-7xl mx-auto px-0 md:px-4 pb-8"
+>
+    <div class="home-wallpaper border border-white/5 shadow-2xl">
+
+        <!-- Decorative Wallpaper Elements -->
+        <div class="hero-globe" aria-hidden="true"></div>
+
+        <span class="hero-data-point" aria-hidden="true"></span>
+        <span class="hero-data-point" aria-hidden="true"></span>
+        <span class="hero-data-point" aria-hidden="true"></span>
+
+        <!-- Real Estate Skyline -->
+        <svg
+            class="hero-skyline"
+            viewBox="0 0 300 280"
+            fill="none"
+            aria-hidden="true"
+        >
+            <path
+                d="M24 258V180H58V258"
+                stroke="#06b6d4"
+                stroke-width="2"
+            />
+
+            <path
+                d="M70 258V116H108V258"
+                stroke="#06b6d4"
+                stroke-width="2"
+            />
+
+            <path
+                d="M119 258V151H153V258"
+                stroke="#10b981"
+                stroke-width="2"
+            />
+
+            <path
+                d="M164 258V80H211V258"
+                stroke="#06b6d4"
+                stroke-width="2"
+            />
+
+            <path
+                d="M222 258V142H270V258"
+                stroke="#10b981"
+                stroke-width="2"
+            />
+
+            <!-- Buildings -->
+            <path
+                d="M176 78V45H199V78"
+                stroke="#06b6d4"
+                stroke-width="2"
+            />
+
+            <path
+                d="M186 45V22"
+                stroke="#06b6d4"
+                stroke-width="2"
+            />
+
+            <!-- House Outline -->
+            <path
+                d="M162 184L222 128L282 184"
+                stroke="#10b981"
+                stroke-width="4"
+            />
+
+            <path
+                d="M181 169V242H263V169"
+                stroke="#10b981"
+                stroke-width="4"
+            />
+
+            <path
+                d="M211 242V201H233V242"
+                stroke="#10b981"
+                stroke-width="4"
+            />
+        </svg>
+
+        <!-- Bottom Wave -->
+        <svg
+            class="hero-wave"
+            viewBox="0 0 620 220"
+            fill="none"
+            aria-hidden="true"
+        >
+            <path
+                d="M2 174C125 55 231 208 371 99C462 29 536 43 618 3"
+                stroke="#10b981"
+                stroke-opacity="0.65"
+            />
+
+            <path
+                d="M4 186C134 72 250 219 388 116C472 53 546 51 619 23"
+                stroke="#06b6d4"
+                stroke-opacity="0.50"
+            />
+
+            <path
+                d="M1 198C149 95 263 226 405 135C494 78 552 74 620 50"
+                stroke="#10b981"
+                stroke-opacity="0.38"
+            />
+
+            <path
+                d="M1 208C164 121 289 228 425 153C505 109 563 99 620 81"
+                stroke="#06b6d4"
+                stroke-opacity="0.28"
+            />
+        </svg>
+
+        <!-- Hero Content -->
+        <div
+            class="relative z-10 flex min-h-[650px] flex-col
+                   items-center justify-center px-6 pb-14 pt-20
+                   text-center md:px-12 md:pt-24"
+        >
+            <!-- Service Badge -->
+            <span
+                class="mb-7 inline-flex items-center rounded-full
+                       border border-cyan-400/20
+                       bg-cyan-500/10 px-5 py-2
+                       text-[10px] font-mono uppercase
+                       tracking-[0.24em] text-cyan-300
+                       shadow-[0_0_25px_rgba(6,182,212,0.09)]"
+            >
+                Customer Support · CRM · Real Estate Operations
+            </span>
+
+            <!-- Main Heading -->
+            <h1
+                class="max-w-5xl text-4xl font-bold leading-[1.06]
+                       tracking-tight text-white
+                       sm:text-5xl lg:text-6xl"
+            >
+                Dependable Support That Keeps
+                <span class="hero-accent-line">
+                    Customers, Data, and Real Estate
+                    Workflows Organized
                 </span>
-<h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight max-w-4xl leading-tight">
-                    Dependable Support That Keeps Customers, Data, and Real Estate Workflows Organized
-                </h1>
-<p class="text-neutral-300 max-w-2xl text-base md:text-lg font-light leading-relaxed mt-6">
-                    I help growing teams manage customer communication, escalations, CRM records, property research, documentation, and day-to-day operational tasks with accuracy and consistency.
+            </h1>
+
+            <!-- Supporting Copy -->
+            <p
+                class="mt-10 max-w-3xl text-base font-light
+                       leading-relaxed text-neutral-300
+                       md:text-lg"
+            >
+                I help growing teams manage customer communication,
+                escalations, CRM records, property research,
+                documentation, and day-to-day operational tasks with
+                accuracy and consistency.
+            </p>
+
+            <!-- Main CTA Buttons -->
+            <div
+                class="mt-9 flex flex-col items-stretch justify-center
+                       gap-4 sm:flex-row sm:items-center"
+            >
+                <button
+                    type="button"
+                    onclick="switchPage('customer-service')"
+                    class="group inline-flex items-center justify-center
+                           gap-3 rounded-xl border border-emerald-500/25
+                           bg-emerald-500/5 px-6 py-3.5
+                           text-sm font-medium text-emerald-400
+                           transition-all duration-300
+                           hover:-translate-y-0.5
+                           hover:border-cyan-400/40
+                           hover:bg-emerald-500/10
+                           hover:text-cyan-300
+                           hover:shadow-[0_8px_30px_rgba(16,185,129,0.10)]"
+                >
+                    <i
+                        class="h-5 w-5 transition-transform duration-300
+                               group-hover:-rotate-6"
+                        data-lucide="headset"
+                    ></i>
+
+                    <span>View Customer Support Experience</span>
+                </button>
+
+                <button
+                    type="button"
+                    onclick="switchPage('real-estate', 'projects-section')"
+                    class="group inline-flex items-center justify-center
+                           gap-3 rounded-xl border border-cyan-500/25
+                           bg-cyan-500/5 px-6 py-3.5
+                           text-sm font-medium text-emerald-400
+                           transition-all duration-300
+                           hover:-translate-y-0.5
+                           hover:border-emerald-400/40
+                           hover:bg-cyan-500/10
+                           hover:text-cyan-300
+                           hover:shadow-[0_8px_30px_rgba(6,182,212,0.10)]"
+                >
+                    <i
+                        class="h-5 w-5 transition-transform duration-300
+                               group-hover:scale-110"
+                        data-lucide="building-2"
+                    ></i>
+
+                    <span>Explore Real Estate Projects</span>
+                </button>
+            </div>
+
+            <!-- Resume Link -->
+            <a
+                href="Sherryl Andrade - CSR resume.pdf"
+                target="_blank"
+                class="group mt-6 inline-flex items-center gap-2
+                       text-sm text-neutral-400
+                       transition-colors duration-300
+                       hover:text-cyan-300"
+            >
+                <i
+                    class="h-4 w-4 text-emerald-400"
+                    data-lucide="file-text"
+                ></i>
+
+                <span class="border-b border-neutral-600 pb-0.5">
+                    View Resume
+                </span>
+
+                <i
+                    class="h-4 w-4 transition-transform duration-300
+                           group-hover:translate-x-1"
+                    data-lucide="arrow-right"
+                ></i>
+            </a>
+        </div>
+
+        <!-- Credibility Strip -->
+        <div
+            class="credibility-panel relative z-10 mx-4 mb-4
+                   grid grid-cols-1 overflow-hidden rounded-2xl
+                   border border-cyan-500/15
+                   shadow-[0_0_40px_rgba(6,182,212,0.05)]
+                   sm:grid-cols-2 lg:mx-8 lg:grid-cols-5"
+        >
+            <!-- Item 1 -->
+            <div
+                class="credibility-item flex flex-col items-center
+                       px-5 py-6 text-center"
+            >
+                <i
+                    class="mb-3 h-7 w-7 text-emerald-400"
+                    data-lucide="headphones"
+                ></i>
+
+                <h3 class="text-sm font-semibold text-white">
+                    9+ Years Experience
+                </h3>
+
+                <p class="mt-2 text-xs leading-relaxed text-neutral-500">
+                    Customer support and operational experience.
                 </p>
-<!-- Call to Action Buttons -->
-<div class="flex flex-wrap items-center justify-center gap-4 mt-8">
-<button class="flex items-center gap-2 text-emerald-400 border border-emerald-600/25 bg-emerald-500/5 hover:bg-emerald-600/15 hover:border-accentBlue px-5 py-2.5 rounded-xl text-sm font-medium transition-all" onclick="switchPage('customer-service')">
-<i class="w-4 h-4" data-lucide="phone"></i>
-                        View Customer Support Experience
-                    </button>
-<button class="flex items-center gap-2 text-emerald-400 border border-emerald-600/25 bg-emerald-500/5 hover:bg-emerald-600/15 hover:border-accentBlue px-5 py-2.5 rounded-xl text-sm font-medium transition-all" onclick="switchPage('real-estate')">
-<i class="w-4 h-4" data-lucide="building"></i>
-                        Explore Real Estate Projects
-                    </button>
-</div>
-</div>
+            </div>
+
+            <!-- Item 2 -->
+            <div
+                class="credibility-item flex flex-col items-center
+                       px-5 py-6 text-center"
+            >
+                <i
+                    class="mb-3 h-7 w-7 text-emerald-400"
+                    data-lucide="messages-square"
+                ></i>
+
+                <h3 class="text-sm font-semibold text-white">
+                    Multi-Channel Support
+                </h3>
+
+                <p class="mt-2 text-xs leading-relaxed text-neutral-500">
+                    Phone, email, chat, and case management.
+                </p>
+            </div>
+
+            <!-- Item 3 -->
+            <div
+                class="credibility-item flex flex-col items-center
+                       px-5 py-6 text-center"
+            >
+                <i
+                    class="mb-3 h-7 w-7 text-emerald-400"
+                    data-lucide="monitor-cog"
+                ></i>
+
+                <h3 class="text-sm font-semibold text-white">
+                    CRM &amp; Tools Expertise
+                </h3>
+
+                <p class="mt-2 text-xs leading-relaxed text-neutral-500">
+                    CRM, ticketing, and productivity platforms.
+                </p>
+            </div>
+
+            <!-- Item 4 -->
+            <div
+                class="credibility-item flex flex-col items-center
+                       px-5 py-6 text-center"
+            >
+                <i
+                    class="mb-3 h-7 w-7 text-emerald-400"
+                    data-lucide="files"
+                ></i>
+
+                <h3 class="text-sm font-semibold text-white">
+                    Real Estate Operations
+                </h3>
+
+                <p class="mt-2 text-xs leading-relaxed text-neutral-500">
+                    Research, transaction support, and documentation.
+                </p>
+            </div>
+
+            <!-- Item 5 -->
+            <div
+                class="credibility-item flex flex-col items-center
+                       px-5 py-6 text-center"
+            >
+                <i
+                    class="mb-3 h-7 w-7 text-emerald-400"
+                    data-lucide="badge-check"
+                ></i>
+
+                <h3 class="text-sm font-semibold text-white">
+                    Detail &amp; Reliability
+                </h3>
+
+                <p class="mt-2 text-xs leading-relaxed text-neutral-500">
+                    Accurate, organized, and dependable execution.
+                </p>
+            </div>
+        </div>
+    </div>
 </section>
 <!-- ================= ABOUT SECTION ================= -->
 <section class="page-viewport max-w-7xl mx-auto px-4 pt-4 pb-16" id="page-about">
