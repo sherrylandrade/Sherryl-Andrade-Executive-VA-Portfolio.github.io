@@ -1,406 +1,317 @@
 <!DOCTYPE html>
-
 <html class="dark scroll-smooth" lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/> 
-<title>Sherryl Andrade — Professional Portfolio</title>
-<!-- Tailwind CSS CDN -->
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        darkBg: '#090a0f',
-                        panelBg: '#12131a',
-                        accentBlue: '#0070f3',
-                        accentCyan: '#06b6d4'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'system-ui', 'sans-serif'],
-                    }
-                }
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Sherryl Andrade — Professional Portfolio</title>
+
+    <style>
+        :root {
+            color-scheme: dark;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            margin: 0;
+            min-height: 100%;
+            background: #05080d;
+        }
+
+        body {
+            overflow-x: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .page-viewport {
+            display: none;
+        }
+
+        .page-viewport.active {
+            display: block;
+        }
+
+        /*
+          Exact homepage artwork.
+          Keep portfolio-homepage-design.png in the same folder as this file.
+        */
+        .home-stage {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            overflow: hidden;
+            background: #05080d;
+        }
+
+        .home-artwork {
+            display: block;
+            width: 100%;
+            height: auto;
+            min-height: 100vh;
+            object-fit: cover;
+            object-position: center top;
+            user-select: none;
+            -webkit-user-drag: none;
+        }
+
+        /*
+          Transparent interactive areas placed over the buttons and navigation
+          already visible in the artwork.
+        */
+        .hotspot {
+            position: absolute;
+            z-index: 10;
+            display: block;
+            border-radius: 9999px;
+            background: transparent;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition:
+                background-color 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        .hotspot:hover,
+        .hotspot:focus-visible {
+            outline: none;
+            border-color: rgba(45, 212, 191, 0.48);
+            background: rgba(6, 182, 212, 0.09);
+            box-shadow:
+                0 0 0 3px rgba(6, 182, 212, 0.08),
+                0 0 22px rgba(45, 212, 191, 0.18);
+        }
+
+        /* Header navigation hotspots */
+        .hotspot-home {
+            left: 21.3%;
+            top: 2.2%;
+            width: 4.2%;
+            height: 5.9%;
+        }
+
+        .hotspot-about {
+            left: 25.7%;
+            top: 2.2%;
+            width: 8.3%;
+            height: 5.9%;
+        }
+
+        .hotspot-customer {
+            left: 34%;
+            top: 2.2%;
+            width: 14.2%;
+            height: 5.9%;
+        }
+
+        .hotspot-real-estate {
+            left: 48.1%;
+            top: 2.2%;
+            width: 18.1%;
+            height: 5.9%;
+        }
+
+        .hotspot-contact {
+            left: 66.2%;
+            top: 2.2%;
+            width: 8.5%;
+            height: 5.9%;
+        }
+
+        /* Hero CTA hotspots */
+        .hotspot-customer-cta {
+            left: 22.4%;
+            top: 59.8%;
+            width: 25%;
+            height: 6.3%;
+            border-radius: 0.85rem;
+        }
+
+        .hotspot-real-estate-cta {
+            left: 48.6%;
+            top: 59.8%;
+            width: 21.1%;
+            height: 6.3%;
+            border-radius: 0.85rem;
+        }
+
+        .hotspot-resume {
+            left: 40.3%;
+            top: 67.1%;
+            width: 11.3%;
+            height: 4.6%;
+        }
+
+        /* Footer social hotspots */
+        .hotspot-facebook {
+            left: 74.3%;
+            top: 95.6%;
+            width: 3.1%;
+            height: 3.3%;
+        }
+
+        .hotspot-instagram {
+            left: 77.6%;
+            top: 95.6%;
+            width: 3.1%;
+            height: 3.3%;
+        }
+
+        .hotspot-linkedin {
+            left: 81%;
+            top: 95.6%;
+            width: 3.1%;
+            height: 3.3%;
+        }
+
+        .hotspot-youtube {
+            left: 84.4%;
+            top: 95.6%;
+            width: 3.1%;
+            height: 3.3%;
+        }
+
+        /*
+          The artwork was designed at a desktop aspect ratio.
+          On narrow screens, preserve the full composition rather than crop it.
+        */
+        @media (max-width: 900px) {
+            .home-stage {
+                min-height: auto;
+                overflow-x: auto;
+            }
+
+            .home-artwork {
+                width: 1200px;
+                max-width: none;
+                min-height: auto;
+            }
+
+            .hotspot {
+                display: none;
             }
         }
-    </script>
-<!-- Inter Font & Lucide Icons via CDN -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<script src="https://unpkg.com/lucide@latest"></script>
-<style>
-    body { font-family: 'Inter', sans-serif; background-color: #090a0f; color: #f3f4f6; }
-    .page-viewport { display: none; }
-    .page-viewport.active { display: block !important; animation: fadeIn 0.3s ease-in-out; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 
-/* Standardized sub-page back navigation */
-.page-viewport aside, .page-viewport .md\:sticky { overflow-x: visible; }
+        @media (min-aspect-ratio: 3 / 2) {
+            .home-artwork {
+                width: 100vw;
+                height: 100vh;
+                object-fit: cover;
+            }
+        }
+    </style>
+</head>
 
-/* Uniform sub-page back navigation */
-.back-nav {
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  margin-bottom: 2rem;
-  font-size: .75rem;
-  line-height: 1rem;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  letter-spacing: .025em;
-  white-space: nowrap;
-  color: #34d399;
-  transition: color .3s ease;
-}
-.back-nav:hover { color: #06b6d4; }
-.back-nav i, .back-nav span { transition: transform .3s ease; }
-.back-nav:hover i { transform: translateX(-6px); }
-.back-nav:hover span { transform: translateX(-4px); }
-</style>
+<body>
+    <main>
+        <!-- =================================================
+             HOME PAGE — EXACT GENERATED DESIGN
+        ================================================== -->
+        <section id="page-home" class="page-viewport active">
+            <div class="home-stage">
 
-<!-- ======================================================
-     HOME PAGE
-======================================================= -->
-<section
-    id="page-home"
-    class="page-viewport active max-w-7xl mx-auto px-0 md:px-4 pb-8"
->
-    <div class="home-wallpaper border border-white/5 shadow-2xl">
+                <img
+                    class="home-artwork"
+                    src="portfolio-homepage-design.png"
+                    alt="Sherryl Andrade professional portfolio homepage"
+                />
 
-        <!-- Decorative Wallpaper Elements -->
-        <div class="hero-globe" aria-hidden="true"></div>
+                <!-- Header navigation -->
+                <a
+                    class="hotspot hotspot-home"
+                    href="#home"
+                    onclick="event.preventDefault(); switchPage('home')"
+                    aria-label="Home"
+                ></a>
 
-        <span class="hero-data-point" aria-hidden="true"></span>
-        <span class="hero-data-point" aria-hidden="true"></span>
-        <span class="hero-data-point" aria-hidden="true"></span>
+                <a
+                    class="hotspot hotspot-about"
+                    href="#about"
+                    onclick="event.preventDefault(); switchPage('about')"
+                    aria-label="About"
+                ></a>
 
-        <!-- Real Estate Skyline -->
-        <svg
-            class="hero-skyline"
-            viewBox="0 0 300 280"
-            fill="none"
-            aria-hidden="true"
-        >
-            <path
-                d="M24 258V180H58V258"
-                stroke="#06b6d4"
-                stroke-width="2"
-            />
+                <a
+                    class="hotspot hotspot-customer"
+                    href="#customer-service"
+                    onclick="event.preventDefault(); switchPage('customer-service')"
+                    aria-label="Customer Support"
+                ></a>
 
-            <path
-                d="M70 258V116H108V258"
-                stroke="#06b6d4"
-                stroke-width="2"
-            />
+                <a
+                    class="hotspot hotspot-real-estate"
+                    href="#real-estate"
+                    onclick="event.preventDefault(); switchPage('real-estate')"
+                    aria-label="Real Estate Operations"
+                ></a>
 
-            <path
-                d="M119 258V151H153V258"
-                stroke="#10b981"
-                stroke-width="2"
-            />
+                <a
+                    class="hotspot hotspot-contact"
+                    href="#contact"
+                    onclick="event.preventDefault(); switchPage('contact')"
+                    aria-label="Contact"
+                ></a>
 
-            <path
-                d="M164 258V80H211V258"
-                stroke="#06b6d4"
-                stroke-width="2"
-            />
+                <!-- Main calls to action -->
+                <a
+                    class="hotspot hotspot-customer-cta"
+                    href="#customer-service"
+                    onclick="event.preventDefault(); switchPage('customer-service')"
+                    aria-label="View Customer Support Experience"
+                ></a>
 
-            <path
-                d="M222 258V142H270V258"
-                stroke="#10b981"
-                stroke-width="2"
-            />
+                <a
+                    class="hotspot hotspot-real-estate-cta"
+                    href="#real-estate"
+                    onclick="event.preventDefault(); switchPage('real-estate', 'projects-section')"
+                    aria-label="Explore Real Estate Projects"
+                ></a>
 
-            <!-- Buildings -->
-            <path
-                d="M176 78V45H199V78"
-                stroke="#06b6d4"
-                stroke-width="2"
-            />
+                <a
+                    class="hotspot hotspot-resume"
+                    href="Sherryl Andrade - CSR resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="View Resume"
+                ></a>
 
-            <path
-                d="M186 45V22"
-                stroke="#06b6d4"
-                stroke-width="2"
-            />
+                <!-- Footer social links: replace # with your real profile URLs -->
+                <a
+                    class="hotspot hotspot-facebook"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                ></a>
 
-            <!-- House Outline -->
-            <path
-                d="M162 184L222 128L282 184"
-                stroke="#10b981"
-                stroke-width="4"
-            />
+                <a
+                    class="hotspot hotspot-instagram"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram"
+                ></a>
 
-            <path
-                d="M181 169V242H263V169"
-                stroke="#10b981"
-                stroke-width="4"
-            />
+                <a
+                    class="hotspot hotspot-linkedin"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                ></a>
 
-            <path
-                d="M211 242V201H233V242"
-                stroke="#10b981"
-                stroke-width="4"
-            />
-        </svg>
-
-        <!-- Bottom Wave -->
-        <svg
-            class="hero-wave"
-            viewBox="0 0 620 220"
-            fill="none"
-            aria-hidden="true"
-        >
-            <path
-                d="M2 174C125 55 231 208 371 99C462 29 536 43 618 3"
-                stroke="#10b981"
-                stroke-opacity="0.65"
-            />
-
-            <path
-                d="M4 186C134 72 250 219 388 116C472 53 546 51 619 23"
-                stroke="#06b6d4"
-                stroke-opacity="0.50"
-            />
-
-            <path
-                d="M1 198C149 95 263 226 405 135C494 78 552 74 620 50"
-                stroke="#10b981"
-                stroke-opacity="0.38"
-            />
-
-            <path
-                d="M1 208C164 121 289 228 425 153C505 109 563 99 620 81"
-                stroke="#06b6d4"
-                stroke-opacity="0.28"
-            />
-        </svg>
-
-        <!-- Hero Content -->
-        <div
-            class="relative z-10 flex min-h-[650px] flex-col
-                   items-center justify-center px-6 pb-14 pt-20
-                   text-center md:px-12 md:pt-24"
-        >
-            <!-- Service Badge -->
-            <span
-                class="mb-7 inline-flex items-center rounded-full
-                       border border-cyan-400/20
-                       bg-cyan-500/10 px-5 py-2
-                       text-[10px] font-mono uppercase
-                       tracking-[0.24em] text-cyan-300
-                       shadow-[0_0_25px_rgba(6,182,212,0.09)]"
-            >
-                Customer Support · CRM · Real Estate Operations
-            </span>
-
-            <!-- Main Heading -->
-            <h1
-                class="max-w-5xl text-4xl font-bold leading-[1.06]
-                       tracking-tight text-white
-                       sm:text-5xl lg:text-6xl"
-            >
-                Dependable Support That Keeps
-                <span class="hero-accent-line">
-                    Customers, Data, and Real Estate
-                    Workflows Organized
-                </span>
-            </h1>
-
-            <!-- Supporting Copy -->
-            <p
-                class="mt-10 max-w-3xl text-base font-light
-                       leading-relaxed text-neutral-300
-                       md:text-lg"
-            >
-                I help growing teams manage customer communication,
-                escalations, CRM records, property research,
-                documentation, and day-to-day operational tasks with
-                accuracy and consistency.
-            </p>
-
-            <!-- Main CTA Buttons -->
-            <div
-                class="mt-9 flex flex-col items-stretch justify-center
-                       gap-4 sm:flex-row sm:items-center"
-            >
-                <button
-                    type="button"
-                    onclick="switchPage('customer-service')"
-                    class="group inline-flex items-center justify-center
-                           gap-3 rounded-xl border border-emerald-500/25
-                           bg-emerald-500/5 px-6 py-3.5
-                           text-sm font-medium text-emerald-400
-                           transition-all duration-300
-                           hover:-translate-y-0.5
-                           hover:border-cyan-400/40
-                           hover:bg-emerald-500/10
-                           hover:text-cyan-300
-                           hover:shadow-[0_8px_30px_rgba(16,185,129,0.10)]"
-                >
-                    <i
-                        class="h-5 w-5 transition-transform duration-300
-                               group-hover:-rotate-6"
-                        data-lucide="headset"
-                    ></i>
-
-                    <span>View Customer Support Experience</span>
-                </button>
-
-                <button
-                    type="button"
-                    onclick="switchPage('real-estate', 'projects-section')"
-                    class="group inline-flex items-center justify-center
-                           gap-3 rounded-xl border border-cyan-500/25
-                           bg-cyan-500/5 px-6 py-3.5
-                           text-sm font-medium text-emerald-400
-                           transition-all duration-300
-                           hover:-translate-y-0.5
-                           hover:border-emerald-400/40
-                           hover:bg-cyan-500/10
-                           hover:text-cyan-300
-                           hover:shadow-[0_8px_30px_rgba(6,182,212,0.10)]"
-                >
-                    <i
-                        class="h-5 w-5 transition-transform duration-300
-                               group-hover:scale-110"
-                        data-lucide="building-2"
-                    ></i>
-
-                    <span>Explore Real Estate Projects</span>
-                </button>
+                <a
+                    class="hotspot hotspot-youtube"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="YouTube"
+                ></a>
             </div>
-
-            <!-- Resume Link -->
-            <a
-                href="Sherryl Andrade - CSR resume.pdf"
-                target="_blank"
-                class="group mt-6 inline-flex items-center gap-2
-                       text-sm text-neutral-400
-                       transition-colors duration-300
-                       hover:text-cyan-300"
-            >
-                <i
-                    class="h-4 w-4 text-emerald-400"
-                    data-lucide="file-text"
-                ></i>
-
-                <span class="border-b border-neutral-600 pb-0.5">
-                    View Resume
-                </span>
-
-                <i
-                    class="h-4 w-4 transition-transform duration-300
-                           group-hover:translate-x-1"
-                    data-lucide="arrow-right"
-                ></i>
-            </a>
-        </div>
-
-        <!-- Credibility Strip -->
-        <div
-            class="credibility-panel relative z-10 mx-4 mb-4
-                   grid grid-cols-1 overflow-hidden rounded-2xl
-                   border border-cyan-500/15
-                   shadow-[0_0_40px_rgba(6,182,212,0.05)]
-                   sm:grid-cols-2 lg:mx-8 lg:grid-cols-5"
-        >
-            <!-- Item 1 -->
-            <div
-                class="credibility-item flex flex-col items-center
-                       px-5 py-6 text-center"
-            >
-                <i
-                    class="mb-3 h-7 w-7 text-emerald-400"
-                    data-lucide="headphones"
-                ></i>
-
-                <h3 class="text-sm font-semibold text-white">
-                    9+ Years Experience
-                </h3>
-
-                <p class="mt-2 text-xs leading-relaxed text-neutral-500">
-                    Customer support and operational experience.
-                </p>
-            </div>
-
-            <!-- Item 2 -->
-            <div
-                class="credibility-item flex flex-col items-center
-                       px-5 py-6 text-center"
-            >
-                <i
-                    class="mb-3 h-7 w-7 text-emerald-400"
-                    data-lucide="messages-square"
-                ></i>
-
-                <h3 class="text-sm font-semibold text-white">
-                    Multi-Channel Support
-                </h3>
-
-                <p class="mt-2 text-xs leading-relaxed text-neutral-500">
-                    Phone, email, chat, and case management.
-                </p>
-            </div>
-
-            <!-- Item 3 -->
-            <div
-                class="credibility-item flex flex-col items-center
-                       px-5 py-6 text-center"
-            >
-                <i
-                    class="mb-3 h-7 w-7 text-emerald-400"
-                    data-lucide="monitor-cog"
-                ></i>
-
-                <h3 class="text-sm font-semibold text-white">
-                    CRM &amp; Tools Expertise
-                </h3>
-
-                <p class="mt-2 text-xs leading-relaxed text-neutral-500">
-                    CRM, ticketing, and productivity platforms.
-                </p>
-            </div>
-
-            <!-- Item 4 -->
-            <div
-                class="credibility-item flex flex-col items-center
-                       px-5 py-6 text-center"
-            >
-                <i
-                    class="mb-3 h-7 w-7 text-emerald-400"
-                    data-lucide="files"
-                ></i>
-
-                <h3 class="text-sm font-semibold text-white">
-                    Real Estate Operations
-                </h3>
-
-                <p class="mt-2 text-xs leading-relaxed text-neutral-500">
-                    Research, transaction support, and documentation.
-                </p>
-            </div>
-
-            <!-- Item 5 -->
-            <div
-                class="credibility-item flex flex-col items-center
-                       px-5 py-6 text-center"
-            >
-                <i
-                    class="mb-3 h-7 w-7 text-emerald-400"
-                    data-lucide="badge-check"
-                ></i>
-
-                <h3 class="text-sm font-semibold text-white">
-                    Detail &amp; Reliability
-                </h3>
-
-                <p class="mt-2 text-xs leading-relaxed text-neutral-500">
-                    Accurate, organized, and dependable execution.
-                </p>
-            </div>
-        </div>
-    </div>
-</section> 
+        </section>
         
 <!-- ================= ABOUT SECTION ================= -->
 <section class="page-viewport max-w-7xl mx-auto px-4 pt-4 pb-16" id="page-about">
