@@ -434,38 +434,47 @@
 <!-- ================= WORK EXPERIENCE PAGE ================= -->
 <section class="page-viewport" id="page-work">
 <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start mt-4">
-<div class="md:col-span-1 md:sticky md:top-36 space-y-4">
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full bg-neutral-900/30 flex items-center justify-center border border-white/5">
-<i class="w-5 h-5 text-neutral-400" data-lucide="list-ordered"></i>
-</div>
 
-<a
-    href="#"
-    onclick="event.preventDefault(); switchPage('customer-service','cs-cases-section')"
-    class="group inline-flex items-center gap-2 mb-8
-           text-xs font-mono tracking-wide text-emerald-400
-           hover:text-accentCyan transition-colors duration-300"
->
-    <i
-        data-lucide="arrow-left"
-        class="w-3.5 h-3.5 transition-transform duration-300
-               group-hover:-translate-x-1.5">
-    </i>
-    <span class="transition-transform duration-300
-                 group-hover:-translate-x-1">
-        Back to Customer Support
-    </span>
-</a>
+<div class="md:col-span-1 md:sticky md:top-36 space-y-6">
+
+    <!-- Back link: separate row -->
+    <a
+        href="#"
+        onclick="event.preventDefault(); switchPage('about','work-redirect')"
+        class="group inline-flex items-center gap-2 pl-2
+               text-xs font-mono tracking-wide whitespace-nowrap
+               text-emerald-400 hover:text-accentCyan
+               hover:-translate-x-1
+               transition-all duration-300"
+    >
+        <i
+            data-lucide="arrow-left"
+            class="w-3.5 h-3.5 shrink-0">
+        </i>
+        <span>Back to About</span>
+    </a>
+    <!-- Work History title: separate row -->
+    <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-full bg-neutral-900/30
+                    flex items-center justify-center
+                    border border-white/5 shrink-0">
+            <i
+                class="w-5 h-5 text-neutral-400"
+                data-lucide="list-ordered">
+            </i>
+        </div>
+        <h2 class="text-2xl font-bold text-white tracking-tight whitespace-nowrap">
+            Work History
+        </h2>
+    </div>
+    <!-- Description -->
+    <p class="text-sm text-neutral-400 leading-relaxed font-light">
+        A professional history highlighting 9+ years of dedicated customer
+        ticket resolution, escalation management, and customer success
+        achievements.
+    </p>
+</div>
         
-<div>
-<h2 class="text-2xl font-bold text-white tracking-tight">Work History</h2>
-</div>
-</div>
-<p class="text-sm text-neutral-400 leading-relaxed font-light">
-                        A professional history highlighting 9+ years of dedicated customer ticket resolution, escalation management, and customer success achievements.
-                    </p>
-</div>
 <div class="md:col-span-2 space-y-4">
 <div class="p-6 rounded-xl bg-neutral-900/30 border border-white/5 hover:border-emerald-500/35">
 <span class="text-xs font-mono text-accentBlue bg-accentBlue/10 px-2.5 py-1 rounded-md">Nov 2024 - Sep 2025 • 10 mos</span>
