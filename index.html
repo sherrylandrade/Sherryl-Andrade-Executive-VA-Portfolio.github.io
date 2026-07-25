@@ -61,16 +61,11 @@
    Keep assets/portfolio-homepage-design.png in the repository.
 ============================================================ */
 
-body.home-mode > header,
-body.home-mode > footer {
-    display: none !important;
-}
-
 body.home-mode > main {
     width: 100%;
     max-width: none;
     margin: 0;
-    padding: 0;
+    padding: 7.25rem 0 0;
 }
 
 #page-home.exact-home-page {
@@ -83,7 +78,7 @@ body.home-mode > main {
 .exact-home-stage {
     position: relative;
     width: 100%;
-    min-height: 100vh;
+    min-height: 0;
     overflow: hidden;
     background: #05080d;
 }
@@ -93,8 +88,9 @@ body.home-mode > main {
     z-index: 1;
     display: block;
     width: 100%;
-    min-height: 100vh;
-    object-fit: cover;
+    height: auto;
+    min-height: 0;
+    object-fit: contain;
     object-position: center top;
     user-select: none;
     -webkit-user-drag: none;
@@ -129,100 +125,41 @@ body.home-mode > main {
 
 
 /* Header navigation */
-.exact-home-link-home {
-    left: 21.7%;
-    top: 2.0%;
-    width: 5.2%;
-    height: 7.0%;
-}
 
-.exact-home-link-about {
-    left: 27.7%;
-    top: 2.2%;
-    width: 7.0%;
-    height: 5.8%;
-}
 
-.exact-home-link-customer {
-    left: 35.5%;
-    top: 2.2%;
-    width: 14.0%;
-    height: 5.8%;
-}
 
-.exact-home-link-real-estate {
-    left: 50.2%;
-    top: 2.2%;
-    width: 17.6%;
-    height: 5.8%;
-}
 
-.exact-home-link-contact {
-    left: 68.3%;
-    top: 2.2%;
-    width: 8.2%;
-    height: 5.8%;
-}
 
 /* Main hero actions */
 .exact-home-link-customer-cta {
     left: 23.7%;
-    top: 64.4%;
+    top: 59.9%;
     width: 27.7%;
-    height: 7.4%;
+    height: 8.1%;
 }
 
 .exact-home-link-real-estate-cta {
     left: 52.7%;
-    top: 64.4%;
+    top: 59.9%;
     width: 24.3%;
-    height: 7.4%;
+    height: 8.1%;
 }
 
 
 /* Footer social links */
-.exact-home-link-facebook {
-    left: 74.2%;
-    top: 95.3%;
-    width: 3.3%;
-    height: 3.7%;
-}
 
-.exact-home-link-instagram {
-    left: 77.6%;
-    top: 95.3%;
-    width: 3.3%;
-    height: 3.7%;
-}
 
-.exact-home-link-linkedin {
-    left: 81%;
-    top: 95.3%;
-    width: 3.3%;
-    height: 3.7%;
-}
 
-.exact-home-link-youtube {
-    left: 84.4%;
-    top: 95.3%;
-    width: 3.3%;
-    height: 3.7%;
-}
 
 @media (max-width: 900px) {
-    body.home-mode {
-        overflow-x: auto;
+    body.home-mode > main {
+        padding-top: 8.5rem;
     }
 
-    .exact-home-stage {
-        width: 1200px;
-        min-height: auto;
-    }
-
+    .exact-home-stage,
     .exact-home-artwork {
-        width: 1200px;
-        min-height: auto;
-        object-fit: contain;
+        width: 100%;
+        min-height: 0;
     }
 }
 
@@ -405,33 +342,8 @@ body:not(.home-mode) .hover\:border-emerald-500\/30:hover {
             alt="Sherryl Andrade professional portfolio homepage"
         />
 
-        <!-- Header navigation hotspots -->
-        <a class="exact-home-hotspot exact-home-link-home"
-           href="#home"
-           onclick="event.preventDefault(); switchPage('home'); window.scrollTo({ top: 0, behavior: 'smooth' });"
-           aria-label="Home"></a>
-
-        <a class="exact-home-hotspot exact-home-link-about"
-           href="#about"
-           onclick="event.preventDefault(); switchPage('about')"
-           aria-label="About"></a>
-
-        <a class="exact-home-hotspot exact-home-link-customer"
-           href="#customer-service"
-           onclick="event.preventDefault(); switchPage('customer-service')"
-           aria-label="Customer Support"></a>
-
-        <a class="exact-home-hotspot exact-home-link-real-estate"
-           href="#real-estate"
-           onclick="event.preventDefault(); switchPage('real-estate')"
-           aria-label="Real Estate Operations"></a>
-
-        <a class="exact-home-hotspot exact-home-link-contact"
-           href="#contact"
-           onclick="event.preventDefault(); switchPage('contact')"
-           aria-label="Contact"></a>
-
-        <!-- Hero calls to action -->
+        <!-- Global fixed navigation is rendered above this artwork -->
+<!-- Hero calls to action -->
         <a class="exact-home-hotspot exact-home-link-customer-cta"
            href="#customer-service"
            onclick="event.preventDefault(); switchPage('customer-service')"
@@ -442,23 +354,8 @@ body:not(.home-mode) .hover\:border-emerald-500\/30:hover {
            onclick="event.preventDefault(); switchPage('real-estate', 'projects-section')"
            aria-label="Explore Real Estate Projects"></a>
     
-        <!-- Replace # with your real social profile URLs -->
-        <a class="exact-home-hotspot exact-home-link-facebook"
-           href="#"
-           aria-label="Facebook"></a>
-
-        <a class="exact-home-hotspot exact-home-link-instagram"
-           href="#"
-           aria-label="Instagram"></a>
-
-        <a class="exact-home-hotspot exact-home-link-linkedin"
-           href="#"
-           aria-label="LinkedIn"></a>
-
-        <a class="exact-home-hotspot exact-home-link-youtube"
-           href="#"
-           aria-label="YouTube"></a>
-    </div>
+        
+</div>
 </section>
 <!-- ================= ABOUT SECTION ================= -->
 <section class="page-viewport max-w-7xl mx-auto px-4 pt-4 pb-16" id="page-about">
