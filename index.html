@@ -56,40 +56,7 @@
 .back-nav:hover i { transform: translateX(-6px); }
 .back-nav:hover span { transform: translateX(-4px); }
 </style>
-</head>
-<body class="min-h-screen flex flex-col justify-between selection:bg-accentCyan-900/90 selection:text-white">
-<!-- GLOBAL HEADER NAVIGATION -->
-<header class="fixed top-0 left-0 w-full z-50 px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4 bg-darkBg/80 backdrop-blur-md border-b border-white/5">
-<!-- Location Indicator -->
-<div class="text-xs font-medium tracking-wide text-neutral-400 bg-accentCyan-900/70 px-3 py-1.5 rounded-full border border-cyan-500/15 shadow-[0_0_10px_rgba(6,182,212,0.12)]">
-            Batangas, Philippines
-        </div>
-<!-- Central Navigation Pill -->
-<nav class="flex items-center gap-1 bg-accentCyan-900/90 border border-accentCyan/25 rounded-full px-2 py-1.5 shadow-xl shadow-accentCyan/10 overflow-x-auto max-w-full">
-<button class="nav-btn flex items-center justify-center p-2 rounded-full text-neutral-400 hover:text-accentBlue transition-all duration-200" id="nav-home" onclick="switchPage('home')">
-<i class="w-4 h-4" data-lucide="home"></i>
-</button>
-<button class="nav-btn flex items-center gap-2 text-xs font-medium px-4 py-1.5 rounded-full text-neutral-400 hover:text-accentBlue transition-all duration-200" id="nav-about" onclick="switchPage('about')">
-<i class="w-3.5 h-3.5" data-lucide="user"></i>About
-            </button>
-<button class="nav-btn flex items-center gap-2 text-xs font-medium px-4 py-1.5 rounded-full text-neutral-400 hover:text-accentBlue transition-all duration-200 whitespace-nowrap" id="nav-customer-service" onclick="switchPage('customer-service')">
-<i class="w-3.5 h-3.5" data-lucide="headset"></i>Customer Support
-            </button>
-<button class="nav-btn flex items-center gap-2 text-xs font-medium px-4 py-1.5 rounded-full text-neutral-400 hover:text-accentBlue transition-all duration-200 whitespace-nowrap" id="nav-real-estate" onclick="switchPage('real-estate')">
-<i class="w-3.5 h-3.5" data-lucide="building"></i>Real Estate Operations
-            </button>
-<button class="nav-btn flex items-center gap-2 text-xs font-medium px-4 py-1.5 rounded-full text-neutral-400 hover:text-accentBlue transition-all duration-200" id="nav-contact" onclick="switchPage('contact')">
-<i class="w-3.5 h-3.5" data-lucide="mail"></i>Contact
-            </button>
-</nav>
-<!-- Live Clock -->
-<div class="text-xs font-mono tracking-widest text-neutral-400 bg-accentCyan-900/70 px-3 py-1.5 rounded-full border border-cyan-500/15 shadow-[0_0_10px_rgba(6,182,212,0.12)] min-w-[85px] text-center hidden md:block" id="live-clock">
-            00:00 PHT
-        </div>
-</header>
-<!-- MAIN CONTENT CANVAS -->
-<main class="flex-grow pt-36 pb-16 max-w-6xl w-full mx-auto px-6">
-        
+
 <!-- ======================================================
      HOME PAGE
 ======================================================= -->
@@ -434,6 +401,7 @@
         </div>
     </div>
 </section>
+        
 <!-- ================= ABOUT SECTION ================= -->
 <section class="page-viewport max-w-7xl mx-auto px-4 pt-4 pb-16" id="page-about">
 <!-- Layout Wrapper -->
