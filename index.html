@@ -33,6 +33,28 @@
     .page-viewport { display: none; }
     .page-viewport.active { display: block !important; animation: fadeIn 0.3s ease-in-out; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Standardized sub-page back navigation */
+.page-viewport aside, .page-viewport .md\:sticky { overflow-x: visible; }
+
+/* Uniform sub-page back navigation */
+.back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  margin-bottom: 2rem;
+  font-size: .75rem;
+  line-height: 1rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  letter-spacing: .025em;
+  white-space: nowrap;
+  color: #34d399;
+  transition: color .3s ease;
+}
+.back-nav:hover { color: #06b6d4; }
+.back-nav i, .back-nav span { transition: transform .3s ease; }
+.back-nav:hover i { transform: translateX(-6px); }
+.back-nav:hover span { transform: translateX(-4px); }
 </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between selection:bg-accentCyan-900/90 selection:text-white">
@@ -284,7 +306,7 @@
 <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-6">Certificates</span>
 <div class="flex flex-col sm:flex-row sm:items-center gap-4 bg-gradient-to-r from-purple-950/30 to-neutral-900/40 border border-white/5 hover:border-emerald-500/35 rounded-2xl p-6 mb-8">
 <div class="w-20 h-20 shrink-0 bg-neutral-950/50 rounded-xl p-2 border border-white/10 flex items-center justify-center">
-<img alt="Verified ClickUp Power User" class="w-full h-full object-contain" src="verified ClickUp power badge.png"/>
+<img alt="Verified ClickUp Power User" class="w-full h-full object-contain" src="verified%20ClickUp%20power%20badge.png"/>
 </div>
 <div>
 <span class="text-xs font-mono uppercase tracking-widest text-accentCyan block mb-1">Platform Verification</span>
@@ -350,13 +372,13 @@
 <div class="lg:col-span-1 bg-neutral-900/30 border border-white/5 hover:border-emerald-500/35 rounded-2xl p-4 flex flex-col justify-between">
 <div class="relative aspect-[4/3] w-full bg-neutral-950 rounded-xl overflow-x-auto snap-x snap-mandatory flex items-center scrollbar-thin scrollbar-thumb-white/10">
 <div class="snap-center shrink-0 w-full h-full p-1">
-<img alt="OS Specifications Benchmark Card 1" class="w-full h-full object-cover rounded-lg opacity-80" src="System Specs-1.JPG"/>
+<img alt="OS Specifications Benchmark Card 1" class="w-full h-full object-cover rounded-lg opacity-80" src="System%20Specs-1.JPG"/>
 </div>
 <div class="snap-center shrink-0 w-full h-full p-1">
-<img alt="OS Specifications Benchmark Card 2" class="w-full h-full object-cover rounded-lg opacity-80" src="System Specs-2.JPG"/>
+<img alt="OS Specifications Benchmark Card 2" class="w-full h-full object-cover rounded-lg opacity-80" src="System%20Specs-2.JPG"/>
 </div>
 <div class="snap-center shrink-0 w-full h-full p-1">
-<img alt="Starlink ISP Speed Verification Metrics" class="w-full h-full object-cover rounded-lg opacity-80" src="Speed Test 6-22-2026.jpg"/>
+<img alt="Starlink ISP Speed Verification Metrics" class="w-full h-full object-cover rounded-lg opacity-80" src="Speed%20Test%206-22-2026.jpg"/>
 </div>
 <div class="snap-center shrink-0 w-full h-full p-1">
 <img alt="Sherryl Andrade Workstation Setup - Desk Overview" class="w-full h-full object-cover rounded-lg opacity-80" src="HomeOffice1.jpg"/>
@@ -434,47 +456,26 @@
 <!-- ================= WORK EXPERIENCE PAGE ================= -->
 <section class="page-viewport" id="page-work">
 <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start mt-4">
-
 <div class="md:col-span-1 md:sticky md:top-36 space-y-6">
-
-    <!-- Back link: separate row -->
-    <a
-        href="#"
-        onclick="event.preventDefault(); switchPage('about','work-redirect')"
-        class="group inline-flex items-center gap-2 pl-2
-               text-xs font-mono tracking-wide whitespace-nowrap
-               text-emerald-400 hover:text-accentCyan
-               hover:-translate-x-1
-               transition-all duration-300"
-    >
-        <i
-            data-lucide="arrow-left"
-            class="w-3.5 h-3.5 shrink-0">
-        </i>
-        <span>Back to About</span>
-    </a>
-    <!-- Work History title: separate row -->
-    <div class="flex items-center gap-4">
-        <div class="w-12 h-12 rounded-full bg-neutral-900/30
-                    flex items-center justify-center
-                    border border-white/5 shrink-0">
-            <i
-                class="w-5 h-5 text-neutral-400"
-                data-lucide="list-ordered">
-            </i>
-        </div>
-        <h2 class="text-2xl font-bold text-white tracking-tight whitespace-nowrap">
+<!-- Back link: separate row -->
+<a class="back-nav" href="#" onclick="event.preventDefault(); switchPage('about','work-redirect')"><i class="w-3.5 h-3.5 shrink-0" data-lucide="arrow-left"></i><span>Back to About</span></a>
+<!-- Work History title: separate row -->
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-neutral-900/30 flex items-center justify-center border border-white/5 shrink-0">
+<i class="w-5 h-5 text-neutral-400" data-lucide="list-ordered">
+</i>
+</div>
+<h2 class="text-2xl font-bold text-white tracking-tight whitespace-nowrap">
             Work History
         </h2>
-    </div>
-    <!-- Description -->
-    <p class="text-sm text-neutral-400 leading-relaxed font-light">
+</div>
+<!-- Description -->
+<p class="text-sm text-neutral-400 leading-relaxed font-light">
         A professional history highlighting 9+ years of dedicated customer
         ticket resolution, escalation management, and customer success
         achievements.
     </p>
 </div>
-        
 <div class="md:col-span-2 space-y-4">
 <div class="p-6 rounded-xl bg-neutral-900/30 border border-white/5 hover:border-emerald-500/35">
 <span class="text-xs font-mono text-accentBlue bg-accentBlue/10 px-2.5 py-1 rounded-md">Nov 2024 - Sep 2025 • 10 mos</span>
@@ -613,11 +614,11 @@
 </div>
 <!-- Right -->
 <div class="flex flex-wrap gap-3">
-<a class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-accentCyan/10 border border-accentCyan/20 hover:bg-accentCyan/20 transition-all text-accentCyan font-medium" href="Sherryl Andrade - CSR resume.pdf" target="_blank">
+<a class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-accentCyan/10 border border-accentCyan/20 hover:bg-accentCyan/20 transition-all text-accentCyan font-medium" href="Sherryl%20Andrade%20-%20CSR%20resume.pdf" target="_blank">
 <i class="w-5 h-5" data-lucide="file-text"></i>
                 View Resume
             </a>
-<a class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 transition-all text-emerald-400 font-medium" download="" href="Sherryl Andrade - CSR resume.pdf">
+<a class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-500/10 border border-emerald-500/20 hover:bg-emerald-500/20 transition-all text-emerald-400 font-medium" download="" href="Sherryl%20Andrade%20-%20CSR%20resume.pdf">
 <i class="w-5 h-5" data-lucide="download"></i>
                 Download PDF
             </a>
@@ -802,41 +803,21 @@
 </section>
 <!-- ================= VIEW: CASE STUDIES LANDING PAGE ================= -->
 <section class="page-viewport hidden max-w-7xl mx-auto py-12 px-4 transition-all duration-300" id="page-cases">
-
 <div class="w-full h-full relative flex flex-col md:flex-row gap-8 items-start">
-        <aside class="w-full md:w-64 shrink-0 md:sticky md:top-32 md:max-h-[calc(100vh-9rem)] md:overflow-y-auto z-20 self-start bg-darkBg/95 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border-b md:border-b-0 border-white/5 pb-4 md:pb-0">
-
-        <a
-    href="#"
-    onclick="event.preventDefault(); switchPage('customer-service','cs-cases-section')"
-    class="group inline-flex items-center gap-2 pl-2 mb-8
-           text-xs font-mono tracking-wide text-emerald-400
-           hover:text-accentCyan transition-colors duration-300"
->
-    <i
-        data-lucide="arrow-left"
-        class="w-3.5 h-3.5 transition-transform duration-300
-               group-hover:-translate-x-1.5">
-    </i>
-    <span class="transition-transform duration-300
-                 group-hover:-translate-x-1">
-        Back to Customer Support
-    </span>
-</a>
-
-        <nav class="space-y-4 font-mono text-xs">
-        <a class="group flex items-center gap-2 text-emerald-400 hover:text-accentCyan transition-colors" href="#cases/case-01" onclick="event.preventDefault(); switchPage('cases', 'case-01')">
-        <span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all">
-        </span>Case Study 01</a><a class="group flex items-center gap-2 text-emerald-400 hover:text-accentCyan transition-colors" href="#cases/case-02" onclick="event.preventDefault(); switchPage('cases', 'case-02')">
-        <span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all">
-        </span>Case Study 02</a><a class="group flex items-center gap-2 text-emerald-400 hover:text-accentCyan transition-colors" href="#cases/case-03" onclick="event.preventDefault(); switchPage('cases', 'case-03')">
-        <span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all">
-        </span>Case Study 03</a><a class="group flex items-center gap-2 text-emerald-400 hover:text-accentCyan transition-colors" href="#cases/case-testimonials-section" onclick="event.preventDefault(); switchPage('cases', 'case-testimonials-section')">
-        <span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all">
-        </span>Testimonials</a>
-        </nav></aside>
+<aside class="w-full md:w-64 shrink-0 md:sticky md:top-32 md:max-h-[calc(100vh-9rem)] md:overflow-y-auto z-20 self-start bg-darkBg/95 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border-b md:border-b-0 border-white/5 pb-4 md:pb-0">
+<a class="back-nav" href="#" onclick="event.preventDefault(); switchPage('customer-service','cs-cases-section')"><i class="w-3.5 h-3.5 shrink-0" data-lucide="arrow-left"></i><span>Back to Customer Support</span></a>
+<nav class="space-y-4 font-mono text-xs">
+<a class="group flex items-center gap-2 text-emerald-400 hover:text-accentCyan transition-colors" href="#cases/case-01" onclick="event.preventDefault(); switchPage('cases', 'case-01')">
+<span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all">
+</span>Case Study 01</a><a class="group flex items-center gap-2 text-emerald-400 hover:text-accentCyan transition-colors" href="#cases/case-02" onclick="event.preventDefault(); switchPage('cases', 'case-02')">
+<span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all">
+</span>Case Study 02</a><a class="group flex items-center gap-2 text-emerald-400 hover:text-accentCyan transition-colors" href="#cases/case-03" onclick="event.preventDefault(); switchPage('cases', 'case-03')">
+<span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all">
+</span>Case Study 03</a><a class="group flex items-center gap-2 text-emerald-400 hover:text-accentCyan transition-colors" href="#cases/case-testimonials-section" onclick="event.preventDefault(); switchPage('cases', 'case-testimonials-section')">
+<span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all">
+</span>Testimonials</a>
+</nav></aside>
 <!-- Sticky Sub-Navigation Rail -->
-
 <!-- Main Stream Stack Component Container -->
 <div class="flex-1 w-full space-y-8">
 <!-- Context Header Banner Section -->
@@ -1098,25 +1079,7 @@
                 </p>
 </div>
 </div>
-        
-<a
-    href="#"
-    onclick="event.preventDefault(); switchPage('customer-service','cs-testimonials-section')"
-
-    class="group inline-flex items-center gap-2 pl-2 mb-8
-           text-xs font-mono tracking-wide text-emerald-400
-           hover:text-accentCyan transition-colors duration-300">
-    <i
-        data-lucide="arrow-left"
-        class="w-3.5 h-3.5 transition-transform duration-300
-               group-hover:-translate-x-1.5">
-    </i>
-    <span class="transition-transform duration-300
-                 group-hover:-translate-x-1">
-        Back to Customer Support
-    </span>
-</a>
-        
+<a class="back-nav" href="#" onclick="event.preventDefault(); switchPage('customer-service','cs-testimonials-section')"><i class="w-3.5 h-3.5 shrink-0" data-lucide="arrow-left"></i><span>Back to Customer Support</span></a>
 </div>
 </div>
 </div>
@@ -1125,19 +1088,14 @@
 </section>
 <!-- ================= VIEW: TESTIMONIALS LANDING PAGE ================= -->
 <section class="page-viewport hidden max-w-7xl mx-auto py-12 px-4" id="page-testimonials">
-
 <div class="flex flex-col md:flex-row gap-8 items-start">
-        <aside class="w-full md:w-64 shrink-0 md:sticky md:top-32 md:max-h-[calc(100vh-9rem)] md:overflow-y-auto z-20 self-start bg-darkBg/95 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border-b md:border-b-0 border-white/5 pb-4 md:pb-0"><button class="group inline-flex items-center gap-2 text-xs font-mono text-neutral-300 hover:text-accentCyan transition-colors mb-6" onclick="switchPage('customer-service')" type="button">
-        <i class="w-4 h-4 transition-transform group-hover:-translate-x-1" data-lucide="arrow-left">                
-        </i>Back to Customer Support</button>
-                
-        <nav class="space-y-4 font-mono text-xs">
-        <a class="group flex items-center gap-2 text-emerald-400 hover:text-accentCyan transition-colors" href="#testimonials/section-video" onclick="event.preventDefault(); switchPage('testimonials', 'section-video')"><span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all">               
-        </span>Commendation Video</a><a class="group flex items-center gap-2 text-emerald-400 hover:text-accentCyan transition-colors" href="#testimonials/section-feedback-panel" onclick="event.preventDefault(); switchPage('testimonials', 'section-feedback-panel')"><span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all">                
-        </span>Feedback Panels</a><a class="group flex items-center gap-2 text-emerald-400 hover:text-accentCyan transition-colors" href="#testimonials/confidentiality-disclaimer" onclick="event.preventDefault(); switchPage('testimonials', 'confidentiality-disclaimer')"><span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all">                
-        </span>Disclaimer</a>
-        </nav></aside>
-
+<aside class="w-full md:w-64 shrink-0 md:sticky md:top-32 md:max-h-[calc(100vh-9rem)] md:overflow-y-auto z-20 self-start bg-darkBg/95 md:bg-transparent backdrop-blur-md md:backdrop-blur-none border-b md:border-b-0 border-white/5 pb-4 md:pb-0"><a class="back-nav" href="#" onclick="event.preventDefault(); switchPage('customer-service')"><i class="w-3.5 h-3.5 shrink-0" data-lucide="arrow-left"></i><span>Back to Customer Support</span></a>
+<nav class="space-y-4 font-mono text-xs">
+<a class="group flex items-center gap-2 text-emerald-400 hover:text-accentCyan transition-colors" href="#testimonials/section-video" onclick="event.preventDefault(); switchPage('testimonials', 'section-video')"><span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all">
+</span>Commendation Video</a><a class="group flex items-center gap-2 text-emerald-400 hover:text-accentCyan transition-colors" href="#testimonials/section-feedback-panel" onclick="event.preventDefault(); switchPage('testimonials', 'section-feedback-panel')"><span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all">
+</span>Feedback Panels</a><a class="group flex items-center gap-2 text-emerald-400 hover:text-accentCyan transition-colors" href="#testimonials/confidentiality-disclaimer" onclick="event.preventDefault(); switchPage('testimonials', 'confidentiality-disclaimer')"><span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all">
+</span>Disclaimer</a>
+</nav></aside>
 <div class="flex-1 w-full space-y-12">
 <div>
 <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-2">Professional Endorsements</span>
@@ -1218,28 +1176,34 @@
 <div class="flex justify-between text-xs font-mono border-b border-white/5 pb-2 text-accentCyan">
 <span>Phone &amp; Email Quality Audit Parameter</span><span>Score Level</span>
 </div>
-<div class="flex justify-between text-sm text-neutral-300"><span>Zendesk Response Empathy/Tone Accuracy</span><span class="text-emerald-400">98.4%</span></div>
-<div class="flex justify-between text-sm text-neutral-300"><span>First Contact Resolution (FCR)</span><span class="text-accentCyan">94.1%</span></div>
-<div class="flex justify-between text-sm text-neutral-300"><span>Average Customer Satisfaction Rating (CSAT)</span><span class="text-purple-400">4.95 / 5.0</span></div>
+<div class="flex justify-between text-sm text-neutral-300">
+<span>Zendesk Response Empathy/Tone Accuracy</span><span class="text-emerald-400">98.4%</span>
+</div>
+<div class="flex justify-between text-sm text-neutral-300">
+<span>First Contact Resolution (FCR)</span><span class="text-accentCyan">94.1%</span>
+</div>
+<div class="flex justify-between text-sm text-neutral-300">
+<span>Average Customer Satisfaction Rating (CSAT)</span><span class="text-purple-400">4.95 / 5.0</span>
+</div>
 </div>
 <div class="space-y-6 mt-6">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-2">
-<img alt="Zendesk Analytical Summary Data 1" class="w-full h-auto object-contain rounded-lg" src="KPI 1.jpg"/>
+<img alt="Zendesk Analytical Summary Data 1" class="w-full h-auto object-contain rounded-lg" src="KPI%201.jpg"/>
 </div>
 <div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-2">
-<img alt="Zendesk Analytical Summary Data 2" class="w-full h-auto object-contain rounded-lg" src="KPI 2.jpg"/>
+<img alt="Zendesk Analytical Summary Data 2" class="w-full h-auto object-contain rounded-lg" src="KPI%202.jpg"/>
 </div>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-<div class="overflow-hidden rounded-lg border border-white/5 bg-neutral-900/20 p-1"><img alt="Metrics Sheet Detail 6" class="w-full h-auto object-contain rounded" src="KPI 6.jpg"/></div>
-<div class="overflow-hidden rounded-lg border border-white/5 bg-neutral-900/20 p-1"><img alt="Metrics Sheet Detail 4" class="w-full h-auto object-contain rounded" src="KPI 4.jpg"/></div>
-<div class="overflow-hidden rounded-lg border border-white/5 bg-neutral-900/20 p-1"><img alt="Metrics Sheet Detail 3" class="w-full h-auto object-contain rounded" src="KPI 3.jpg"/></div>
-<div class="overflow-hidden rounded-lg border border-white/5 bg-neutral-900/20 p-1"><img alt="Metrics Sheet Detail 5" class="w-full h-auto object-contain rounded" src="KPI 5.jpg"/></div>
+<div class="overflow-hidden rounded-lg border border-white/5 bg-neutral-900/20 p-1"><img alt="Metrics Sheet Detail 6" class="w-full h-auto object-contain rounded" src="KPI%206.jpg"/></div>
+<div class="overflow-hidden rounded-lg border border-white/5 bg-neutral-900/20 p-1"><img alt="Metrics Sheet Detail 4" class="w-full h-auto object-contain rounded" src="KPI%204.jpg"/></div>
+<div class="overflow-hidden rounded-lg border border-white/5 bg-neutral-900/20 p-1"><img alt="Metrics Sheet Detail 3" class="w-full h-auto object-contain rounded" src="KPI%203.jpg"/></div>
+<div class="overflow-hidden rounded-lg border border-white/5 bg-neutral-900/20 p-1"><img alt="Metrics Sheet Detail 5" class="w-full h-auto object-contain rounded" src="KPI%205.jpg"/></div>
 <div class="overflow-hidden rounded-lg border border-white/5 bg-neutral-900/20 p-1"><img alt="Metrics Sheet Detail 12" class="w-full h-auto object-contain rounded" src="KPI12.png"/></div>
-<div class="overflow-hidden rounded-lg border border-white/5 bg-neutral-900/20 p-1"><img alt="Metrics Sheet Detail 7" class="w-full h-auto object-contain rounded" src="KPI 7.jpg"/></div>
-<div class="overflow-hidden rounded-lg border border-white/5 bg-neutral-900/20 p-1"><img alt="Metrics Sheet Detail 8" class="w-full h-auto object-contain rounded" src="KPI 8.jpg"/></div>
-<div class="overflow-hidden rounded-lg border border-white/5 bg-neutral-900/20 p-1"><img alt="Metrics Sheet Detail 11" class="w-full h-auto object-contain rounded" src="KPI 11.png"/></div>
+<div class="overflow-hidden rounded-lg border border-white/5 bg-neutral-900/20 p-1"><img alt="Metrics Sheet Detail 7" class="w-full h-auto object-contain rounded" src="KPI%207.jpg"/></div>
+<div class="overflow-hidden rounded-lg border border-white/5 bg-neutral-900/20 p-1"><img alt="Metrics Sheet Detail 8" class="w-full h-auto object-contain rounded" src="KPI%208.jpg"/></div>
+<div class="overflow-hidden rounded-lg border border-white/5 bg-neutral-900/20 p-1"><img alt="Metrics Sheet Detail 11" class="w-full h-auto object-contain rounded" src="KPI%2011.png"/></div>
 </div>
 </div>
 </div>
@@ -1263,7 +1227,8 @@
 </div>
 </div>
 </div>
-</div></div></section>
+</div>
+</div></section>
 <!-- =========================================================
      REAL ESTATE OPERATIONS PORTFOLIO
 ========================================================= -->
@@ -1273,7 +1238,7 @@
              LEFT SIDEBAR NAVIGATION
         ====================================================== -->
 <aside class="w-full md:w-1/5 shrink-0 md:sticky md:top-28">
-<nav class="flex flex-col gap-4 text-xs font-mono tracking-wide text-emerald-500">        
+<nav class="flex flex-col gap-4 text-xs font-mono tracking-wide text-emerald-500">
 <a class="group flex items-center gap-2 hover:text-accentCyan transition-colors" href="#real-estate/re-introduction" onclick="event.preventDefault(); switchPage('real-estate', 're-introduction')">
 <span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all duration-300"></span>
                     Introduction
@@ -1897,7 +1862,6 @@
 <!-- =================================================
      PORTFOLIO DELIVERABLES
 ================================================== -->
-
 <!-- ================= VIEW: TESTIMONIALS LANDING PAGE ================= -->
 <!-- =========================================================
      PROJECT 01: PROPERTY RESEARCH & LISTING ANALYSIS
@@ -1998,9 +1962,15 @@
 <div class="flex justify-between text-xs font-mono border-b border-white/5 pb-2 text-accentCyan">
 <span>File Quality &amp; Closing Audit Parameter</span><span>Score Level</span>
 </div>
-<div class="flex justify-between text-sm text-neutral-300"><span>Contract Contingency Verification Speed</span><span class="text-emerald-400">99.2%</span></div>
-<div class="flex justify-between text-sm text-neutral-300"><span>First-Pass Compliance Folder Approval (FCR)</span><span class="text-accentCyan">96.5%</span></div>
-<div class="flex justify-between text-sm text-neutral-300"><span>Agent/Client Operations Satisfaction Rating</span><span class="text-purple-400">4.98 / 5.0</span></div>
+<div class="flex justify-between text-sm text-neutral-300">
+<span>Contract Contingency Verification Speed</span><span class="text-emerald-400">99.2%</span>
+</div>
+<div class="flex justify-between text-sm text-neutral-300">
+<span>First-Pass Compliance Folder Approval (FCR)</span><span class="text-accentCyan">96.5%</span>
+</div>
+<div class="flex justify-between text-sm text-neutral-300">
+<span>Agent/Client Operations Satisfaction Rating</span><span class="text-purple-400">4.98 / 5.0</span>
+</div>
 </div>
 <div class="space-y-6 mt-6">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -2034,23 +2004,28 @@
 </div>
 </div>
 </div>
-</section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-project-02">
+</section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-project-02"><div class="mb-2"><a class="back-nav" href="#" onclick="event.preventDefault(); switchPage('real-estate', 're-project-portfolio')"><i class="w-3.5 h-3.5 shrink-0" data-lucide="arrow-left"></i><span>Back to Projects &amp; Workflow Demonstrations</span></a></div>
 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
-<button class="group inline-flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-emerald-400 transition-colors w-fit" onclick="switchPage('real-estate', 're-project-portfolio')" type="button">
-<i class="w-4 h-4 transition-transform group-hover:-translate-x-1" data-lucide="arrow-left"></i>Back to Projects &amp; Workflow Demonstrations
-</button>
-<div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-500"><span>Real Estate Operations</span><span class="text-neutral-700">/</span><span class="text-emerald-400">Project 02</span></div>
+
+<div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-500">
+<span>Real Estate Operations</span><span class="text-neutral-700">/</span><span class="text-emerald-400">Project 02</span>
+</div>
 </div>
 <header class="relative overflow-hidden bg-neutral-900/30 border border-white/5 rounded-2xl p-7 md:p-10 mb-8">
 <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-emerald-500/5 blur-3xl pointer-events-none"></div>
 <div class="relative z-10 max-w-4xl">
-<div class="flex flex-wrap gap-2 mb-5"><span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 bg-purple-500/5 border border-purple-500/10 px-3 py-1.5 rounded-full">Project 02</span><span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/5 border border-emerald-500/10 px-3 py-1.5 rounded-full">Rental Research</span></div>
+<div class="flex flex-wrap gap-2 mb-5">
+<span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 bg-purple-500/5 border border-purple-500/10 px-3 py-1.5 rounded-full">Project 02</span><span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/5 border border-emerald-500/10 px-3 py-1.5 rounded-full">Rental Research</span>
+</div>
 <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-3">Real Estate Operations Portfolio</span>
 <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">Rental Property &amp; Vendor Research</h1>
 <p class="text-neutral-400 font-light leading-relaxed mt-5 max-w-3xl">Compiled residential, commercial, and short-term rental options with pricing, amenities, listing links, and vendor contact information.</p>
-<div class="flex flex-wrap gap-2 mt-6"><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Rental Research</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Vendor Sourcing</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Property Comparison</span></div>
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Rental Research</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Vendor Sourcing</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Property Comparison</span>
+</div>
 </div></header>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-5"><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
 <span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Objective</span>
 <p class="text-sm text-neutral-400 font-light leading-relaxed">Demonstrate organized and dependable support for rental property &amp; vendor research while maintaining clear documentation, accurate data handling, and practical next-step visibility.</p>
 </article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
@@ -2065,11 +2040,9 @@
 </article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
 <span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Quality &amp; Confidentiality</span>
 <p class="text-sm text-neutral-400 font-light leading-relaxed">Sample information is presented for portfolio demonstration. Client, property, transaction, and personal details should be anonymized before publication or sharing.</p>
-</article></div>
-<div class="mt-8 flex flex-wrap gap-3">
-<button class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-neutral-400 border border-white/5 bg-neutral-900/30 hover:text-emerald-400 hover:border-emerald-500/20 px-5 py-3 rounded-xl transition-all" onclick="switchPage('real-estate', 're-project-portfolio')" type="button"><i class="w-4 h-4 group-hover:-translate-x-1 transition-transform" data-lucide="arrow-left"></i>Back to Projects &amp; Workflow Demonstrations</button>
-<a class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue px-5 py-3 rounded-xl transition-all" href="#contact" onclick="event.preventDefault(); switchPage('contact')">Discuss This Workflow<i class="w-4 h-4" data-lucide="arrow-up-right"></i></a>
+</article>
 </div>
+
 <section class="mt-10 rounded-2xl border border-emerald-500/15 bg-gradient-to-br from-emerald-500/5 to-neutral-900/30 p-7 md:p-9" id="project-02-work-sample">
 <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
 <div class="max-w-3xl">
@@ -2080,27 +2053,38 @@
 <div class="w-14 h-14 rounded-xl bg-neutral-950 border border-white/5 flex items-center justify-center text-emerald-400 shrink-0"><i class="w-6 h-6" data-lucide="file-check-2"></i></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-7">
-<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Output</span><p class="text-neutral-400 text-sm mt-2">A presentation-ready sample connected directly to this project workflow.</p></div>
-<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Quality Check</span><p class="text-neutral-400 text-sm mt-2">Reviewed for clarity, completeness, consistency, and practical usability.</p></div>
-<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Portfolio Note</span><p class="text-neutral-400 text-sm mt-2">Sensitive client, property, and transaction information is anonymized.</p></div>
+<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5">
+<span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Output</span><p class="text-neutral-400 text-sm mt-2">A presentation-ready sample connected directly to this project workflow.</p>
 </div>
-</section></section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-project-03">
+<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5">
+<span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Quality Check</span><p class="text-neutral-400 text-sm mt-2">Reviewed for clarity, completeness, consistency, and practical usability.</p>
+</div>
+<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5">
+<span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Portfolio Note</span><p class="text-neutral-400 text-sm mt-2">Sensitive client, property, and transaction information is anonymized.</p>
+</div>
+</div>
+</section><section class="mt-10 rounded-2xl border border-white/5 bg-neutral-900/30 p-7 md:p-9" id="project-02-gallery"><div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-7"><div><span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Project Gallery</span><h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Report &amp; Documentation Preview</h2></div><p class="text-neutral-500 text-sm font-light leading-relaxed max-w-xl lg:text-right">Replace the sample image paths below with screenshots of your completed work.</p></div><div class="grid grid-cols-1 md:grid-cols-2 gap-5"><figure class="group overflow-hidden rounded-2xl border border-white/5 bg-neutral-950/40"><div class="aspect-video bg-neutral-950 overflow-hidden flex items-center justify-center"><img alt="Rental Property &amp; Vendor Research sample preview 1" class="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-300" src="project-02-gallery-01.jpg"/></div><figcaption class="p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Sample Preview</span><h3 class="text-white font-semibold mt-2">Rental Property &amp; Vendor Research — Sample 1</h3><p class="text-neutral-400 text-sm font-light leading-relaxed mt-2">Add a screenshot and a short description of the completed output, document, tracker, or presentation.</p></figcaption></figure><figure class="group overflow-hidden rounded-2xl border border-white/5 bg-neutral-950/40"><div class="aspect-video bg-neutral-950 overflow-hidden flex items-center justify-center"><img alt="Rental Property &amp; Vendor Research sample preview 2" class="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-300" src="project-02-gallery-02.jpg"/></div><figcaption class="p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Sample Preview</span><h3 class="text-white font-semibold mt-2">Rental Property &amp; Vendor Research — Sample 2</h3><p class="text-neutral-400 text-sm font-light leading-relaxed mt-2">Add a screenshot and a short description of the completed output, document, tracker, or presentation.</p></figcaption></figure></div></section><div class="mt-6 flex justify-end"><a class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue px-5 py-3 rounded-xl transition-all" href="#contact" onclick="event.preventDefault(); switchPage('contact')">Discuss This Workflow<i class="w-4 h-4" data-lucide="arrow-up-right"></i></a></div><div class="mt-10 flex justify-start"><a class="back-nav" href="#" onclick="event.preventDefault(); switchPage('real-estate', 're-project-portfolio')"><i class="w-3.5 h-3.5 shrink-0" data-lucide="arrow-left"></i><span>Back to Projects &amp; Workflow Demonstrations</span></a></div></section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-project-03"><div class="mb-2"><a class="back-nav" href="#" onclick="event.preventDefault(); switchPage('real-estate', 're-project-portfolio')"><i class="w-3.5 h-3.5 shrink-0" data-lucide="arrow-left"></i><span>Back to Projects &amp; Workflow Demonstrations</span></a></div>
 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
-<button class="group inline-flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-emerald-400 transition-colors w-fit" onclick="switchPage('real-estate', 're-project-portfolio')" type="button">
-<i class="w-4 h-4 transition-transform group-hover:-translate-x-1" data-lucide="arrow-left"></i>Back to Projects &amp; Workflow Demonstrations
-</button>
-<div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-500"><span>Real Estate Operations</span><span class="text-neutral-700">/</span><span class="text-emerald-400">Project 03</span></div>
+
+<div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-500">
+<span>Real Estate Operations</span><span class="text-neutral-700">/</span><span class="text-emerald-400">Project 03</span>
+</div>
 </div>
 <header class="relative overflow-hidden bg-neutral-900/30 border border-white/5 rounded-2xl p-7 md:p-10 mb-8">
 <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-emerald-500/5 blur-3xl pointer-events-none"></div>
 <div class="relative z-10 max-w-4xl">
-<div class="flex flex-wrap gap-2 mb-5"><span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 bg-purple-500/5 border border-purple-500/10 px-3 py-1.5 rounded-full">Project 03</span><span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/5 border border-emerald-500/10 px-3 py-1.5 rounded-full">Document Review</span></div>
+<div class="flex flex-wrap gap-2 mb-5">
+<span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 bg-purple-500/5 border border-purple-500/10 px-3 py-1.5 rounded-full">Project 03</span><span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/5 border border-emerald-500/10 px-3 py-1.5 rounded-full">Document Review</span>
+</div>
 <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-3">Real Estate Operations Portfolio</span>
 <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">Tenant Screening Support</h1>
 <p class="text-neutral-400 font-light leading-relaxed mt-5 max-w-3xl">Organized tenant background information and reviewed screening details for rental administration and property-management support.</p>
-<div class="flex flex-wrap gap-2 mt-6"><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Document Review</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Data Handling</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Rental Administration</span></div>
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Document Review</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Data Handling</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Rental Administration</span>
+</div>
 </div></header>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-5"><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
 <span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Objective</span>
 <p class="text-sm text-neutral-400 font-light leading-relaxed">Demonstrate organized and dependable support for tenant screening support while maintaining clear documentation, accurate data handling, and practical next-step visibility.</p>
 </article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
@@ -2115,28 +2099,31 @@
 </article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
 <span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Quality &amp; Confidentiality</span>
 <p class="text-sm text-neutral-400 font-light leading-relaxed">Sample information is presented for portfolio demonstration. Client, property, transaction, and personal details should be anonymized before publication or sharing.</p>
-</article></div>
-<div class="mt-8 flex flex-wrap gap-3">
-<button class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-neutral-400 border border-white/5 bg-neutral-900/30 hover:text-emerald-400 hover:border-emerald-500/20 px-5 py-3 rounded-xl transition-all" onclick="switchPage('real-estate', 're-project-portfolio')" type="button"><i class="w-4 h-4 group-hover:-translate-x-1 transition-transform" data-lucide="arrow-left"></i>Back to Projects &amp; Workflow Demonstrations</button>
-<a class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue px-5 py-3 rounded-xl transition-all" href="#contact" onclick="event.preventDefault(); switchPage('contact')">Discuss This Workflow<i class="w-4 h-4" data-lucide="arrow-up-right"></i></a>
+</article>
 </div>
-</section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-project-04">
+
+<section class="mt-10 rounded-2xl border border-white/5 bg-neutral-900/30 p-7 md:p-9" id="project-03-gallery"><div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-7"><div><span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Project Gallery</span><h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Report &amp; Documentation Preview</h2></div><p class="text-neutral-500 text-sm font-light leading-relaxed max-w-xl lg:text-right">Replace the sample image paths below with screenshots of your completed work.</p></div><div class="grid grid-cols-1 md:grid-cols-2 gap-5"><figure class="group overflow-hidden rounded-2xl border border-white/5 bg-neutral-950/40"><div class="aspect-video bg-neutral-950 overflow-hidden flex items-center justify-center"><img alt="Tenant Screening Support sample preview 1" class="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-300" src="project-03-gallery-01.jpg"/></div><figcaption class="p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Sample Preview</span><h3 class="text-white font-semibold mt-2">Tenant Screening Support — Sample 1</h3><p class="text-neutral-400 text-sm font-light leading-relaxed mt-2">Add a screenshot and a short description of the completed output, document, tracker, or presentation.</p></figcaption></figure><figure class="group overflow-hidden rounded-2xl border border-white/5 bg-neutral-950/40"><div class="aspect-video bg-neutral-950 overflow-hidden flex items-center justify-center"><img alt="Tenant Screening Support sample preview 2" class="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-300" src="project-03-gallery-02.jpg"/></div><figcaption class="p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Sample Preview</span><h3 class="text-white font-semibold mt-2">Tenant Screening Support — Sample 2</h3><p class="text-neutral-400 text-sm font-light leading-relaxed mt-2">Add a screenshot and a short description of the completed output, document, tracker, or presentation.</p></figcaption></figure></div></section><div class="mt-6 flex justify-end"><a class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue px-5 py-3 rounded-xl transition-all" href="#contact" onclick="event.preventDefault(); switchPage('contact')">Discuss This Workflow<i class="w-4 h-4" data-lucide="arrow-up-right"></i></a></div><div class="mt-10 flex justify-start"><a class="back-nav" href="#" onclick="event.preventDefault(); switchPage('real-estate', 're-project-portfolio')"><i class="w-3.5 h-3.5 shrink-0" data-lucide="arrow-left"></i><span>Back to Projects &amp; Workflow Demonstrations</span></a></div></section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-project-04"><div class="mb-2"><a class="back-nav" href="#" onclick="event.preventDefault(); switchPage('real-estate', 're-project-portfolio')"><i class="w-3.5 h-3.5 shrink-0" data-lucide="arrow-left"></i><span>Back to Projects &amp; Workflow Demonstrations</span></a></div>
 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
-<button class="group inline-flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-emerald-400 transition-colors w-fit" onclick="switchPage('real-estate', 're-project-portfolio')" type="button">
-<i class="w-4 h-4 transition-transform group-hover:-translate-x-1" data-lucide="arrow-left"></i>Back to Projects &amp; Workflow Demonstrations
-</button>
-<div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-500"><span>Real Estate Operations</span><span class="text-neutral-700">/</span><span class="text-emerald-400">Project 04</span></div>
+
+<div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-500">
+<span>Real Estate Operations</span><span class="text-neutral-700">/</span><span class="text-emerald-400">Project 04</span>
+</div>
 </div>
 <header class="relative overflow-hidden bg-neutral-900/30 border border-white/5 rounded-2xl p-7 md:p-10 mb-8">
 <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-emerald-500/5 blur-3xl pointer-events-none"></div>
 <div class="relative z-10 max-w-4xl">
-<div class="flex flex-wrap gap-2 mb-5"><span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 bg-purple-500/5 border border-purple-500/10 px-3 py-1.5 rounded-full">Project 04</span><span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/5 border border-emerald-500/10 px-3 py-1.5 rounded-full">Comparable Research</span></div>
+<div class="flex flex-wrap gap-2 mb-5">
+<span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 bg-purple-500/5 border border-purple-500/10 px-3 py-1.5 rounded-full">Project 04</span><span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/5 border border-emerald-500/10 px-3 py-1.5 rounded-full">Comparable Research</span>
+</div>
 <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-3">Real Estate Operations Portfolio</span>
 <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">Comparative Market Analysis Support</h1>
 <p class="text-neutral-400 font-light leading-relaxed mt-5 max-w-3xl">Researched comparable properties and organized listing information to support property evaluation and pricing discussions.</p>
-<div class="flex flex-wrap gap-2 mt-6"><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Comparable Research</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Market Review</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Report Preparation</span></div>
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Comparable Research</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Market Review</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Report Preparation</span>
+</div>
 </div></header>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-5"><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
 <span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Objective</span>
 <p class="text-sm text-neutral-400 font-light leading-relaxed">Demonstrate organized and dependable support for comparative market analysis support while maintaining clear documentation, accurate data handling, and practical next-step visibility.</p>
 </article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
@@ -2151,11 +2138,9 @@
 </article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
 <span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Quality &amp; Confidentiality</span>
 <p class="text-sm text-neutral-400 font-light leading-relaxed">Sample information is presented for portfolio demonstration. Client, property, transaction, and personal details should be anonymized before publication or sharing.</p>
-</article></div>
-<div class="mt-8 flex flex-wrap gap-3">
-<button class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-neutral-400 border border-white/5 bg-neutral-900/30 hover:text-emerald-400 hover:border-emerald-500/20 px-5 py-3 rounded-xl transition-all" onclick="switchPage('real-estate', 're-project-portfolio')" type="button"><i class="w-4 h-4 group-hover:-translate-x-1 transition-transform" data-lucide="arrow-left"></i>Back to Projects &amp; Workflow Demonstrations</button>
-<a class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue px-5 py-3 rounded-xl transition-all" href="#contact" onclick="event.preventDefault(); switchPage('contact')">Discuss This Workflow<i class="w-4 h-4" data-lucide="arrow-up-right"></i></a>
+</article>
 </div>
+
 <section class="mt-10 rounded-2xl border border-emerald-500/15 bg-gradient-to-br from-emerald-500/5 to-neutral-900/30 p-7 md:p-9" id="project-04-work-sample">
 <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
 <div class="max-w-3xl">
@@ -2166,27 +2151,38 @@
 <div class="w-14 h-14 rounded-xl bg-neutral-950 border border-white/5 flex items-center justify-center text-emerald-400 shrink-0"><i class="w-6 h-6" data-lucide="file-check-2"></i></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-7">
-<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Output</span><p class="text-neutral-400 text-sm mt-2">A presentation-ready sample connected directly to this project workflow.</p></div>
-<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Quality Check</span><p class="text-neutral-400 text-sm mt-2">Reviewed for clarity, completeness, consistency, and practical usability.</p></div>
-<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Portfolio Note</span><p class="text-neutral-400 text-sm mt-2">Sensitive client, property, and transaction information is anonymized.</p></div>
+<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5">
+<span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Output</span><p class="text-neutral-400 text-sm mt-2">A presentation-ready sample connected directly to this project workflow.</p>
 </div>
-</section></section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-project-05">
+<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5">
+<span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Quality Check</span><p class="text-neutral-400 text-sm mt-2">Reviewed for clarity, completeness, consistency, and practical usability.</p>
+</div>
+<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5">
+<span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Portfolio Note</span><p class="text-neutral-400 text-sm mt-2">Sensitive client, property, and transaction information is anonymized.</p>
+</div>
+</div>
+</section><section class="mt-10 rounded-2xl border border-white/5 bg-neutral-900/30 p-7 md:p-9" id="project-04-gallery"><div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-7"><div><span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Project Gallery</span><h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Report &amp; Documentation Preview</h2></div><p class="text-neutral-500 text-sm font-light leading-relaxed max-w-xl lg:text-right">Replace the sample image paths below with screenshots of your completed work.</p></div><div class="grid grid-cols-1 md:grid-cols-2 gap-5"><figure class="group overflow-hidden rounded-2xl border border-white/5 bg-neutral-950/40"><div class="aspect-video bg-neutral-950 overflow-hidden flex items-center justify-center"><img alt="Comparative Market Analysis Support sample preview 1" class="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-300" src="project-04-gallery-01.jpg"/></div><figcaption class="p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Sample Preview</span><h3 class="text-white font-semibold mt-2">Comparative Market Analysis Support — Sample 1</h3><p class="text-neutral-400 text-sm font-light leading-relaxed mt-2">Add a screenshot and a short description of the completed output, document, tracker, or presentation.</p></figcaption></figure><figure class="group overflow-hidden rounded-2xl border border-white/5 bg-neutral-950/40"><div class="aspect-video bg-neutral-950 overflow-hidden flex items-center justify-center"><img alt="Comparative Market Analysis Support sample preview 2" class="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-300" src="project-04-gallery-02.jpg"/></div><figcaption class="p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Sample Preview</span><h3 class="text-white font-semibold mt-2">Comparative Market Analysis Support — Sample 2</h3><p class="text-neutral-400 text-sm font-light leading-relaxed mt-2">Add a screenshot and a short description of the completed output, document, tracker, or presentation.</p></figcaption></figure></div></section><div class="mt-6 flex justify-end"><a class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue px-5 py-3 rounded-xl transition-all" href="#contact" onclick="event.preventDefault(); switchPage('contact')">Discuss This Workflow<i class="w-4 h-4" data-lucide="arrow-up-right"></i></a></div><div class="mt-10 flex justify-start"><a class="back-nav" href="#" onclick="event.preventDefault(); switchPage('real-estate', 're-project-portfolio')"><i class="w-3.5 h-3.5 shrink-0" data-lucide="arrow-left"></i><span>Back to Projects &amp; Workflow Demonstrations</span></a></div></section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-project-05"><div class="mb-2"><a class="back-nav" href="#" onclick="event.preventDefault(); switchPage('real-estate', 're-project-portfolio')"><i class="w-3.5 h-3.5 shrink-0" data-lucide="arrow-left"></i><span>Back to Projects &amp; Workflow Demonstrations</span></a></div>
 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
-<button class="group inline-flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-emerald-400 transition-colors w-fit" onclick="switchPage('real-estate', 're-project-portfolio')" type="button">
-<i class="w-4 h-4 transition-transform group-hover:-translate-x-1" data-lucide="arrow-left"></i>Back to Projects &amp; Workflow Demonstrations
-</button>
-<div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-500"><span>Real Estate Operations</span><span class="text-neutral-700">/</span><span class="text-emerald-400">Project 05</span></div>
+
+<div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-500">
+<span>Real Estate Operations</span><span class="text-neutral-700">/</span><span class="text-emerald-400">Project 05</span>
+</div>
 </div>
 <header class="relative overflow-hidden bg-neutral-900/30 border border-white/5 rounded-2xl p-7 md:p-10 mb-8">
 <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-emerald-500/5 blur-3xl pointer-events-none"></div>
 <div class="relative z-10 max-w-4xl">
-<div class="flex flex-wrap gap-2 mb-5"><span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 bg-purple-500/5 border border-purple-500/10 px-3 py-1.5 rounded-full">Project 05</span><span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/5 border border-emerald-500/10 px-3 py-1.5 rounded-full">Buyer Criteria</span></div>
+<div class="flex flex-wrap gap-2 mb-5">
+<span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 bg-purple-500/5 border border-purple-500/10 px-3 py-1.5 rounded-full">Project 05</span><span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/5 border border-emerald-500/10 px-3 py-1.5 rounded-full">Buyer Criteria</span>
+</div>
 <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-3">Real Estate Operations Portfolio</span>
 <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">Buyer Property Search</h1>
 <p class="text-neutral-400 font-light leading-relaxed mt-5 max-w-3xl">Researched available properties based on buyer criteria and organized suitable options for easier agent and client evaluation.</p>
-<div class="flex flex-wrap gap-2 mt-6"><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Buyer Criteria</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Property Search</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Listing Shortlist</span></div>
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Buyer Criteria</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Property Search</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Listing Shortlist</span>
+</div>
 </div></header>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-5"><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
 <span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Objective</span>
 <p class="text-sm text-neutral-400 font-light leading-relaxed">Demonstrate organized and dependable support for buyer property search while maintaining clear documentation, accurate data handling, and practical next-step visibility.</p>
 </article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
@@ -2201,28 +2197,31 @@
 </article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
 <span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Quality &amp; Confidentiality</span>
 <p class="text-sm text-neutral-400 font-light leading-relaxed">Sample information is presented for portfolio demonstration. Client, property, transaction, and personal details should be anonymized before publication or sharing.</p>
-</article></div>
-<div class="mt-8 flex flex-wrap gap-3">
-<button class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-neutral-400 border border-white/5 bg-neutral-900/30 hover:text-emerald-400 hover:border-emerald-500/20 px-5 py-3 rounded-xl transition-all" onclick="switchPage('real-estate', 're-project-portfolio')" type="button"><i class="w-4 h-4 group-hover:-translate-x-1 transition-transform" data-lucide="arrow-left"></i>Back to Projects &amp; Workflow Demonstrations</button>
-<a class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue px-5 py-3 rounded-xl transition-all" href="#contact" onclick="event.preventDefault(); switchPage('contact')">Discuss This Workflow<i class="w-4 h-4" data-lucide="arrow-up-right"></i></a>
+</article>
 </div>
-</section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-project-06">
+
+<section class="mt-10 rounded-2xl border border-white/5 bg-neutral-900/30 p-7 md:p-9" id="project-05-gallery"><div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-7"><div><span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Project Gallery</span><h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Report &amp; Documentation Preview</h2></div><p class="text-neutral-500 text-sm font-light leading-relaxed max-w-xl lg:text-right">Replace the sample image paths below with screenshots of your completed work.</p></div><div class="grid grid-cols-1 md:grid-cols-2 gap-5"><figure class="group overflow-hidden rounded-2xl border border-white/5 bg-neutral-950/40"><div class="aspect-video bg-neutral-950 overflow-hidden flex items-center justify-center"><img alt="Buyer Property Search sample preview 1" class="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-300" src="project-05-gallery-01.jpg"/></div><figcaption class="p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Sample Preview</span><h3 class="text-white font-semibold mt-2">Buyer Property Search — Sample 1</h3><p class="text-neutral-400 text-sm font-light leading-relaxed mt-2">Add a screenshot and a short description of the completed output, document, tracker, or presentation.</p></figcaption></figure><figure class="group overflow-hidden rounded-2xl border border-white/5 bg-neutral-950/40"><div class="aspect-video bg-neutral-950 overflow-hidden flex items-center justify-center"><img alt="Buyer Property Search sample preview 2" class="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-300" src="project-05-gallery-02.jpg"/></div><figcaption class="p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Sample Preview</span><h3 class="text-white font-semibold mt-2">Buyer Property Search — Sample 2</h3><p class="text-neutral-400 text-sm font-light leading-relaxed mt-2">Add a screenshot and a short description of the completed output, document, tracker, or presentation.</p></figcaption></figure></div></section><div class="mt-6 flex justify-end"><a class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue px-5 py-3 rounded-xl transition-all" href="#contact" onclick="event.preventDefault(); switchPage('contact')">Discuss This Workflow<i class="w-4 h-4" data-lucide="arrow-up-right"></i></a></div><div class="mt-10 flex justify-start"><a class="back-nav" href="#" onclick="event.preventDefault(); switchPage('real-estate', 're-project-portfolio')"><i class="w-3.5 h-3.5 shrink-0" data-lucide="arrow-left"></i><span>Back to Projects &amp; Workflow Demonstrations</span></a></div></section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-project-06"><div class="mb-2"><a class="back-nav" href="#" onclick="event.preventDefault(); switchPage('real-estate', 're-project-portfolio')"><i class="w-3.5 h-3.5 shrink-0" data-lucide="arrow-left"></i><span>Back to Projects &amp; Workflow Demonstrations</span></a></div>
 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
-<button class="group inline-flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-emerald-400 transition-colors w-fit" onclick="switchPage('real-estate', 're-project-portfolio')" type="button">
-<i class="w-4 h-4 transition-transform group-hover:-translate-x-1" data-lucide="arrow-left"></i>Back to Projects &amp; Workflow Demonstrations
-</button>
-<div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-500"><span>Real Estate Operations</span><span class="text-neutral-700">/</span><span class="text-emerald-400">Project 06</span></div>
+
+<div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-500">
+<span>Real Estate Operations</span><span class="text-neutral-700">/</span><span class="text-emerald-400">Project 06</span>
+</div>
 </div>
 <header class="relative overflow-hidden bg-neutral-900/30 border border-white/5 rounded-2xl p-7 md:p-10 mb-8">
 <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-emerald-500/5 blur-3xl pointer-events-none"></div>
 <div class="relative z-10 max-w-4xl">
-<div class="flex flex-wrap gap-2 mb-5"><span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 bg-purple-500/5 border border-purple-500/10 px-3 py-1.5 rounded-full">Project 06</span><span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/5 border border-emerald-500/10 px-3 py-1.5 rounded-full">Canva Design</span></div>
+<div class="flex flex-wrap gap-2 mb-5">
+<span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 bg-purple-500/5 border border-purple-500/10 px-3 py-1.5 rounded-full">Project 06</span><span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/5 border border-emerald-500/10 px-3 py-1.5 rounded-full">Canva Design</span>
+</div>
 <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-3">Real Estate Operations Portfolio</span>
 <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">Open House Marketing Design</h1>
 <p class="text-neutral-400 font-light leading-relaxed mt-5 max-w-3xl">Created an open-house promotional design using property details, listing highlights, contact information, and a clear call to action.</p>
-<div class="flex flex-wrap gap-2 mt-6"><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Canva Design</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Listing Marketing</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Property Highlights</span></div>
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Canva Design</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Listing Marketing</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Property Highlights</span>
+</div>
 </div></header>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-5"><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
 <span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Objective</span>
 <p class="text-sm text-neutral-400 font-light leading-relaxed">Demonstrate organized and dependable support for open house marketing design while maintaining clear documentation, accurate data handling, and practical next-step visibility.</p>
 </article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
@@ -2237,11 +2236,9 @@
 </article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
 <span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Quality &amp; Confidentiality</span>
 <p class="text-sm text-neutral-400 font-light leading-relaxed">Sample information is presented for portfolio demonstration. Client, property, transaction, and personal details should be anonymized before publication or sharing.</p>
-</article></div>
-<div class="mt-8 flex flex-wrap gap-3">
-<button class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-neutral-400 border border-white/5 bg-neutral-900/30 hover:text-emerald-400 hover:border-emerald-500/20 px-5 py-3 rounded-xl transition-all" onclick="switchPage('real-estate', 're-project-portfolio')" type="button"><i class="w-4 h-4 group-hover:-translate-x-1 transition-transform" data-lucide="arrow-left"></i>Back to Projects &amp; Workflow Demonstrations</button>
-<a class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue px-5 py-3 rounded-xl transition-all" href="#contact" onclick="event.preventDefault(); switchPage('contact')">Discuss This Workflow<i class="w-4 h-4" data-lucide="arrow-up-right"></i></a>
+</article>
 </div>
+
 <section class="mt-10 rounded-2xl border border-emerald-500/15 bg-gradient-to-br from-emerald-500/5 to-neutral-900/30 p-7 md:p-9" id="project-06-work-sample">
 <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
 <div class="max-w-3xl">
@@ -2252,27 +2249,38 @@
 <div class="w-14 h-14 rounded-xl bg-neutral-950 border border-white/5 flex items-center justify-center text-emerald-400 shrink-0"><i class="w-6 h-6" data-lucide="file-check-2"></i></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-7">
-<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Output</span><p class="text-neutral-400 text-sm mt-2">A presentation-ready sample connected directly to this project workflow.</p></div>
-<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Quality Check</span><p class="text-neutral-400 text-sm mt-2">Reviewed for clarity, completeness, consistency, and practical usability.</p></div>
-<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Portfolio Note</span><p class="text-neutral-400 text-sm mt-2">Sensitive client, property, and transaction information is anonymized.</p></div>
+<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5">
+<span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Output</span><p class="text-neutral-400 text-sm mt-2">A presentation-ready sample connected directly to this project workflow.</p>
 </div>
-</section></section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-project-07">
+<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5">
+<span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Quality Check</span><p class="text-neutral-400 text-sm mt-2">Reviewed for clarity, completeness, consistency, and practical usability.</p>
+</div>
+<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5">
+<span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Portfolio Note</span><p class="text-neutral-400 text-sm mt-2">Sensitive client, property, and transaction information is anonymized.</p>
+</div>
+</div>
+</section><section class="mt-10 rounded-2xl border border-white/5 bg-neutral-900/30 p-7 md:p-9" id="project-06-gallery"><div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-7"><div><span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Project Gallery</span><h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Report &amp; Documentation Preview</h2></div><p class="text-neutral-500 text-sm font-light leading-relaxed max-w-xl lg:text-right">Replace the sample image paths below with screenshots of your completed work.</p></div><div class="grid grid-cols-1 md:grid-cols-2 gap-5"><figure class="group overflow-hidden rounded-2xl border border-white/5 bg-neutral-950/40"><div class="aspect-video bg-neutral-950 overflow-hidden flex items-center justify-center"><img alt="Open House Marketing Design sample preview 1" class="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-300" src="project-06-gallery-01.jpg"/></div><figcaption class="p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Sample Preview</span><h3 class="text-white font-semibold mt-2">Open House Marketing Design — Sample 1</h3><p class="text-neutral-400 text-sm font-light leading-relaxed mt-2">Add a screenshot and a short description of the completed output, document, tracker, or presentation.</p></figcaption></figure><figure class="group overflow-hidden rounded-2xl border border-white/5 bg-neutral-950/40"><div class="aspect-video bg-neutral-950 overflow-hidden flex items-center justify-center"><img alt="Open House Marketing Design sample preview 2" class="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-300" src="project-06-gallery-02.jpg"/></div><figcaption class="p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Sample Preview</span><h3 class="text-white font-semibold mt-2">Open House Marketing Design — Sample 2</h3><p class="text-neutral-400 text-sm font-light leading-relaxed mt-2">Add a screenshot and a short description of the completed output, document, tracker, or presentation.</p></figcaption></figure></div></section><div class="mt-6 flex justify-end"><a class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue px-5 py-3 rounded-xl transition-all" href="#contact" onclick="event.preventDefault(); switchPage('contact')">Discuss This Workflow<i class="w-4 h-4" data-lucide="arrow-up-right"></i></a></div><div class="mt-10 flex justify-start"><a class="back-nav" href="#" onclick="event.preventDefault(); switchPage('real-estate', 're-project-portfolio')"><i class="w-3.5 h-3.5 shrink-0" data-lucide="arrow-left"></i><span>Back to Projects &amp; Workflow Demonstrations</span></a></div></section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-project-07"><div class="mb-2"><a class="back-nav" href="#" onclick="event.preventDefault(); switchPage('real-estate', 're-project-portfolio')"><i class="w-3.5 h-3.5 shrink-0" data-lucide="arrow-left"></i><span>Back to Projects &amp; Workflow Demonstrations</span></a></div>
 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
-<button class="group inline-flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-emerald-400 transition-colors w-fit" onclick="switchPage('real-estate', 're-project-portfolio')" type="button">
-<i class="w-4 h-4 transition-transform group-hover:-translate-x-1" data-lucide="arrow-left"></i>Back to Projects &amp; Workflow Demonstrations
-</button>
-<div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-500"><span>Real Estate Operations</span><span class="text-neutral-700">/</span><span class="text-emerald-400">Project 07</span></div>
+
+<div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-500">
+<span>Real Estate Operations</span><span class="text-neutral-700">/</span><span class="text-emerald-400">Project 07</span>
+</div>
 </div>
 <header class="relative overflow-hidden bg-neutral-900/30 border border-white/5 rounded-2xl p-7 md:p-10 mb-8">
 <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-emerald-500/5 blur-3xl pointer-events-none"></div>
 <div class="relative z-10 max-w-4xl">
-<div class="flex flex-wrap gap-2 mb-5"><span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 bg-purple-500/5 border border-purple-500/10 px-3 py-1.5 rounded-full">Project 07</span><span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/5 border border-emerald-500/10 px-3 py-1.5 rounded-full">Calendar Management</span></div>
+<div class="flex flex-wrap gap-2 mb-5">
+<span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 bg-purple-500/5 border border-purple-500/10 px-3 py-1.5 rounded-full">Project 07</span><span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/5 border border-emerald-500/10 px-3 py-1.5 rounded-full">Calendar Management</span>
+</div>
 <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-3">Real Estate Operations Portfolio</span>
 <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">Transaction Calendar Coordination</h1>
 <p class="text-neutral-400 font-light leading-relaxed mt-5 max-w-3xl">Organized transaction dates, follow-up activities, deadlines, and milestone reminders within a structured calendar workflow.</p>
-<div class="flex flex-wrap gap-2 mt-6"><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Calendar Management</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Deadline Tracking</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Transaction Milestones</span></div>
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Calendar Management</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Deadline Tracking</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Transaction Milestones</span>
+</div>
 </div></header>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-5"><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
 <span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Objective</span>
 <p class="text-sm text-neutral-400 font-light leading-relaxed">Demonstrate organized and dependable support for transaction calendar coordination while maintaining clear documentation, accurate data handling, and practical next-step visibility.</p>
 </article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
@@ -2287,11 +2295,9 @@
 </article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
 <span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Quality &amp; Confidentiality</span>
 <p class="text-sm text-neutral-400 font-light leading-relaxed">Sample information is presented for portfolio demonstration. Client, property, transaction, and personal details should be anonymized before publication or sharing.</p>
-</article></div>
-<div class="mt-8 flex flex-wrap gap-3">
-<button class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-neutral-400 border border-white/5 bg-neutral-900/30 hover:text-emerald-400 hover:border-emerald-500/20 px-5 py-3 rounded-xl transition-all" onclick="switchPage('real-estate', 're-project-portfolio')" type="button"><i class="w-4 h-4 group-hover:-translate-x-1 transition-transform" data-lucide="arrow-left"></i>Back to Projects &amp; Workflow Demonstrations</button>
-<a class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue px-5 py-3 rounded-xl transition-all" href="#contact" onclick="event.preventDefault(); switchPage('contact')">Discuss This Workflow<i class="w-4 h-4" data-lucide="arrow-up-right"></i></a>
+</article>
 </div>
+
 <section class="mt-10 rounded-2xl border border-emerald-500/15 bg-gradient-to-br from-emerald-500/5 to-neutral-900/30 p-7 md:p-9" id="project-07-work-sample">
 <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
 <div class="max-w-3xl">
@@ -2302,27 +2308,38 @@
 <div class="w-14 h-14 rounded-xl bg-neutral-950 border border-white/5 flex items-center justify-center text-emerald-400 shrink-0"><i class="w-6 h-6" data-lucide="file-check-2"></i></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-7">
-<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Output</span><p class="text-neutral-400 text-sm mt-2">A presentation-ready sample connected directly to this project workflow.</p></div>
-<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Quality Check</span><p class="text-neutral-400 text-sm mt-2">Reviewed for clarity, completeness, consistency, and practical usability.</p></div>
-<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Portfolio Note</span><p class="text-neutral-400 text-sm mt-2">Sensitive client, property, and transaction information is anonymized.</p></div>
+<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5">
+<span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Output</span><p class="text-neutral-400 text-sm mt-2">A presentation-ready sample connected directly to this project workflow.</p>
 </div>
-</section></section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-project-08">
+<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5">
+<span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Quality Check</span><p class="text-neutral-400 text-sm mt-2">Reviewed for clarity, completeness, consistency, and practical usability.</p>
+</div>
+<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5">
+<span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Portfolio Note</span><p class="text-neutral-400 text-sm mt-2">Sensitive client, property, and transaction information is anonymized.</p>
+</div>
+</div>
+</section><section class="mt-10 rounded-2xl border border-white/5 bg-neutral-900/30 p-7 md:p-9" id="project-07-gallery"><div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-7"><div><span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Project Gallery</span><h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Report &amp; Documentation Preview</h2></div><p class="text-neutral-500 text-sm font-light leading-relaxed max-w-xl lg:text-right">Replace the sample image paths below with screenshots of your completed work.</p></div><div class="grid grid-cols-1 md:grid-cols-2 gap-5"><figure class="group overflow-hidden rounded-2xl border border-white/5 bg-neutral-950/40"><div class="aspect-video bg-neutral-950 overflow-hidden flex items-center justify-center"><img alt="Transaction Calendar Coordination sample preview 1" class="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-300" src="project-07-gallery-01.jpg"/></div><figcaption class="p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Sample Preview</span><h3 class="text-white font-semibold mt-2">Transaction Calendar Coordination — Sample 1</h3><p class="text-neutral-400 text-sm font-light leading-relaxed mt-2">Add a screenshot and a short description of the completed output, document, tracker, or presentation.</p></figcaption></figure><figure class="group overflow-hidden rounded-2xl border border-white/5 bg-neutral-950/40"><div class="aspect-video bg-neutral-950 overflow-hidden flex items-center justify-center"><img alt="Transaction Calendar Coordination sample preview 2" class="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-300" src="project-07-gallery-02.jpg"/></div><figcaption class="p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Sample Preview</span><h3 class="text-white font-semibold mt-2">Transaction Calendar Coordination — Sample 2</h3><p class="text-neutral-400 text-sm font-light leading-relaxed mt-2">Add a screenshot and a short description of the completed output, document, tracker, or presentation.</p></figcaption></figure></div></section><div class="mt-6 flex justify-end"><a class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue px-5 py-3 rounded-xl transition-all" href="#contact" onclick="event.preventDefault(); switchPage('contact')">Discuss This Workflow<i class="w-4 h-4" data-lucide="arrow-up-right"></i></a></div><div class="mt-10 flex justify-start"><a class="back-nav" href="#" onclick="event.preventDefault(); switchPage('real-estate', 're-project-portfolio')"><i class="w-3.5 h-3.5 shrink-0" data-lucide="arrow-left"></i><span>Back to Projects &amp; Workflow Demonstrations</span></a></div></section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-project-08"><div class="mb-2"><a class="back-nav" href="#" onclick="event.preventDefault(); switchPage('real-estate', 're-project-portfolio')"><i class="w-3.5 h-3.5 shrink-0" data-lucide="arrow-left"></i><span>Back to Projects &amp; Workflow Demonstrations</span></a></div>
 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
-<button class="group inline-flex items-center gap-2 text-xs font-mono text-neutral-400 hover:text-emerald-400 transition-colors w-fit" onclick="switchPage('real-estate', 're-project-portfolio')" type="button">
-<i class="w-4 h-4 transition-transform group-hover:-translate-x-1" data-lucide="arrow-left"></i>Back to Projects &amp; Workflow Demonstrations
-</button>
-<div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-500"><span>Real Estate Operations</span><span class="text-neutral-700">/</span><span class="text-emerald-400">Project 08</span></div>
+
+<div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-500">
+<span>Real Estate Operations</span><span class="text-neutral-700">/</span><span class="text-emerald-400">Project 08</span>
+</div>
 </div>
 <header class="relative overflow-hidden bg-neutral-900/30 border border-white/5 rounded-2xl p-7 md:p-10 mb-8">
 <div class="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-emerald-500/5 blur-3xl pointer-events-none"></div>
 <div class="relative z-10 max-w-4xl">
-<div class="flex flex-wrap gap-2 mb-5"><span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 bg-purple-500/5 border border-purple-500/10 px-3 py-1.5 rounded-full">Project 08</span><span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/5 border border-emerald-500/10 px-3 py-1.5 rounded-full">Compliance Review</span></div>
+<div class="flex flex-wrap gap-2 mb-5">
+<span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 bg-purple-500/5 border border-purple-500/10 px-3 py-1.5 rounded-full">Project 08</span><span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-500/5 border border-emerald-500/10 px-3 py-1.5 rounded-full">Compliance Review</span>
+</div>
 <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-3">Real Estate Operations Portfolio</span>
 <h1 class="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight">Contract Compliance Review</h1>
 <p class="text-neutral-400 font-light leading-relaxed mt-5 max-w-3xl">Reviewed transaction documents for missing information and prepared professional follow-up communication requesting required details.</p>
-<div class="flex flex-wrap gap-2 mt-6"><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Compliance Review</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Document Tracking</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Email Drafting</span></div>
+<div class="flex flex-wrap gap-2 mt-6">
+<span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Compliance Review</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Document Tracking</span><span class="px-3 py-1.5 rounded-full border border-emerald-500/10 bg-emerald-500/5 text-xs text-neutral-300">Email Drafting</span>
+</div>
 </div></header>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-5"><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
 <span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Objective</span>
 <p class="text-sm text-neutral-400 font-light leading-relaxed">Demonstrate organized and dependable support for contract compliance review while maintaining clear documentation, accurate data handling, and practical next-step visibility.</p>
 </article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
@@ -2337,11 +2354,9 @@
 </article><article class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 hover:border-emerald-500/30 transition-colors">
 <span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Quality &amp; Confidentiality</span>
 <p class="text-sm text-neutral-400 font-light leading-relaxed">Sample information is presented for portfolio demonstration. Client, property, transaction, and personal details should be anonymized before publication or sharing.</p>
-</article></div>
-<div class="mt-8 flex flex-wrap gap-3">
-<button class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-neutral-400 border border-white/5 bg-neutral-900/30 hover:text-emerald-400 hover:border-emerald-500/20 px-5 py-3 rounded-xl transition-all" onclick="switchPage('real-estate', 're-project-portfolio')" type="button"><i class="w-4 h-4 group-hover:-translate-x-1 transition-transform" data-lucide="arrow-left"></i>Back to Projects &amp; Workflow Demonstrations</button>
-<a class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue px-5 py-3 rounded-xl transition-all" href="#contact" onclick="event.preventDefault(); switchPage('contact')">Discuss This Workflow<i class="w-4 h-4" data-lucide="arrow-up-right"></i></a>
+</article>
 </div>
+
 <section class="mt-10 rounded-2xl border border-emerald-500/15 bg-gradient-to-br from-emerald-500/5 to-neutral-900/30 p-7 md:p-9" id="project-08-work-sample">
 <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
 <div class="max-w-3xl">
@@ -2352,11 +2367,17 @@
 <div class="w-14 h-14 rounded-xl bg-neutral-950 border border-white/5 flex items-center justify-center text-emerald-400 shrink-0"><i class="w-6 h-6" data-lucide="file-check-2"></i></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-7">
-<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Output</span><p class="text-neutral-400 text-sm mt-2">A presentation-ready sample connected directly to this project workflow.</p></div>
-<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Quality Check</span><p class="text-neutral-400 text-sm mt-2">Reviewed for clarity, completeness, consistency, and practical usability.</p></div>
-<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Portfolio Note</span><p class="text-neutral-400 text-sm mt-2">Sensitive client, property, and transaction information is anonymized.</p></div>
+<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5">
+<span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Output</span><p class="text-neutral-400 text-sm mt-2">A presentation-ready sample connected directly to this project workflow.</p>
 </div>
-</section></section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-contact">
+<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5">
+<span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Quality Check</span><p class="text-neutral-400 text-sm mt-2">Reviewed for clarity, completeness, consistency, and practical usability.</p>
+</div>
+<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5">
+<span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Portfolio Note</span><p class="text-neutral-400 text-sm mt-2">Sensitive client, property, and transaction information is anonymized.</p>
+</div>
+</div>
+</section><section class="mt-10 rounded-2xl border border-white/5 bg-neutral-900/30 p-7 md:p-9" id="project-08-gallery"><div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-7"><div><span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Project Gallery</span><h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Report &amp; Documentation Preview</h2></div><p class="text-neutral-500 text-sm font-light leading-relaxed max-w-xl lg:text-right">Replace the sample image paths below with screenshots of your completed work.</p></div><div class="grid grid-cols-1 md:grid-cols-2 gap-5"><figure class="group overflow-hidden rounded-2xl border border-white/5 bg-neutral-950/40"><div class="aspect-video bg-neutral-950 overflow-hidden flex items-center justify-center"><img alt="Contract Compliance Review sample preview 1" class="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-300" src="project-08-gallery-01.jpg"/></div><figcaption class="p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Sample Preview</span><h3 class="text-white font-semibold mt-2">Contract Compliance Review — Sample 1</h3><p class="text-neutral-400 text-sm font-light leading-relaxed mt-2">Add a screenshot and a short description of the completed output, document, tracker, or presentation.</p></figcaption></figure><figure class="group overflow-hidden rounded-2xl border border-white/5 bg-neutral-950/40"><div class="aspect-video bg-neutral-950 overflow-hidden flex items-center justify-center"><img alt="Contract Compliance Review sample preview 2" class="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-300" src="project-08-gallery-02.jpg"/></div><figcaption class="p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Sample Preview</span><h3 class="text-white font-semibold mt-2">Contract Compliance Review — Sample 2</h3><p class="text-neutral-400 text-sm font-light leading-relaxed mt-2">Add a screenshot and a short description of the completed output, document, tracker, or presentation.</p></figcaption></figure></div></section><div class="mt-6 flex justify-end"><a class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue px-5 py-3 rounded-xl transition-all" href="#contact" onclick="event.preventDefault(); switchPage('contact')">Discuss This Workflow<i class="w-4 h-4" data-lucide="arrow-up-right"></i></a></div><div class="mt-10 flex justify-start"><a class="back-nav" href="#" onclick="event.preventDefault(); switchPage('real-estate', 're-project-portfolio')"><i class="w-3.5 h-3.5 shrink-0" data-lucide="arrow-left"></i><span>Back to Projects &amp; Workflow Demonstrations</span></a></div></section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-contact">
 <div class="max-w-5xl mx-auto">
 <header class="relative overflow-hidden rounded-2xl border border-white/5 bg-neutral-900/30 p-8 md:p-12">
 <div class="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-accentCyan/5 blur-3xl pointer-events-none"></div>
@@ -2374,9 +2395,24 @@
 <aside class="lg:col-span-2 rounded-2xl bg-neutral-950/40 border border-white/5 p-6">
 <span class="text-[10px] font-mono uppercase tracking-widest text-purple-400 block mb-5">Availability</span>
 <div class="space-y-5 text-sm">
-<div class="flex items-start gap-3"><i class="w-4 h-4 text-emerald-400 mt-0.5" data-lucide="clock-3"></i><div><p class="text-white font-medium">Response time</p><p class="text-neutral-500 text-xs mt-1">Typically within 24 hours</p></div></div>
-<div class="flex items-start gap-3"><i class="w-4 h-4 text-accentCyan mt-0.5" data-lucide="briefcase-business"></i><div><p class="text-white font-medium">Engagement</p><p class="text-neutral-500 text-xs mt-1">Full-time, part-time, or contract</p></div></div>
-<div class="flex items-start gap-3"><i class="w-4 h-4 text-purple-400 mt-0.5" data-lucide="globe-2"></i><div><p class="text-white font-medium">Work setup</p><p class="text-neutral-500 text-xs mt-1">Remote support worldwide</p></div></div>
+<div class="flex items-start gap-3">
+<i class="w-4 h-4 text-emerald-400 mt-0.5" data-lucide="clock-3"></i><div>
+<p class="text-white font-medium">Response time</p>
+<p class="text-neutral-500 text-xs mt-1">Typically within 24 hours</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<i class="w-4 h-4 text-accentCyan mt-0.5" data-lucide="briefcase-business"></i><div>
+<p class="text-white font-medium">Engagement</p>
+<p class="text-neutral-500 text-xs mt-1">Full-time, part-time, or contract</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<i class="w-4 h-4 text-purple-400 mt-0.5" data-lucide="globe-2"></i><div>
+<p class="text-white font-medium">Work setup</p>
+<p class="text-neutral-500 text-xs mt-1">Remote support worldwide</p>
+</div>
+</div>
 </div>
 </aside>
 </div>
@@ -2386,12 +2422,11 @@
 <h2 class="text-2xl font-bold text-white">Include a few project details</h2>
 <p class="text-neutral-400 text-sm font-light mt-3 max-w-3xl">Share the role or project, key responsibilities, preferred schedule, tools currently used, and target start date. I’ll reply with relevant next steps.</p>
 </section>
-</div></section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-project-01">
+</div></section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-re-project-01"><div class="mb-2"><a class="back-nav" href="#" onclick="event.preventDefault(); switchPage('real-estate', 're-project-portfolio')"><i class="w-3.5 h-3.5 shrink-0" data-lucide="arrow-left"></i><span>Back to Projects &amp; Workflow Demonstrations</span></a></div>
 <!-- =====================================================
          PROJECT NAVIGATION
     ====================================================== -->
 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-10">
-               
 <div class="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-neutral-500">
 <span>Real Estate Operations</span>
 <span class="text-neutral-700">/</span>
@@ -2769,7 +2804,6 @@
 </div>
 </div>
 </section>
-        
 <!-- =====================================================
          DELIVERABLES
     ====================================================== -->
@@ -2829,17 +2863,11 @@
                 </p>
 </article>
 </div>
-</div>
-   
-        
 <!-- =====================================================
-         PROJECT GALLERY
+         INTEGRATED WORK SAMPLE
     ====================================================== -->
-<section class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 md:p-8 mb-10">
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
-
-</div>
-<section class="mt-10 rounded-2xl border border-emerald-500/15 bg-gradient-to-br from-emerald-500/5 to-neutral-900/30 p-7 md:p-9" id="project-01-work-sample">
+</section>
+<section class="mt-10 mb-10 rounded-2xl border border-emerald-500/15 bg-gradient-to-br from-emerald-500/5 to-neutral-900/30 p-7 md:p-9" id="project-01-work-sample">
 <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
 <div class="max-w-3xl">
 <span class="text-[10px] font-mono uppercase tracking-widest text-emerald-400 block mb-3">Integrated Work Sample</span>
@@ -2849,70 +2877,46 @@
 <div class="w-14 h-14 rounded-xl bg-neutral-950 border border-white/5 flex items-center justify-center text-emerald-400 shrink-0"><i class="w-6 h-6" data-lucide="file-check-2"></i></div>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-7">
-<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Output</span><p class="text-neutral-400 text-sm mt-2">A presentation-ready sample connected directly to this project workflow.</p></div>
-<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Quality Check</span><p class="text-neutral-400 text-sm mt-2">Reviewed for clarity, completeness, consistency, and practical usability.</p></div>
-<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Portfolio Note</span><p class="text-neutral-400 text-sm mt-2">Sensitive client, property, and transaction information is anonymized.</p></div>
+<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5">
+<span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Output</span><p class="text-neutral-400 text-sm mt-2">A presentation-ready sample connected directly to this project workflow.</p>
 </div>
-</section></section>
-        
+<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5">
+<span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Quality Check</span><p class="text-neutral-400 text-sm mt-2">Reviewed for clarity, completeness, consistency, and practical usability.</p>
+</div>
+<div class="rounded-xl border border-white/5 bg-neutral-950/30 p-5">
+<span class="text-[10px] font-mono uppercase tracking-wider text-accentBlue">Portfolio Note</span><p class="text-neutral-400 text-sm mt-2">Sensitive client, property, and transaction information is anonymized.</p>
+</div>
+</div>
+</section><section class="mt-10 rounded-2xl border border-white/5 bg-neutral-900/30 p-7 md:p-9" id="project-01-gallery"><div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 mb-7"><div><span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-3">Project Gallery</span><h2 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Report &amp; Documentation Preview</h2></div><p class="text-neutral-500 text-sm font-light leading-relaxed max-w-xl lg:text-right">Replace the sample image paths below with screenshots of your completed work.</p></div><div class="grid grid-cols-1 md:grid-cols-2 gap-5"><figure class="group overflow-hidden rounded-2xl border border-white/5 bg-neutral-950/40"><div class="aspect-video bg-neutral-950 overflow-hidden flex items-center justify-center"><img alt="Property Research &amp; Listing Analysis sample preview 1" class="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-300" src="project-01-gallery-01.jpg"/></div><figcaption class="p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Sample Preview</span><h3 class="text-white font-semibold mt-2">Property Research &amp; Listing Analysis — Sample 1</h3><p class="text-neutral-400 text-sm font-light leading-relaxed mt-2">Add a screenshot and a short description of the completed output, document, tracker, or presentation.</p></figcaption></figure><figure class="group overflow-hidden rounded-2xl border border-white/5 bg-neutral-950/40"><div class="aspect-video bg-neutral-950 overflow-hidden flex items-center justify-center"><img alt="Property Research &amp; Listing Analysis sample preview 2" class="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-300" src="project-01-gallery-02.jpg"/></div><figcaption class="p-5"><span class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Sample Preview</span><h3 class="text-white font-semibold mt-2">Property Research &amp; Listing Analysis — Sample 2</h3><p class="text-neutral-400 text-sm font-light leading-relaxed mt-2">Add a screenshot and a short description of the completed output, document, tracker, or presentation.</p></figcaption></figure></div></section><div class="mt-6 flex justify-end"><a class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue px-5 py-3 rounded-xl transition-all" href="#contact" onclick="event.preventDefault(); switchPage('contact')">
+            Discuss Real Estate Support
+
+            <i class="w-4 h-4 transition-transform group-hover:translate-x-1" data-lucide="arrow-right"></i>
+</a></div>
+<!-- =====================================================
+         PROJECT GALLERY
+    ====================================================== -->
+<section class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 md:p-8 mb-10">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
 <div>
-<span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-2">
-                    Project Gallery
-                </span>
-<h2 class="text-3xl font-bold text-white tracking-tight">
-                    Report &amp; Documentation Preview
-                </h2>
+<span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-2">Project Gallery</span>
+<h2 class="text-3xl font-bold text-white tracking-tight">Report &amp; Documentation Preview</h2>
 </div>
-<p class="text-xs text-neutral-500 font-light max-w-md md:text-right leading-relaxed">
-                Replace the sample image paths below with screenshots of your
-                completed report, comparison sheet, or presentation.
-            </p>
+<p class="text-xs text-neutral-500 font-light max-w-md md:text-right leading-relaxed">Replace the sample image paths below with screenshots of your completed report, comparison sheet, or presentation.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-<!-- Preview 1 -->
 <figure class="bg-neutral-950/50 border border-white/5 rounded-xl overflow-hidden group">
-<div class="aspect-video bg-neutral-950 overflow-hidden">
-<img alt="Property research report preview" class="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-300" src="project-01-property-research-report.jpg"/>
-</div>
-<figcaption class="p-4">
-<span class="text-[10px] font-mono uppercase tracking-wider text-purple-300">
-                        Deliverable Preview
-                    </span>
-<h3 class="text-sm font-semibold text-white mt-2">
-                        Property Research Report
-                    </h3>
-<p class="text-xs text-neutral-400 font-light mt-1">
-                        Structured presentation of researched property
-                        information and source references.
-                    </p>
-</figcaption>
+<div class="aspect-video bg-neutral-950 overflow-hidden"><img alt="Property research report preview" class="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-300" src="project-01-property-research-report.jpg"/></div>
+<figcaption class="p-4"><span class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Deliverable Preview</span><h3 class="text-sm font-semibold text-white mt-2">Property Research Report</h3>
+<p class="text-xs text-neutral-400 font-light mt-1">Structured presentation of researched property information and source references.</p></figcaption>
 </figure>
-<!-- Preview 2 -->
 <figure class="bg-neutral-950/50 border border-white/5 rounded-xl overflow-hidden group">
-<div class="aspect-video bg-neutral-950 overflow-hidden">
-<img alt="Property comparison sheet preview" class="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-300" src="project-01-property-comparison.jpg"/>
-</div>
-<figcaption class="p-4">
-<span class="text-[10px] font-mono uppercase tracking-wider text-purple-300">
-                        Deliverable Preview
-                    </span>
-<h3 class="text-sm font-semibold text-white mt-2">
-                        Property Comparison Sheet
-                    </h3>
-<p class="text-xs text-neutral-400 font-light mt-1">
-                        Side-by-side presentation of listing details, pricing,
-                        features, and suitability.
-                    </p>
-</figcaption>
+<div class="aspect-video bg-neutral-950 overflow-hidden"><img alt="Property comparison sheet preview" class="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-300" src="project-01-property-comparison.jpg"/></div>
+<figcaption class="p-4"><span class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Deliverable Preview</span><h3 class="text-sm font-semibold text-white mt-2">Property Comparison Sheet</h3>
+<p class="text-xs text-neutral-400 font-light mt-1">Side-by-side presentation of listing details, pricing, features, and suitability.</p></figcaption>
 </figure>
 </div>
-<!-- Optional document button -->
 <div class="mt-6 flex justify-end">
-<a class="inline-flex items-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 px-5 py-2.5 rounded-xl bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue transition-all" href="YOUR-PROJECT-01-DOCUMENT-LINK" rel="noopener noreferrer" target="_blank">
-                View Complete Report
-
-                <i class="w-3.5 h-3.5" data-lucide="arrow-up-right"></i>
-</a>
+<a class="inline-flex items-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 px-5 py-2.5 rounded-xl bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue transition-all" href="YOUR-PROJECT-01-DOCUMENT-LINK" rel="noopener noreferrer" target="_blank">View Complete Report <i class="w-3.5 h-3.5" data-lucide="arrow-up-right"></i></a>
 </div>
 </section>
 <!-- =====================================================
@@ -2980,21 +2984,8 @@
 <!-- =====================================================
          BOTTOM NAVIGATION
     ====================================================== -->
-<div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
-<button class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-neutral-400 border border-white/5 bg-neutral-900/30 hover:text-emerald-400 hover:border-emerald-500/20 px-5 py-3 rounded-xl transition-all" onclick="switchPage('real-estate', 're-project-portfolio')" type="button">
-<i class="w-4 h-4 transition-transform group-hover:-translate-x-1" data-lucide="arrow-left"></i>
 
-            Back to Project Portfolio
-        </button>
-<a class="group inline-flex items-center justify-center gap-2 text-xs font-mono text-emerald-400 border border-emerald-500/20 bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue px-5 py-3 rounded-xl transition-all" href="#contact" onclick="event.preventDefault(); switchPage('contact')">
-            Discuss Real Estate Support
-
-            <i class="w-4 h-4 transition-transform group-hover:translate-x-1" data-lucide="arrow-right"></i>
-</a>
-</div>
-
-        
-</section>
+<div class="mt-10 flex justify-start"><a class="back-nav" href="#" onclick="event.preventDefault(); switchPage('real-estate', 're-project-portfolio')"><i class="w-3.5 h-3.5 shrink-0" data-lucide="arrow-left"></i><span>Back to Projects &amp; Workflow Demonstrations</span></a></div></section>
 </main>
 <!-- ========================================== -->
 <!-- FIXED FOOTER SECTION                       -->
