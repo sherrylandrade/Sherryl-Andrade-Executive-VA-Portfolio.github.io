@@ -61,11 +61,25 @@
    Keep assets/portfolio-homepage-design.png in the repository.
 ============================================================ */
 
+
+/* ============================================================
+   HOME VIEWPORT FIT
+   Uses the usable space between the fixed header and footer.
+============================================================ */
+
+:root {
+    --portfolio-header-height: 92px;
+    --portfolio-footer-height: 84px;
+}
+
 body.home-mode > main {
     width: 100%;
     max-width: none;
     margin: 0;
-    padding: 7.25rem 0 0;
+    padding:
+        var(--portfolio-header-height)
+        0
+        var(--portfolio-footer-height);
 }
 
 #page-home.exact-home-page {
@@ -78,7 +92,12 @@ body.home-mode > main {
 .exact-home-stage {
     position: relative;
     width: 100%;
-    min-height: 0;
+    height: calc(
+        100vh
+        - var(--portfolio-header-height)
+        - var(--portfolio-footer-height)
+    );
+    min-height: 620px;
     overflow: hidden;
     background: #05080d;
 }
@@ -88,80 +107,44 @@ body.home-mode > main {
     z-index: 1;
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
     min-height: 0;
-    object-fit: contain;
-    object-position: center top;
+    object-fit: cover;
+    object-position: center center;
     user-select: none;
     -webkit-user-drag: none;
 }
 
-
-.exact-home-hotspot,
-.exact-home-hotspot:hover,
-.exact-home-hotspot:focus,
-.exact-home-hotspot:focus-visible,
-.exact-home-hotspot:active,
-.exact-home-hotspot:visited {
-    position: absolute;
-    z-index: 100;
-    display: block;
-    pointer-events: auto;
-    margin: 0;
-    padding: 0;
-    border: 0 !important;
-    outline: 0 !important;
-    border-radius: 0;
-    background: transparent !important;
-    box-shadow: none !important;
-    color: transparent !important;
-    text-decoration: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-    transition: none !important;
-    -webkit-tap-highlight-color: transparent;
-    appearance: none;
-}
-
-
-/* Header navigation */
-
-
-
-
-
-/* Main hero actions */
+/* Click areas aligned to the visible CTA buttons */
 .exact-home-link-customer-cta {
-    left: 23.7%;
-    top: 59.9%;
-    width: 27.7%;
-    height: 8.1%;
+    left: 26.2%;
+    top: 59.8%;
+    width: 25.4%;
+    height: 8.0%;
 }
 
 .exact-home-link-real-estate-cta {
-    left: 52.7%;
-    top: 59.9%;
-    width: 24.3%;
-    height: 8.1%;
+    left: 52.9%;
+    top: 59.8%;
+    width: 22.3%;
+    height: 8.0%;
 }
-
-
-/* Footer social links */
-
-
-
 
 @media (max-width: 900px) {
-    body.home-mode > main {
-        padding-top: 8.5rem;
+    :root {
+        --portfolio-header-height: 142px;
+        --portfolio-footer-height: 112px;
     }
 
-    .exact-home-stage,
+    .exact-home-stage {
+        min-height: 660px;
+    }
+
     .exact-home-artwork {
-        width: 100%;
-        min-height: 0;
+        object-position: center center;
     }
 }
+
 
 
 /* ============================================================
