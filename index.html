@@ -100,34 +100,40 @@ body.home-mode > main {
     -webkit-user-drag: none;
 }
 
-.exact-home-hotspot {
+
+.exact-home-hotspot,
+.exact-home-hotspot:hover,
+.exact-home-hotspot:focus,
+.exact-home-hotspot:focus-visible,
+.exact-home-hotspot:active,
+.exact-home-hotspot:visited {
     position: absolute;
     z-index: 50;
-    pointer-events: auto;
     display: block;
-    border: 1px solid transparent;
-    border-radius: 9999px;
-    background: transparent;
-    cursor: pointer;
-    transition: opacity 0.2s ease;
+    pointer-events: auto;
+    margin: 0;
+    padding: 0;
+    border: 0 !important;
+    outline: 0 !important;
+    border-radius: 0;
+    background: transparent !important;
+    box-shadow: none !important;
+    color: transparent !important;
+    text-decoration: none !important;
+    opacity: 1;
+    transform: none !important;
+    transition: none !important;
     -webkit-tap-highlight-color: transparent;
+    appearance: none;
 }
 
-.exact-home-hotspot:hover,
-.exact-home-hotspot:focus-visible {
-    outline: none;
-    background: transparent;
-    border-color: transparent;
-    box-shadow: none;
-    transform: none;
-}
 
 /* Header navigation */
 .exact-home-link-home {
-    left: 20.7%;
-    top: 1.45%;
-    width: 5.8%;
-    height: 7.2%;
+    left: 21.2%;
+    top: 2.0%;
+    width: 4.8%;
+    height: 5.8%;
 }
 
 .exact-home-link-about {
@@ -175,12 +181,6 @@ body.home-mode > main {
     border-radius: 0.9rem;
 }
 
-.exact-home-link-resume {
-    left: 40.2%;
-    top: 67%;
-    width: 11.7%;
-    height: 4.7%;
-}
 
 /* Footer social links */
 .exact-home-link-facebook {
@@ -300,7 +300,7 @@ body.home-mode > main {
            onclick="event.preventDefault(); switchPage('contact')"
            aria-label="Contact"></a>
 
-        <!-- Hero calls to action -->
+        <!-- Hero calls to action: résumé intentionally omitted -->
         <a class="exact-home-hotspot exact-home-link-customer-cta"
            href="#customer-service"
            onclick="event.preventDefault(); switchPage('customer-service')"
