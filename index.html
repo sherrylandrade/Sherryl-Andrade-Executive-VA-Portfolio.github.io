@@ -31,6 +31,7 @@
 <style>
 
 
+
 /* ============================================================
    1. GLOBAL BASE
 ============================================================ */
@@ -1191,6 +1192,180 @@ body:not(.home-mode) .site-footer {
         overflow: visible !important;
     }
 }
+
+/* ============================================================
+   8. PROJECT INTERACTIONS
+   Hover behavior for Real Estate project cards and showcases.
+============================================================ */
+
+/* Entire project cards lift subtly */
+.project-card {
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform 0.30s ease,
+        border-color 0.30s ease,
+        box-shadow 0.30s ease,
+        background-color 0.30s ease;
+}
+
+.project-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    background:
+        radial-gradient(
+            circle at 82% 18%,
+            rgba(45, 212, 191, 0.08),
+            transparent 34%
+        );
+    transition: opacity 0.30s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(45, 212, 191, 0.34) !important;
+    box-shadow:
+        0 24px 56px rgba(0, 0, 0, 0.28),
+        0 0 34px rgba(16, 185, 129, 0.08);
+}
+
+.project-card:hover::after {
+    opacity: 1;
+}
+
+/* View Project links */
+.project-link {
+    position: relative;
+    z-index: 2;
+
+    display: inline-flex !important;
+    align-items: center;
+    gap: 0.45rem;
+
+    color: #34d399 !important;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition:
+        color 0.24s ease,
+        gap 0.24s ease,
+        transform 0.24s ease,
+        text-shadow 0.24s ease;
+}
+
+.project-link svg,
+.project-link i {
+    transition: transform 0.24s ease;
+}
+
+.project-link:hover,
+.project-card:hover .project-link {
+    color: #67e8f9 !important;
+    gap: 0.78rem;
+    transform: translateX(3px);
+    text-shadow: 0 0 18px rgba(103, 232, 249, 0.18);
+}
+
+.project-link:hover svg,
+.project-link:hover i,
+.project-card:hover .project-link svg,
+.project-card:hover .project-link i {
+    transform: translateX(4px);
+}
+
+/* Integrated work-sample showcase */
+.report-showcase {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(7, 18, 24, 0.88),
+            rgba(6, 13, 18, 0.82)
+        ) !important;
+
+    border: 1px solid rgba(18, 212, 200, 0.20) !important;
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.30),
+        inset 0 0 42px rgba(18, 212, 200, 0.035);
+
+    transition:
+        transform 0.34s ease,
+        box-shadow 0.34s ease,
+        border-color 0.34s ease;
+}
+
+.report-showcase::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 82% 18%,
+            rgba(16, 185, 129, 0.08),
+            transparent 32%
+        ),
+        linear-gradient(
+            90deg,
+            rgba(6, 182, 212, 0.10),
+            transparent 26%
+        );
+
+    opacity: 0.80;
+}
+
+.report-showcase:hover {
+    transform: translateY(-6px);
+    border-color: rgba(18, 212, 200, 0.38) !important;
+
+    box-shadow:
+        0 30px 65px rgba(0, 0, 0, 0.40),
+        0 0 40px rgba(18, 212, 200, 0.09),
+        inset 0 0 60px rgba(18, 212, 200, 0.045);
+}
+
+/* Three mini cards inside the showcase */
+.report-mini-card {
+    transition:
+        transform 0.28s ease,
+        border-color 0.28s ease,
+        background-color 0.28s ease,
+        box-shadow 0.28s ease;
+}
+
+.report-mini-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(18, 212, 200, 0.28) !important;
+    background: rgba(18, 212, 200, 0.035) !important;
+    box-shadow:
+        0 14px 32px rgba(0, 0, 0, 0.20),
+        0 0 24px rgba(18, 212, 200, 0.055);
+}
+
+/* Reduce motion when requested */
+@media (prefers-reduced-motion: reduce) {
+    .project-card,
+    .project-link,
+    .project-link svg,
+    .project-link i,
+    .report-showcase,
+    .report-mini-card {
+        transition: none !important;
+        transform: none !important;
+    }
+}
 </style>
 </head>
 <body class="home-mode min-h-screen flex flex-col justify-between selection:bg-accentCyan-900/90 selection:text-white">
@@ -1277,7 +1452,7 @@ body:not(.home-mode) .site-footer {
             </div>
 
             <div class="editable-credibility-panel">
-                <article class="editable-credibility-item">
+                <article class="editable-credibility-item project-link">
                     <i data-lucide="headphones"></i>
                     <h3>9+ Years Experience</h3>
                     <p>
@@ -3665,7 +3840,7 @@ body:not(.home-mode) .site-footer {
                     </p>
 </div>
 <!-- Project icon -->
-<div class="w-20 h-20 rounded-2xl bg-neutral-950 border border-white/5 flex items-center justify-center text-emerald-400 shrink-0">
+<div class="w-20 h-20 rounded-2xl bg-neutral-950 border border-white/5 flex items-center justify-center text-emerald-400 shrink-0 report-showcase">
 <i class="w-9 h-9" data-lucide="search-check"></i>
 </div>
 </div>
