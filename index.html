@@ -306,21 +306,24 @@ body.home-mode > main {
     position: relative;
     isolation: isolate;
     width: 100%;
-    min-height: 100vh;
+    height: 100%;
     overflow: hidden;
-    background: transparent;
+    background: #05080d;
 }
 
-.editable-home-stage::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    z-index:-3;
-
-    background-image:url("assets/portfolio-background-editable.jpg");
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
+.editable-home-stage::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -3;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(4, 8, 14, 0.10),
+            rgba(4, 8, 14, 0.24)
+        ),
+        url("assets/portfolio-background-editable.jpg")
+        center center / cover no-repeat;
 }
 
 .editable-home-stage::after {
@@ -329,73 +332,60 @@ body.home-mode > main {
     inset: 0;
     z-index: -2;
     pointer-events: none;
-
     background:
         radial-gradient(
-            circle at 15% 10%,
-            rgba(2, 8, 13, 0.01),
-            rgba(2, 8, 13, 0.08) 15%,
-            rgba(2, 8, 13, 0.18) 20%
+            circle at 50% 38%,
+            rgba(2, 8, 13, 0.04),
+            rgba(2, 8, 13, 0.20) 54%,
+            rgba(2, 8, 13, 0.38) 100%
         );
 }
 
 .editable-home-content {
     position: relative;
     z-index: 5;
-
     display: flex;
-    min-height: 100%;
+    height: 100%;
+    min-height: 0;
     flex-direction: column;
-    justify-content: flex-start;
-
-    padding: 2.5rem 3.5rem 2rem;
-
-    background: transparent;
-    backdrop-filter: none;
-    border: none;
-    box-shadow: none;
+    justify-content: center;
+    padding: 1.2rem 3.5rem 1.35rem;
 }
 
 .editable-home-hero {
-    width: min(980px, 82vw);
+    width: min(940px, 78vw);
     margin: 0 auto;
     text-align: center;
 }
 
 .editable-home-title {
-    margin: 1.25rem auto 0;
-    max-width: 900px;
-
-    font-size: clamp(2.2rem, 3.25vw, 3.65rem);
+    margin: 1.1rem auto 0;
+    max-width: 920px;
+    font-size: clamp(2.5rem, 4.25vw, 4.6rem);
     font-weight: 700;
-    line-height: 1.08;
-    letter-spacing: -0.03em;
-
+    line-height: 1.03;
+    letter-spacing: -0.045em;
     color: #fff;
     text-wrap: balance;
-
-    text-shadow: none;
+    text-shadow: 0 5px 26px rgba(0, 0, 0, 0.74);
 }
 
 .editable-home-copy {
-    max-width: 860px;
-    margin: 1.75rem auto 0;
-
-    font-size: clamp(0.95rem, 1.15vw, 1.15rem);
+    max-width: 800px;
+    margin: 1.35rem auto 0;
+    font-size: clamp(1rem, 1.35vw, 1.3rem);
     font-weight: 300;
-    line-height: 1.75;
-
-    color: rgba(229, 231, 235, 0.82);
+    line-height: 1.65;
+    color: rgba(229, 231, 235, 0.90);
     text-wrap: balance;
-
-    text-shadow: none;
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.84);
 }
 
 .editable-home-actions {
     display: flex;
     justify-content: center;
-    gap: 1.25rem;
-    margin-top: 2rem;
+    gap: 1rem;
+    margin-top: 1.6rem;
 }
 
 .editable-home-button {
@@ -404,21 +394,17 @@ body.home-mode > main {
     justify-content: center;
     gap: 0.75rem;
     min-width: 320px;
-
-    border: 1px solid rgba(16, 185, 129, 0.42);
+    border: 1px solid rgba(16, 185, 129, 0.48);
     border-radius: 0.85rem;
-
-    background: rgba(3, 12, 18, 0.04);
-    backdrop-filter: none;
-
+    background: rgba(3, 12, 18, 0.76);
     padding: 0.9rem 1.35rem;
-
     color: #2dd4bf;
     font-size: 0.98rem;
     font-weight: 600;
-
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.10);
-
+    backdrop-filter: blur(12px);
+    box-shadow:
+        0 10px 34px rgba(0, 0, 0, 0.23),
+        inset 0 0 22px rgba(16, 185, 129, 0.025);
     transition:
         transform 0.25s ease,
         border-color 0.25s ease,
@@ -438,18 +424,21 @@ body.home-mode > main {
 .editable-credibility-panel {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
-
     width: min(1420px, calc(100vw - 6rem));
-    margin: 2rem auto 0;
+    margin: 1.6rem auto 0;
     overflow: hidden;
-
-    border: 1px solid rgba(6, 182, 212, 0.24);
+    border: 1px solid rgba(6, 182, 212, 0.28);
     border-radius: 1.2rem;
-
-    background: rgba(3, 12, 18, 0.08);
-    backdrop-filter: none;
-
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.10);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(3, 14, 21, 0.88),
+            rgba(3, 10, 16, 0.83)
+        );
+    box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.30),
+        inset 0 0 45px rgba(6, 182, 212, 0.025);
+    backdrop-filter: blur(14px);
 }
 
 .editable-credibility-item {
@@ -547,6 +536,285 @@ body.home-mode > main {
     }
 }
 
+
+/* ============================================================
+   FINAL EDITABLE HOMEPAGE OVERRIDES
+   Background is image-only. All content remains editable HTML.
+============================================================ */
+
+body.home-mode {
+    overflow: hidden;
+    background: #05080d;
+}
+
+body.home-mode > main {
+    width: 100%;
+    max-width: none;
+    height: 100vh;
+    margin: 0;
+    padding: 92px 0 84px;
+}
+
+#page-home.editable-home-page,
+.editable-home-stage {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* Clean wallpaper only — no gradient or dark CSS overlay */
+.editable-home-stage {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: #05080d;
+}
+
+.editable-home-stage::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+
+    background-image:
+        url("assets/portfolio-background-clean.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+/* Completely remove the previous radial overlay */
+.editable-home-stage::after {
+    content: none !important;
+    display: none !important;
+    background: none !important;
+}
+
+/* Hero has no dark rectangle, blur, border, or shadow */
+.editable-home-content,
+.editable-home-hero,
+.editable-home-title,
+.editable-home-copy,
+.editable-home-actions {
+    background: transparent !important;
+    background-image: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none;
+    box-shadow: none !important;
+    filter: none !important;
+}
+
+.editable-home-content {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    height: 100%;
+    min-height: 0;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.15rem 3.5rem 1.3rem;
+}
+
+.editable-home-hero {
+    width: min(1000px, 82vw);
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* No text shadows */
+.editable-home-title {
+    margin: 1rem auto 0;
+    max-width: 930px;
+    font-size: clamp(2.1rem, 3.15vw, 3.55rem);
+    font-weight: 700;
+    line-height: 1.07;
+    letter-spacing: -0.03em;
+    color: #fff;
+    text-wrap: balance;
+    text-shadow: none !important;
+    filter: none !important;
+}
+
+.editable-home-copy {
+    max-width: 850px;
+    margin: 1.55rem auto 0;
+    font-size: clamp(0.94rem, 1.08vw, 1.1rem);
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(229, 231, 235, 0.88);
+    text-wrap: balance;
+    text-shadow: none !important;
+    filter: none !important;
+}
+
+.editable-home-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.15rem;
+    margin-top: 1.7rem;
+}
+
+/* Buttons remain readable but nearly transparent */
+.editable-home-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    min-width: 320px;
+
+    border: 1px solid rgba(16, 185, 129, 0.42);
+    border-radius: 0.85rem;
+    background: rgba(3, 12, 18, 0.08) !important;
+
+    padding: 0.82rem 1.3rem;
+    color: #2dd4bf;
+    font-size: 0.94rem;
+    font-weight: 600;
+
+    backdrop-filter: blur(3px) !important;
+    -webkit-backdrop-filter: blur(3px) !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.editable-home-button:hover {
+    transform: translateY(-2px);
+    border-color: rgba(34, 211, 238, 0.70);
+    background: rgba(3, 12, 18, 0.14) !important;
+    color: #67e8f9;
+    box-shadow: none !important;
+}
+
+/*
+   Five-card panel:
+   5px backdrop blur with a lightly tinted transparent surface.
+*/
+.editable-credibility-panel {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+
+    width: min(1420px, calc(100vw - 6rem));
+    margin: 1.65rem auto 0;
+    overflow: hidden;
+
+    border: 1px solid rgba(6, 182, 212, 0.28);
+    border-radius: 1.2rem;
+
+    background: rgba(3, 12, 18, 0.16) !important;
+    background-image: none !important;
+
+    backdrop-filter: blur(5px) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+
+    box-shadow: none !important;
+}
+
+.editable-credibility-item {
+    min-width: 0;
+    padding: 1.15rem 0.95rem 1.05rem;
+    text-align: center;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.editable-credibility-item:not(:last-child) {
+    border-right: 1px solid rgba(45, 212, 191, 0.18);
+}
+
+.editable-credibility-item svg {
+    width: 1.85rem;
+    height: 1.85rem;
+    margin: 0 auto 0.65rem;
+    color: #2dd4bf;
+    filter: none !important;
+}
+
+.editable-credibility-item h3 {
+    margin: 0;
+    color: #fff;
+    font-size: 0.93rem;
+    font-weight: 700;
+    text-shadow: none !important;
+}
+
+.editable-credibility-item p {
+    margin: 0.55rem auto 0;
+    max-width: 245px;
+    color: rgba(212, 212, 216, 0.86);
+    font-size: 0.78rem;
+    line-height: 1.5;
+    text-shadow: none !important;
+}
+
+/* Remove text/filter effects from every element inside the homepage */
+#page-home *,
+#page-home *::before,
+#page-home *::after {
+    text-shadow: none !important;
+}
+
+/* Keep only icon colors; suppress generated glow filters */
+#page-home svg {
+    filter: none !important;
+}
+
+@media (max-width: 1100px) {
+    body.home-mode {
+        overflow: auto;
+    }
+
+    body.home-mode > main {
+        height: auto;
+        min-height: 100vh;
+        padding-top: 145px;
+        padding-bottom: 116px;
+    }
+
+    .editable-home-stage {
+        min-height: calc(100vh - 261px);
+    }
+
+    .editable-home-content {
+        height: auto;
+        min-height: calc(100vh - 261px);
+        padding: 2rem 1.25rem;
+    }
+
+    .editable-home-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .editable-home-button {
+        width: min(100%, 520px);
+        min-width: 0;
+    }
+
+    .editable-credibility-panel {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: min(720px, calc(100vw - 2rem));
+    }
+}
+
+@media (max-width: 620px) {
+    .editable-home-title {
+        font-size: 2.1rem;
+    }
+
+    .editable-credibility-panel {
+        grid-template-columns: 1fr;
+    }
+}
+
 </style>
 </head>
 <body class="home-mode min-h-screen flex flex-col justify-between selection:bg-accentCyan-900/90 selection:text-white">
@@ -617,7 +885,7 @@ body.home-mode > main {
                         class="editable-home-button"
                         onclick="switchPage('customer-service')"
                     >
-                        <i class="h-4 w-4" data-lucide="headset"></i>
+                        <i class="h-5 w-5" data-lucide="headset"></i>
                         <span>View Customer Support Experience</span>
                     </button>
 
@@ -626,7 +894,7 @@ body.home-mode > main {
                         class="editable-home-button"
                         onclick="switchPage('real-estate', 'projects-section')"
                     >
-                        <i class="h-4 w-4" data-lucide="building-2"></i>
+                        <i class="h-5 w-5" data-lucide="building-2"></i>
                         <span>Explore Real Estate Projects</span>
                     </button>
                 </div>
@@ -3519,213 +3787,47 @@ body.home-mode > main {
 <!-- ========================================== -->
 <!-- FIXED FOOTER SECTION                       -->
 <!-- ========================================== -->
-<!-- ================= FIXED GLOBAL FOOTER ================= -->
-<!-- ================= FIXED GLOBAL FOOTER ================= -->
-<footer
-    class="fixed bottom-0 left-0 right-0 z-50
-           w-full border-t border-white/5
-           bg-[#090a0f]/95 backdrop-blur-xl
-           px-8 py-4"
->
-    <div
-        class="flex w-full items-center justify-between gap-8"
-    >
-        <!-- Left Side: Copyright and Positioning -->
-        <div
-            class="flex min-w-0 flex-col items-start gap-1 text-left"
-        >
-            <p
-                class="m-0 text-xs font-mono tracking-wide
-                       text-neutral-400 whitespace-nowrap"
-            >
-                © 2026 Sherryl Andrade |
-                Customer Support Specialist |
-                Real Estate VA
+<footer class="fixed bottom-0 left-0 w-full border-t border-white/5 bg-[#090a0f]/80 backdrop-blur-md z-50 py-4 px-6">
+<div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+<!-- Left Side: Copyright Text -->
+<div class="flex flex-col gap-1 text-center sm:text-left w-full">
+<p class="text-xs font-mono text-neutral-400 tracking-wide whitespace-nowrap">
+                © 2026 Sherryl Andrade | Customer Support Specialist | Real Estate VA 
             </p>
-
-            <p
-                class="m-0 text-[11px] font-mono tracking-wide
-                       text-neutral-500 whitespace-nowrap"
-            >
-                Delivering organized customer support and dependable
-                real estate operations for growing businesses.
+<p class="text-[11px] font-mono text-neutral-500 tracking-wide whitespace-nowrap">    
+                Delivering organized customer support and dependable real estate operations for growing businesses.
             </p>
-        </div>
-
-        <!-- Right Side: Social and Scheduling Links -->
-        <div
-            class="ml-auto flex shrink-0 items-center
-                   justify-end gap-5 text-neutral-500"
-        >
-            <!-- Facebook -->
-            <a
-                href="https://www.facebook.com/profile.php?id=61591320306509"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Facebook"
-                aria-label="Visit Sherryl Andrade on Facebook"
-                class="transition-all duration-200
-                       hover:-translate-y-0.5
-                       hover:text-blue-400
-                       drop-shadow-[0_2px_8px_rgba(59,130,246,0.5)]"
-            >
-                <svg
-                    class="h-4 w-4 fill-current"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                >
-                    <path
-                        d="M22 12c0-5.523-4.477-10-10-10S2
-                           6.477 2 12c0 4.991 3.657 9.128
-                           8.438 9.878v-6.987h-2.54V12h2.54
-                           V9.797c0-2.506 1.492-3.89
-                           3.777-3.89 1.094 0 2.238.195
-                           2.238.195v2.46h-1.26c-1.243
-                           0-1.63.771-1.63 1.562V12h2.773
-                           l-.443 2.89h-2.33v6.988C18.343
-                           21.128 22 16.991 22 12z"
-                    ></path>
-                </svg>
-            </a>
-
-            <!-- Instagram -->
-            <a
-                href="https://www.instagram.com/its.andrade.she"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Instagram"
-                aria-label="Visit Sherryl Andrade on Instagram"
-                class="transition-all duration-200
-                       hover:-translate-y-0.5
-                       hover:text-rose-400
-                       drop-shadow-[0_2px_8px_rgba(244,63,94,0.5)]"
-            >
-                <svg
-                    class="h-4 w-4 fill-none stroke-current"
-                    viewBox="0 0 24 24"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    aria-hidden="true"
-                >
-                    <rect
-                        x="2"
-                        y="2"
-                        width="20"
-                        height="20"
-                        rx="5"
-                        ry="5"
-                    ></rect>
-
-                    <path
-                        d="M16 11.37A4 4 0 1 1
-                           12.63 8 4 4 0 0 1 16 11.37z"
-                    ></path>
-
-                    <line
-                        x1="17.5"
-                        y1="6.5"
-                        x2="17.51"
-                        y2="6.5"
-                    ></line>
-                </svg>
-            </a>
-
-            <!-- LinkedIn -->
-            <a
-                href="https://www.linkedin.com/in/sherrylandrade/"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="LinkedIn"
-                aria-label="Visit Sherryl Andrade on LinkedIn"
-                class="transition-all duration-200
-                       hover:-translate-y-0.5
-                       hover:text-sky-400
-                       drop-shadow-[0_2px_8px_rgba(14,165,233,0.5)]"
-            >
-                <svg
-                    class="h-4 w-4 fill-current"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                >
-                    <path
-                        d="M19 0h-14c-2.761 0-5
-                           2.239-5 5v14c0 2.761
-                           2.239 5 5 5h14c2.762
-                           0 5-2.239 5-5v-14c0
-                           -2.761-2.238-5-5-5zm-11
-                           19h-3v-11h3v11zm-1.5
-                           -12.268c-.966 0-1.75-.79
-                           -1.75-1.764s.784-1.764
-                           1.75-1.764 1.75.79
-                           1.75 1.764-.783
-                           1.764-1.75
-                           1.764zm13.5
-                           12.268h-3v-5.604c0-3.368
-                           -4-3.113-4 0v5.604h-3v-11h3
-                           v1.765c1.396-2.586
-                           7-2.777 7 2.476v6.759z"
-                    ></path>
-                </svg>
-            </a>
-
-            <!-- Calendly -->
-            <a
-                href="https://calendly.com/sherryl-andrade/15-min-call-meeting"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="Schedule a 15-Minute Call"
-                aria-label="Schedule a call with Sherryl Andrade"
-                class="transition-all duration-200
-                       hover:-translate-y-0.5
-                       hover:text-cyan-300
-                       drop-shadow-[0_2px_8px_rgba(255,255,255,0.4)]"
-            >
-                <svg
-                    class="h-4 w-4 fill-current"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                >
-                    <path
-                        d="M17.433 2.1c1.233 0
-                           2.296.242 3.19.724a5.006
-                           5.006 0 0 1 2.13
-                           2.236c.427.944.64
-                           2.062.64 3.352v7.176c0
-                           1.29-.213 2.408-.64
-                           3.352a5.006 5.006 0 0 1
-                           -2.13 2.236c-.894.482
-                           -1.957.724-3.19.724H6.567c
-                           -1.233 0-2.296-.242
-                           -3.19-.724a5.006 5.006
-                           0 0 1-2.13-2.236C.82
-                           17.97.607 16.852.607
-                           15.562V8.386c0-1.29.213
-                           -2.408.64-3.352A5.006
-                           5.006 0 0 1 3.377
-                           2.8c.894-.482
-                           1.957-.724
-                           3.19-.724h10.866zm.052
-                           3.101H6.515a2.531 2.531
-                           0 0 0-1.802.68 2.656
-                           2.656 0 0 0-.672
-                           1.913v7.19c.004.757.23
-                           1.394.676 1.91a2.536
-                           2.536 0 0 0 1.798.683h10.97
-                           a2.536 2.536 0 0 0
-                           1.798-.683c.447-.516.672
-                           -1.153.676-1.91V7.794a2.656
-                           2.656 0 0 0-.672
-                           -1.913 2.531 2.531
-                           0 0 0-1.802-.68zM12
-                           7.72a3.868 3.868 0 1 1
-                           0 7.736A3.868 3.868
-                           0 0 1 12 7.72z"
-                    ></path>
-                </svg>
-            </a>
-        </div>
-    </div>
+</div>
+<!-- Right Side: Official Brand Logos Only (Fixed with Shadow Accent for image_d15a65.png) -->
+<div class="flex items-center gap-5 text-neutral-500">
+<!-- Facebook -->
+<a class="hover:text-accentBlue transition-all duration-200 filter drop-shadow-[0_2px_8px_rgba(59,130,246,0.5)]" href="https://www.facebook.com/profile.php?id=61591320306509" rel="noopener noreferrer" target="_blank" title="Facebook">
+<svg class="w-4 h-4 fill-current filter drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]" viewbox="0 0 24 24">
+<path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path>
+</svg>
+</a>
+<!-- Instagram -->
+<a class="hover:text-accentBlue transition-all duration-200 filter drop-shadow-[0_2px_8px_rgba(244,63,94,0.5)]" href="https://www.instagram.com/its.andrade.she" rel="noopener noreferrer" target="_blank" title="Instagram">
+<svg class="w-4 h-4 stroke-current fill-none filter drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<rect height="20" rx="5" ry="5" width="20" x="2" y="2"></rect>
+<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+<line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
+</svg>
+</a>
+<!-- LinkedIn -->
+<a class="hover:text-accentBlue transition-all duration-200 filter drop-shadow-[0_2px_8px_rgba(14,165,233,0.5)]" href="https://www.linkedin.com/in/sherrylandrade/" rel="noopener noreferrer" target="_blank" title="LinkedIn">
+<svg class="w-4 h-4 fill-current filter drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]" viewbox="0 0 24 24">
+<path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path>
+</svg>
+</a>
+<!-- Official Calendly Logo -->
+<a class="hover:text-accentBlue transition-all duration-200 filter drop-shadow-[0_2px_8px_rgba(255,255,255,0.4)]" href="https://calendly.com/sherryl-andrade/15-min-call-meeting" rel="noopener noreferrer" target="_blank" title="Schedule a Call via Calendly">
+<svg class="w-4 h-4 fill-current filter drop-shadow-[0_1px_2px_rgba(0,0,0,0.8)]" viewbox="0 0 24 24">
+<path d="M17.433 2.1c1.233 0 2.296.242 3.19.724a5.006 5.006 0 0 1 2.13 2.236c.427.944.64 2.062.64 3.352v7.176c0 1.29-.213 2.408-.64 3.352a5.006 5.006 0 0 1-2.13 2.236c-.894.482-1.957.724-3.19.724H6.567c-1.233 0-2.296-.242-3.19-.724a5.006 5.006 0 0 1-2.13-2.236C.82 17.97.607 16.852.607 15.562V8.386c0-1.29.213-2.408.64-3.352A5.006 5.006 0 0 1 3.377 2.8c.894-.482 1.957-.724 3.19-.724h10.866zm.052 3.101H6.515a2.531 2.531 0 0 0-1.802.68 2.656 2.656 0 0 0-.672 1.913v7.19c.004.757.23 1.394.676 1.91a2.536 2.536 0 0 0 1.798.683h10.97a2.536 2.536 0 0 0 1.798-.683c.447-.516.672-1.153.676-1.91V7.794a2.656 2.656 0 0 0-.672-1.913 2.531 2.531 0 0 0-1.802-.68zM12 7.72a3.868 3.868 0 1 1 0 7.736A3.868 3.868 0 0 1 12 7.72z"></path>
+</svg>
+</a>
+</div>
+</div>
 </footer>
 <!-- CODE SCRIPT ROUTER, CLOCK, AND SLIDER -->
 <script>
