@@ -339,56 +339,65 @@ body.home-mode > main {
         );
 }
 
-.editable-home-content{
-    position:relative;
-    z-index:5;
+.editable-home-content {
+    position: relative;
+    z-index: 5;
 
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
 
-    padding:1.2rem 3.5rem;
+    padding: 2.5rem 3.5rem 2rem;
 
-    background:transparent;
-    backdrop-filter:none;
-    border:none;
-    box-shadow:none;
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    box-shadow: none;
 }
 
 .editable-home-hero {
-    width: min(940px, 78vw);
+    width: min(980px, 82vw);
     margin: 0 auto;
     text-align: center;
 }
 
 .editable-home-title {
-    margin: 0.9rem auto 0;
-    max-width: 860px;
-    font-size: clamp(1.15rem, 3.4vw, 3.8rem);
+    margin: 1.25rem auto 0;
+    max-width: 900px;
+
+    font-size: clamp(2.2rem, 3.25vw, 3.65rem);
     font-weight: 700;
-    line-height: 1.05;
-    letter-spacing: -0.035em;
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+
     color: #fff;
     text-wrap: balance;
-    text-shadow: 0 1px 6px rgba(0,0,0,.5);
+
+    text-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.18);
 }
 
 .editable-home-copy {
-    max-width: 800px;
-    margin: 1.35rem auto 0;
-    font-size: clamp(1rem, 1.35vw, 1.3rem);
+    max-width: 860px;
+    margin: 1.75rem auto 0;
+
+    font-size: clamp(0.95rem, 1.15vw, 1.15rem);
     font-weight: 300;
-    line-height: 1.65;
-    color: rgba(229, 231, 235, 0.90);
+    line-height: 1.75;
+
+    color: rgba(229, 231, 235, 0.82);
     text-wrap: balance;
-    text-shadow: none;
+
+    text-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.12);
 }
 
 .editable-home-actions {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-top: 1.6rem;
+    gap: 1.25rem;
+    margin-top: 2rem;
 }
 
 .editable-home-button {
@@ -427,21 +436,20 @@ body.home-mode > main {
 .editable-credibility-panel {
     display: grid;
     grid-template-columns: repeat(5, minmax(0, 1fr));
+
     width: min(1420px, calc(100vw - 6rem));
-    margin: 1.6rem auto 0;
+    margin: 2.2rem auto 0;
     overflow: hidden;
-    border: 1px solid rgba(6, 182, 212, 0.28);
+
+    border: 1px solid rgba(6, 182, 212, 0.24);
     border-radius: 1.2rem;
-    background:
-        linear-gradient(
-            145deg,
-            rgba(3, 14, 21, 0.88),
-            rgba(3, 10, 16, 0.83)
-        );
+
+    background: rgba(3, 12, 18, 0.28);
+
     box-shadow:
-        0 18px 50px rgba(0, 0, 0, 0.30),
-        inset 0 0 45px rgba(6, 182, 212, 0.025);
-    backdrop-filter: blur(14px);
+        0 10px 30px rgba(0, 0, 0, 0.18);
+
+    backdrop-filter: blur(2px);
 }
 
 .editable-credibility-item {
