@@ -61,15 +61,177 @@
    Keep assets/portfolio-homepage-design.png in the repository.
 ============================================================ */
 
+body.home-mode > header,
+body.home-mode > footer {
+    display: none !important;
+}
+
+body.home-mode > main {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+#page-home.exact-home-page {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+}
+
+.exact-home-stage {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background: #05080d;
+}
+
+.exact-home-artwork {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+    object-fit: cover;
+    object-position: center top;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.exact-home-hotspot {
+    position: absolute;
+    z-index: 50;
+    pointer-events: auto;
+    display: block;
+    border: 1px solid transparent;
+    border-radius: 9999px;
+    background: transparent;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.exact-home-hotspot:hover,
+.exact-home-hotspot:focus-visible {
+    outline: none;
+    background: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Header navigation */
+.exact-home-link-home {
+    left: 20.7%;
+    top: 1.45%;
+    width: 5.8%;
+    height: 7.2%;
+}
+
+.exact-home-link-about {
+    left: 26.2%;
+    top: 2.1%;
+    width: 7.8%;
+    height: 5.9%;
+}
+
+.exact-home-link-customer {
+    left: 34.6%;
+    top: 2.1%;
+    width: 13.7%;
+    height: 5.9%;
+}
+
+.exact-home-link-real-estate {
+    left: 48.8%;
+    top: 2.1%;
+    width: 17.2%;
+    height: 5.9%;
+}
+
+.exact-home-link-contact {
+    left: 66.5%;
+    top: 2.1%;
+    width: 8.1%;
+    height: 5.9%;
+}
+
+/* Main hero actions */
+.exact-home-link-customer-cta {
+    left: 22.3%;
+    top: 59.7%;
+    width: 25%;
+    height: 6.3%;
+    border-radius: 0.9rem;
+}
+
+.exact-home-link-real-estate-cta {
+    left: 48.5%;
+    top: 59.7%;
+    width: 21.2%;
+    height: 6.3%;
+    border-radius: 0.9rem;
+}
+
+
+/* Footer social links */
+.exact-home-link-facebook {
+    left: 74.2%;
+    top: 95.3%;
+    width: 3.3%;
+    height: 3.7%;
+}
+
+.exact-home-link-instagram {
+    left: 77.6%;
+    top: 95.3%;
+    width: 3.3%;
+    height: 3.7%;
+}
+
+.exact-home-link-linkedin {
+    left: 81%;
+    top: 95.3%;
+    width: 3.3%;
+    height: 3.7%;
+}
+
+.exact-home-link-youtube {
+    left: 84.4%;
+    top: 95.3%;
+    width: 3.3%;
+    height: 3.7%;
+}
+
+@media (max-width: 900px) {
+    body.home-mode {
+        overflow-x: auto;
+    }
+
+    .exact-home-stage {
+        width: 1200px;
+        min-height: auto;
+    }
+
+    .exact-home-artwork {
+        width: 1200px;
+        min-height: auto;
+        object-fit: contain;
+    }
+}
+
 
 /* ============================================================
-   HOME VIEWPORT FIT
-   Uses the usable space between the fixed header and footer.
+   FINAL HOMEPAGE FIT
+   Keeps the wallpaper fully visible between the fixed header
+   and footer while preserving all five credibility cards.
 ============================================================ */
 
 :root {
-    --portfolio-header-height: 92px;
-    --portfolio-footer-height: 84px;
+    --portfolio-header-height: 94px;
+    --portfolio-footer-height: 86px;
 }
 
 body.home-mode > main {
@@ -109,173 +271,72 @@ body.home-mode > main {
     width: 100%;
     height: 100%;
     min-height: 0;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center center;
+    background: #05080d;
     user-select: none;
     -webkit-user-drag: none;
 }
 
-/* Click areas aligned to the visible CTA buttons */
+/* Invisible click areas aligned to the final artwork */
 .exact-home-link-customer-cta {
-    left: 26.2%;
-    top: 59.8%;
-    width: 25.4%;
-    height: 8.0%;
+    left: 26.3%;
+    top: 57.2%;
+    width: 25.1%;
+    height: 7.2%;
 }
 
 .exact-home-link-real-estate-cta {
-    left: 52.9%;
-    top: 59.8%;
-    width: 22.3%;
-    height: 8.0%;
+    left: 52.7%;
+    top: 57.2%;
+    width: 22.1%;
+    height: 7.2%;
 }
 
-@media (max-width: 900px) {
+/* Keep all hotspot elements invisible */
+.exact-home-hotspot,
+.exact-home-hotspot:hover,
+.exact-home-hotspot:focus,
+.exact-home-hotspot:focus-visible,
+.exact-home-hotspot:active,
+.exact-home-hotspot:visited {
+    border: 0 !important;
+    outline: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    transform: none !important;
+    transition: none !important;
+    text-decoration: none !important;
+    -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 1100px) {
     :root {
-        --portfolio-header-height: 142px;
-        --portfolio-footer-height: 112px;
+        --portfolio-header-height: 104px;
+        --portfolio-footer-height: 96px;
     }
 
     .exact-home-stage {
-        min-height: 660px;
+        min-height: 650px;
     }
-
-    .exact-home-artwork {
-        object-position: center center;
-    }
-}
-
-
-
-/* ============================================================
-   NON-HOME PAGE VISUAL SYSTEM
-   Adds atmospheric wallpaper styling without changing content.
-============================================================ */
-
-body:not(.home-mode) {
-    position: relative;
-    isolation: isolate;
-    background:
-        radial-gradient(
-            circle at 12% 14%,
-            rgba(6, 182, 212, 0.075),
-            transparent 25rem
-        ),
-        radial-gradient(
-            circle at 88% 36%,
-            rgba(16, 185, 129, 0.055),
-            transparent 30rem
-        ),
-        radial-gradient(
-            circle at 50% 100%,
-            rgba(6, 182, 212, 0.035),
-            transparent 34rem
-        ),
-        #090a0f;
-}
-
-body:not(.home-mode)::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -2;
-    pointer-events: none;
-    opacity: 0.18;
-    background-image:
-        linear-gradient(
-            rgba(6, 182, 212, 0.055) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(6, 182, 212, 0.055) 1px,
-            transparent 1px
-        );
-    background-size: 76px 76px;
-    mask-image:
-        linear-gradient(
-            to bottom,
-            transparent 0%,
-            black 16%,
-            black 82%,
-            transparent 100%
-        );
-}
-
-body:not(.home-mode)::after {
-    content: "";
-    position: fixed;
-    right: -11rem;
-    bottom: -12rem;
-    z-index: -1;
-    width: 34rem;
-    height: 34rem;
-    border: 1px solid rgba(16, 185, 129, 0.075);
-    border-radius: 50%;
-    pointer-events: none;
-    box-shadow:
-        0 0 85px rgba(6, 182, 212, 0.045),
-        inset 0 0 85px rgba(16, 185, 129, 0.025);
-}
-
-body:not(.home-mode) > main {
-    position: relative;
-    isolation: isolate;
-}
-
-.page-viewport:not(#page-home).active {
-    position: relative;
-}
-
-.page-viewport:not(#page-home).active::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: -1.5rem;
-    width: min(18rem, 46vw);
-    height: 1px;
-    pointer-events: none;
-    background:
-        linear-gradient(
-            90deg,
-            rgba(45, 212, 191, 0.75),
-            rgba(6, 182, 212, 0.18),
-            transparent
-        );
-    box-shadow: 0 0 18px rgba(6, 182, 212, 0.14);
-}
-
-body:not(.home-mode) header {
-    box-shadow:
-        0 12px 38px rgba(0, 0, 0, 0.34),
-        0 0 30px rgba(6, 182, 212, 0.045);
-}
-
-body:not(.home-mode) .bg-neutral-900\/30,
-body:not(.home-mode) .bg-neutral-900\/40 {
-    backdrop-filter: blur(10px);
-}
-
-body:not(.home-mode) .rounded-2xl,
-body:not(.home-mode) .rounded-xl {
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-}
-
-body:not(.home-mode) .hover\:border-emerald-500\/35:hover,
-body:not(.home-mode) .hover\:border-emerald-500\/30:hover {
-    box-shadow:
-        0 12px 34px rgba(0, 0, 0, 0.22),
-        0 0 22px rgba(16, 185, 129, 0.055);
 }
 
 @media (max-width: 767px) {
-    body:not(.home-mode)::before {
-        background-size: 52px 52px;
-        opacity: 0.12;
+    :root {
+        --portfolio-header-height: 142px;
+        --portfolio-footer-height: 118px;
     }
 
-    .page-viewport:not(#page-home).active::before {
-        top: -0.75rem;
+    .exact-home-stage {
+        width: 1180px;
+        height: auto;
+        min-height: 690px;
+    }
+
+    .exact-home-artwork {
+        width: 1180px;
+        height: auto;
+        object-fit: contain;
     }
 }
 
@@ -325,8 +386,33 @@ body:not(.home-mode) .hover\:border-emerald-500\/30:hover {
             alt="Sherryl Andrade professional portfolio homepage"
         />
 
-        <!-- Global fixed navigation is rendered above this artwork -->
-<!-- Hero calls to action -->
+        <!-- Header navigation hotspots -->
+        <a class="exact-home-hotspot exact-home-link-home"
+           href="#home"
+           onclick="event.preventDefault(); switchPage('home'); window.scrollTo({ top: 0, behavior: 'smooth' });"
+           aria-label="Home"></a>
+
+        <a class="exact-home-hotspot exact-home-link-about"
+           href="#about"
+           onclick="event.preventDefault(); switchPage('about')"
+           aria-label="About"></a>
+
+        <a class="exact-home-hotspot exact-home-link-customer"
+           href="#customer-service"
+           onclick="event.preventDefault(); switchPage('customer-service')"
+           aria-label="Customer Support"></a>
+
+        <a class="exact-home-hotspot exact-home-link-real-estate"
+           href="#real-estate"
+           onclick="event.preventDefault(); switchPage('real-estate')"
+           aria-label="Real Estate Operations"></a>
+
+        <a class="exact-home-hotspot exact-home-link-contact"
+           href="#contact"
+           onclick="event.preventDefault(); switchPage('contact')"
+           aria-label="Contact"></a>
+
+        <!-- Hero calls to action -->
         <a class="exact-home-hotspot exact-home-link-customer-cta"
            href="#customer-service"
            onclick="event.preventDefault(); switchPage('customer-service')"
@@ -337,8 +423,23 @@ body:not(.home-mode) .hover\:border-emerald-500\/30:hover {
            onclick="event.preventDefault(); switchPage('real-estate', 'projects-section')"
            aria-label="Explore Real Estate Projects"></a>
     
-        
-</div>
+        <!-- Replace # with your real social profile URLs -->
+        <a class="exact-home-hotspot exact-home-link-facebook"
+           href="#"
+           aria-label="Facebook"></a>
+
+        <a class="exact-home-hotspot exact-home-link-instagram"
+           href="#"
+           aria-label="Instagram"></a>
+
+        <a class="exact-home-hotspot exact-home-link-linkedin"
+           href="#"
+           aria-label="LinkedIn"></a>
+
+        <a class="exact-home-hotspot exact-home-link-youtube"
+           href="#"
+           aria-label="YouTube"></a>
+    </div>
 </section>
 <!-- ================= ABOUT SECTION ================= -->
 <section class="page-viewport max-w-7xl mx-auto px-4 pt-4 pb-16" id="page-about">
