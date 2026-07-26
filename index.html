@@ -306,25 +306,21 @@ body.home-mode > main {
     position: relative;
     isolation: isolate;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     overflow: hidden;
-    background: #05080d;
+    background: transparent;
 }
 
-.editable-home-stage::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -3;
+.editable-home-stage::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    z-index:-3;
 
-    background:
-        linear-gradient(
-            180deg,
-            rgba(4, 8, 14, 0.03),
-            rgba(4, 8, 14, 0.10)
-        ),
-        url("assets/portfolio-background-editable.jpg")
-        center center / cover no-repeat;
+    background-image:url("assets/portfolio-background-editable.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
 }
 
 .editable-home-stage::after {
@@ -336,22 +332,27 @@ body.home-mode > main {
 
     background:
         radial-gradient(
-            circle at 10% 5%,
+            circle at 25% 20%,
             rgba(2, 8, 13, 0.01),
-            rgba(2, 8, 13, 0.08) 10%,
-            rgba(2, 8, 13, 0.18) 20%
+            rgba(2, 8, 13, 0.08) 25%,
+            rgba(2, 8, 13, 0.18) 50%
         );
 }
 
-.editable-home-content {
-    position: relative;
-    z-index: 5;
-    display: flex;
-    height: 100%;
-    min-height: 0;
-    flex-direction: column;
-    justify-content: center;
-    padding: 1.2rem 3.5rem 1.35rem;
+.editable-home-content{
+    position:relative;
+    z-index:5;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    padding:1.2rem 3.5rem;
+
+    background:transparent;
+    backdrop-filter:none;
+    border:none;
+    box-shadow:none;
 }
 
 .editable-home-hero {
