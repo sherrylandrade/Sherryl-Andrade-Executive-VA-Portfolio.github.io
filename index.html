@@ -29,6 +29,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght=300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <script src="https://unpkg.com/lucide@latest"></script>
 <style>
+
 /* ============================================================
    1. GLOBAL BASE
 ============================================================ */
@@ -777,6 +778,335 @@ body:not(.home-mode) > footer.site-footer {
     :root {
         --home-footer-space: 108px;
         --site-footer-safe-space: 122px;
+    }
+}
+
+/* ============================================================
+   6. INTERIOR PAGE VISUAL SYSTEM
+   Applies to all pages except the approved homepage.
+============================================================ */
+
+/* Page-specific accent variables */
+#page-about {
+    --page-accent: 6, 182, 212;
+    --page-accent-2: 16, 185, 129;
+}
+
+#page-customer-service,
+#page-case-studies,
+#page-case-study-1,
+#page-case-study-2,
+#page-case-study-3,
+#page-testimonials {
+    --page-accent: 139, 92, 246;
+    --page-accent-2: 6, 182, 212;
+}
+
+#page-real-estate,
+[id^="page-project-"],
+[id*="real-estate"] {
+    --page-accent: 16, 185, 129;
+    --page-accent-2: 6, 182, 212;
+}
+
+#page-contact {
+    --page-accent: 6, 182, 212;
+    --page-accent-2: 59, 130, 246;
+}
+
+.page-viewport:not(#page-home) {
+    --page-accent: 6, 182, 212;
+    --page-accent-2: 16, 185, 129;
+}
+
+/* Wider, more premium canvas */
+body:not(.home-mode) > main {
+    max-width: 1480px !important;
+    padding-left: clamp(1.25rem, 3vw, 3rem) !important;
+    padding-right: clamp(1.25rem, 3vw, 3rem) !important;
+}
+
+/* Atmosphere behind each active page */
+.page-viewport:not(#page-home).active {
+    position: relative;
+    isolation: isolate;
+    min-height: calc(100vh - var(--site-header-safe-space) - var(--site-footer-safe-space));
+    padding-top: 1.25rem;
+}
+
+.page-viewport:not(#page-home).active::after {
+    content: "";
+    position: absolute;
+    inset: -2rem -2rem auto;
+    z-index: -1;
+    height: 18rem;
+    pointer-events: none;
+    background:
+        radial-gradient(
+            circle at 18% 25%,
+            rgba(var(--page-accent), 0.14),
+            transparent 34rem
+        ),
+        radial-gradient(
+            circle at 82% 15%,
+            rgba(var(--page-accent-2), 0.10),
+            transparent 30rem
+        );
+    filter: blur(4px);
+}
+
+/* Section labels become more deliberate */
+.page-viewport:not(#page-home) > span,
+.page-viewport:not(#page-home) h3[id],
+.page-viewport:not(#page-home) [class*="uppercase"][class*="tracking"] {
+    letter-spacing: 0.18em;
+}
+
+/* Glass rail for left navigation */
+body:not(.home-mode) .md\:sticky,
+body:not(.home-mode) aside {
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    body:not(.home-mode) .md\:sticky {
+        top: calc(var(--site-header-safe-space) + 1rem);
+    }
+
+    body:not(.home-mode) .page-viewport:not(#page-home) aside,
+    body:not(.home-mode) .page-viewport:not(#page-home) .md\:sticky {
+        background:
+            linear-gradient(
+                145deg,
+                rgba(8, 13, 20, 0.78),
+                rgba(7, 10, 16, 0.62)
+            );
+        border: 1px solid rgba(var(--page-accent), 0.14);
+        border-radius: 1.15rem;
+        padding: 1.15rem;
+        box-shadow:
+            0 16px 44px rgba(0, 0, 0, 0.20),
+            inset 0 1px rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+    }
+}
+
+/* Sidebar links */
+body:not(.home-mode) .page-viewport:not(#page-home) aside a,
+body:not(.home-mode) .page-viewport:not(#page-home) .md\:sticky a {
+    border-radius: 0.7rem;
+    padding: 0.55rem 0.7rem;
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+body:not(.home-mode) .page-viewport:not(#page-home) aside a:hover,
+body:not(.home-mode) .page-viewport:not(#page-home) .md\:sticky a:hover {
+    color: rgb(var(--page-accent));
+    background: rgba(var(--page-accent), 0.08);
+    transform: translateX(4px);
+}
+
+/* Stronger profile/photo presentation */
+body:not(.home-mode) #page-about img[alt="Sherryl Andrade"] {
+    box-shadow:
+        0 0 0 1px rgba(var(--page-accent), 0.24),
+        0 18px 55px rgba(0, 0, 0, 0.36),
+        0 0 42px rgba(var(--page-accent), 0.12);
+}
+
+body:not(.home-mode) #page-about h2 {
+    text-shadow: 0 8px 26px rgba(0, 0, 0, 0.22);
+}
+
+/* Upgraded generic cards */
+body:not(.home-mode) .page-viewport:not(#page-home) .bg-neutral-900\/20,
+body:not(.home-mode) .page-viewport:not(#page-home) .bg-neutral-900\/30,
+body:not(.home-mode) .page-viewport:not(#page-home) .bg-neutral-900\/40,
+body:not(.home-mode) .page-viewport:not(#page-home) [class*="from-purple-950"] {
+    position: relative;
+    overflow: hidden;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(13, 17, 24, 0.82),
+            rgba(8, 12, 18, 0.72)
+        ) !important;
+    border-color: rgba(var(--page-accent), 0.13) !important;
+    box-shadow:
+        0 14px 38px rgba(0, 0, 0, 0.18),
+        inset 0 1px rgba(255, 255, 255, 0.018);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition:
+        transform 0.28s ease,
+        border-color 0.28s ease,
+        box-shadow 0.28s ease;
+}
+
+body:not(.home-mode) .page-viewport:not(#page-home) .bg-neutral-900\/20::before,
+body:not(.home-mode) .page-viewport:not(#page-home) .bg-neutral-900\/30::before,
+body:not(.home-mode) .page-viewport:not(#page-home) .bg-neutral-900\/40::before,
+body:not(.home-mode) .page-viewport:not(#page-home) [class*="from-purple-950"]::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto auto 0;
+    width: 46%;
+    height: 1px;
+    pointer-events: none;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(var(--page-accent), 0.72),
+            rgba(var(--page-accent-2), 0.16),
+            transparent
+        );
+}
+
+body:not(.home-mode) .page-viewport:not(#page-home) [class*="hover:border-emerald"]:hover,
+body:not(.home-mode) .page-viewport:not(#page-home) .bg-neutral-900\/20:hover,
+body:not(.home-mode) .page-viewport:not(#page-home) .bg-neutral-900\/30:hover,
+body:not(.home-mode) .page-viewport:not(#page-home) .bg-neutral-900\/40:hover {
+    transform: translateY(-3px);
+    border-color: rgba(var(--page-accent), 0.34) !important;
+    box-shadow:
+        0 20px 48px rgba(0, 0, 0, 0.26),
+        0 0 30px rgba(var(--page-accent), 0.07);
+}
+
+/* Main content blocks gain rhythm */
+body:not(.home-mode) .page-viewport:not(#page-home) hr {
+    border-color: rgba(var(--page-accent), 0.10) !important;
+    margin-top: 2.4rem;
+    margin-bottom: 2.4rem;
+}
+
+body:not(.home-mode) .page-viewport:not(#page-home) h2,
+body:not(.home-mode) .page-viewport:not(#page-home) h3 {
+    text-wrap: balance;
+}
+
+body:not(.home-mode) .page-viewport:not(#page-home) h2::selection,
+body:not(.home-mode) .page-viewport:not(#page-home) h3::selection {
+    background: rgba(var(--page-accent), 0.24);
+}
+
+/* Page-entry banner treatment for prominent top blocks */
+body:not(.home-mode) .page-viewport:not(#page-home) > div:first-child,
+body:not(.home-mode) .page-viewport:not(#page-home) > .grid:first-child {
+    position: relative;
+}
+
+body:not(.home-mode) .page-viewport:not(#page-home) > div:first-child::before,
+body:not(.home-mode) .page-viewport:not(#page-home) > .grid:first-child::before {
+    content: "";
+    position: absolute;
+    top: -1.25rem;
+    left: 0;
+    width: min(19rem, 52vw);
+    height: 1px;
+    background:
+        linear-gradient(
+            90deg,
+            rgb(var(--page-accent)),
+            rgba(var(--page-accent-2), 0.30),
+            transparent
+        );
+    box-shadow: 0 0 18px rgba(var(--page-accent), 0.22);
+}
+
+/* Accent treatments for headings and metadata */
+body:not(.home-mode) .text-accentBlue {
+    color: rgb(var(--page-accent)) !important;
+}
+
+body:not(.home-mode) .text-emerald-400,
+body:not(.home-mode) .text-emerald-500 {
+    color: rgb(var(--page-accent-2)) !important;
+}
+
+/* Buttons and action links */
+body:not(.home-mode) .page-viewport:not(#page-home) a[class*="rounded"],
+body:not(.home-mode) .page-viewport:not(#page-home) button[class*="rounded"] {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition:
+        transform 0.24s ease,
+        border-color 0.24s ease,
+        background-color 0.24s ease,
+        color 0.24s ease,
+        box-shadow 0.24s ease;
+}
+
+body:not(.home-mode) .page-viewport:not(#page-home) a[class*="rounded"]:hover,
+body:not(.home-mode) .page-viewport:not(#page-home) button[class*="rounded"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(var(--page-accent), 0.09);
+}
+
+/* Certificate and gallery image frames */
+body:not(.home-mode) .page-viewport:not(#page-home) img {
+    transition:
+        transform 0.35s ease,
+        filter 0.35s ease;
+}
+
+body:not(.home-mode) .page-viewport:not(#page-home) [class*="overflow-hidden"]:hover > img {
+    transform: scale(1.018);
+}
+
+/* Contact page gets a more intentional spotlight */
+body:not(.home-mode) #page-contact {
+    min-height: calc(100vh - var(--site-header-safe-space) - var(--site-footer-safe-space));
+    display: flex;
+    align-items: center;
+}
+
+body:not(.home-mode) #page-contact > * {
+    width: 100%;
+}
+
+/* Case studies and project pages */
+body:not(.home-mode) [id^="page-project-"] .rounded-2xl,
+body:not(.home-mode) [id^="page-case-study"] .rounded-2xl,
+body:not(.home-mode) #page-testimonials .rounded-2xl {
+    border-color: rgba(var(--page-accent), 0.16) !important;
+}
+
+body:not(.home-mode) [id^="page-project-"] [class*="uppercase"],
+body:not(.home-mode) [id^="page-case-study"] [class*="uppercase"],
+body:not(.home-mode) #page-testimonials [class*="uppercase"] {
+    color: rgb(var(--page-accent)) !important;
+}
+
+/* Footer stays visually separate from page content */
+body:not(.home-mode) .site-footer {
+    background: rgba(5, 8, 13, 0.76) !important;
+    backdrop-filter: blur(18px) saturate(135%) !important;
+    -webkit-backdrop-filter: blur(18px) saturate(135%) !important;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .page-viewport:not(#page-home).active {
+        padding-top: 0.5rem;
+    }
+
+    .page-viewport:not(#page-home).active::after {
+        inset: -1rem -1rem auto;
+        height: 14rem;
+    }
+
+    body:not(.home-mode) > main {
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    body:not(.home-mode) .page-viewport:not(#page-home) .rounded-2xl {
+        border-radius: 1rem;
     }
 }
 </style>
