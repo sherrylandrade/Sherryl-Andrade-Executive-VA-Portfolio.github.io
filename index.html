@@ -470,6 +470,209 @@ body.home-mode > main {
     }
 }
 
+
+/* ============================================================
+   PORTFOLIO INTERIOR-PAGE DESIGN SYSTEM
+   Applies only outside the approved full-screen homepage.
+============================================================ */
+
+:root {
+    --site-header-safe-space: 112px;
+    --site-footer-safe-space: 92px;
+}
+
+/* Real global header and footer remain fixed on all interior pages. */
+body:not(.home-mode) > header {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 100;
+    border-bottom-color: rgba(6, 182, 212, 0.11);
+    background:
+        linear-gradient(
+            180deg,
+            rgba(7, 10, 16, 0.96),
+            rgba(7, 10, 16, 0.84)
+        );
+    box-shadow:
+        0 14px 42px rgba(0, 0, 0, 0.34),
+        0 0 26px rgba(6, 182, 212, 0.045);
+}
+
+body:not(.home-mode) > footer {
+    position: fixed;
+    inset: auto 0 0;
+    z-index: 100;
+    border-top-color: rgba(6, 182, 212, 0.10);
+    background:
+        linear-gradient(
+            0deg,
+            rgba(7, 10, 16, 0.98),
+            rgba(7, 10, 16, 0.90)
+        );
+    box-shadow:
+        0 -14px 42px rgba(0, 0, 0, 0.32),
+        0 0 24px rgba(6, 182, 212, 0.035);
+}
+
+/* Prevent fixed navigation from covering page content. */
+body:not(.home-mode) > main {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    padding-top: var(--site-header-safe-space) !important;
+    padding-bottom: var(--site-footer-safe-space) !important;
+}
+
+/* Interior-page atmospheric wallpaper. */
+body:not(.home-mode) {
+    position: relative;
+    isolation: isolate;
+    background:
+        radial-gradient(
+            circle at 8% 18%,
+            rgba(6, 182, 212, 0.085),
+            transparent 29rem
+        ),
+        radial-gradient(
+            circle at 92% 42%,
+            rgba(16, 185, 129, 0.055),
+            transparent 31rem
+        ),
+        radial-gradient(
+            circle at 48% 108%,
+            rgba(6, 182, 212, 0.045),
+            transparent 35rem
+        ),
+        #090a0f;
+}
+
+body:not(.home-mode)::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+    pointer-events: none;
+    opacity: 0.18;
+    background-image:
+        linear-gradient(
+            rgba(6, 182, 212, 0.055) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(6, 182, 212, 0.055) 1px,
+            transparent 1px
+        );
+    background-size: 74px 74px;
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent 0%,
+            black 14%,
+            black 84%,
+            transparent 100%
+        );
+}
+
+body:not(.home-mode)::after {
+    content: "";
+    position: fixed;
+    right: -13rem;
+    bottom: -15rem;
+    z-index: -2;
+    width: 39rem;
+    height: 39rem;
+    border: 1px solid rgba(16, 185, 129, 0.065);
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow:
+        0 0 95px rgba(6, 182, 212, 0.045),
+        inset 0 0 90px rgba(16, 185, 129, 0.025);
+}
+
+/* A restrained page-entry accent instead of another large wallpaper. */
+.page-viewport:not(#page-home).active {
+    position: relative;
+}
+
+.page-viewport:not(#page-home).active::before {
+    content: "";
+    position: absolute;
+    top: -0.85rem;
+    left: 0;
+    width: min(22rem, 55vw);
+    height: 1px;
+    pointer-events: none;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(45, 212, 191, 0.88),
+            rgba(6, 182, 212, 0.22),
+            transparent
+        );
+    box-shadow: 0 0 18px rgba(6, 182, 212, 0.15);
+}
+
+/* Glass treatment for existing content cards. */
+body:not(.home-mode) .bg-neutral-900\/20,
+body:not(.home-mode) .bg-neutral-900\/30,
+body:not(.home-mode) .bg-neutral-900\/40 {
+    background-color: rgba(15, 17, 23, 0.68) !important;
+    backdrop-filter: blur(11px);
+}
+
+body:not(.home-mode) .rounded-xl,
+body:not(.home-mode) .rounded-2xl {
+    box-shadow:
+        0 12px 34px rgba(0, 0, 0, 0.13),
+        inset 0 1px rgba(255, 255, 255, 0.012);
+}
+
+/* Refined hover state across existing content cards. */
+body:not(.home-mode) [class*="hover:border-emerald"]:hover {
+    box-shadow:
+        0 15px 38px rgba(0, 0, 0, 0.23),
+        0 0 24px rgba(16, 185, 129, 0.065);
+}
+
+/* Side navigation gets a quiet glass rail on desktop. */
+@media (min-width: 768px) {
+    body:not(.home-mode) aside {
+        border: 1px solid rgba(255, 255, 255, 0.035);
+        border-radius: 1rem;
+        background: rgba(8, 11, 17, 0.46);
+        padding: 1.15rem;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+    }
+}
+
+/* Improve lower-page spacing above the fixed footer. */
+body:not(.home-mode) .page-viewport:not(#page-home) {
+    scroll-padding-bottom: calc(var(--site-footer-safe-space) + 2rem);
+}
+
+body:not(.home-mode) .page-viewport:not(#page-home) > :last-child {
+    margin-bottom: 2rem;
+}
+
+/* Mobile navigation occupies more vertical space. */
+@media (max-width: 767px) {
+    :root {
+        --site-header-safe-space: 154px;
+        --site-footer-safe-space: 122px;
+    }
+
+    body:not(.home-mode)::before {
+        background-size: 52px 52px;
+        opacity: 0.12;
+    }
+
+    .page-viewport:not(#page-home).active::before {
+        top: -0.35rem;
+    }
+}
+
 </style>
 </head>
 <body class="home-mode min-h-screen flex flex-col justify-between selection:bg-accentCyan-900/90 selection:text-white">
@@ -1536,7 +1739,7 @@ body.home-mode > main {
                 </p>
 </div>
 </div>
-<a class="back-nav" href="#" onclick="event.preventDefault(); switchPage('customer-service','cs-testimonials-section')"><i class="w-3.5 h-3.5 shrink-0" data-lucide="arrow-left"></i><span>Back to Customer Support</span></a>
+<a class="inline-flex items-center gap-2 whitespace-nowrap rounded-xl border border-emerald-500/20 bg-emerald-500/5 px-4 py-2 font-mono text-xs font-medium text-emerald-400 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-400/40 hover:bg-emerald-500/10 hover:text-cyan-300 hover:shadow-[0_8px_24px_rgba(16,185,129,0.10)]" href="#testimonials" onclick="event.preventDefault(); switchPage('testimonials')"><span>Open Reviews</span><i class="h-3.5 w-3.5" data-lucide="arrow-up-right"></i></a>
 </div>
 </div>
 </div>
