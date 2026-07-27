@@ -393,15 +393,17 @@ body.home-mode > main {
 
     display: flex;
     width: 100%;
-    height: 100vh;
+
+    height: auto;
     min-height: 100vh;
+
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
 
     padding:
-        calc(var(--home-header-space) + 3.5rem)
+        calc(var(--home-header-space) + 3rem)
         clamp(1.25rem, 4vw, 4rem)
-        calc(var(--home-footer-space) + 3rem);
+        calc(var(--home-footer-space) + 1.5rem);
 
     background: transparent !important;
     background-image: none !important;
@@ -422,6 +424,10 @@ body.home-mode > main {
     box-shadow: none !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
+}
+
+.editable-home-hero {
+    flex: 0 0 auto;
 }
 
 .editable-home-title {
@@ -526,14 +532,16 @@ body.home-mode > main {
 
     width: min(1420px, calc(100vw - 6rem));
     margin: 4rem auto 0;
+
+    flex: 0 0 auto;
+    flex-shrink: 0;
+
     overflow: hidden;
 
     border: 1px solid rgba(6, 182, 212, 0.30);
     border-radius: 2.5rem;
 
     background: rgba(3, 12, 18, 0.44) !important;
-    background-image: none !important;
-
     backdrop-filter: blur(10px) !important;
     -webkit-backdrop-filter: blur(10px) !important;
 
@@ -542,7 +550,7 @@ body.home-mode > main {
 
 .editable-credibility-item {
     min-width: 0;
-    padding: 1.05rem 0.95rem 0.95rem;
+    padding: 1.5rem 1rem 1.75rem;
     text-align: center;
 
     background: transparent !important;
