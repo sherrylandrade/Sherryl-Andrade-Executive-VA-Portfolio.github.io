@@ -71,6 +71,12 @@ body {
 .back-nav:hover i { transform: translateX(-6px); }
 .back-nav:hover span { transform: translateX(-4px); }
 
+/* Keep nested Customer Support sidebars compact below their back link. */
+#page-cases .back-nav,
+#page-testimonials .back-nav {
+  margin-bottom: .5rem;
+}
+
 /* ============================================================
    3. INTERIOR PAGES
    Shared design system for About, Customer Support,
@@ -1589,9 +1595,6 @@ button[onclick^="switchPage('re-project-"] svg {
             </button>
 <button class="nav-btn flex items-center gap-2 text-xs font-medium px-4 py-1.5 rounded-full text-neutral-400 hover:text-accentBlue transition-all duration-200 whitespace-nowrap" id="nav-real-estate" onclick="switchPage('real-estate')">
 <i class="w-3.5 h-3.5" data-lucide="building"></i>Real Estate Operations
-            </button>
-<button class="nav-btn flex items-center gap-2 text-xs font-medium px-4 py-1.5 rounded-full text-neutral-400 hover:text-accentBlue transition-all duration-200" id="nav-contact" onclick="switchPage('contact')">
-<i class="w-3.5 h-3.5" data-lucide="mail"></i>Contact
             </button>
 <button class="nav-cta flex items-center gap-2 text-xs font-semibold px-4 py-1.5 rounded-full border border-cyan-400/25 bg-cyan-400/10 text-cyan-300 hover:bg-cyan-400/15 hover:text-cyan-200 transition-all duration-200 whitespace-nowrap" onclick="switchPage('contact')">
 <span>Let’s Work Together</span>
