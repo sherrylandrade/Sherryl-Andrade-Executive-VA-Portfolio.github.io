@@ -77,6 +77,15 @@ body {
   margin-bottom: .5rem;
 }
 
+/* Work History has a Back link and title in the same spacing stack. */
+#page-work .back-nav {
+  margin-bottom: 0;
+}
+
+#page-work .md\:sticky > * + * {
+  margin-top: .75rem !important;
+}
+
 /* ============================================================
    3. INTERIOR PAGES
    Shared design system for About, Customer Support,
@@ -87,7 +96,7 @@ body {
     --site-header-safe-space: 112px;
     --site-footer-safe-space: 92px;
     --home-header-space: 82px;
-    --home-footer-space: 76px;
+    --home-footer-space: 120px;
 }
 
 /* Real global header and footer remain fixed on all interior pages. */
@@ -407,9 +416,9 @@ body.home-mode > main {
     justify-content: center;
 
     padding:
-        calc(var(--home-header-space) + 3rem)
+        calc(var(--home-header-space) + 1.5rem)
         clamp(1.25rem, 4vw, 4rem)
-        calc(var(--home-footer-space) + 1.5rem);
+        calc(var(--home-footer-space) + 2rem);
 
     background: transparent !important;
     background-image: none !important;
@@ -476,7 +485,7 @@ body.home-mode > main {
     display: flex;
     justify-content: center;
     gap: 1.25rem;
-    margin-top: 2.5rem;
+    margin-top: 2rem;
 
     background: transparent !important;
     box-shadow: none !important;
@@ -537,7 +546,7 @@ body.home-mode > main {
     grid-template-columns: repeat(5, minmax(0, 1fr));
 
     width: min(1420px, calc(100vw - 6rem));
-    margin: 2.5rem auto 0;
+    margin: 1.5rem auto 0;
 
     flex: 0 0 auto;
     flex-shrink: 0;
