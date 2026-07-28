@@ -1108,6 +1108,40 @@ body:not(.home-mode) .site-footer {
     -webkit-backdrop-filter: blur(18px) saturate(135%) !important;
 }
 
+/* Customer Support page readability and spacing */
+#page-customer-service p.text-neutral-400 {
+    color: rgba(212, 212, 216, 0.84) !important;
+}
+
+#page-customer-service .text-xs.text-neutral-400 {
+    color: rgba(212, 212, 216, 0.78) !important;
+}
+
+#page-customer-service .text-purple-300 {
+    color: #67e8f9 !important;
+}
+
+#page-customer-service .bg-neutral-900\/30,
+#page-customer-service .bg-neutral-900\/40 {
+    border-color: rgba(45, 212, 191, 0.16) !important;
+}
+
+#page-customer-service .space-y-20 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 3.5rem;
+}
+
+.skill-tag {
+    display: inline-flex;
+    padding: 0.45rem 0.75rem;
+    border: 1px solid rgba(45, 212, 191, 0.16);
+    border-radius: 9999px;
+    background: rgba(6, 78, 59, 0.08);
+    color: rgba(229, 231, 235, 0.84);
+    font-size: 0.78rem;
+    font-weight: 300;
+    line-height: 1.25;
+}
+
 /* Responsive */
 @media (max-width: 767px) {
     .page-viewport:not(#page-home).active {
@@ -2044,7 +2078,7 @@ button[onclick^="switchPage('re-project-"] svg {
 <!-- Fixed: Changed to a standard anchor scroll target -->
 <a class="group flex items-center gap-2 hover:text-accentCyan transition-colors" href="#customer-service/cs-testimonials-section" onclick="event.preventDefault(); switchPage('customer-service', 'cs-testimonials-section')">
 <span class="w-4 h-[1px] bg-neutral-700 group-hover:bg-emerald-400 group-hover:w-6 transition-all"></span>
-                    Testimonials
+                    Recommendations
                 </a>
 </nav>
 </div>
@@ -2055,14 +2089,14 @@ button[onclick^="switchPage('re-project-"] svg {
 
 
 </div>
-<div class="w-full rounded-2xl border border-white/5 bg-neutral-900/40 hover:border-emerald-500/30 transition-all duration-300 p-5 mt-2">
+<div class="w-full rounded-2xl border border-white/5 bg-neutral-900/40 hover:border-emerald-500/30 transition-all duration-300 p-5">
 <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
 <!-- Text Info -->
 <div>
-<span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-2">Core Expertise</span>
-<h2 class="text-4xl font-bold text-white tracking-tight mb-4">Customer Support That Builds Trust and Loyalty</h2>
-<p class="text-neutral-400 max-w-2xl text-base font-light leading-relaxed">
-                        Delivering professional customer support across phone, email, live chat, and CRM platforms while maintaining organized workflows, timely resolutions, and positive customer experiences.
+<span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-2">Customer Support Expertise</span>
+<h2 class="text-4xl font-bold text-white tracking-tight mb-4">Experienced Customer Support That Protects Customer Trust</h2>
+<p class="text-neutral-300 max-w-3xl text-base font-light leading-relaxed">
+                        Bringing 9+ years of customer support experience across phone, email, case management, escalations, CRM workflows, and cross-functional operations—helping businesses resolve concerns efficiently and deliver consistent customer experiences.
                     </p>
 </div>
 
@@ -2072,26 +2106,26 @@ button[onclick^="switchPage('re-project-"] svg {
 <!-- Subsection 2: Core Services Matrix -->
 <div class="scroll-mt-28" id="cs-core-services">
 <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-6">Core Services</span>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-<div class="bg-neutral-900/30 border border-white/5 rounded-xl p-5 hover:border-emerald-500/35 transition-colors">
-<i class="w-5 h-5 text-accentCyan mb-3" data-lucide="phone"></i>
-<h3 class="text-white font-semibold mb-1">Inbound &amp; Outbound Phone Support</h3>
-<p class="text-neutral-400 text-sm font-light leading-relaxed">Managed high-volume inbound and outbound customer interactions while maintaining professional communication, efficient resolution, and positive customer experiences.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+<div class="bg-neutral-900/30 border border-white/5 rounded-xl p-6 hover:border-emerald-500/35 transition-colors">
+<i class="w-5 h-5 text-accentCyan mb-3" data-lucide="headphones"></i>
+<h3 class="text-white font-semibold mb-2">Omnichannel Customer Support</h3>
+<p class="text-neutral-300 text-base font-light leading-relaxed">Handle inbound and outbound customer interactions across phone and email with clear communication, organized case ownership, and consistent follow-through.</p>
 </div>
-<div class="bg-neutral-900/30 border border-white/5 rounded-xl p-5 hover:border-emerald-500/35 transition-colors">
-<i class="w-5 h-5 text-accentCyan mb-3" data-lucide="mail"></i>
-<h3 class="text-white font-semibold mb-1">Email Ticketing &amp; Async Resolution</h3>
-<p class="text-neutral-400 text-sm font-light leading-relaxed">Managing high-volume email queues through clear communication, detailed issue tracking, and efficient workflow processes to ensure timely customer resolutions.</p>
+<div class="bg-neutral-900/30 border border-white/5 rounded-xl p-6 hover:border-emerald-500/35 transition-colors">
+<i class="w-5 h-5 text-accentCyan mb-3" data-lucide="shield-alert"></i>
+<h3 class="text-white font-semibold mb-2">Case Management &amp; Escalation Resolution</h3>
+<p class="text-neutral-300 text-base font-light leading-relaxed">Manage complex account, billing, shipping, technical, and service-related concerns while coordinating with the appropriate teams through resolution.</p>
 </div>
-<div class="bg-neutral-900/30 border border-white/5 rounded-xl p-5 hover:border-emerald-500/35 transition-colors">
-<i class="w-5 h-5 text-accentCyan mb-3" data-lucide="shield-check"></i>
-<h3 class="text-white font-semibold mb-1">Account Support & Verification</h3>
-<p class="text-neutral-400 text-sm font-light leading-relaxed">Resolve complex customer concerns involving account verification, billing disputes, shipping issues, and sensitive customer data while maintaining compliance and security standards.</p>
+<div class="bg-neutral-900/30 border border-white/5 rounded-xl p-6 hover:border-emerald-500/35 transition-colors">
+<i class="w-5 h-5 text-accentCyan mb-3" data-lucide="database"></i>
+<h3 class="text-white font-semibold mb-2">CRM, Ticketing &amp; Customer Records</h3>
+<p class="text-neutral-300 text-base font-light leading-relaxed">Maintain organized customer records, detailed case documentation, ticket updates, follow-up actions, and clear internal handoffs across support platforms.</p>
 </div>
-<div class="bg-neutral-900/30 border border-white/5 rounded-xl p-5 hover:border-emerald-500/35 transition-colors">
-<i class="w-5 h-5 text-accentCyan mb-3" data-lucide="cpu"></i>
-<h3 class="text-white font-semibold mb-1">CRM Management & Support</h3>
-<p class="text-neutral-400 text-sm font-light leading-relaxed">Keep customer records accurate, organized, and up to date across CRM platforms while supporting efficient workflows.</p>
+<div class="bg-neutral-900/30 border border-white/5 rounded-xl p-6 hover:border-emerald-500/35 transition-colors">
+<i class="w-5 h-5 text-accentCyan mb-3" data-lucide="badge-check"></i>
+<h3 class="text-white font-semibold mb-2">Quality Assurance &amp; Support Operations</h3>
+<p class="text-neutral-300 text-base font-light leading-relaxed">Support service consistency through quality monitoring, workflow documentation, project coordination, and structured process improvement.</p>
 </div>
 </div>
 </div>
@@ -2101,36 +2135,37 @@ button[onclick^="switchPage('re-project-"] svg {
 <div class="flex flex-col gap-6 mt-12 w-full scroll-mt-28" id="skills-tools">
 <!-- TOP SECTION: SKILLS CARD -->
 <div class="bg-neutral-900/30 border border-white/5 hover:border-emerald-500/35 rounded-2xl p-6 w-full">
-<h3 class="font-mono text-xs uppercase tracking-widest text-accentBlue mb-6 scroll-mt-24" id="skills-tools">Skills</h3>
+<h3 class="font-mono text-xs uppercase tracking-widest text-accentBlue mb-6 scroll-mt-24">Skills</h3>
 <!-- 3-Column Grid for Skill Categories -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 <!-- Category 1: Customer Support -->
 <div class="flex flex-col gap-3">
-<h4 class="text-xs font-mono uppercase tracking-wider text-purple-300">Customer Support</h4>
+<h4 class="text-xs font-mono uppercase tracking-wider text-accentCyan">Customer Support</h4>
 <div class="flex flex-wrap gap-2">
-<span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Customer Experience</span>
-<span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Technical Support</span>
-<span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Escalations Management</span>
-<span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Case Management (Inbound &amp; Outbound)</span>
+<span class="skill-tag">Customer Experience</span>
+<span class="skill-tag">Technical Support</span>
+<span class="skill-tag">Sales Support</span>
+<span class="skill-tag">Brand Representation</span>
 </div>
 </div>
 <!-- Category 2: Operations -->
 <div class="flex flex-col gap-3">
-<h4 class="text-xs font-mono uppercase tracking-wider text-purple-300">Operations</h4>
+<h4 class="text-xs font-mono uppercase tracking-wider text-accentCyan">Case &amp; Escalation Management</h4>
 <div class="flex flex-wrap gap-2">
-<span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Sales Support</span>
-<span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Attention to Detail</span>
-<span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Project Coordination</span>
-<span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Project Documentation</span>
+<span class="skill-tag">Case Ownership</span>
+<span class="skill-tag">Escalation Resolution</span>
+<span class="skill-tag">Account Support</span>
+<span class="skill-tag">Inbound &amp; Outbound Support</span>
 </div>
 </div>
 <!-- Category 3: Customer Experience -->
 <div class="flex flex-col gap-3">
-<h4 class="text-xs font-mono uppercase tracking-wider text-purple-300">Customer Excellence</h4>
+<h4 class="text-xs font-mono uppercase tracking-wider text-accentCyan">Support Operations</h4>
 <div class="flex flex-wrap gap-2">
-<span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Quality Assurance</span>
-<span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Customer Relationship Management (CRM)</span>
-<span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Brand Representation &amp; Positive Customer Experience</span>
+<span class="skill-tag">Quality Assurance</span>
+<span class="skill-tag">CRM Management</span>
+<span class="skill-tag">Project Coordination</span>
+<span class="skill-tag">Project Documentation</span>
 </div>
 </div>
 </div>
@@ -2140,7 +2175,7 @@ button[onclick^="switchPage('re-project-"] svg {
 <h3 class="font-mono text-xs uppercase tracking-widest text-accentBlue">Tools</h3>
 <!-- Category 1: Communication & Collaboration -->
 <div class="space-y-2">
-<div class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Communication &amp; Collaboration</div>
+<div class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Communication Platforms</div>
 <div class="flex flex-wrap gap-2">
 <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Gmail</span>
 <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Slack</span>
@@ -2151,7 +2186,7 @@ button[onclick^="switchPage('re-project-"] svg {
 </div>
 <!-- Category 3: CRM & Business Platforms -->
 <div class="space-y-2">
-<div class="text-[10px] font-mono uppercase tracking-wider text-purple-300">CRM &amp; Business Platforms</div>
+<div class="text-[10px] font-mono uppercase tracking-wider text-purple-300">CRM &amp; Business Systems</div>
 <div class="flex flex-wrap gap-2">
 <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Salesforce</span>
 <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">HubSpot</span>
@@ -2171,7 +2206,7 @@ button[onclick^="switchPage('re-project-"] svg {
 </div>
 <!-- Category 4: Productivity & Project Management -->
 <div class="space-y-2">
-<div class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Productivity &amp; Project Management</div>
+<div class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Workflow &amp; Project Management</div>
 <div class="flex flex-wrap gap-2">
 <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">ClickUp</span>
 <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Asana</span>
@@ -2181,13 +2216,13 @@ button[onclick^="switchPage('re-project-"] svg {
 </div>
 <!-- Category 5: Google Workspace -->
 <div class="space-y-2">
-<div class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Google Workspace</div>
+<div class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Office &amp; Productivity</div>
 <div class="flex flex-wrap gap-2">
 <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Google Workspace</span>
 <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Google Drive</span>
 <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Google Calendar</span>
 <span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Google Sheets</span>
-<span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Excel</span>
+<span class="px-3 py-1.5 bg-emerald-800/5 border border-emerald-300/10 rounded-full text-xs text-neutral-400 font-light">Microsoft Excel</span>
 </div>
 </div>
 <!-- Category 6: AI Productivity -->
@@ -2212,7 +2247,7 @@ button[onclick^="switchPage('re-project-"] svg {
 </div>
 <div>
 <h3 class="text-white font-semibold text-lg tracking-tight">Customer Support Case Studies</h3>
-<p class="text-xs text-neutral-400 font-light mt-0.5">View in-depth metrics tracking metric performance, ticket overrides, and escalation loops.</p>
+<p class="text-xs text-neutral-400 font-light mt-0.5">Explore customer support performance, ticket management, escalation handling, quality results, and workflow improvements.</p>
 </div>
 </div>
 <!-- Fixed: Action link triggers separate SPA page view -->
@@ -2224,20 +2259,20 @@ button[onclick^="switchPage('re-project-"] svg {
 <hr class="border-white/5"/>
 <!-- TESTIMONIALS SECTION -->
 <div class="scroll-mt-28" id="cs-testimonials-section">
-<span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-4">Testimonials</span>
+<span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-4">Professional Recommendations</span>
 <div class="bg-neutral-900/30 border border-white/5 rounded-2xl p-6 flex items-center justify-between group hover:border-emerald-500/35 transition-all">
 <div class="flex items-center gap-4">
 <div class="w-12 h-12 rounded-xl bg-neutral-950 border border-white/5 flex items-center justify-center text-emerald-400 group-hover:text-accentCyan transition-colors">
 <i class="w-6 h-6" data-lucide="message-square-quote"></i>
 </div>
 <div>
-<h3 class="text-white font-semibold text-lg tracking-tight">Client Reviews &amp; Recommendations</h3>
-<p class="text-xs text-neutral-400 font-light mt-0.5">Read structured feedback and operation evaluations from executive team lead evaluations.</p>
+<h3 class="text-white font-semibold text-lg tracking-tight">Professional Recommendations</h3>
+<p class="text-xs text-neutral-400 font-light mt-0.5">Read feedback from supervisors, team leads, and cross-functional colleagues throughout my customer support career.</p>
 </div>
 </div>
 <!-- Fixed: Added whitespace-nowrap to keep 'Open Reviews' on one line -->
 <a class="inline-flex items-center gap-1 text-xs font-mono text-emerald-400 border border-emerald-500/20 px-4 py-2 rounded-xl bg-emerald-500/5 hover:bg-emerald-500/10 hover:border-accentBlue transition-all font-medium whitespace-nowrap" href="#testimonials" onclick="switchPage('testimonials')">
-                        Open Reviews <i class="w-3.5 h-3.5" data-lucide="arrow-up-right"></i>
+                        View Recommendations <i class="w-3.5 h-3.5" data-lucide="arrow-up-right"></i>
 </a>
 </div>
 </div>
