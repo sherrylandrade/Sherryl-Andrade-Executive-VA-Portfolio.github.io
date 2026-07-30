@@ -4136,9 +4136,23 @@ function animateCaseStudy(caseStudy, shouldOpen) {
 }
 
 document.querySelectorAll('#cs-cases-section details, #re-project-portfolio details').forEach(function (caseStudy) {
-  caseStudy.addEventListener('mouseenter', function () {
-    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+  const summary = caseStudy.querySelector(':scope > summary');
+  if (!summary) return;
+
+  summary.addEventListener('click', function (event) {
+    event.preventDefault();
+    const shouldOpen = !caseStudy.open;
+
+    document.querySelectorAll('#cs-cases-section details[open], #re-project-portfolio details[open]').forEach(function (otherCard) {
+      if (otherCard !== caseStudy) {
+        animateCaseStudy(otherCard, false);
+      }
+    });
+
+    if (shouldOpen) {
       animateCaseStudy(caseStudy, true);
+    } else {
+      animateCaseStudy(caseStudy, false);
     }
   });
 });
