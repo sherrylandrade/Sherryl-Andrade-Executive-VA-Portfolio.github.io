@@ -2196,8 +2196,8 @@ Discuss Your Support Needs
 </div>
 <hr class="border-white/5"/>
 <!-- VERTICALLY STACKED LAYOUT: SKILLS ON TOP OF TOOLS -->
-<!-- FIXED: Added id="cs-skills-tools" and scroll-mt-28 here so your sidebar anchor link works! -->
-<div class="flex flex-col gap-6 w-full scroll-mt-28" id="skills-tools">
+<!-- FIXED: Added id="skills-tools" and scroll-mt-28 here so your sidebar anchor link works! -->
+<div class="flex flex-col gap-6 w-full scroll-mt-28" id="cs-skills-tools">
 <!-- TOP SECTION: SKILLS CARD -->
 <div class="bg-neutral-900/30 border border-white/5 hover:border-emerald-500/35 rounded-2xl p-6 w-full">
 <h3 class="font-mono text-xs uppercase tracking-widest text-accentBlue mb-6 scroll-mt-24">Skills</h3>
@@ -2315,7 +2315,7 @@ Discuss Your Support Needs
 <div class="scroll-mt-28" id="cs-cases-section">
   <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-4">Selected Customer Support Case Studies</span>
   <div class="space-y-5">
-    <details class="group bg-neutral-900/30 border border-white/5 rounded-2xl hover:border-emerald-500/35 transition-all" open>
+    <details class="group bg-neutral-900/30 border border-white/5 rounded-2xl hover:border-emerald-500/35 transition-all">
       <summary class="cursor-pointer list-none p-6 flex items-center justify-between gap-5">
         <div>
           <span class="text-[10px] font-mono uppercase tracking-wider text-purple-400">Case Study 01</span>
@@ -2424,6 +2424,16 @@ Discuss Your Support Needs
 </div>
 <div class="relative overflow-hidden min-h-[160px]">
 <div class="testimonial-slide transition-opacity duration-300 block" id="testimonial-slide-0">
+<div class="w-full bg-neutral-900/40 rounded-2xl border border-white/5 hover:border-emerald-500/35 overflow-hidden shadow-2xl mb-6">
+  <div class="p-4 bg-black/40 border-b border-white/5 flex items-center justify-between">
+    <span class="text-xs font-mono text-accentBlue flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-accentCyan animate-pulse"></span> Commendation Video
+    </span>
+  </div>
+  <div class="aspect-video w-full bg-neutral-950 relative flex items-center justify-center">
+    <iframe title="Customer support commendation video" allow="autoplay" allowfullscreen class="w-full h-full" src="https://drive.google.com/file/d/1xE_tMCfpdZjiXO8qMOI2uV5W57q545G_/preview"></iframe>
+  </div>
+</div>
 <p class="text-base text-neutral-300 italic font-light leading-relaxed mb-6">
                             Selected workplace feedback highlighting customer handling, teamwork, initiative, problem-solving, and service quality.
                         </p>
@@ -4847,6 +4857,18 @@ Discuss Your Support Needs
   <img id="portfolio-lightbox-image" class="max-h-[90vh] max-w-[94vw] rounded-xl object-contain shadow-2xl" alt="Expanded customer support evidence"/>
 </div>
 <script>
+document.querySelectorAll('#cs-cases-section details').forEach(function (caseStudy) {
+  caseStudy.addEventListener('mouseenter', function () {
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      caseStudy.open = true;
+    }
+  });
+  caseStudy.addEventListener('mouseleave', function () {
+    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      caseStudy.open = false;
+    }
+  });
+});
 document.addEventListener('click', function (event) {
   const image = event.target.closest('#cs-feedback-section img');
   const lightbox = document.getElementById('portfolio-lightbox');
