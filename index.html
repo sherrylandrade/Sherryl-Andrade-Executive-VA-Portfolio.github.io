@@ -4857,15 +4857,60 @@ Discuss Your Support Needs
   <img id="portfolio-lightbox-image" class="max-h-[90vh] max-w-[94vw] rounded-xl object-contain shadow-2xl" alt="Expanded customer support evidence"/>
 </div>
 <script>
+const caseStudyAnimations = new WeakMap();
+
+function animateCaseStudy(caseStudy, shouldOpen) {
+  const content = caseStudy.querySelector(':scope > div');
+  if (!content) return;
+
+  const activeAnimation = caseStudyAnimations.get(caseStudy);
+  if (activeAnimation) activeAnimation.cancel();
+  content.style.overflow = 'hidden';
+
+  if (shouldOpen) {
+    if (!caseStudy.open) caseStudy.open = true;
+    const animation = content.animate(
+      [
+        { height: '0px', opacity: 0, transform: 'translateY(-6px)' },
+        { height: content.scrollHeight + 'px', opacity: 1, transform: 'translateY(0)' }
+      ],
+      { duration: 320, easing: 'cubic-bezier(0.22, 1, 0.36, 1)' }
+    );
+    caseStudyAnimations.set(caseStudy, animation);
+    animation.onfinish = function () {
+      content.style.height = '';
+      content.style.opacity = '';
+      content.style.transform = '';
+      content.style.overflow = '';
+      caseStudyAnimations.delete(caseStudy);
+    };
+  } else if (caseStudy.open) {
+    const startHeight = content.getBoundingClientRect().height || content.scrollHeight;
+    const animation = content.animate(
+      [
+        { height: startHeight + 'px', opacity: 1, transform: 'translateY(0)' },
+        { height: '0px', opacity: 0, transform: 'translateY(-6px)' }
+      ],
+      { duration: 260, easing: 'cubic-bezier(0.4, 0, 1, 1)' }
+    );
+    caseStudyAnimations.set(caseStudy, animation);
+    animation.onfinish = function () {
+      caseStudy.open = false;
+      content.style.overflow = '';
+      caseStudyAnimations.delete(caseStudy);
+    };
+  }
+}
+
 document.querySelectorAll('#cs-cases-section details').forEach(function (caseStudy) {
   caseStudy.addEventListener('mouseenter', function () {
     if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-      caseStudy.open = true;
+      animateCaseStudy(caseStudy, true);
     }
   });
   caseStudy.addEventListener('mouseleave', function () {
     if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-      caseStudy.open = false;
+      animateCaseStudy(caseStudy, false);
     }
   });
 });
