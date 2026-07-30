@@ -4141,12 +4141,16 @@ document.querySelectorAll('#cs-cases-section details, #re-project-portfolio deta
       animateCaseStudy(caseStudy, true);
     }
   });
-  caseStudy.addEventListener('mouseleave', function () {
-    if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
-      animateCaseStudy(caseStudy, false);
+});
+
+document.addEventListener('click', function (event) {
+  document.querySelectorAll('#cs-cases-section details[open], #re-project-portfolio details[open]').forEach(function (openCard) {
+    if (!openCard.contains(event.target)) {
+      animateCaseStudy(openCard, false);
     }
   });
 });
+
 document.addEventListener('click', function (event) {
   const image = event.target.closest('#cs-feedback-section img, #re-project-portfolio img');
   const lightbox = document.getElementById('portfolio-lightbox');
