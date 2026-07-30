@@ -1586,7 +1586,17 @@ button[onclick^="switchPage('re-project-"] svg {
 <style>
 html.route-pending body { visibility: hidden; }
 html.route-ready body { visibility: visible; }
+.editable-home-title {
+  font-size: clamp(2.4rem, 4vw, 4rem) !important;
+}
+.editable-home-actions {
+  margin-top: 1rem !important;
+}
+.editable-credibility-panel {
+  margin-top: 0.5rem !important;
+}
 @media (max-width: 620px) {
+  .editable-home-title { font-size: 1.75rem !important; }
   .editable-home-button { min-width: 0 !important; }
 }
 </style>
@@ -1900,18 +1910,18 @@ html.route-ready body { visibility: visible; }
   <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-2">Certificates</span>
   <p class="text-neutral-400 text-sm font-light mb-4">Selected platform and productivity certifications.</p>
   <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-    <a class="bg-neutral-900/30 border border-white/5 rounded-xl p-4 flex items-center gap-3 hover:border-emerald-500/35 transition-colors" href="verified%20ClickUp%20power%20badge.png" target="_blank" rel="noopener">
+    <div class="bg-neutral-900/30 border border-white/5 rounded-xl p-4 flex items-center gap-3">
       <img alt="Verified ClickUp Power User badge" class="w-11 h-11 object-contain shrink-0" src="verified%20ClickUp%20power%20badge.png"/>
-      <div><h3 class="text-white text-sm font-semibold">ClickUp Power User</h3><p class="text-neutral-500 text-xs mt-0.5">View verified badge ↗</p></div>
-    </a>
+      <div><h3 class="text-white text-sm font-semibold">ClickUp Power User</h3><p class="text-neutral-500 text-xs mt-0.5">Platform verification</p></div>
+    </div>
     <a class="bg-neutral-900/30 border border-white/5 rounded-xl p-4 hover:border-emerald-500/35 transition-colors" href="https://app.coursiv.io/certificates/public/SYFJ6H7R/en?referrer=copy-link" target="_blank" rel="noopener">
-      <h3 class="text-white text-sm font-semibold">Master of Gemini</h3><p class="text-neutral-500 text-xs mt-1">Coursiv • Verify certificate</p>
+      <h3 class="text-white text-sm font-semibold">Master of Gemini</h3><p class="text-cyan-400 hover:text-cyan-300 text-xs mt-1 underline decoration-cyan-400/40 underline-offset-4">Coursiv • Verify certificate ↗</p>
     </a>
     <a class="bg-neutral-900/30 border border-white/5 rounded-xl p-4 hover:border-emerald-500/35 transition-colors" href="https://app.coursiv.io/certificates/public/RYRKGSPY/en?referrer=copy-link" target="_blank" rel="noopener">
-      <h3 class="text-white text-sm font-semibold">Master of Canva AI</h3><p class="text-neutral-500 text-xs mt-1">Coursiv • Verify certificate</p>
+      <h3 class="text-white text-sm font-semibold">Master of Canva AI</h3><p class="text-cyan-400 hover:text-cyan-300 text-xs mt-1 underline decoration-cyan-400/40 underline-offset-4">Coursiv • Verify certificate ↗</p>
     </a>
     <a class="bg-neutral-900/30 border border-white/5 rounded-xl p-4 hover:border-emerald-500/35 transition-colors" href="https://verify.skilljar.com/c/arvrzh4t4npe" target="_blank" rel="noopener">
-      <h3 class="text-white text-sm font-semibold">ClickUp Advanced AI</h3><p class="text-neutral-500 text-xs mt-1">Verify certificate ↗</p>
+      <h3 class="text-white text-sm font-semibold">ClickUp Advanced AI</h3><p class="text-cyan-400 hover:text-cyan-300 text-xs mt-1 underline decoration-cyan-400/40 underline-offset-4">Verify certificate ↗</p>
     </a>
   </div>
 </div>
