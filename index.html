@@ -1583,6 +1583,14 @@ button[onclick^="switchPage('re-project-"] svg {
     }
 }
 </style>
+<style>
+html.route-pending body { visibility: hidden; }
+html.route-ready body { visibility: visible; }
+@media (max-width: 620px) {
+  .editable-home-button { min-width: 0 !important; }
+}
+</style>
+<script>document.documentElement.classList.add('route-pending');</script>
 </head>
 <body class="home-mode min-h-screen flex flex-col justify-between selection:bg-accentCyan-900/90 selection:text-white">
 <!-- GLOBAL HEADER NAVIGATION -->
@@ -1887,63 +1895,25 @@ button[onclick^="switchPage('re-project-"] svg {
 </div>
 <hr class="border-white/5"/>
 <!-- Subsection 4: Certificates -->
+
 <div class="scroll-mt-28" id="certificates">
-<span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-1">Certificates</span>
-
-<div class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-1"></div>
-<p class="text-neutral-400 text-sm font-light mb-4">Continuing to strengthen my technical and digital capabilities through platform certifications and practical training in tools used by modern remote teams.</p>
-
-<div class="flex flex-col sm:flex-row sm:items-center gap-4 bg-gradient-to-r from-purple-950/30 to-neutral-900/40 border border-white/5 hover:border-emerald-500/35 rounded-2xl p-6 mb-8">
-<div class="w-20 h-20 shrink-0 bg-neutral-950/50 rounded-xl p-2 border border-white/10 flex items-center justify-center">
-<img alt="Verified ClickUp Power User" class="w-full h-full object-contain" src="verified%20ClickUp%20power%20badge.png"/>
-</div>
-<div>
-<span class="text-xs font-mono uppercase tracking-widest text-accentCyan block mb-1">Platform Verification</span>
-<h3 class="text-xl font-bold text-white tracking-tight">Verified ClickUp Power User</h3>
-<p class="text-neutral-400 text-sm font-light leading-relaxed mt-0.5">Verified proficiency in ClickUp workspace features, task organization, workflow management, and productivity tools.</p>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-<div class="bg-neutral-900/40 border border-white/5 hover:border-emerald-500/35 rounded-xl p-5 flex flex-col justify-between">
-<div>
-<div class="w-full aspect-[4/3] rounded-lg bg-neutral-900/30 border border-white/5 mb-4 overflow-hidden">
-<img alt="Master of Gemini Certificate Thumbnail" class="w-full h-full object-cover" src="Gemini.jpg"/>
-</div>
-<h4 class="text-white font-medium text-base leading-tight">Master of Gemini</h4>
-<p class="text-neutral-400 text-xs mt-1">Issued 25 April 2026 • Coursiv</p>
-</div>
-<div class="mt-6 pt-3 border-t border-white/5 flex items-center justify-between text-xs font-mono text-neutral-500">
-<span>ID: <span class="text-neutral-300">SYFJ6H7R</span></span>
-<a class="text-accentCyan hover:underline hover:text-accentBlue flex items-center gap-1" href="https://app.coursiv.io/certificates/public/SYFJ6H7R/en?referrer=copy-link" target="_blank">Verify <i class="w-3 h-3" data-lucide="external-link"></i></a>
-</div>
-</div>
-<div class="bg-neutral-900/40 border border-white/5 hover:border-emerald-500/35 rounded-xl p-5 flex flex-col justify-between">
-<div>
-<div class="w-full aspect-[4/3] rounded-lg bg-neutral-900/30 border border-white/5 mb-4 overflow-hidden">
-<img alt="Master of Canva AI Certificate Thumbnail" class="w-full h-full object-cover" src="canva.jpg"/>
-</div>
-<h4 class="text-white font-medium text-base leading-tight">Master of Canva AI</h4>
-<p class="text-neutral-400 text-xs mt-1">Issued 28 April 2026 • Coursiv</p>
-</div>
-<div class="mt-6 pt-3 border-t border-white/5 flex items-center justify-between text-xs font-mono text-neutral-500">
-<span>ID: <span class="text-neutral-300">RYRKGSPY</span></span>
-<a class="text-accentCyan hover:underline hover:text-accentBlue flex items-center gap-1" href="https://app.coursiv.io/certificates/public/RYRKGSPY/en?referrer=copy-link" target="_blank">Verify <i class="w-3 h-3" data-lucide="external-link"></i></a>
-</div>
-</div>
-<div class="bg-neutral-900/40 border border-white/5 hover:border-emerald-500/35 rounded-xl p-5 flex flex-col justify-between">
-<div>
-<div class="w-full aspect-[4/3] rounded-lg bg-neutral-900/30 border border-white/5 mb-4 overflow-hidden">
-<img alt="ClickUp Advanced AI Certificate Thumbnail" class="w-full h-full object-cover" src="ai-skills.png"/>
-</div>
-<h4 class="text-white font-medium text-base leading-tight">ClickUp Advanced AI Certification</h4>
-<p class="text-neutral-400 text-xs mt-1">Issued May 2026</p>
-</div>
-<div class="mt-6 pt-3 border-t border-white/5 flex items-center justify-between text-xs font-mono text-neutral-500">
-<span>ID: <span class="text-neutral-300">arvrzh4t4npe</span></span>
-<a class="text-accentCyan hover:underline hover:text-accentBlue flex items-center gap-1" href="https://verify.skilljar.com/c/arvrzh4t4npe" target="_blank">Verify <i class="w-3 h-3" data-lucide="external-link"></i></a>
-</div>
-</div>
-</div>
+  <span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-2">Certificates</span>
+  <p class="text-neutral-400 text-sm font-light mb-4">Selected platform and productivity certifications.</p>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+    <div class="bg-neutral-900/30 border border-white/5 rounded-xl p-4 flex items-center gap-3">
+      <img alt="Verified ClickUp Power User badge" class="w-11 h-11 object-contain shrink-0" src="verified%20ClickUp%20power%20badge.png"/>
+      <div><h3 class="text-white text-sm font-semibold">ClickUp Power User</h3><p class="text-neutral-500 text-xs mt-0.5">Platform verification</p></div>
+    </div>
+    <a class="bg-neutral-900/30 border border-white/5 rounded-xl p-4 hover:border-emerald-500/35 transition-colors" href="https://app.coursiv.io/certificates/public/SYFJ6H7R/en?referrer=copy-link" target="_blank" rel="noopener">
+      <h3 class="text-white text-sm font-semibold">Master of Gemini</h3><p class="text-neutral-500 text-xs mt-1">Coursiv • Verify certificate</p>
+    </a>
+    <a class="bg-neutral-900/30 border border-white/5 rounded-xl p-4 hover:border-emerald-500/35 transition-colors" href="https://app.coursiv.io/certificates/public/RYRKGSPY/en?referrer=copy-link" target="_blank" rel="noopener">
+      <h3 class="text-white text-sm font-semibold">Master of Canva AI</h3><p class="text-neutral-500 text-xs mt-1">Coursiv • Verify certificate</p>
+    </a>
+    <a class="bg-neutral-900/30 border border-white/5 rounded-xl p-4 hover:border-emerald-500/35 transition-colors" href="https://verify.skilljar.com/c/arvrzh4t4npe" target="_blank" rel="noopener">
+      <h3 class="text-white text-sm font-semibold">ClickUp Advanced AI</h3><p class="text-neutral-500 text-xs mt-1">Verify certificate</p>
+    </a>
+  </div>
 </div>
 <hr class="border-white/5"/>
 <!-- Subsection 5: Workstation Setup -->
@@ -2325,68 +2295,26 @@ Let's Discuss Your Support Needs
         <i class="w-5 h-5 shrink-0 text-emerald-400 transition-transform group-open:rotate-180" data-lucide="chevron-down"></i>
       </summary>
       <div class="border-t border-white/5 p-6 grid grid-cols-1 lg:grid-cols-[minmax(190px,0.32fr)_minmax(0,1fr)] gap-6 items-start">
-        <div class="grid grid-cols-2 gap-y-4 gap-x-2 border-t border-white/5 pt-4 text-xs font-mono">
-<div>
-<span class="text-neutral-500 block text-[10px] uppercase tracking-wider font-semibold">Role</span>
-<span class="text-neutral-300 font-light">Jr Customer Resolution Specialist</span>
-</div>
-<div>
-<span class="text-neutral-500 block text-[10px] uppercase tracking-wider font-semibold">Industry</span>
-<span class="text-neutral-300 font-light">E-Commerce Logistics</span>
-</div>
-<div>
-<span class="text-neutral-500 block text-[10px] uppercase tracking-wider font-semibold">Channels</span>
-<span class="text-neutral-300 font-light">Phone, Email Workspace</span>
-</div>
-<div>
-<span class="text-neutral-500 block text-[10px] uppercase tracking-wider font-semibold">CRMs</span>
-<span class="text-neutral-300 font-light">Salesforce, HubSpot</span>
-</div>
-</div>
-        <div class="w-full lg:w-2/3 space-y-6">
-<div class="bg-neutral-900/20 border border-white/5 rounded-xl p-5 transition-colors">
-<span class="text-[10px] font-mono font-bold uppercase tracking-wider text-red-400 flex items-center gap-1.5 mb-2">
-<span class="w-1.5 h-1.5 rounded-full bg-red-400"></span> Customer Issue
-                            </span>
-<p class="text-neutral-400 text-sm font-light leading-relaxed">
-                                Customers experienced recurring order-status discrepancies and fulfillment delays that required investigation across multiple records and internal teams.
-                            </p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-<div class="bg-neutral-900/20 border border-white/5 rounded-xl p-5 transition-colors">
-<span class="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5 mb-2">
-<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Actions Taken
-                                </span>
-<p class="text-neutral-400 text-sm font-light leading-relaxed">
-                                    Investigated micro-records across multiple database systems, audited customer configuration objects, and orchestrated sync solutions directly with external supply-chain vendor points.
-                                </p>
-</div>
-<div class="bg-neutral-900/20 border border-white/5 rounded-xl p-5 flex flex-col justify-between transition-colors">
-<div>
-<span class="text-[10px] font-mono font-bold uppercase tracking-wider text-cyan-400 flex items-center gap-1.5 mb-3">
-<span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Tools & Systems
-                                    </span>
-<div class="flex flex-wrap gap-1.5 mt-1">
-<span class="px-2.5 py-1 bg-neutral-900 border border-white/5 rounded text-[11px] text-neutral-400 font-mono tracking-tight">Aircall Native</span>
-<span class="px-2.5 py-1 bg-neutral-900 border border-white/5 rounded text-[11px] text-neutral-400 font-mono tracking-tight">Slack Connect</span>
-<span class="px-2.5 py-1 bg-neutral-900 border border-white/5 rounded text-[11px] text-neutral-400 font-mono tracking-tight">Internal DB Lookup</span>
-</div>
-</div>
-</div>
-</div>
-<div class="bg-neutral-900/20 border border-white/5 rounded-xl p-5 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 transition-colors">
-<div class="space-y-1 max-w-xl">
-<span class="text-[10px] font-mono font-bold uppercase tracking-wider text-purple-400 block">Result</span>
-<p class="text-neutral-300 text-sm font-light leading-relaxed">
-                                    Decreased downstream tier escalation volume cycles by introducing standardized triage runbooks, optimizing case resolution paths, and lowering repeat ticket frequency.
-                                </p>
-</div>
-<div class="shrink-0 font-mono text-right hidden md:block border-l border-white/5 pl-4">
-<div class="text-emerald-400 font-bold text-lg leading-none tracking-tight">Workflow</div>
-<div class="text-[9px] text-neutral-500 uppercase tracking-widest mt-1">Optimization</div>
-</div>
-</div>
-</div>
+        <div class="grid grid-cols-2 gap-y-4 gap-x-3 border-t border-white/5 pt-4 text-xs font-mono">
+          <div><span class="text-neutral-500 block text-[10px] uppercase tracking-wider font-semibold">Role</span><span class="text-neutral-300 font-light">Jr Customer Resolution Specialist</span></div>
+          <div><span class="text-neutral-500 block text-[10px] uppercase tracking-wider font-semibold">Industry</span><span class="text-neutral-300 font-light">E-Commerce Logistics</span></div>
+          <div><span class="text-neutral-500 block text-[10px] uppercase tracking-wider font-semibold">Channels</span><span class="text-neutral-300 font-light">Phone, Email</span></div>
+          <div><span class="text-neutral-500 block text-[10px] uppercase tracking-wider font-semibold">CRMs</span><span class="text-neutral-300 font-light">Salesforce, HubSpot</span></div>
+        </div>
+        <div class="space-y-4">
+          <div class="bg-neutral-900/20 border border-white/5 rounded-xl p-5">
+            <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-red-400 block mb-2">Customer Issue</span>
+            <p class="text-neutral-400 text-sm font-light leading-relaxed">Customers experienced recurring order-status discrepancies and fulfillment delays that required investigation across multiple records and internal teams.</p>
+          </div>
+          <div class="bg-neutral-900/20 border border-white/5 rounded-xl p-5">
+            <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-400 block mb-2">Actions Taken</span>
+            <p class="text-neutral-400 text-sm font-light leading-relaxed">Reviewed customer and order records, documented discrepancies, coordinated with the appropriate fulfillment teams, and maintained case ownership through resolution.</p>
+          </div>
+          <div class="bg-neutral-900/20 border border-white/5 rounded-xl p-5">
+            <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-purple-400 block mb-2">Result</span>
+            <p class="text-neutral-300 text-sm font-light leading-relaxed">Improved case clarity, reduced repeated handoffs, and provided more consistent customer updates until fulfillment-related concerns were resolved.</p>
+          </div>
+        </div>
       </div>
     </details>
     <details class="group bg-neutral-900/30 border border-white/5 rounded-2xl hover:border-emerald-500/35 transition-all">
@@ -2394,73 +2322,31 @@ Let's Discuss Your Support Needs
         <div>
           <span class="text-[10px] font-mono uppercase tracking-wider text-purple-400">Case Study 02</span>
           <h3 class="text-white font-semibold text-xl tracking-tight mt-1">Resolving Account Access Issues</h3>
-          <p class="text-sm text-neutral-400 font-light mt-1">Restoring secure account access by resolving activation failures, licensing issues, and validation discrepancies.</p>
+          <p class="text-sm text-neutral-400 font-light mt-1">Restored customer account access by reviewing activation, verification, and account-record concerns.</p>
         </div>
         <i class="w-5 h-5 shrink-0 text-emerald-400 transition-transform group-open:rotate-180" data-lucide="chevron-down"></i>
       </summary>
       <div class="border-t border-white/5 p-6 grid grid-cols-1 lg:grid-cols-[minmax(190px,0.32fr)_minmax(0,1fr)] gap-6 items-start">
-        <div class="grid grid-cols-2 gap-y-4 gap-x-2 border-t border-white/5 pt-4 text-xs font-mono">
-<div>
-<span class="text-neutral-500 block text-[10px] uppercase tracking-wider font-semibold">Role</span>
-<span class="text-neutral-300 font-light">Customer Service Rep</span>
-</div>
-<div>
-<span class="text-neutral-500 block text-[10px] uppercase tracking-wider font-semibold">Industry</span>
-<span class="text-neutral-300 font-light">SaaS Operations</span>
-</div>
-<div>
-<span class="text-neutral-500 block text-[10px] uppercase tracking-wider font-semibold">Channels</span>
-<span class="text-neutral-300 font-light">Inbound Voice Pipeline</span>
-</div>
-<div>
-<span class="text-neutral-500 block text-[10px] uppercase tracking-wider font-semibold">CRMs</span>
-<span class="text-neutral-300 font-light">Zendesk, Asana</span>
-</div>
-</div>
-        <div class="w-full lg:w-2/3 space-y-6">
-<div class="bg-neutral-900/20 border border-white/5 rounded-xl p-5 transition-colors">
-<span class="text-[10px] font-mono font-bold uppercase tracking-wider text-red-400 flex items-center gap-1.5 mb-2">
-<span class="w-1.5 h-1.5 rounded-full bg-red-400"></span> Customer Issue
-                            </span>
-<p class="text-neutral-400 text-sm font-light leading-relaxed">
-                                Enterprise accounts faced critical workflow disruptions resulting from token registration timeouts, faulty subscription sync bugs, and missing platform credential assertions.
-                            </p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-<div class="bg-neutral-900/20 border border-white/5 rounded-xl p-5 transition-colors">
-<span class="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5 mb-2">
-<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Actions Taken
-                                </span>
-<p class="text-neutral-400 text-sm font-light leading-relaxed">
-                                    Reviewed customer and order records, documented inconsistencies, coordinated with the appropriate teams, and maintained case ownership through resolution.
-                                </p>
-</div>
-<div class="bg-neutral-900/20 border border-white/5 rounded-xl p-5 flex flex-col justify-between transition-colors">
-<div>
-<span class="text-[10px] font-mono font-bold uppercase tracking-wider text-cyan-400 flex items-center gap-1.5 mb-3">
-<span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Tools & Systems
-                                    </span>
-<div class="flex flex-wrap gap-1.5 mt-1">
-<span class="px-2.5 py-1 bg-neutral-900 border border-white/5 rounded text-[11px] text-neutral-400 font-mono tracking-tight">Genesys Cloud</span>
-<span class="px-2.5 py-1 bg-neutral-900 border border-white/5 rounded text-[11px] text-neutral-400 font-mono tracking-tight">Admin Console</span>
-<span class="px-2.5 py-1 bg-neutral-900 border border-white/5 rounded text-[11px] text-neutral-400 font-mono tracking-tight">IdM Systems</span>
-</div>
-</div>
-</div>
-</div>
-<div class="bg-neutral-900/20 border border-white/5 rounded-xl p-5 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 transition-colors">
-<div class="space-y-1 max-w-xl">
-<span class="text-[10px] font-mono font-bold uppercase tracking-wider text-purple-400 block">Result</span>
-<p class="text-neutral-300 text-sm font-light leading-relaxed">
-                                    Improved case clarity, reduced repeated handoffs, and supported more consistent resolution of fulfillment-related concerns.
-                                </p>
-</div>
-<div class="shrink-0 font-mono text-right hidden md:block border-l border-white/5 pl-4">
-<div class="text-emerald-400 font-bold text-lg leading-none tracking-tight">Account Access</div>
-<div class="text-[9px] text-neutral-500 uppercase tracking-widest mt-1">Resolution</div>
-</div>
-</div>
-</div>
+        <div class="grid grid-cols-2 gap-y-4 gap-x-3 border-t border-white/5 pt-4 text-xs font-mono">
+          <div><span class="text-neutral-500 block text-[10px] uppercase tracking-wider font-semibold">Role</span><span class="text-neutral-300 font-light">Customer Service Representative</span></div>
+          <div><span class="text-neutral-500 block text-[10px] uppercase tracking-wider font-semibold">Industry</span><span class="text-neutral-300 font-light">SaaS Operations</span></div>
+          <div><span class="text-neutral-500 block text-[10px] uppercase tracking-wider font-semibold">Channels</span><span class="text-neutral-300 font-light">Inbound Voice</span></div>
+          <div><span class="text-neutral-500 block text-[10px] uppercase tracking-wider font-semibold">CRMs</span><span class="text-neutral-300 font-light">Zendesk, Asana</span></div>
+        </div>
+        <div class="space-y-4">
+          <div class="bg-neutral-900/20 border border-white/5 rounded-xl p-5">
+            <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-red-400 block mb-2">Customer Issue</span>
+            <p class="text-neutral-400 text-sm font-light leading-relaxed">Customers were unable to access their accounts because of activation, verification, or account-record discrepancies.</p>
+          </div>
+          <div class="bg-neutral-900/20 border border-white/5 rounded-xl p-5">
+            <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-400 block mb-2">Actions Taken</span>
+            <p class="text-neutral-400 text-sm font-light leading-relaxed">Verified customer and account details, reviewed the documented history, completed available troubleshooting steps, and coordinated with the appropriate team when additional support was required.</p>
+          </div>
+          <div class="bg-neutral-900/20 border border-white/5 rounded-xl p-5">
+            <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-purple-400 block mb-2">Result</span>
+            <p class="text-neutral-300 text-sm font-light leading-relaxed">Restored or progressed account access, reduced repeated handoffs, and maintained clear documentation throughout the resolution process.</p>
+          </div>
+        </div>
       </div>
     </details>
     <details class="group bg-neutral-900/30 border border-white/5 rounded-2xl hover:border-emerald-500/35 transition-all">
@@ -2468,73 +2354,31 @@ Let's Discuss Your Support Needs
         <div>
           <span class="text-[10px] font-mono uppercase tracking-wider text-purple-400">Case Study 03</span>
           <h3 class="text-white font-semibold text-xl tracking-tight mt-1">Resolving Billing and Account Discrepancies</h3>
-          <p class="text-sm text-neutral-400 font-light mt-1">Reconciling high-volume enterprise billing mismatches and processing gateway exceptions under tight accounting schedules.</p>
+          <p class="text-sm text-neutral-400 font-light mt-1">Reviewed billing mismatches and account-record discrepancies requiring careful documentation and follow-up.</p>
         </div>
         <i class="w-5 h-5 shrink-0 text-emerald-400 transition-transform group-open:rotate-180" data-lucide="chevron-down"></i>
       </summary>
       <div class="border-t border-white/5 p-6 grid grid-cols-1 lg:grid-cols-[minmax(190px,0.32fr)_minmax(0,1fr)] gap-6 items-start">
-        <div class="grid grid-cols-2 gap-y-4 gap-x-2 border-t border-white/5 pt-4 text-xs font-mono">
-<div>
-<span class="text-neutral-500 block text-[10px] uppercase tracking-wider font-semibold">Role</span>
-<span class="text-neutral-300 font-light">Operations Associate</span>
-</div>
-<div>
-<span class="text-neutral-500 block text-[10px] uppercase tracking-wider font-semibold">Industry</span>
-<span class="text-neutral-300 font-light">FinTech / E-Comm</span>
-</div>
-<div>
-<span class="text-neutral-500 block text-[10px] uppercase tracking-wider font-semibold">Channels</span>
-<span class="text-neutral-300 font-light">Email, Internal Portal</span>
-</div>
-<div>
-<span class="text-neutral-500 block text-[10px] uppercase tracking-wider font-semibold">CRMs</span>
-<span class="text-neutral-300 font-light">Hubspot, Asana, </span>
-</div>
-</div>
-        <div class="w-full lg:w-2/3 space-y-6">
-<div class="bg-neutral-900/20 border border-white/5 rounded-xl p-5 transition-colors">
-<span class="text-[10px] font-mono font-bold uppercase tracking-wider text-red-400 flex items-center gap-1.5 mb-2">
-<span class="w-1.5 h-1.5 rounded-full bg-red-400"></span> Customer Issue
-                            </span>
-<p class="text-neutral-400 text-sm font-light leading-relaxed">
-                                API discrepancies between storefront fulfillment records and secondary transactional ledger applications created critical billing exceptions and delayed payout reconciliation cadences.
-                            </p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-<div class="bg-neutral-900/20 border border-white/5 rounded-xl p-5 transition-colors">
-<span class="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5 mb-2">
-<span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Actions Taken
-                                </span>
-<p class="text-neutral-400 text-sm font-light leading-relaxed">
-                                    Audited ledger arrays, manually targeted systemic payload failures inside transaction logs, and executed safe batch re-sync procedures to align cross-platform balances.
-                                </p>
-</div>
-<div class="bg-neutral-900/20 border border-white/5 rounded-xl p-5 flex flex-col justify-between transition-colors">
-<div>
-<span class="text-[10px] font-mono font-bold uppercase tracking-wider text-cyan-400 flex items-center gap-1.5 mb-3">
-<span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Tools & Systems
-                                    </span>
-<div class="flex flex-wrap gap-1.5 mt-1">
-<span class="px-2.5 py-1 bg-neutral-900 border border-white/5 rounded text-[11px] text-neutral-400 font-mono tracking-tight">Stripe Gateway</span>
-<span class="px-2.5 py-1 bg-neutral-900 border border-white/5 rounded text-[11px] text-neutral-400 font-mono tracking-tight">Excel Advanced</span>
-<span class="px-2.5 py-1 bg-neutral-900 border border-white/5 rounded text-[11px] text-neutral-400 font-mono tracking-tight">Jira Service Desk</span>
-</div>
-</div>
-</div>
-</div>
-<div class="bg-neutral-900/20 border border-white/5 rounded-xl p-5 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 transition-colors">
-<div class="space-y-1 max-w-xl">
-<span class="text-[10px] font-mono font-bold uppercase tracking-wider text-purple-400 block">Result</span>
-<p class="text-neutral-300 text-sm font-light leading-relaxed">
-                                    Protected key account relationships by eliminating operational data discrepancies and standardizing financial tracking systems.
-                                </p>
-</div>
-<div class="shrink-0 font-mono text-right hidden md:block border-l border-white/5 pl-4">
-<div class="text-emerald-400 font-bold text-lg leading-none tracking-tight">Billing</div>
-<div class="text-[9px] text-neutral-500 uppercase tracking-widest mt-1">Resolution</div>
-</div>
-</div>
-</div>
+        <div class="grid grid-cols-2 gap-y-4 gap-x-3 border-t border-white/5 pt-4 text-xs font-mono">
+          <div><span class="text-neutral-500 block text-[10px] uppercase tracking-wider font-semibold">Role</span><span class="text-neutral-300 font-light">Operations Associate</span></div>
+          <div><span class="text-neutral-500 block text-[10px] uppercase tracking-wider font-semibold">Industry</span><span class="text-neutral-300 font-light">E-Commerce Operations</span></div>
+          <div><span class="text-neutral-500 block text-[10px] uppercase tracking-wider font-semibold">Channels</span><span class="text-neutral-300 font-light">Email</span></div>
+          <div><span class="text-neutral-500 block text-[10px] uppercase tracking-wider font-semibold">CRMs</span><span class="text-neutral-300 font-light">HubSpot, Asana</span></div>
+        </div>
+        <div class="space-y-4">
+          <div class="bg-neutral-900/20 border border-white/5 rounded-xl p-5">
+            <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-red-400 block mb-2">Customer Issue</span>
+            <p class="text-neutral-400 text-sm font-light leading-relaxed">Billing information, payment status, or account balances did not match the available customer and transaction records.</p>
+          </div>
+          <div class="bg-neutral-900/20 border border-white/5 rounded-xl p-5">
+            <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-emerald-400 block mb-2">Actions Taken</span>
+            <p class="text-neutral-400 text-sm font-light leading-relaxed">Compared the available account and transaction details, documented the discrepancy, explained the findings clearly, and coordinated correction or follow-up with the responsible team.</p>
+          </div>
+          <div class="bg-neutral-900/20 border border-white/5 rounded-xl p-5">
+            <span class="text-[10px] font-mono font-bold uppercase tracking-wider text-purple-400 block mb-2">Result</span>
+            <p class="text-neutral-300 text-sm font-light leading-relaxed">Created a clear record of the issue, reduced repeated explanations, and supported an organized path toward billing or account resolution.</p>
+          </div>
+        </div>
       </div>
     </details>
   </div>
@@ -3146,11 +2990,11 @@ Let's Discuss Your Support Needs
     <details class="group bg-neutral-900/30 border border-white/5 rounded-2xl hover:border-emerald-500/35 transition-all">
       <summary class="cursor-pointer list-none p-6 flex items-center justify-between gap-5">
         <div>
-          <span class="text-[10px] font-mono uppercase tracking-wider text-purple-400">Project 03</span>
-          <h3 class="text-white font-semibold text-xl tracking-tight mt-1">Tenant Screening Support</h3>
-          <p class="text-sm text-neutral-400 font-light mt-1">Organized tenant background information and reviewed screening details for rental administration and property-management support.</p>
+          <span class="text-[10px] font-mono uppercase tracking-wider text-purple-400">Project 07</span>
+          <h3 class="text-white font-semibold text-xl tracking-tight mt-1">Transaction Calendar Coordination</h3>
+          <p class="text-sm text-neutral-400 font-light mt-1">Organized transaction dates, follow-up activities, deadlines, and milestone reminders within a structured calendar workflow.</p>
           <div class="flex flex-wrap gap-2 mt-3">
-            <span class="skill-tag">Document Review</span><span class="skill-tag">Data Handling</span><span class="skill-tag">Rental Administration</span>
+            <span class="skill-tag">Calendar Management</span><span class="skill-tag">Deadline Tracking</span><span class="skill-tag">Transaction Milestones</span>
           </div>
         </div>
         <i class="w-5 h-5 shrink-0 text-emerald-400 transition-transform group-open:rotate-180" data-lucide="chevron-down"></i>
@@ -3167,112 +3011,22 @@ Let's Discuss Your Support Needs
           
           <figure class="group/sample overflow-hidden rounded-2xl border border-white/5 bg-neutral-950/40">
             <div class="aspect-video bg-neutral-950 overflow-hidden flex items-center justify-center">
-              <img alt="Applicant Screening Tracker preview" class="w-full h-full object-cover opacity-85 group-hover/sample:opacity-100 group-hover/sample:scale-[1.02] transition-all duration-300" src="project-03-gallery-01.jpg"/>
+              <img alt="Transaction Timeline Calendar preview" class="w-full h-full object-cover opacity-85 group-hover/sample:opacity-100 group-hover/sample:scale-[1.02] transition-all duration-300" src="project-07-gallery-01.jpg"/>
             </div>
             <figcaption class="p-5">
               <span class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Project Sample</span>
-              <h5 class="text-white font-semibold mt-2">Applicant Screening Tracker</h5>
-              <p class="text-neutral-400 text-sm font-light leading-relaxed mt-2">Organized screening status, submitted requirements, verification steps, and follow-up notes for each applicant.</p>
+              <h5 class="text-white font-semibold mt-2">Transaction Timeline Calendar</h5>
+              <p class="text-neutral-400 text-sm font-light leading-relaxed mt-2">Organized calendar of contract dates, contingency deadlines, inspections, financing milestones, and closing tasks.</p>
             </figcaption>
           </figure>
           <figure class="group/sample overflow-hidden rounded-2xl border border-white/5 bg-neutral-950/40">
             <div class="aspect-video bg-neutral-950 overflow-hidden flex items-center justify-center">
-              <img alt="Screening Summary & Recommendation preview" class="w-full h-full object-cover opacity-85 group-hover/sample:opacity-100 group-hover/sample:scale-[1.02] transition-all duration-300" src="project-03-gallery-02.jpg"/>
+              <img alt="Deadline & Follow-Up Tracker preview" class="w-full h-full object-cover opacity-85 group-hover/sample:opacity-100 group-hover/sample:scale-[1.02] transition-all duration-300" src="project-07-gallery-02.jpg"/>
             </div>
             <figcaption class="p-5">
               <span class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Project Sample</span>
-              <h5 class="text-white font-semibold mt-2">Screening Summary & Recommendation</h5>
-              <p class="text-neutral-400 text-sm font-light leading-relaxed mt-2">Clear summary of verified information, incomplete items, risk indicators, and next-step recommendations.</p>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </details>
-    <details class="group bg-neutral-900/30 border border-white/5 rounded-2xl hover:border-emerald-500/35 transition-all">
-      <summary class="cursor-pointer list-none p-6 flex items-center justify-between gap-5">
-        <div>
-          <span class="text-[10px] font-mono uppercase tracking-wider text-purple-400">Project 04</span>
-          <h3 class="text-white font-semibold text-xl tracking-tight mt-1">Comparative Market Analysis Support</h3>
-          <p class="text-sm text-neutral-400 font-light mt-1">Researched comparable properties and organized listing information to support property evaluation and pricing discussions.</p>
-          <div class="flex flex-wrap gap-2 mt-3">
-            <span class="skill-tag">Comparable Research</span><span class="skill-tag">Market Review</span><span class="skill-tag">Report Preparation</span>
-          </div>
-        </div>
-        <i class="w-5 h-5 shrink-0 text-emerald-400 transition-transform group-open:rotate-180" data-lucide="chevron-down"></i>
-      </summary>
-      <div class="border-t border-white/5 p-6">
-        <div class="flex items-center justify-between gap-4 mb-5">
-          <div>
-            <span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-1">Project Gallery</span>
-            <h4 class="text-white font-semibold text-lg">Sample Work</h4>
-          </div>
-          <span class="text-xs text-neutral-500 font-light">Click an image to enlarge</span>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-          
-          <figure class="group/sample overflow-hidden rounded-2xl border border-white/5 bg-neutral-950/40">
-            <div class="aspect-video bg-neutral-950 overflow-hidden flex items-center justify-center">
-              <img alt="Comparable Property Analysis preview" class="w-full h-full object-cover opacity-85 group-hover/sample:opacity-100 group-hover/sample:scale-[1.02] transition-all duration-300" src="project-04-gallery-01.jpg"/>
-            </div>
-            <figcaption class="p-5">
-              <span class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Project Sample</span>
-              <h5 class="text-white font-semibold mt-2">Comparable Property Analysis</h5>
-              <p class="text-neutral-400 text-sm font-light leading-relaxed mt-2">Structured review of comparable listings, property characteristics, pricing, and market-position indicators.</p>
-            </figcaption>
-          </figure>
-          <figure class="group/sample overflow-hidden rounded-2xl border border-white/5 bg-neutral-950/40">
-            <div class="aspect-video bg-neutral-950 overflow-hidden flex items-center justify-center">
-              <img alt="CMA Summary Presentation preview" class="w-full h-full object-cover opacity-85 group-hover/sample:opacity-100 group-hover/sample:scale-[1.02] transition-all duration-300" src="project-04-gallery-02.jpg"/>
-            </div>
-            <figcaption class="p-5">
-              <span class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Project Sample</span>
-              <h5 class="text-white font-semibold mt-2">CMA Summary Presentation</h5>
-              <p class="text-neutral-400 text-sm font-light leading-relaxed mt-2">Presentation-ready overview of selected comparables, pricing observations, adjustments, and supporting sources.</p>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </details>
-    <details class="group bg-neutral-900/30 border border-white/5 rounded-2xl hover:border-emerald-500/35 transition-all">
-      <summary class="cursor-pointer list-none p-6 flex items-center justify-between gap-5">
-        <div>
-          <span class="text-[10px] font-mono uppercase tracking-wider text-purple-400">Project 05</span>
-          <h3 class="text-white font-semibold text-xl tracking-tight mt-1">Buyer Property Search</h3>
-          <p class="text-sm text-neutral-400 font-light mt-1">Researched available properties based on buyer criteria and organized suitable options for easier agent and client evaluation.</p>
-          <div class="flex flex-wrap gap-2 mt-3">
-            <span class="skill-tag">Buyer Criteria</span><span class="skill-tag">Property Search</span><span class="skill-tag">Listing Shortlist</span>
-          </div>
-        </div>
-        <i class="w-5 h-5 shrink-0 text-emerald-400 transition-transform group-open:rotate-180" data-lucide="chevron-down"></i>
-      </summary>
-      <div class="border-t border-white/5 p-6">
-        <div class="flex items-center justify-between gap-4 mb-5">
-          <div>
-            <span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-1">Project Gallery</span>
-            <h4 class="text-white font-semibold text-lg">Sample Work</h4>
-          </div>
-          <span class="text-xs text-neutral-500 font-light">Click an image to enlarge</span>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-          
-          <figure class="group/sample overflow-hidden rounded-2xl border border-white/5 bg-neutral-950/40">
-            <div class="aspect-video bg-neutral-950 overflow-hidden flex items-center justify-center">
-              <img alt="Buyer Criteria & Search Tracker preview" class="w-full h-full object-cover opacity-85 group-hover/sample:opacity-100 group-hover/sample:scale-[1.02] transition-all duration-300" src="project-05-gallery-01.jpg"/>
-            </div>
-            <figcaption class="p-5">
-              <span class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Project Sample</span>
-              <h5 class="text-white font-semibold mt-2">Buyer Criteria & Search Tracker</h5>
-              <p class="text-neutral-400 text-sm font-light leading-relaxed mt-2">Documented buyer requirements, preferred locations, price range, property features, and search progress.</p>
-            </figcaption>
-          </figure>
-          <figure class="group/sample overflow-hidden rounded-2xl border border-white/5 bg-neutral-950/40">
-            <div class="aspect-video bg-neutral-950 overflow-hidden flex items-center justify-center">
-              <img alt="Shortlisted Property Comparison preview" class="w-full h-full object-cover opacity-85 group-hover/sample:opacity-100 group-hover/sample:scale-[1.02] transition-all duration-300" src="project-05-gallery-02.jpg"/>
-            </div>
-            <figcaption class="p-5">
-              <span class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Project Sample</span>
-              <h5 class="text-white font-semibold mt-2">Shortlisted Property Comparison</h5>
-              <p class="text-neutral-400 text-sm font-light leading-relaxed mt-2">Side-by-side comparison of suitable listings with pricing, features, source links, and decision notes.</p>
+              <h5 class="text-white font-semibold mt-2">Deadline & Follow-Up Tracker</h5>
+              <p class="text-neutral-400 text-sm font-light leading-relaxed mt-2">Working tracker showing task ownership, completion status, reminders, documentation needs, and next actions.</p>
             </figcaption>
           </figure>
         </div>
@@ -3323,96 +3077,6 @@ Let's Discuss Your Support Needs
         </div>
       </div>
     </details>
-    <details class="group bg-neutral-900/30 border border-white/5 rounded-2xl hover:border-emerald-500/35 transition-all">
-      <summary class="cursor-pointer list-none p-6 flex items-center justify-between gap-5">
-        <div>
-          <span class="text-[10px] font-mono uppercase tracking-wider text-purple-400">Project 07</span>
-          <h3 class="text-white font-semibold text-xl tracking-tight mt-1">Transaction Calendar Coordination</h3>
-          <p class="text-sm text-neutral-400 font-light mt-1">Organized transaction dates, follow-up activities, deadlines, and milestone reminders within a structured calendar workflow.</p>
-          <div class="flex flex-wrap gap-2 mt-3">
-            <span class="skill-tag">Calendar Management</span><span class="skill-tag">Deadline Tracking</span><span class="skill-tag">Transaction Milestones</span>
-          </div>
-        </div>
-        <i class="w-5 h-5 shrink-0 text-emerald-400 transition-transform group-open:rotate-180" data-lucide="chevron-down"></i>
-      </summary>
-      <div class="border-t border-white/5 p-6">
-        <div class="flex items-center justify-between gap-4 mb-5">
-          <div>
-            <span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-1">Project Gallery</span>
-            <h4 class="text-white font-semibold text-lg">Sample Work</h4>
-          </div>
-          <span class="text-xs text-neutral-500 font-light">Click an image to enlarge</span>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-          
-          <figure class="group/sample overflow-hidden rounded-2xl border border-white/5 bg-neutral-950/40">
-            <div class="aspect-video bg-neutral-950 overflow-hidden flex items-center justify-center">
-              <img alt="Transaction Timeline Calendar preview" class="w-full h-full object-cover opacity-85 group-hover/sample:opacity-100 group-hover/sample:scale-[1.02] transition-all duration-300" src="project-07-gallery-01.jpg"/>
-            </div>
-            <figcaption class="p-5">
-              <span class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Project Sample</span>
-              <h5 class="text-white font-semibold mt-2">Transaction Timeline Calendar</h5>
-              <p class="text-neutral-400 text-sm font-light leading-relaxed mt-2">Organized calendar of contract dates, contingency deadlines, inspections, financing milestones, and closing tasks.</p>
-            </figcaption>
-          </figure>
-          <figure class="group/sample overflow-hidden rounded-2xl border border-white/5 bg-neutral-950/40">
-            <div class="aspect-video bg-neutral-950 overflow-hidden flex items-center justify-center">
-              <img alt="Deadline & Follow-Up Tracker preview" class="w-full h-full object-cover opacity-85 group-hover/sample:opacity-100 group-hover/sample:scale-[1.02] transition-all duration-300" src="project-07-gallery-02.jpg"/>
-            </div>
-            <figcaption class="p-5">
-              <span class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Project Sample</span>
-              <h5 class="text-white font-semibold mt-2">Deadline & Follow-Up Tracker</h5>
-              <p class="text-neutral-400 text-sm font-light leading-relaxed mt-2">Working tracker showing task ownership, completion status, reminders, documentation needs, and next actions.</p>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </details>
-    <details class="group bg-neutral-900/30 border border-white/5 rounded-2xl hover:border-emerald-500/35 transition-all">
-      <summary class="cursor-pointer list-none p-6 flex items-center justify-between gap-5">
-        <div>
-          <span class="text-[10px] font-mono uppercase tracking-wider text-purple-400">Project 08</span>
-          <h3 class="text-white font-semibold text-xl tracking-tight mt-1">Contract Compliance Review</h3>
-          <p class="text-sm text-neutral-400 font-light mt-1">Reviewed transaction documents for missing information and prepared professional follow-up communication requesting required details.</p>
-          <div class="flex flex-wrap gap-2 mt-3">
-            <span class="skill-tag">Compliance Review</span><span class="skill-tag">Document Tracking</span><span class="skill-tag">Email Drafting</span>
-          </div>
-        </div>
-        <i class="w-5 h-5 shrink-0 text-emerald-400 transition-transform group-open:rotate-180" data-lucide="chevron-down"></i>
-      </summary>
-      <div class="border-t border-white/5 p-6">
-        <div class="flex items-center justify-between gap-4 mb-5">
-          <div>
-            <span class="text-[10px] font-mono uppercase tracking-widest text-accentBlue block mb-1">Project Gallery</span>
-            <h4 class="text-white font-semibold text-lg">Sample Work</h4>
-          </div>
-          <span class="text-xs text-neutral-500 font-light">Click an image to enlarge</span>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-          
-          <figure class="group/sample overflow-hidden rounded-2xl border border-white/5 bg-neutral-950/40">
-            <div class="aspect-video bg-neutral-950 overflow-hidden flex items-center justify-center">
-              <img alt="Contract Review Checklist preview" class="w-full h-full object-cover opacity-85 group-hover/sample:opacity-100 group-hover/sample:scale-[1.02] transition-all duration-300" src="project-08-gallery-01.jpg"/>
-            </div>
-            <figcaption class="p-5">
-              <span class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Project Sample</span>
-              <h5 class="text-white font-semibold mt-2">Contract Review Checklist</h5>
-              <p class="text-neutral-400 text-sm font-light leading-relaxed mt-2">Line-by-line checklist used to identify missing, incomplete, inconsistent, or required contract information.</p>
-            </figcaption>
-          </figure>
-          <figure class="group/sample overflow-hidden rounded-2xl border border-white/5 bg-neutral-950/40">
-            <div class="aspect-video bg-neutral-950 overflow-hidden flex items-center justify-center">
-              <img alt="Compliance Findings Summary preview" class="w-full h-full object-cover opacity-85 group-hover/sample:opacity-100 group-hover/sample:scale-[1.02] transition-all duration-300" src="project-08-gallery-02.jpg"/>
-            </div>
-            <figcaption class="p-5">
-              <span class="text-[10px] font-mono uppercase tracking-wider text-purple-300">Project Sample</span>
-              <h5 class="text-white font-semibold mt-2">Compliance Findings Summary</h5>
-              <p class="text-neutral-400 text-sm font-light leading-relaxed mt-2">Organized summary of identified issues, responsible parties, requested corrections, and follow-up status.</p>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </details>
   </div>
 </section>
 <hr class="border-white/5"/>
@@ -3425,143 +3089,7 @@ Let's Discuss Your Support Needs
 ========================================================= -->
 <!-- ================= CONTACT/CTA PAGE ================= -->
 </div>
-</div></section><section class="page-viewport hidden max-w-7xl mx-auto py-12 px-4" id="page-re-testimonials">
-<div class="flex flex-col md:flex-row gap-8 items-start">
-<div class="w-full md:w-64 shrink-0 md:sticky md:top-28">
-<nav class="space-y-2 font-mono text-xs">
-<a class="group text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left" href="#re-testimonials/section-video" onclick="event.preventDefault(); switchPage('re-testimonials', 'section-video')">
-<span class="opacity-50">—</span>
-    Commendation Video
-</a>
-<a class="group text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left" href="#re-testimonials/section-feedback-panel" onclick="event.preventDefault(); switchPage('re-testimonials', 'section-feedback-panel')">
-<span class="opacity-50">—</span>
-    Feedback Panels
-</a>
-<a class="group text-emerald-400 hover:text-emerald-300 transition-colors flex items-center gap-2 py-1 w-full text-left" href="#re-testimonials/confidentiality-disclaimer" onclick="event.preventDefault(); switchPage('re-testimonials', 'confidentiality-disclaimer')">
-<span class="opacity-50">—</span>
-    Disclaimer
-</a>
-</nav>
-</div>
-<div class="flex-1 w-full space-y-12">
-<div>
-<span class="text-xs font-mono uppercase tracking-widest text-accentBlue block mb-2">// Corporate Endorsements</span>
-<h2 class="text-4xl font-bold text-white tracking-tight">Brokerage Reviews &amp; Recommendations</h2>
-<p class="text-neutral-400 font-light mt-2 max-w-xl text-sm">
-                    Professional feedback and transaction performance evaluations collected from real estate firm directors, operations leaders, and brokerage executives.
-                </p>
-</div>
-<div class="relative -top-32 invisible" id="section-video-anchor"></div>
-<div class="w-full bg-neutral-900/40 rounded-2xl border border-white/5 hover:border-emerald-500/35 overflow-hidden shadow-2xl" id="section-video">
-<div class="p-4 bg-black/40 border-b border-white/5 flex items-center justify-between">
-<span class="text-xs font-mono text-accentBlue flex items-center gap-2">
-<span class="w-2 h-2 rounded-full bg-accentCyan animate-pulse"></span> Commendation Video
-                    </span>
-</div>
-<div class="aspect-video w-full bg-neutral-950 relative flex items-center justify-center">
-<iframe allow="autoplay" allowfullscreen="" class="w-full h-full" src="https://drive.google.com/file/d/1xE_tMCfpdZjiXO8qMOI2uV5W57q545G_/preview"></iframe>
-</div>
-</div>
-<hr class="border-white/5"/>
-<div class="scroll-mt-32 w-full bg-neutral-900/40 rounded-2xl border border-white/5 hover:border-emerald-500/35 p-6 relative" id="section-feedback-panel">
-<div class="p-4 bg-black/40 border-b border-white/5 flex items-center justify-between pb-4 mb-6">
-<span class="text-xs font-mono uppercase tracking-widest text-accentBlue" id="re-slider-category-title">1. Broker Commendations</span>
-<div class="flex items-center gap-2">
-<!-- Standardized naming targets slider logic -->
-<button class="p-2 rounded-lg bg-accentCyan-100 border border-accentCyan/25 text-accentCyan-400 hover:text-accentBlue transition-colors" onclick="slidePrev()">
-<i class="w-4 h-4" data-lucide="chevron-left"></i>
-</button>
-<button class="p-2 rounded-lg bg-accentCyan-100 border border-accentCyan/25 text-accentCyan-400 hover:text-accentBlue transition-colors" onclick="slideNext()">
-<i class="w-4 h-4" data-lucide="chevron-right"></i>
-</button>
-</div>
-</div>
-<div class="relative overflow-hidden min-h-[160px]">
-<!-- SLIDE 1 -->
-<div class="testimonial-slide transition-opacity duration-300 block" id="re-testimonial-slide-0">
-<p class="text-base text-neutral-300 italic font-light leading-relaxed mb-6">
-                            Direct transaction logs and workspace team updates highlighting file speed capabilities, operational scaling solutions, and administrative audits.
-                        </p>
-<div class="space-y-6 max-w-3xl mx-auto mt-4">
-<div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-2">
-<img alt="Broker Workspace Commendation 1" class="w-full h-auto object-contain rounded-lg" src="re_commendation1.jpg"/>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-<div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-2">
-<img alt="Broker Workspace Commendation 2" class="w-full h-auto object-contain rounded-lg" src="re_commendation2.jpg"/>
-</div>
-<div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-2">
-<img alt="Broker Workspace Commendation 4" class="w-full h-auto object-contain rounded-lg" src="re_commendation4.jpg"/>
-</div>
-</div>
-<div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-2">
-<img alt="Broker Workspace Commendation 3" class="w-full h-auto object-contain rounded-lg" src="re_commendation3.jpg"/>
-</div>
-</div>
-</div>
-<!-- SLIDE 2 -->
-<div class="testimonial-slide transition-opacity duration-300 hidden" id="re-testimonial-slide-1">
-<p class="text-base text-neutral-300 italic font-light leading-relaxed mb-6">
-                            Verified pipeline operational logs and compliance audit feedback tracking folder accuracy metrics.
-                        </p>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-<div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-1.5"><img alt="Closing Audit Feedback 1" class="w-full h-auto object-contain rounded-lg" src="re_feedback1.jpg"/></div>
-<div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-1.5"><img alt="Closing Audit Feedback 2" class="w-full h-auto object-contain rounded-lg" src="re_feedback2.jpg"/></div>
-<div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-1.5"><img alt="Closing Audit Feedback 3" class="w-full h-auto object-contain rounded-lg" src="re_feedback3.jpg"/></div>
-<div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-1.5"><img alt="Closing Audit Feedback 4" class="w-full h-auto object-contain rounded-lg" src="re_feedback4.jpg"/></div>
-<div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-1.5"><img alt="Closing Audit Feedback 5" class="w-full h-auto object-contain rounded-lg" src="re_feedback5.jpg"/></div>
-<div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-1.5"><img alt="Closing Audit Feedback 6" class="w-full h-auto object-contain rounded-lg" src="re_feedback6.jpg"/></div>
-</div>
-</div>
-<!-- SLIDE 3 -->
-<div class="testimonial-slide transition-opacity duration-300 hidden" id="re-testimonial-slide-2">
-<div class="space-y-2 mb-6">
-<div class="flex justify-between text-xs font-mono border-b border-white/5 pb-2 text-accentCyan">
-<span>File Quality &amp; Closing Audit Parameter</span><span>Score Level</span>
-</div>
-<div class="flex justify-between text-sm text-neutral-300">
-<span>Contract Contingency Verification Speed</span><span class="text-emerald-400">99.2%</span>
-</div>
-<div class="flex justify-between text-sm text-neutral-300">
-<span>First-Pass Compliance Folder Approval (FCR)</span><span class="text-accentCyan">96.5%</span>
-</div>
-<div class="flex justify-between text-sm text-neutral-300">
-<span>Agent/Client Operations Satisfaction Rating</span><span class="text-purple-400">4.98 / 5.0</span>
-</div>
-</div>
-<div class="space-y-6 mt-6">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-<div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-2">
-<img alt="Analytical Closing Summary 1" class="w-full h-auto object-contain rounded-lg" src="re_KPI1.jpg"/>
-</div>
-<div class="overflow-hidden rounded-xl border border-white/10 bg-neutral-900/40 p-2">
-<img alt="Analytical Closing Summary 2" class="w-full h-auto object-contain rounded-lg" src="re_KPI2.jpg"/>
-</div>
-</div>
-</div>
-</div>
-</div>
-<hr class="border-white/5 my-8"/>
-<!-- Confidentiality Shield Guard Component -->
-<div class="scroll-mt-32 w-full bg-transparent rounded-xl border border-red-600/25 p-4 flex items-start gap-3 drop-shadow-[0_2px_8px_rgba(244,63,94,0.5)]" id="confidentiality-disclaimer">
-<div class="p-2 rounded bg-transparent text-neutral-400 shrink-0">
-<svg class="lucide lucide-shield-alert" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
-<path d="M20 13c0 5-3.5 7.5-7.66 9.7a1 1 0 0 1-.68 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 .76-.97l8-2a1 1 0 0 1 .48 0l8 2A1 1 0 0 1 20 6z"></path>
-<path d="M12 8v4"></path>
-<path d="M12 16h.01"></path>
-</svg>
-</div>
-<div class="space-y-1">
-<span class="text-[10px] font-mono uppercase tracking-wider text-accentCyan block">System Notice | Confidentiality Guard</span>
-<p class="text-xs text-neutral-400 leading-relaxed font-light">
-                            All transactional data fields, address coordinates, and client profiles have been thoroughly anonymized to ensure confidentiality rules. Documentation patterns are shown exclusively for closing validation metrics tracking.
-                        </p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-contact">
+</div></section><section class="page-viewport hidden max-w-7xl mx-auto py-8 px-4" id="page-contact">
 <div class="max-w-5xl mx-auto">
 <header class="relative overflow-hidden rounded-2xl border border-white/5 bg-neutral-900/30 p-8 md:p-12">
 <div class="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-accentCyan/5 blur-3xl pointer-events-none"></div>
@@ -3744,8 +3272,7 @@ Let's Discuss Your Support Needs
     'real-estate',
     'contact',
     're-cases',
-    're-testimonials',
-    're-sample-06'
+        're-sample-06'
 ];
     
     // ================= SCROLL TO SECTION =================
@@ -4147,6 +3674,8 @@ Let's Discuss Your Support Needs
             updateSliderView();
 
             initRouter();
+            document.documentElement.classList.remove('route-pending');
+            document.documentElement.classList.add('route-ready');
         }
     );
 
